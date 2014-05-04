@@ -6,7 +6,8 @@ from annotation import open_textfile
 
 namespace = 'http://contextus.net/data/RRH/'
 
-namespaces = {'ome':'http://contextus.net/ontology/ontomedia/core/expression#', 'omt':'http://contextus.net/ontology/ontomedia/ext/common/trait#', 'omb':'http://contextus.net/ontology/ontomedia/ext/common/being#'}
+namespaces = {'ome':'http://contextus.net/ontology/ontomedia/core/expression#', 'omt':'http://contextus.net/ontology/ontomedia/ext/common/trait#', 'omb':'http://contextus.net/ontology/ontomedia/ext/common/being#', 'omeg':'http://contextus.net/ontology/ontomedia/ext/events/gain#', 'omel':'http://contextus.net/ontology/ontomedia/ext/events/loss#', 'omet':'http://contextus.net/ontology/ontomedia/ext/events/trans#', 'omes':'http://contextus.net/ontology/ontomedia/ext/events/social#', 'omea':'http://contextus.net/ontology/ontomedia/ext/events/action#', 'omj':'http://contextus.net/ontology/ontomedia/ext/events/travel#', 'eprop':'http://contextus.net/ontology/ontomedia/ext/events/eventprop#'
+}
     
 category_map = {'Entity':'ome', 'Being':'ome', 'Character':'ome', 'Item':'ome', 'Abstract-Item':'ome', 'Group':'omb', 'Community':'omb', 'Household':'omb', 'Bonded-Group':'omb', 'Bonded-Pair':'omb', 'Organisation':'omb', 'Company':'omb', 'Government':'omb', 'Context':'ome', 'Physical-Item':'ome', 'Space':'ome','Event':'ome', 'Gain':'ome', 'Creation':'omeg', 'Loss':'ome', 'Destruction':'omel', 'Betrayal':'omel', 'Transformation':'ome', 'Transference':'omet', 'Division':'omet', 'Merge':'omet', 'Degradation':'omet', 'Social':'ome', 'Conversational':'omes', 'Flirtation':'omes', 'Proposition':'omes', 'Political':'omes', 'Academic':'omes', 'Legal':'omes', 'Theological':'omes', 'Philosophical':'omes', 'Action':'ome', 'Violence':'omea', 'Sex':'omea', 'Festivity':'omea', 'Ingestion':'omea', 'Celestial':'omea', 'Environmental':'omea', 'Travel':'omj'}
 
