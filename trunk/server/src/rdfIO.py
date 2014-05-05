@@ -13,7 +13,7 @@ category_map = {'Entity':'ome', 'Being':'ome', 'Character':'ome', 'Item':'ome', 
     
 relationship_map = {'is-linked-to':'ome', 'is':'ome', 'is-shadow-of':'ome', 'contains':'ome', 'contained-by':'ome', 'has-subject-entity':'ome', 'has-object-entity':'ome', 'has-subject':'omes', 'to':'ome', 'from':'ome'}
     
-extended_rdf_map = {'bond-with':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Bond;\n\t\tome:is-linked-to {1}].\n\t\t].\n', 'family-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Family;\n\t\tomb:is-relation-of {1}].\n\t\t].\n', 'friend-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Friendship;\n\t\tome:is-linked-to {1}].\n\t\t].\n', 'enemy-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Enmity;\n\t\tomb:is-linked-to {1}].\n\t\t].\n'}
+extended_rdf_map = {'bond-with':'omt:has-trait [\n\ta <omt:link> ;\n\t\tomb:has-bond [\n\t\t\ta <omb:Bond>;\n\t\tome:is-linked-to {1}].\n\t\t].\n', 'family-of':'omt:has-trait [\n\ta <omt:link> ;\n\t\tomb:has-bond [\n\t\t\ta <omb:Family>;\n\t\tomb:is-relation-of {1}].\n\t\t].\n', 'friend-of':'omt:has-trait [\n\ta <omt:link> ;\n\t\tomb:has-bond [\n\t\t\ta <omb:Friendship>;\n\t\tome:is-linked-to {1}].\n\t\t].\n', 'enemy-of':'omt:has-trait [\n\ta <omt:link> ;\n\t\tomb:has-bond [\n\t\t\ta <omb:Enmity>;\n\t\tomb:is-linked-to {1}].\n\t\t].\n'}
 
 def convert_to_rdf(fpath):
     
