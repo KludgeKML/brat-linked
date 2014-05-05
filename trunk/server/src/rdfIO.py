@@ -43,7 +43,7 @@ def convert_to_rdf(fpath):
             
                 for chunk in chunks[2:]:
                     if ':' in chunk:
-                        rdf += "\t" + chunk.split(':')[0] + " <" + namespace + chunk.split(':')[1] + ">;\n"
+                        rdf += "\t" + lookup(chunk.split(':')[0]) + " <" + namespace + chunk.split(':')[1] + ">;\n"
                 
                 rdf += "\trdf:label " + chunks[0] + " .\n\n"
                 
@@ -56,7 +56,7 @@ def convert_to_rdf(fpath):
                 rdf += "<" + namespace + chunks[2].split(":")[1] + "> "
                     
                 if lookup(chunks[1]) != False:
-                    rdf += lookup(chunks[1]) + "{" + chunks[1] + "} " + "<" + namespace + chunks[3].split(":")[1] + ">;\n" 
+                    rdf += lookup(chunks[1]) + " " + "<" + namespace + chunks[3].split(":")[1] + ">;\n" 
                 else:
                     rdf += get_long_rdf(chunks[1], chunks[3].split(":")[1])
                 
