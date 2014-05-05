@@ -60,7 +60,7 @@ def convert_to_rdf(fpath):
                 else:
                     rdf += get_long_rdf(chunks[1], chunks[3].split(":")[1])
                 
-                rdf += '\trdfs:label "' + chunks[0] + "' .\n\n"
+                rdf += '\trdfs:label "' + chunks[0] + '" .\n\n'
             
             elif line[0] == 'T':
                 rdf += "<" + namespace + chunks[0] + ">\n\ta <"
