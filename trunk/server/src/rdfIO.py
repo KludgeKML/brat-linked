@@ -39,13 +39,13 @@ def convert_to_rdf(fpath):
                 rdf += "<" + namespace + EventID + ">\n\ta "
                 
                 if lookup(EventType) != False:
-                    rdf += lookup(EventType) + ";\n"
+                    rdf += "<" + lookup(EventType) + ">;\n"
             
                 for chunk in chunks[2:]:
                     if ':' in chunk:
                         rdf += "\t" + lookup(chunk.split(':')[0]) + " <" + namespace + chunk.split(':')[1] + ">;\n"
                 
-                rdf += "\trdfs:label " + chunks[0] + " .\n\n"
+                rdf += '\trdfs:label "' + chunks[0] + '" .\n\n'
                 
             elif line[0] == 'N':        
                 rdf += "<" + namespace + chunks[4] + "> owl:sameAs <" + namespace + chunks[3] + ">;\n"
@@ -60,7 +60,7 @@ def convert_to_rdf(fpath):
                 else:
                     rdf += get_long_rdf(chunks[1], chunks[3].split(":")[1])
                 
-                rdf += "\trdfs:label '" + chunks[0] + "' .\n\n"
+                rdf += '\trdfs:label "' + chunks[0] + "' .\n\n"
             
             elif line[0] == 'T':
                 rdf += "<" + namespace + chunks[0] + ">\n\ta <"
@@ -70,7 +70,7 @@ def convert_to_rdf(fpath):
             
             elif line[0] == 'A':
                 rdf += "<" + namespace + chunks[2] + ">\n\ta <" + lookup(chunks[3]) + ">;\n"    
-                rdf += "\trdfs:label '" + chunks[0] + "' .\n\n"     
+                rdf += '\trdfs:label "' + chunks[0] + '" .\n\n'     
            
     return rdf
 
