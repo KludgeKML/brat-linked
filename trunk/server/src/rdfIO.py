@@ -78,8 +78,8 @@ def lookup(annotation):
 
     conversion = {'Given':'Consent-Given', 'Implied':'Consent-Implied', 'Not-Given':'Consent-Not-Given', 'Unclear':'Consent-Unclear'}
     
-    if annontation in conversion:
-        annotation = conversion[annotation]
+    #if annontation in conversion:
+    #    annotation = conversion[annotation]
 
     if annotation in namespaces:
         return namespaces[annotation]
