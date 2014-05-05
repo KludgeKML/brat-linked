@@ -56,7 +56,7 @@ def convert_to_rdf(fpath):
                 rdf += "<" + namespace + chunks[2].split(":")[1] + "> "
                     
                 if lookup(chunks[1]) != False:
-                    rdf += lookup(chunks[1]) + " " + "<" + namespace + chunks[3].split(":")[1] + ">;\n" 
+                    rdf += lookup(chunks[1]) + "{" + chunks[1] + "} " + "<" + namespace + chunks[3].split(":")[1] + ">;\n" 
                 else:
                     rdf += get_long_rdf(chunks[1], chunks[3].split(":")[1])
                 
@@ -66,7 +66,6 @@ def convert_to_rdf(fpath):
                 rdf += "<" + namespace + chunks[0] + ">\n\ta <"
                 if lookup(chunks[1]) != False:
                     rdf += lookup(chunks[1])
-                    rdf += '{' + chunks[1] + '}'
                 rdf += "> .\n\n"
             
             elif line[0] == 'A':
