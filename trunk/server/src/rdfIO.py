@@ -49,7 +49,7 @@ def convert_to_rdf(fpath):
                 
             elif line[0] == 'N':        
                 rdf += "<" + namespace + chunks[4] + "> owl:sameAs <" + namespace + chunks[3] + ">;\n"
-                rdf += "\trdfs:seeAlso " + namespace + chunks[0] + " .\n\n"
+                rdf += "\trdfs:seeAlso <" + namespace + chunks[0] + "> .\n\n"
            
             elif line[0] == 'R':
                 
