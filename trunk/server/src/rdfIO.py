@@ -66,6 +66,7 @@ def convert_to_rdf(fpath):
                 rdf += "<" + namespace + chunks[0] + ">\n\ta <"
                 if lookup(chunks[1]) != False:
                     rdf += lookup(chunks[1])
+                    rdf += '{' + chunks[1] + '}'
                 rdf += "> .\n\n"
             
             elif line[0] == 'A':
