@@ -76,10 +76,10 @@ def convert_to_rdf(fpath):
 
 def lookup(annotation):
 
-    conversion = {'Given':'Consent-Given', 'Implied':'Consent-Implied', 'Not-Given':'Consent-Not-Given', 'Unclear':'Consent-Unclear'}
+    #conversion = {}
     
-    if annotation in conversion:
-        annotation = conversion[annotation]
+    #if annotation in conversion:
+    #    annotation = conversion[annotation]
 
     if annotation in namespaces:
         return namespaces[annotation]
