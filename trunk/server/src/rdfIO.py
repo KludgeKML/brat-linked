@@ -20,7 +20,7 @@ def upload_to_triplestore(prefixes, data):
 
 def convert_to_rdf(fpath):
     parts = get_rdf_parts(fpath);
-    rdf = parts['prefix'] + '\n' + parts['data']
+    rdf = parts['prefixes'] + '\n' + parts['data']
     return rdf
 
 def get_rdf_parts(fpath):
