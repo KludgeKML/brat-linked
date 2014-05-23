@@ -37,4 +37,6 @@ def upload_annotation(document, collection, extension):
 		Messager.info('Uploaded data to triplestore')
     else:
 		Messager.error('Failed to upload to triplestore')
+		
+    return {}
 
