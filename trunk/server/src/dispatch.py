@@ -35,6 +35,7 @@ from search import search_text, search_entity, search_event, search_relation, se
 from predict import suggest_span_types
 from undo import undo
 from tag import tag
+from triplestore import upload_annotation
 from delete import delete_document, delete_collection
 from norm import norm_get_name, norm_search, norm_get_data
 
@@ -55,7 +56,9 @@ DISPATCHER = {
         'retrieveStored': retrieve_stored,
         'downloadFile': download_file,
         'downloadCollection': download_collection,
-        'downloadRDF': download_rdf,
+        'downloadRDF': upload_annotation,
+#        'downloadRDF': download_rdf,
+#        'uploadAnnotation': upload_annotation,
 
         'login': login,
         'logout': logout,

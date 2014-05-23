@@ -15,20 +15,22 @@ relationship_map = {'is-linked-to':'ome', 'is':'ome', 'is-shadow-of':'ome', 'con
     
 extended_rdf_map = {'bond-with':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Bond;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n', 'family-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Family;\n\t\t\tomb:is-relation-of {1}]\n\t\t];\n', 'friend-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Friendship;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n', 'enemy-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Enmity;\n\t\t\tomb:is-linked-to {1}]\n\t\t];\n'}
 
-def upload_to_triplestore(prefixes, data):
-    pass
-
 def convert_to_rdf(fpath):
     parts = get_rdf_parts(fpath);
-    rdf = parts['prefixes'] + '\n' + parts['data']
+    rdf = ''
+
+    for prefix in parts['prefixes']:
+        rdf += '@prefix ' + prefix + '.\n'
+    rdf += '\n' + parts['data']
+
     return rdf
 
 def get_rdf_parts(fpath):
    
-    parts = { 'prefixes': '', 'data': '' }
+    parts = { 'prefixes': [], 'data': '' }
     
     for prefix, url in namespaces.items():
-        parts['prefixes'] += '@prefix ' + prefix + ': <' + url + '>.\n'
+        parts['prefixes'].append(prefix + ': <' + url + '>')
 
     with open(fpath) as txt_file:
         for line in txt_file:
