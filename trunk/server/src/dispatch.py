@@ -56,9 +56,8 @@ DISPATCHER = {
         'retrieveStored': retrieve_stored,
         'downloadFile': download_file,
         'downloadCollection': download_collection,
-        'downloadRDF': upload_annotation,
-#        'downloadRDF': download_rdf,
-#        'uploadAnnotation': upload_annotation,
+        'downloadRDF': download_rdf,
+        'uploadAnnotation': upload_annotation,
 
         'login': login,
         'logout': logout,
