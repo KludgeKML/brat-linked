@@ -36,7 +36,7 @@ def upload_annotation(document, collection):
     if response.status_code == 200:
 		Messager.info('Uploaded data to triplestore')
     else:
-		Messager.error('Failed to upload to triplestore')
+		Messager.error('Failed to upload to triplestore (Response ' + response.status_code + ' ' + response.reason + ')')
 		
     return {}
 

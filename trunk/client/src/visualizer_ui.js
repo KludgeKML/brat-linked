@@ -1706,7 +1706,7 @@ var VisualizerUI = (function($, window, undefined) {
           var $link = $('<a target="brat_search"/>').
               text(ext).
               attr('href',
-                  'ajax.cgi?action=downloadRDF&collection=' + encodeURIComponent(coll) +
+                  'ajax.cgi?action=downloadFile&collection=' + encodeURIComponent(coll) +
                   '&document=' + encodeURIComponent(doc) + '&extension=' + encodeURIComponent(ext) +
                   // TODO: Extract the protocol version into somewhere global
                   '&protocol=' + 1);
