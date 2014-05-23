@@ -15,15 +15,21 @@ relationship_map = {'is-linked-to':'ome', 'is':'ome', 'is-shadow-of':'ome', 'con
     
 extended_rdf_map = {'bond-with':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Bond;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n', 'family-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Family;\n\t\t\tomb:is-relation-of {1}]\n\t\t];\n', 'friend-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Friendship;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n', 'enemy-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Enmity;\n\t\t\tomb:is-linked-to {1}]\n\t\t];\n'}
 
+def upload_to_triplestore(prefixes, data):
+    pass
+
 def convert_to_rdf(fpath):
-    
-    rdf = ''
+    parts = get_rdf_parts(fpath);
+    rdf = parts['prefix'] + '\n' + parts['data']
+    return rdf
+
+def get_rdf_parts(fpath):
+   
+    parts = { 'prefixes': '', 'data': '' }
     
     for prefix, url in namespaces.items():
-        rdf += '@prefix ' + prefix + ': <' + url + '>.\n'
+        parts['prefixes'] += '@prefix ' + prefix + ': <' + url + '>.\n'
 
-    rdf += '\n'
-        
     with open(fpath) as txt_file:
         for line in txt_file:
 
@@ -36,43 +42,43 @@ def convert_to_rdf(fpath):
                 EventID = Event.split(':')[1]
                 EventType = Event.split(':')[0]
             
-                rdf += "<" + namespace + EventID + ">\n\ta "
+                parts['data'] += "<" + namespace + EventID + ">\n\ta "
                 
                 if lookup(EventType) != False:
-                    rdf += lookup(EventType) + ";\n"
+                    parts['data'] += lookup(EventType) + ";\n"
             
                 for chunk in chunks[2:]:
                     if ':' in chunk:
-                        rdf += "\t" + lookup(chunk.split(':')[0]) + " <" + namespace + chunk.split(':')[1] + ">;\n"
+                        parts['data'] += "\t" + lookup(chunk.split(':')[0]) + " <" + namespace + chunk.split(':')[1] + ">;\n"
                 
-                rdf += '\trdfs:label "' + chunks[0] + '" .\n\n'
+                parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
                 
             elif line[0] == 'N':        
-                rdf += "<" + namespace + chunks[4] + "> owl:sameAs <" + namespace + chunks[3] + ">;\n"
-                rdf += "\trdfs:seeAlso <" + namespace + chunks[0] + "> .\n\n"
+                parts['data'] += "<" + namespace + chunks[4] + "> owl:sameAs <" + namespace + chunks[3] + ">;\n"
+                parts['data'] += "\trdfs:seeAlso <" + namespace + chunks[0] + "> .\n\n"
            
             elif line[0] == 'R':
                 
-                rdf += "<" + namespace + chunks[2].split(":")[1] + "> "
+                parts['data'] += "<" + namespace + chunks[2].split(":")[1] + "> "
                     
                 if lookup(chunks[1]) != False:
-                    rdf += lookup(chunks[1]) + " " + "<" + namespace + chunks[3].split(":")[1] + ">;\n" 
+                    parts['data'] += lookup(chunks[1]) + " " + "<" + namespace + chunks[3].split(":")[1] + ">;\n" 
                 else:
-                    rdf += get_long_rdf(chunks[1], chunks[3].split(":")[1])
+                    parts['data'] += get_long_rdf(chunks[1], chunks[3].split(":")[1])
                 
-                rdf += '\trdfs:label "' + chunks[0] + '" .\n\n'
+                parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
             
             elif line[0] == 'T':
-                rdf += "<" + namespace + chunks[0] + ">\n\ta "
+                parts['data'] += "<" + namespace + chunks[0] + ">\n\ta "
                 if lookup(chunks[1]) != False:
-                    rdf += lookup(chunks[1])
-                rdf += " .\n\n"
+                    parts['data'] += lookup(chunks[1])
+                parts['data'] += " .\n\n"
             
             elif line[0] == 'A':
-                rdf += "<" + namespace + chunks[2] + ">\n\ta " + lookup(chunks[3]) + ";\n"    
-                rdf += '\trdfs:label "' + chunks[0] + '" .\n\n'     
+                parts['data'] += "<" + namespace + chunks[2] + ">\n\ta " + lookup(chunks[3]) + ";\n"    
+                parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'     
            
-    return rdf
+    return parts
 
 def lookup(annotation):
 
