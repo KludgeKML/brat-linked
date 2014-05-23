@@ -1746,8 +1746,8 @@ var VisualizerUI = (function($, window, undefined) {
 			dispatcher.post('ajax',
 				[{
 					action: 'uploadAnnotation',
-					collection: encodeURIComponent(coll),
-					document:  encodeURIComponent(doc),
+					collection: coll,
+					document:  doc,
 					protocol: '1'
 				}]);
 		});
