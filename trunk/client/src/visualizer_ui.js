@@ -1742,15 +1742,25 @@ var VisualizerUI = (function($, window, undefined) {
           hideNoDocMessage();
         }
 
-        var $uploadAnnotation = $('#triplestore_upload').empty();
-        var $uploadAnnotationLink = $('<a/>')
-          .text('4Store')
-          .attr('href', 'ajax.cgi?action=uploadAnnotation&collection=' + encodeURIComponent(coll)
-          + '&include_conf=' + ($('#source_collection_conf_on').is(':checked') ? 1 : 0)
-          // TODO: Extract the protocol version into somewhere global
-          + '&protocol=' + 1);
-        $uploadAnnotation.append($uploadAnnotationLink);
-        $uploadAnnotationLink.button();
+		$('#triplestore_upload').click(function(evt) {
+			dispatcher.post('ajax',
+				[{
+					action: 'uploadAnnotation',
+					collection: encodeURIComponent(coll),
+					document:  encodeURIComponent(doc),
+					protocol: '1'
+				}]);
+		});
+
+        //var $uploadAnnotation = $('#triplestore_upload').empty();
+        //var $uploadAnnotationLink = $('<a/>')
+        //  .text('4Store')
+        //  .attr('href', 'ajax.cgi?action=uploadAnnotation&collection=' + encodeURIComponent(coll) + 
+        //        '&document=' + encodeURIComponent(doc) + 
+        //        // TODO: Extract the protocol version into somewhere global
+        //        '&protocol=' + 1);
+        //$uploadAnnotation.append($uploadAnnotationLink);
+        //$uploadAnnotationLink.button();
 
 
         // if we have a collection change, update "collection download" and
