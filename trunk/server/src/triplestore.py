@@ -16,10 +16,10 @@ from document import real_directory
 from message import Messager
 from rdfIO import get_rdf_parts
 
-def upload_annotation(document, collection, extension):
+def upload_annotation(document, collection):
     directory = collection
     real_dir = real_directory(directory)
-    fname = '%s.%s' % (document, extension)
+    fname = '%s.%s' % (document, 'ann')
     fpath = path_join(real_dir, fname)
 
     parts = get_rdf_parts(fpath)

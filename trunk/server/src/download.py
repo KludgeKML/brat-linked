@@ -39,7 +39,7 @@ def download_file(document, collection, extension):
 def download_rdf(document, collection, extension):
     directory = collection
     real_dir = real_directory(directory)
-    fname = '%s.%s' % (document, extension)
+    fname = '%s.%s' % (document, 'ann')
     fpath = path_join(real_dir, fname)
 
     hdrs = [('Content-Type', 'text/plain; charset=utf-8'),
