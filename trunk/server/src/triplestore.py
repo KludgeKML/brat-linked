@@ -30,7 +30,7 @@ def upload_annotation(document, collection):
     fname = '%s.%s' % (document, 'ann')
     fpath = path_join(real_dir, fname)
 
-    parts = get_rdf_parts(fpath)
+    parts = get_rdf_parts(fpath, document)
     sparql = ''
     
     for prefix in parts['prefixes']:

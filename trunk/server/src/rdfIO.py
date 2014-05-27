@@ -16,14 +16,14 @@ relationship_map = {'is-linked-to':'ome', 'is':'ome', 'is-shadow-of':'ome', 'con
     
 extended_rdf_map = {'bond-with':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Bond;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n', 'family-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Family;\n\t\t\tomb:is-relation-of {1}]\n\t\t];\n', 'friend-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Friendship;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n', 'enemy-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Enmity;\n\t\t\tomb:is-linked-to {1}]\n\t\t];\n'}
 
-def convert_to_rdf(fpath):
+def convert_to_rdf(fpath, document):
     '''Returns a turtle file of the annotations.
     
     The annotations to the current file, as well as the prefixes required
     to insert them into a graph, are returned as a file. This function is
     designed to be called from the dispatcher.
     '''
-    parts = get_rdf_parts(fpath);
+    parts = get_rdf_parts(fpath, document);
     rdf = ''
 
     for prefix in parts['prefixes']:
@@ -32,12 +32,12 @@ def convert_to_rdf(fpath):
 
     return rdf
 
-def get_rdf_parts(fpath):
+def get_rdf_parts(fpath, document):
     
     user = get_session()['user']
     parts = { 'prefixes': [], 'data': '' }
     
-    namespace = base_namespace + user + '/'
+    namespace = base_namespace + user + '/' + document + '/'
     
     for prefix, url in namespaces.items():
         parts['prefixes'].append(prefix + ': <' + url + '>')

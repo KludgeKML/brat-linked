@@ -48,7 +48,7 @@ def download_rdf(document, collection, extension):
     #with open_textfile(fpath, 'r') as txt_file:
     #   data = txt_file.read().encode('utf-8')
     
-    data = convert_to_rdf(fpath)
+    data = convert_to_rdf(fpath, document)
     raise NoPrintJSONError(hdrs, data)    
 
 def find_in_directory_tree(directory, filename):
