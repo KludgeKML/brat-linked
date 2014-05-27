@@ -5,7 +5,7 @@ import re
 from annotation import open_textfile
 from session import get_session
 
-namespace = 'http://contextus.net/resource/RRH/'
+base_namespace = 'http://contextus.net/resource/RRH/'
 
 namespaces = {'rdfs':'http://www.w3.org/2000/01/rdf-schema#','ome':'http://contextus.net/ontology/ontomedia/core/expression#', 'omt':'http://contextus.net/ontology/ontomedia/ext/common/trait#', 'omb':'http://contextus.net/ontology/ontomedia/ext/common/being#', 'omeg':'http://contextus.net/ontology/ontomedia/ext/events/gain#', 'omel':'http://contextus.net/ontology/ontomedia/ext/events/loss#', 'omet':'http://contextus.net/ontology/ontomedia/ext/events/trans#', 'omes':'http://contextus.net/ontology/ontomedia/ext/events/social#', 'omea':'http://contextus.net/ontology/ontomedia/ext/events/action#', 'omj':'http://contextus.net/ontology/ontomedia/ext/events/travel#', 'eprop':'http://contextus.net/ontology/ontomedia/ext/events/eventprop#', 'omf':'http://contextus.net/ontology/ontomedia/ext/fiction/fic#', 'owl':'http://www.w3.org/2002/07/owl#'}
     
@@ -37,7 +37,7 @@ def get_rdf_parts(fpath):
     user = get_session()['user']
     parts = { 'prefixes': [], 'data': '' }
     
-    namespace += user + '/'
+    namespace = base_namespace + user + '/'
     
     for prefix, url in namespaces.items():
         parts['prefixes'].append(prefix + ': <' + url + '>')
