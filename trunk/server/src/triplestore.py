@@ -17,14 +17,14 @@ from message import Messager
 from rdfIO import get_rdf_parts
 
 def upload_annotation(document, collection):
-	'''Uploads an annotation into a triplestore.
-	
-	The triplestore URL is specified by the module's store_url variable,
-	and the function assumes that INSERT DATA statements can be sent to 
-	that url with a POST http command, using the parameter name supplied 
-	in the module's store_update_param variable. This function is called
-	from the dispatcher when an AJAX 'uploadAnnotation' call comes in.
-	'''
+    '''Uploads an annotation into a triplestore.
+    
+    The triplestore URL is specified by the module's store_url variable,
+    and the function assumes that INSERT DATA statements can be sent to 
+    that url with a POST http command, using the parameter name supplied 
+    in the module's store_update_param variable. This function is called
+    from the dispatcher when an AJAX 'uploadAnnotation' call comes in.
+    '''
     directory = collection
     real_dir = real_directory(directory)
     fname = '%s.%s' % (document, 'ann')
