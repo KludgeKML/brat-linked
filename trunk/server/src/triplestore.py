@@ -9,6 +9,7 @@ store_url = 'http://localhost:8000/update/'
 store_update_param = 'update'
 
 from os.path import join as path_join
+from session import get_session
 
 import requests
 
@@ -29,13 +30,14 @@ def upload_annotation(document, collection):
     real_dir = real_directory(directory)
     fname = '%s.%s' % (document, 'ann')
     fpath = path_join(real_dir, fname)
+    user = get_session()['user']
 
     parts = get_rdf_parts(fpath, document)
     sparql = ''
     
     for prefix in parts['prefixes']:
         sparql += 'PREFIX ' + prefix + ' '
-    sparql += ' INSERT DATA { ' + parts['data'] + ' } '
+    sparql += ' INSERT DATA { GRAPH ' + user + '{ ' + parts['data'] + ' }} '
     
     insertData = { store_update_param: sparql }
     
