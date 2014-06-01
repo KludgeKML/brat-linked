@@ -37,7 +37,7 @@ def upload_annotation(document, collection):
     
     for prefix in parts['prefixes']:
         sparql += 'PREFIX ' + prefix + ' '
-    sparql += ' INSERT DATA { GRAPH ' + user + '{ ' + parts['data'] + ' }} '
+    sparql += ' INSERT DATA { GRAPH <http://contextus.net/user/' + user + '> { ' + parts['data'] + ' }} '
     
     insertData = { store_update_param: sparql }
     
