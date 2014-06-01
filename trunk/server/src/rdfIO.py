@@ -76,7 +76,7 @@ def get_rdf_parts(fpath, document):
                 if lookup(chunks[1]) != False:
                     parts['data'] += lookup(chunks[1]) + " " + "<" + namespace + chunks[3].split(":")[1] + ">;\n" 
                 else:
-                    parts['data'] += get_long_rdf(chunks[1], chunks[3].split(":")[1])
+                    parts['data'] += get_long_rdf(chunks[1], chunks[3].split(":")[1], namespace)
                 
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
             
@@ -110,7 +110,7 @@ def lookup(annotation):
     return annotation
 
 
-def get_long_rdf(annotation, entity):
+def get_long_rdf(annotation, entity, namespace):
     ent = ''    
     if entity in category_map:
         ent = category_map[entity] + ":" + entity
