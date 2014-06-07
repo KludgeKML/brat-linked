@@ -1286,6 +1286,7 @@ var AnnotatorUI = (function($, window, undefined) {
         dispatcher.post('hideForm');
         $('#norm_search_button').val('Search ' + $('#span_norm_db').val());
         setNormSearchSubmit(false);
+        $('#norm_create_button').button(disable);
         dispatcher.post('showForm', [normSearchDialog]);
         $('#norm_search_query').focus().select();
       }
