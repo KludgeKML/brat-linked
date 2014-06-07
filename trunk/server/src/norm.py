@@ -70,9 +70,10 @@ def _get_db_path(database, collection):
                              collection+', falling back on default.')
             return None
 
-def norm_create_name(database, name, entityID):
-    Messager.info('Created Name: ' + name + ' with ID ' + entityID)
-    return {}
+def norm_create_name(database, name):
+    Messager.info('Created Name: ' + name)
+    entityID = name.replace(" ", "")
+    return { 'name' : name, 'entityID' : entityID }
 
 def norm_get_name(database, key, collection=None):
     if NORM_LOOKUP_DEBUG:

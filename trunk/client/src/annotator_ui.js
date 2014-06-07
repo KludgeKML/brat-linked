@@ -1203,6 +1203,7 @@ var AnnotatorUI = (function($, window, undefined) {
         chooseNormId(evt);
         normSearchSubmit(evt);
       }
+     
       var setSpanNormSearchResults = function(response) {
         if (response.exception) {
           // TODO: better response to failure
@@ -1259,6 +1260,11 @@ var AnnotatorUI = (function($, window, undefined) {
 
         // TODO: sorting on click on header (see showFileBrowser())
       }
+                  
+      var updateWithCreatedNorm = function(response) {
+          $('#norm_search_query').val("UPDATED DUMMY ID");
+      }
+      
       var performNormSearch = function() {
         var val = $('#norm_search_query').val();
         var db = $('#span_norm_db').val();
@@ -1305,14 +1311,16 @@ var AnnotatorUI = (function($, window, undefined) {
       $('#norm_create_button').button();
       
       $('#norm_create_button').click(function(evt) {
+        var db = $('#span_norm_db').val();
+        var entityName = $('#norm_create_name').val('')
 		dispatcher.post('ajax',
 		[{
 			action: 'normCreate',
             database: db,
-			name: 'DUMMY NAME',
-			entityID:  '<http://contextus.net/RRH/DUMMY_NAME>',
+			name: name,
 			protocol: '1'
-		}]);
+		}, 'normCreateResult']);
+        
       });
       
 
@@ -2756,7 +2764,8 @@ var AnnotatorUI = (function($, window, undefined) {
           on('annotationSpeed', setAnnotationSpeed).
           on('suggestedSpanTypes', receivedSuggestedSpanTypes).
           on('normGetNameResult', setSpanNormText).
-          on('normSearchResult', setSpanNormSearchResults);
+          on('normSearchResult', setSpanNormSearchResults).
+          on('normCreateResult', updateWithCreatedNorm);
     };
 
     return AnnotatorUI;
