@@ -7,6 +7,7 @@ Version:    2014-05-23
 
 store_url = 'http://localhost:8000/update/'
 store_data_url = 'http://localhost:8000/data/'
+store_delete_param = 'graph'
 store_update_param = 'update'
 
 from os.path import join as path_join
@@ -38,7 +39,9 @@ def upload_annotation(document, collection):
 
     # First remove the entire user graph from the triplestore
     
-    response = requests.delete(store_data_url + 'http://contextus.net/user/' + user)
+    deleteData = { store_delete_param: 'http://contextus.net/user/' + user }
+    
+    response = requests.delete(store_data_url, params=deleteData)
 
     if response.status_code != 200:
         Messager.error('Failed to delete old graph from triplestore (Response ' + str(response.status_code) + ' ' + response.reason + ')')
@@ -55,7 +58,7 @@ def upload_annotation(document, collection):
     
     insertData = { store_update_param: sparql }
     
-    response = requests.post(store_url,data=insertData)
+    response = requests.post(store_url, data=insertData)
     
     if response.status_code == 200:
 		Messager.info('Uploaded data to triplestore')
