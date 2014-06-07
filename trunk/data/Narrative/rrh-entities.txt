@@ -1,0 +1,4 @@
+http://contextus.net/data/meta/RedRidingHood	name:Name:Red Riding Hood	attr:Category:Character
+http://contextus.net/data/meta/Grandma	name:Name:Grandma	attr:Category:Character
+http://contextus.net/data/meta/Wolf	name:Name:Wolf	attr:Category:Character
+http://contextus.net/data/meta/Forrester	name:Name:Forrester	attr:Category:Character
