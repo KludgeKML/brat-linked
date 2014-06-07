@@ -41,7 +41,7 @@ def upload_annotation(document, collection):
     response = requests.delete(store_data_url + 'http://contextus.net/user/' + user)
 
     if response.status_code != 200:
-        Messager.error('Failed to delete old graph from triplestore (Response ' + response.status_code + ' ' + response.reason + ')')
+        Messager.error('Failed to delete old graph from triplestore (Response ' + str(response.status_code) + ' ' + response.reason + ')')
         return {}
 
     # Then add the new graph in
@@ -60,7 +60,7 @@ def upload_annotation(document, collection):
     if response.status_code == 200:
 		Messager.info('Uploaded data to triplestore')
     else:
-		Messager.error('Failed to upload to triplestore (Response ' + response.status_code + ' ' + response.reason + ')')
+		Messager.error('Failed to upload to triplestore (Response ' + str(response.status_code) + ' ' + response.reason + ')')
 		
     return {}
 
