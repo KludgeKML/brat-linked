@@ -1308,6 +1308,7 @@ var AnnotatorUI = (function($, window, undefined) {
 		dispatcher.post('ajax',
 		[{
 			action: 'normCreate',
+            database: db,
 			name: 'DUMMY NAME',
 			entityID:  '<http://contextus.net/RRH/DUMMY_NAME>',
 			protocol: '1'
