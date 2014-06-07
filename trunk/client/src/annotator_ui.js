@@ -1312,7 +1312,7 @@ var AnnotatorUI = (function($, window, undefined) {
       
       $('#norm_create_button').click(function(evt) {
         var db = $('#span_norm_db').val();
-        var entityName = $('#norm_create_name').val('')
+        var entityName = $('#norm_create_name').val()
 		dispatcher.post('ajax',
 		[{
 			action: 'normCreate',
