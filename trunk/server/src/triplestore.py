@@ -34,12 +34,9 @@ def upload_annotation(document, collection):
     fpath = path_join(real_dir, fname)
     user = get_session()['user']
 
-    # TODO: make graphs unique to user+document, otherwise all user data will get wiped
-    #       when they make a change to any document.
-
     # First remove the entire user graph from the triplestore
     
-    deleteData = { store_delete_param: str('http://contextus.net/user/' + user) }
+    deleteData = { store_delete_param: str('http://contextus.net/user/' + user + '/' + document) }
     
     response = requests.delete(store_data_url, params=deleteData)
 
@@ -54,7 +51,7 @@ def upload_annotation(document, collection):
     
     for prefix in parts['prefixes']:
         sparql += 'PREFIX ' + prefix + ' '
-    sparql += ' INSERT DATA { GRAPH <http://contextus.net/user/' + user + '> { ' + parts['data'] + ' }} '
+    sparql += ' INSERT DATA { GRAPH <http://contextus.net/user/' + user + '/' + document + '> { ' + parts['data'] + ' }} '
     
     insertData = { store_update_param: sparql }
     
