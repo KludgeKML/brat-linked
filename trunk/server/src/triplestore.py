@@ -39,13 +39,13 @@ def upload_annotation(document, collection):
 
     # First remove the entire user graph from the triplestore
     
-    #deleteData = { store_delete_param: str('http://contextus.net/user/' + user) }
+    deleteData = { store_delete_param: str('http://contextus.net/user/' + user) }
     
-    #response = requests.delete(store_data_url, params=deleteData)
+    response = requests.delete(store_data_url, params=deleteData)
 
-    #if response.status_code != 200:
-    #    Messager.error('Failed to delete old graph from triplestore (Response ' + str(response.status_code) + ' ' + response.reason + ')')
-    #    return {}
+    if response.status_code != 200:
+        Messager.error('Failed to delete old graph from triplestore (Response ' + str(response.status_code) + ' ' + response.reason + ')')
+        return {}
 
     # Then add the new graph in
 
