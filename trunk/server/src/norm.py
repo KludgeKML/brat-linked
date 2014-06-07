@@ -80,7 +80,7 @@ def norm_create_name(database, name):
 def camelCase(tag_str):
     words = re.findall(r'\w+', tag_str)
     camel = ''
-    foreach words as word:
+    for word in words:
         camel += word.title()
     return camel
 
