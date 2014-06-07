@@ -1292,6 +1292,7 @@ var AnnotatorUI = (function($, window, undefined) {
       $('#span_norm_txt').click(showNormSearchDialog);
       $('#norm_search_button').button();
       $('#norm_create_button').button();
+      $('#norm_create_button').button('disable');
 
       var arcFormSubmitRadio = function(evt) {
         // TODO: check for confirm_mode?
