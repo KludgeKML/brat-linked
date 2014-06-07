@@ -39,7 +39,7 @@ def upload_annotation(document, collection):
 
     # First remove the entire user graph from the triplestore
     
-    deleteData = { store_delete_param: 'http://contextus.net/user/' + user }
+    deleteData = { store_delete_param: str('http://contextus.net/user/' + user) }
     
     response = requests.delete(store_data_url, params=deleteData)
 
