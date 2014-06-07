@@ -6,6 +6,7 @@ Version:    2014-05-23
 '''
 
 store_url = 'http://localhost:8000/update/'
+store_data_url = 'http://localhost:8000/data/'
 store_update_param = 'update'
 
 from os.path import join as path_join
@@ -31,6 +32,19 @@ def upload_annotation(document, collection):
     fname = '%s.%s' % (document, 'ann')
     fpath = path_join(real_dir, fname)
     user = get_session()['user']
+
+    # TODO: make graphs unique to user+document, otherwise all user data will get wiped
+    #       when they make a change to any document.
+
+    # First remove the entire user graph from the triplestore
+    
+    response = requests.delete(store_data_url + 'http://contextus.net/user/' + user)
+
+    if response.status_code != 200:
+        Messager.error('Failed to delete old graph from triplestore (Response ' + response.status_code + ' ' + response.reason + ')')
+        return {}
+
+    # Then add the new graph in
 
     parts = get_rdf_parts(fpath, document)
     sparql = ''
