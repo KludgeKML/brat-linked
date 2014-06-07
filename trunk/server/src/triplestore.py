@@ -43,7 +43,7 @@ def upload_annotation(document, collection):
     
     response = requests.delete(store_data_url, params=deleteData)
 
-    if response.status_code != 200:
+    if (response.status_code != 200) and (response.status_code != 500):
         Messager.error('Failed to delete old graph from triplestore (Response ' + str(response.status_code) + ' ' + response.reason + ')')
         return {}
 
