@@ -1742,6 +1742,8 @@ var VisualizerUI = (function($, window, undefined) {
           hideNoDocMessage();
         }
 
+        // Until I can work out why Visualiser gets called more than once
+        $("#triplestore_upload").unbind('click');
 		$('#triplestore_upload').click(function(evt) {
 			dispatcher.post('ajax',
 				[{
