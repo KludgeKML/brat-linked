@@ -1262,7 +1262,12 @@ var AnnotatorUI = (function($, window, undefined) {
       }
                   
       var updateWithCreatedNorm = function(response) {
-          $('#norm_search_query').val("UPDATED DUMMY ID");
+          $('#norm_search_id').val(response.entityID);
+          $('#norm_search_query').val(response.name);
+          $('#norm_create_button').button('disable');
+          $('#norm_create_name').attr('readonly', 'readonly');
+          $('#norm_create_name').attr('placeholder', 'Search to find created ID');
+          $('#norm_create_name').val('');          
       }
       
       var performNormSearch = function() {
