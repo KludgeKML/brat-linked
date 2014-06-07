@@ -1210,6 +1210,12 @@ var AnnotatorUI = (function($, window, undefined) {
           return false;
         }
 
+        // Whatever happens, once a search is performed, allow the user
+        // to create a new entity
+        $('#norm_create_button').button('enable');
+        $('#norm_create_name').attr('readonly', false);
+        $('#norm_create_name').attr('placeholder', 'Enter entity name');
+
         if (response.items.length == 0) {
           // no results
           $('#norm_search_result_select thead').empty();
@@ -1286,13 +1292,13 @@ var AnnotatorUI = (function($, window, undefined) {
         dispatcher.post('hideForm');
         $('#norm_search_button').val('Search ' + $('#span_norm_db').val());
         setNormSearchSubmit(false);
+        $('#norm_create_button').button('disable');
         dispatcher.post('showForm', [normSearchDialog]);
         $('#norm_search_query').focus().select();
       }
       $('#span_norm_txt').click(showNormSearchDialog);
       $('#norm_search_button').button();
       $('#norm_create_button').button();
-      $('#norm_create_button').button('disable');
 
       var arcFormSubmitRadio = function(evt) {
         // TODO: check for confirm_mode?
