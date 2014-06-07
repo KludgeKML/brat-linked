@@ -164,6 +164,15 @@ input.invalid_value {
   right: -2px;
 }
 
+#norm_create_container {
+  position: relative;
+}
+#norm_create_button {
+  position: absolute;
+  top: -6px;
+  right: -2px;
+}
+
 #span_form .collapser {
     float: left;
     height: 16px;
