@@ -37,7 +37,7 @@ from undo import undo
 from tag import tag
 from triplestore import upload_annotation
 from delete import delete_document, delete_collection
-from norm import norm_get_name, norm_search, norm_get_data
+from norm import norm_get_name, norm_search, norm_get_data, norm_create_name
 
 # no-op function that can be invoked by client to log a user action
 def logging_no_op(collection, document, log):
@@ -101,6 +101,7 @@ DISPATCHER = {
         'normGetName': norm_get_name,
         'normSearch': norm_search,
         'normData' : norm_get_data,
+        'normCreate' : norm_create_name,
 
         # Visualisation support
         'getConfiguration': get_configuration,

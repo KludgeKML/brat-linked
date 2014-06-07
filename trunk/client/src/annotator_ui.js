@@ -1303,6 +1303,17 @@ var AnnotatorUI = (function($, window, undefined) {
       $('#span_norm_txt').click(showNormSearchDialog);
       $('#norm_search_button').button();
       $('#norm_create_button').button();
+      
+      $('#norm_create_button').click(function(evt) {
+		dispatcher.post('ajax',
+		[{
+			action: 'normCreate',
+			name: 'DUMMY NAME',
+			entityID:  '<http://contextus.net/RRH/DUMMY_NAME>',
+			protocol: '1'
+		}]);
+      });
+      
 
       var arcFormSubmitRadio = function(evt) {
         // TODO: check for confirm_mode?
