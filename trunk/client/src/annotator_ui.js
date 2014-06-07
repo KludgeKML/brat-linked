@@ -1295,6 +1295,8 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_create_button').button('disable');
         $('#norm_create_name').attr('readonly', 'readonly');
         $('#norm_create_name').attr('placeholder', 'Search before creating new!');
+        $('#norm_create_name').val('');
+  
         dispatcher.post('showForm', [normSearchDialog]);
         $('#norm_search_query').focus().select();
       }
