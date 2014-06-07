@@ -1213,7 +1213,7 @@ var AnnotatorUI = (function($, window, undefined) {
         // Whatever happens, once a search is performed, allow the user
         // to create a new entity
         $('#norm_create_button').button('enable');
-        $('#norm_create_name').attr('readonly', false);
+        $('#norm_create_name').removeAttr('readonly', false);
         $('#norm_create_name').attr('placeholder', 'Enter entity name');
 
         if (response.items.length == 0) {
@@ -1293,6 +1293,8 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_search_button').val('Search ' + $('#span_norm_db').val());
         setNormSearchSubmit(false);
         $('#norm_create_button').button('disable');
+        $('#norm_create_name').attr('readonly', 'readonly');
+        $('#norm_create_name').attr('placeholder', 'Search before creating new!');
         dispatcher.post('showForm', [normSearchDialog]);
         $('#norm_search_query').focus().select();
       }
