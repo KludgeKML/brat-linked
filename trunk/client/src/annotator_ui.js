@@ -1317,7 +1317,7 @@ var AnnotatorUI = (function($, window, undefined) {
 		[{
 			action: 'normCreate',
             database: db,
-			name: name,
+			name: entityName,
 			protocol: '1'
 		}, 'normCreateResult']);
         

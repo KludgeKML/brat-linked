@@ -7,8 +7,10 @@ Normalization support.
 '''
 
 import normdb
+import re
 import simstringdb
 import sdistance
+
 from datetime import datetime
 from message import Messager
 
@@ -72,8 +74,17 @@ def _get_db_path(database, collection):
 
 def norm_create_name(database, name):
     Messager.info('Created Name: ' + name)
-    entityID = name.replace(" ", "")
+    entityID = '<http://contextus.net/RRH/' + camelCase(name) + '>'
     return { 'name' : name, 'entityID' : entityID }
+
+def camelCase(tag_str):
+    words = re.findall(r'\w+', tag_str)
+    nwords = len(words)
+    if nwords == 1:
+        return words[0] # leave unchanged
+    elif nwords > 1: # make it camelCaseTag
+        return words[0].lower() + ''.join(map(str.title, words[1:]))
+    return '' # no word characters
 
 def norm_get_name(database, key, collection=None):
     if NORM_LOOKUP_DEBUG:
