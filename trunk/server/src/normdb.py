@@ -96,6 +96,14 @@ def _execute_fetchall(cursor, command, args, dbname):
     __increment_query_count(dbname)
     return cursor.fetchall()
 
+def get_all_entity_strings(dbname):
+    names = []
+    connection, cursor = _get_connection_cursor(dbname)
+    for row in cursor.execute('SELECT DISTINCT(normvalue) FROM names UNION SELECT DISTINCT(normvalue) from attributes'):
+        names.append(row[0])
+
+    return names
+
 def create_norm_entity(dbname, name, entity_id):
     '''
     Create a new normalisation entity in the database which can be searched

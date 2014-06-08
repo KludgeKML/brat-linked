@@ -87,8 +87,10 @@ def norm_create_name(database, name, collection=None):
         responseData = { 'name' : name, 'entityID' : entityID }
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))
-     
-    simstringdb.ssdb_build((name,), dbpath)
+
+    strings = normdb.get_all_entity_strings(dbpath)
+
+    simstringdb.ssdb_build(strings, dbpath)
      
     return responseData
 
