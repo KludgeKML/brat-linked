@@ -96,7 +96,7 @@ def _execute_fetchall(cursor, command, args, dbname):
     __increment_query_count(dbname)
     return cursor.fetchall()
 
-def create_norm_entity(dbname, entity_id, name):
+def create_norm_entity(dbname, name, entity_id):
     '''
     Create a new normalisation entity in the database which can be searched
     for later.
