@@ -74,7 +74,7 @@ def _get_db_path(database, collection):
 
 def norm_create_name(database, name, collection=None):
     responseData = { 'name': '', 'entityID': '' }
-    entityID = '<http://contextus.net/RRH/' + camelCase(name) + '>'
+    entityID = '<http://contextus.net/data/meta/' + camelCase(name) + '>'
 
     dbpath = _get_db_path(database, collection)
     if dbpath is None:
