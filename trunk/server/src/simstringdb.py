@@ -98,6 +98,7 @@ def ssdb_build(strs, dbname, ngram_length=DEFAULT_NGRAM_LENGTH,
         # only library defaults (n=3, no marks) supported just now (TODO)
         assert ngram_length == 3, "Error: unsupported n-gram length"
         assert include_marks == False, "Error: begin/end marks not supported"
+        Messager.info('Putting into ssdb: [' + dbfn + ']')
         db = simstring.writer(dbfn)
         for s in strs:
             db.insert(s)
