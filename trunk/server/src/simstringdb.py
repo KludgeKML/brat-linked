@@ -94,7 +94,6 @@ def ssdb_build(strs, dbname, ngram_length=DEFAULT_NGRAM_LENGTH,
         raise NoSimStringError
 
     dbfn = __ssdb_path(dbname)
-    dbfn = '/var/www/brat/work/rrh-entities.ss.db'
     try:
         # only library defaults (n=3, no marks) supported just now (TODO)
         assert ngram_length == 3, "Error: unsupported n-gram length"
