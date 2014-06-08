@@ -88,6 +88,8 @@ def norm_create_name(database, name, collection=None):
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))
      
+    simstringdb.ssdb_build((name,), dbname)
+     
     return responseData
 
 def camelCase(tag_str):
