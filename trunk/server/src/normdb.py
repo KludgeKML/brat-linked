@@ -107,6 +107,10 @@ def create_norm_entity(dbname, name, entity_id):
     cursor.execute('INSERT INTO names (entity_id,label_id,value,normvalue) values (:entity_id,:label_id,:value,:normvalue)',
                     {'entity_id': entity_rowid, 'label_id': 2, 'value': name, 'normvalue': name.lower()})
     names_rowid = cursor.lastrowid
+    cursor.execute('INSERT INTO attributes (entity_id,label_id,value,normvalue) values (:entity_id,:label_id,:value,:normvalue)',
+                    {'entity_id': entity_rowid, 'label_id': 1, 'value': 'Character', 'normvalue': 'character'})
+    attrs_rowid = cursor.lastrowid
+
     connection.commit()
     return names_rowid
     
