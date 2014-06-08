@@ -1323,6 +1323,7 @@ var AnnotatorUI = (function($, window, undefined) {
 			action: 'normCreate',
             database: db,
 			name: entityName,
+            collection: coll,
 			protocol: '1'
 		}, 'normCreateResult']);
         
