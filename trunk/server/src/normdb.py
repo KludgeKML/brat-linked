@@ -96,6 +96,20 @@ def _execute_fetchall(cursor, command, args, dbname):
     __increment_query_count(dbname)
     return cursor.fetchall()
 
+def create_norm_entity(dbname, entity_id, name):
+    '''
+    Create a new normalisation entity in the database which can be searched
+    for later.
+    '''
+    connection, cursor = _get_connection_cursor(dbname)
+    cursor.execute('INSERT INTO entities (uid) values (:uid)', {'uid': entity_id})
+    entity_rowid = cursor.lastrowid
+    cursor.execute('INSERT INTO names (entity_id,label_id,value,normvalue) values (:entity_id,:label_id,:value,:normvalue)',
+                    {'entity_id': entity_rowid, 'label_id': 2, 'value': name, 'normvalue': name.lower()})
+    names_rowid = cursor.lastrowid
+    return names_rowid
+    
+    
 def data_by_id(dbname, id_):
     '''
     Given a DB name and an entity id, returns all the information

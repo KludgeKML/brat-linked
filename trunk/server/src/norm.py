@@ -72,10 +72,23 @@ def _get_db_path(database, collection):
                              collection+', falling back on default.')
             return None
 
-def norm_create_name(database, name):
-    Messager.info('Created Name: ' + name)
+def norm_create_name(database, name, collection=None):
+    responseData = { 'name': '', 'entityID': '' }
     entityID = '<http://contextus.net/RRH/' + camelCase(name) + '>'
-    return { 'name' : name, 'entityID' : entityID }
+
+    dbpath = _get_db_path(database, collection)
+    if dbpath is None:
+        # full path not configured, fall back on name as default
+        dbpath = database
+
+    try:
+        normdb.create_norm_entity(dbpath, name, entityID)
+        Messager.info('Created Name: ' + name)
+        responseData = { 'name' : name, 'entityID' : entityID }
+    except normdb.dbNotFoundError, e:
+        Messager.warning(str(e))
+     
+    return responseData
 
 def camelCase(tag_str):
     words = re.findall(r'\w+', tag_str)
