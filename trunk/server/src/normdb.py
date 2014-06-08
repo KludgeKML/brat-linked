@@ -100,7 +100,7 @@ def get_all_entity_strings(dbname):
     names = []
     connection, cursor = _get_connection_cursor(dbname)
     for row in cursor.execute('SELECT DISTINCT(normvalue) FROM names UNION SELECT DISTINCT(normvalue) from attributes'):
-        names.append(row[0])
+        names.append(row[0].encode('utf-8'))
 
     return names
 
