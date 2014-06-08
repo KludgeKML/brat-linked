@@ -90,7 +90,7 @@ def norm_create_name(database, name, collection=None):
 
     strings = normdb.get_all_entity_strings(dbpath)
 
-    simstringdb.ssdb_build(strings, dbpath)
+    simstringdb.ssdb_build(strings, database)
      
     return responseData
 
