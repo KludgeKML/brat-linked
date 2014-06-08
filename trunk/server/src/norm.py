@@ -88,7 +88,7 @@ def norm_create_name(database, name, collection=None):
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))
      
-    simstringdb.ssdb_build((name,), dbname)
+    simstringdb.ssdb_build((name,), dbpath)
      
     return responseData
 
