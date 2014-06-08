@@ -89,7 +89,7 @@ def norm_create_name(database, name, collection=None):
         Messager.warning(str(e))
 
     strings = normdb.get_all_entity_strings(dbpath)
-    Messager.info('Strings = [' + ','.join(strings) + ']')
+    Messager.info('Strings for ' + database + ' = [' + ','.join(strings) + ']')
 
     simstringdb.ssdb_build(strings, database)
      
