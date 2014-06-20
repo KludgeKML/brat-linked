@@ -65,9 +65,12 @@ def get_rdf_parts(fpath, document):
                 
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
                 
-            elif line[0] == 'N':        
-                parts['data'] += "<" + namespace + chunks[4] + "> owl:sameAs <" + namespace + chunks[3] + ">;\n"
-                parts['data'] += "\trdfs:seeAlso <" + namespace + chunks[0] + "> .\n\n"
+            elif line[0] == 'N': 
+                
+                normalised = chunks[3].split(':', 1)[1]
+                       
+                parts['data'] += "<" + namespace + chunks[2] + "> owl:sameAs <" + normalised + ">;\n"
+                parts['data'] += "\trdfs:label <" + namespace + chunks[0] + "> .\n\n"
            
             elif line[0] == 'R':
                 
