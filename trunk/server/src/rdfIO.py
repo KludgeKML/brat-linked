@@ -70,7 +70,7 @@ def get_rdf_parts(fpath, document):
                 normalised = chunks[3].split(':', 1)[1]
                        
                 parts['data'] += "<" + namespace + chunks[2] + "> owl:sameAs <" + normalised + ">;\n"
-                parts['data'] += "\trdfs:label '" chunks[0] + "' .\n\n"
+                parts['data'] += "\trdfs:label '" + chunks[0] + "' .\n\n"
            
             elif line[0] == 'R':
                 
