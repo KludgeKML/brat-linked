@@ -108,7 +108,7 @@ def get_local_entities(dbname, docID, userID):
     local_list = []
     connection, cursor = _get_connection_cursor(dbname)
     for row in cursor.execute("SELECT DISTINCT(uid), name FROM local_norms WHERE doc_id='" + docID + "' AND user_id='" + userID + "'"):
-        local_list.append(row.encode('utf-8'))
+        local_list.append({'id':row[0].encode('utf-8'), 'name':row[1].encode('utf-8')})
 
     return local_list    
 
