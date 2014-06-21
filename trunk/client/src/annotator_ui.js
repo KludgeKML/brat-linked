@@ -1282,8 +1282,8 @@ var AnnotatorUI = (function($, window, undefined) {
           return false;
         }
 */
-        var html = ['<tr><th colspan="3">Local Entities</th></tr><tr><td>ID</td><td>Name</td><td>Category</td>'];
-        $('#norm_search_result_select thead').html(html.join(''));
+        var html = '<tr><th colspan="3">Local Entities</th></tr><tr><td>ID</td><td>Name</td><td>Category</td></tr>';
+        $('#norm_search_result_select thead').html(html);
 /*
         html = [];
         var len = response.header.length;
