@@ -1284,7 +1284,7 @@ var AnnotatorUI = (function($, window, undefined) {
 
         var html = '<tr><th colspan="3">Local Entities</th></tr><tr><td>ID</td><td>Name</td><td>Category</td></tr>';
         $('#norm_search_result_select thead').html(html);
-
+/*
         html = [];
         var len = response.header.length;
         $.each(response.items, function(itemNo, item) {
@@ -1299,7 +1299,7 @@ var AnnotatorUI = (function($, window, undefined) {
           html.push('</tr>');
         });
         $('#norm_search_result_select tbody').html(html.join(''));
-
+*/
         $('#norm_search_result_select tbody').find('tr').
             click(chooseNormId).
             dblclick(chooseNormIdAndSubmit);
