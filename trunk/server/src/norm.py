@@ -203,7 +203,7 @@ def norm_get_local_entities(database, docID, collection=None):
     # echo request for sync
     json_dic = {
         'database' : database,
-        'key' : dicID + ', ' + userID
+        'key' : dicID + ', ' + userID,
         'value' : data
         }
     return json_dic
