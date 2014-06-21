@@ -1303,8 +1303,8 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_search_result_select thead').empty();
         $('#norm_search_result_select tbody').empty();  
         
-        body = $('#norm_search_result_select tbody');
-        body.html('<tr><td>Hello</td><td>There!</td></tr>')
+        //body = $('#norm_search_result_select tbody');
+        //body.html('<tr><td>Hello</td><td>There!</td></tr>')
               
         // TODO: support for two (or more) dialogs open at the same time
         // so we don't need to hide this before showing normSearchDialog
