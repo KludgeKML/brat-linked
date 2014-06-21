@@ -1286,7 +1286,8 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_search_result_select thead').html(html);
 
         html = [];
-        var len = response.header.length;
+        //var len = response.header.length;
+        var len = 3
         $.each(response.value, function(itemNo, item) {
 
           html.push('<tr'+
