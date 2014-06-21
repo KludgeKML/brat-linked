@@ -1303,8 +1303,8 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_search_result_select thead').empty();
         $('#norm_search_result_select tbody').empty();  
         
-        //body = $('#norm_search_result_select tbody');
-        //body.html('<tr><td>Hello</td><td>There!</td></tr>')
+        body = $('#norm_search_result_select tbody');
+        body.html('<tr><td>Hello</td><td>There!</td></tr>')
               
         // TODO: support for two (or more) dialogs open at the same time
         // so we don't need to hide this before showing normSearchDialog
@@ -1312,7 +1312,7 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_search_button').val('Search ' + $('#span_norm_db').val());
         setNormSearchSubmit(false);
         $('#norm_create_button').button('disable');
-        $('#norm_create_name').attr('readonly', 'readonly');
+        //$('#norm_create_name').attr('readonly', 'readonly');
         $('#norm_create_name').attr('placeholder', 'Check results before creating new!');
         $('#norm_create_name').val('');
   
