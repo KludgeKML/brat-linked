@@ -18,6 +18,8 @@ from normdb import string_norm_form
 from document import real_directory
 from projectconfig import ProjectConfiguration
 
+from session import get_session
+
 # whether to display alignment scores in search result table
 DISPLAY_SEARCH_SCORES = False
 
@@ -72,9 +74,17 @@ def _get_db_path(database, collection):
                              collection+', falling back on default.')
             return None
 
-def norm_create_name(database, name, collection=None):
+def norm_create_name(database, name, collection=None, docID=None):
     responseData = { 'name': '', 'entityID': '' }
-    entityID = 'http://contextus.net/data/meta/' + camelCase(name)
+    userID = get_session()['user']
+    entityID = 'http://contextus.net/resource/RRH/' + userID
+    
+    if docID != None:
+        entityID += '/' + docID
+        
+    entityID += '/' + camelCase(name)
+
+    
 
     dbpath = _get_db_path(database, collection)
     if dbpath is None:
@@ -82,7 +92,8 @@ def norm_create_name(database, name, collection=None):
         dbpath = database
 
     try:
-        normdb.create_norm_entity(dbpath, name, entityID)
+        #normdb.create_norm_entity(dbpath, name, entityID)
+        normdb.create_local_norm_value(dbpath, name, entityID, userID, docID)
         Messager.info('Created Name: ' + name)
         responseData = { 'name' : name, 'entityID' : entityID }
     except normdb.dbNotFoundError, e:

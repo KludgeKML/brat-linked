@@ -1324,6 +1324,7 @@ var AnnotatorUI = (function($, window, undefined) {
             database: db,
 			name: entityName,
             collection: coll,
+      docID: doc,
 			protocol: '1'
 		}, 'normCreateResult']);
         

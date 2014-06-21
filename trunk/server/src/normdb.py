@@ -121,6 +121,17 @@ def create_norm_entity(dbname, name, entity_id):
 
     connection.commit()
     return names_rowid
+
+def create_local_norm_value(dbname, name, entity_id, user_id, doc_id):
+    '''
+    Create a new local normalisation value (it's not really a full entity at this point, just a linking string value) in the database which can be listed.
+    '''
+    connection, cursor = _get_connection_cursor(dbname)
+    cursor.execute('INSERT INTO local_norms (id, user_id, doc_id, name) values (:id,:user_id,doc_id:,name:)', {'id': entity_id, 'user_id': user_id, 'doc_id': doc_id, 'name': name})
+    local_rowid = cursor.lastrowid
+
+    connection.commit()
+    return local_rowid
     
     
 def data_by_id(dbname, id_):
