@@ -1301,15 +1301,18 @@ var AnnotatorUI = (function($, window, undefined) {
         }
         // blank the table
         $('#norm_search_result_select thead').empty();
-        $('#norm_search_result_select tbody').empty();        
+        $('#norm_search_result_select tbody').empty();  
+        
+        $('#norm_search_result_select tbody').val('!!!');
+              
         // TODO: support for two (or more) dialogs open at the same time
         // so we don't need to hide this before showing normSearchDialog
         dispatcher.post('hideForm');
         $('#norm_search_button').val('Search ' + $('#span_norm_db').val());
         setNormSearchSubmit(false);
         $('#norm_create_button').button('disable');
-        $('#norm_create_name').attr('readonly', 'readonly');
-        $('#norm_create_name').attr('placeholder', 'Search before creating new!');
+        //$('#norm_create_name').attr('readonly', 'readonly');
+        $('#norm_create_name').attr('placeholder', 'Check results before creating new!');
         $('#norm_create_name').val('');
   
         dispatcher.post('showForm', [normSearchDialog]);
