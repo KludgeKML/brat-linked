@@ -1349,6 +1349,7 @@ var AnnotatorUI = (function($, window, undefined) {
         body = $('#norm_search_result_select tbody');
         body.html('<tr><td>Hello</td><td>There!</td></tr>')
         
+        var db = $('#span_norm_db').val();
         dispatcher.post('ajax',
         [{
           action: 'normList',
