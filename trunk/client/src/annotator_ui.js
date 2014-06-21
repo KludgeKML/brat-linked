@@ -1260,6 +1260,53 @@ var AnnotatorUI = (function($, window, undefined) {
 
         // TODO: sorting on click on header (see showFileBrowser())
       }
+
+      var setSpanLocalNormListResults = function(response) {
+        if (response.exception) {
+          // TODO: better response to failure
+          dispatcher.post('messages', [[['Lookup error', 'warning', -1]]]);
+          return false;
+        }
+
+        // Whatever happens, once a search is performed, allow the user
+        // to create a new entity
+        $('#norm_create_button').button('enable');
+        $('#norm_create_name').removeAttr('readonly', false);
+        $('#norm_create_name').attr('placeholder', 'Enter entity name');
+
+        if (response.items.length == 0) {
+          // no results
+          $('#norm_search_result_select thead').empty();
+          $('#norm_search_result_select tbody').empty();
+          dispatcher.post('messages', [[['No matches to search.', 'comment']]]);
+          return false;
+        }
+
+        var html = ['<tr><th colspan="3">Local Entities</th></tr><tr><td>ID</td><td>Name</td><td>Category</td>'];
+        $('#norm_search_result_select thead').html(html.join(''));
+
+        html = [];
+        var len = response.header.length;
+        $.each(response.items, function(itemNo, item) {
+
+          html.push('<tr'+
+                    ' data-id="'+Util.escapeHTMLandQuotes(item[0])+'"'+
+                    ' data-txt="'+Util.escapeHTMLandQuotes(item[1])+'"'+
+                    '>');
+          for (var i=0; i<len; i++) {
+            html.push('<td>' + Util.escapeHTML(item[i]) + '</td>');
+          }
+          html.push('</tr>');
+        });
+        $('#norm_search_result_select tbody').html(html.join(''));
+
+        $('#norm_search_result_select tbody').find('tr').
+            click(chooseNormId).
+            dblclick(chooseNormIdAndSubmit);
+
+        // TODO: sorting on click on header (see showFileBrowser())
+      }
+
                   
       var updateWithCreatedNorm = function(response) {
           $('#norm_search_id').val(response.entityID);
@@ -1268,10 +1315,6 @@ var AnnotatorUI = (function($, window, undefined) {
           $('#norm_create_name').attr('readonly', 'readonly');
           $('#norm_create_name').attr('placeholder', 'Search to find created ID');
           $('#norm_create_name').val('');          
-      }
-      
-      var updateWithLocalNormList = function(response) {
-          alert(response.value)       
       }
       
       var performNormSearch = function() {
@@ -1305,6 +1348,15 @@ var AnnotatorUI = (function($, window, undefined) {
         
         body = $('#norm_search_result_select tbody');
         body.html('<tr><td>Hello</td><td>There!</td></tr>')
+        
+        dispatcher.post('ajax',
+        [{
+          action: 'normList',
+          database: db,
+          collection: coll,
+          docID: doc,
+          protocol: '1'
+        }, 'localNormList']);  
               
         // TODO: support for two (or more) dialogs open at the same time
         // so we don't need to hide this before showing normSearchDialog
@@ -1326,7 +1378,7 @@ var AnnotatorUI = (function($, window, undefined) {
       $('#norm_create_button').click(function(evt) {
         var db = $('#span_norm_db').val();
         var entityName = $('#norm_create_name').val()
-		/*dispatcher.post('ajax',
+		dispatcher.post('ajax',
 		[{
 			action: 'normCreate',
       database: db,
@@ -1334,17 +1386,7 @@ var AnnotatorUI = (function($, window, undefined) {
       collection: coll,
       docID: doc,
 			protocol: '1'
-		}, 'normCreateResult']); */
-       
-    dispatcher.post('ajax',
-		[{
-			action: 'normList',
-      database: db,
-      collection: coll,
-      docID: doc,
-			protocol: '1'
-		}, 'localNormList']);   
-        
+		}, 'normCreateResult']);  
       });
       
 
@@ -2790,7 +2832,7 @@ var AnnotatorUI = (function($, window, undefined) {
           on('normGetNameResult', setSpanNormText).
           on('normSearchResult', setSpanNormSearchResults).
           on('normCreateResult', updateWithCreatedNorm).
-          on('localNormList', updateWithLocalNormList);
+          on('localNormList', setSpanLocalNormListResults);
     };
 
     return AnnotatorUI;
