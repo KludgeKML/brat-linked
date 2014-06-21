@@ -1262,7 +1262,7 @@ var AnnotatorUI = (function($, window, undefined) {
       }
 
       var setSpanLocalNormListResults = function(response) {
-        if (response.exception) {
+/*        if (response.exception) {
           // TODO: better response to failure
           dispatcher.post('messages', [[['Lookup error', 'warning', -1]]]);
           return false;
@@ -1281,10 +1281,10 @@ var AnnotatorUI = (function($, window, undefined) {
           dispatcher.post('messages', [[['No matches to search.', 'comment']]]);
           return false;
         }
-
+*/
         var html = ['<tr><th colspan="3">Local Entities</th></tr><tr><td>ID</td><td>Name</td><td>Category</td>'];
         $('#norm_search_result_select thead').html(html.join(''));
-
+/*
         html = [];
         var len = response.header.length;
         $.each(response.items, function(itemNo, item) {
@@ -1303,7 +1303,7 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_search_result_select tbody').find('tr').
             click(chooseNormId).
             dblclick(chooseNormIdAndSubmit);
-
+        */
         // TODO: sorting on click on header (see showFileBrowser())
       }
 
