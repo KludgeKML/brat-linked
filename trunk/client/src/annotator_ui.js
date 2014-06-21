@@ -1271,7 +1271,7 @@ var AnnotatorUI = (function($, window, undefined) {
       }
       
       var updateWithLocalNormList = function(response) {
-          alert(response.key)       
+          alert(response.value)       
       }
       
       var performNormSearch = function() {
@@ -1322,7 +1322,7 @@ var AnnotatorUI = (function($, window, undefined) {
       $('#norm_create_button').click(function(evt) {
         var db = $('#span_norm_db').val();
         var entityName = $('#norm_create_name').val()
-		dispatcher.post('ajax',
+		/*dispatcher.post('ajax',
 		[{
 			action: 'normCreate',
       database: db,
@@ -1330,7 +1330,7 @@ var AnnotatorUI = (function($, window, undefined) {
       collection: coll,
       docID: doc,
 			protocol: '1'
-		}, 'normCreateResult']);
+		}, 'normCreateResult']); */
        
     dispatcher.post('ajax',
 		[{
