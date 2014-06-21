@@ -102,7 +102,7 @@ DISPATCHER = {
         'normSearch': norm_search,
         'normData' : norm_get_data,
         'normCreate' : norm_create_name,
-        'normList' : norm_get_local_entities
+        'normList' : norm_get_local_entities,
 
         # Visualisation support
         'getConfiguration': get_configuration,
