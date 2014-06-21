@@ -1291,8 +1291,8 @@ var AnnotatorUI = (function($, window, undefined) {
         $.each(response.value, function(itemNo, item) {
 
           html.push('<tr'+
-                    ' data-id="'+Util.escapeHTMLandQuotes(item[0])+'"'+
-                    ' data-txt="'+Util.escapeHTMLandQuotes(item[1])+'"'+
+                    ' data-id="'+Util.escapeHTMLandQuotes(item.id)+'"'+
+                    ' data-txt="'+Util.escapeHTMLandQuotes(item.name)+'"'+
                     '>');
           for (var i=0; i<len; i++) {
             html.push('<td>' + Util.escapeHTML(item[i]) + '</td>');
