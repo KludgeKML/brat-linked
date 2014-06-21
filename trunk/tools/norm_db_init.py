@@ -137,6 +137,21 @@ CREATE TABLE infos (
   value VARCHAR(255)
 );
 """,
+"""
+CREATE TABLE local_norms (
+  id INTEGER PRIMARY KEY,
+  user_id VARCHAR(255),
+  doc_id VARCHAR(255),
+  label_id INTEGER REFERENCES labels (id)
+);
+""",
+"""
+CREATE TABLE entity_norms (
+  id INTEGER PRIMARY KEY,
+  entity_id INTEGER REFERENCES entities (id),
+  norm_id INTEGER REFERENCES local_norms (id)
+);
+""",
 ]
 CREATE_INDEX_COMMANDS = [
 "CREATE INDEX entities_uid ON entities (uid);",
@@ -148,6 +163,9 @@ CREATE_INDEX_COMMANDS = [
 "CREATE INDEX attributes_entity_id ON attributes (entity_id);",
 #"CREATE INDEX infos_value ON infos (value);", # unnecessary, not searchable
 "CREATE INDEX infos_entity_id ON infos (entity_id);",
+"CREATE INDEX norms_for_doc ON local_norms (user_id, doc_id);",
+"CREATE INDEX entity_norms_entity ON entity_norms (entity_id);",
+"CREATE INDEX entity_norms_norm ON entity_norms (norm_id);",
 ]
 
 # SQL for selecting strings to be inserted into the simstring DB for
