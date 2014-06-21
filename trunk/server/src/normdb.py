@@ -103,6 +103,14 @@ def get_all_entity_strings(dbname):
         names.append(row[0].encode('utf-8'))
 
     return names
+    
+def get_local_entities(dbname, docID, userID):
+    local_list = []
+    connection, cursor = _get_connection_cursor(dbname)
+    for row in cursor.execute('SELECT DISTINCT(name, uid) FROM local_norms WHERE docID=' + docID + ' AND userID=' + userID):
+        local_list.append(row[0].encode('utf-8'))
+
+    return local_list    
 
 def create_norm_entity(dbname, name, entity_id):
     '''

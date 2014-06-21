@@ -1270,6 +1270,10 @@ var AnnotatorUI = (function($, window, undefined) {
           $('#norm_create_name').val('');          
       }
       
+      var updateWithLocalNormList = function(response) {
+          alert(response.key)       
+      }
+      
       var performNormSearch = function() {
         var val = $('#norm_search_query').val();
         var db = $('#span_norm_db').val();
@@ -1321,12 +1325,21 @@ var AnnotatorUI = (function($, window, undefined) {
 		dispatcher.post('ajax',
 		[{
 			action: 'normCreate',
-            database: db,
+      database: db,
 			name: entityName,
-            collection: coll,
+      collection: coll,
       docID: doc,
 			protocol: '1'
 		}, 'normCreateResult']);
+       
+    dispatcher.post('ajax',
+		[{
+			action: 'normList',
+      database: db,
+      collection: coll,
+      docID: doc,
+			protocol: '1'
+		}, 'localNormList']);   
         
       });
       
@@ -2772,7 +2785,8 @@ var AnnotatorUI = (function($, window, undefined) {
           on('suggestedSpanTypes', receivedSuggestedSpanTypes).
           on('normGetNameResult', setSpanNormText).
           on('normSearchResult', setSpanNormSearchResults).
-          on('normCreateResult', updateWithCreatedNorm);
+          on('normCreateResult', updateWithCreatedNorm).
+          on('localNormList', updateWithLocalNormList);
     };
 
     return AnnotatorUI;

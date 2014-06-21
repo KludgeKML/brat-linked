@@ -177,6 +177,38 @@ def norm_get_data(database, key, collection=None):
         'value' : data
         }
     return json_dic    
+    
+def norm_get_local_entities(database, docID, collection=None):
+    if NORM_LOOKUP_DEBUG:
+        _check_DB_version(database)
+    if REPORT_LOOKUP_TIMINGS:
+        lookup_start = datetime.now()
+
+    userID = get_session()['user']
+    
+    dbpath = _get_db_path(database, collection)
+    if dbpath is None:
+        # full path not configured, fall back on name as default
+        dbpath = database
+
+    try:
+        data = normdb.get_local_entities(dbpath, docId, userID)
+    except normdb.dbNotFoundError, e:
+        Messager.warning(str(e))
+        data = None
+
+    if REPORT_LOOKUP_TIMINGS:
+        _report_timings(database, lookup_start)
+
+    # echo request for sync
+    json_dic = {
+        'database' : database,
+        'key' : dicID + ', ' + userID
+        'value' : data
+        }
+    return json_dic
+
+    
 
 # TODO: deprecated, confirm unnecessary and remove.
 # def norm_get_ids(database, name, collection=None):
