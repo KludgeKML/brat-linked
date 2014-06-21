@@ -1274,7 +1274,7 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_create_name').removeAttr('readonly', false);
         $('#norm_create_name').attr('placeholder', 'Enter entity name');
 
-        if (response.items.length == 0) {
+        if (response.value.length == 0) {
           // no results
           $('#norm_search_result_select thead').empty();
           $('#norm_search_result_select tbody').empty();
@@ -1284,10 +1284,10 @@ var AnnotatorUI = (function($, window, undefined) {
 
         var html = '<tr><th colspan="3">Local Entities</th></tr><tr><td>ID</td><td>Name</td><td>Category</td></tr>';
         $('#norm_search_result_select thead').html(html);
-/*
+
         html = [];
         var len = response.header.length;
-        $.each(response.items, function(itemNo, item) {
+        $.each(response.value, function(itemNo, item) {
 
           html.push('<tr'+
                     ' data-id="'+Util.escapeHTMLandQuotes(item[0])+'"'+
@@ -1302,7 +1302,7 @@ var AnnotatorUI = (function($, window, undefined) {
 
         $('#norm_search_result_select tbody').find('tr').
             click(chooseNormId).
-            dblclick(chooseNormIdAndSubmit);*/
+            dblclick(chooseNormIdAndSubmit);
 
         // TODO: sorting on click on header (see showFileBrowser())
       }
