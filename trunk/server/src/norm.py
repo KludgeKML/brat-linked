@@ -192,7 +192,7 @@ def norm_get_local_entities(database, docID, collection=None):
         dbpath = database
 
     try:
-        data = normdb.get_local_entities(dbpath, docId, userID)
+        data = normdb.get_local_entities(dbpath, docID, userID)
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))
         data = None
@@ -203,7 +203,7 @@ def norm_get_local_entities(database, docID, collection=None):
     # echo request for sync
     json_dic = {
         'database' : database,
-        'key' : dicID + ', ' + userID,
+        'key' : docID + ', ' + userID,
         'value' : data
         }
     return json_dic
