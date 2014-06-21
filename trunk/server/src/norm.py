@@ -77,7 +77,7 @@ def _get_db_path(database, collection):
 def norm_create_name(database, name, collection=None, docID=None):
     responseData = { 'name': '', 'entityID': '' }
     userID = get_session()['user']
-    entityID = 'http://contextus.net/resource/RRH/' + userID
+    entityID = 'http://contextus.net/resource/RRH/meta/' + userID
     
     if docID != None:
         entityID += '/' + docID
@@ -99,10 +99,10 @@ def norm_create_name(database, name, collection=None, docID=None):
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))
 
-    strings = normdb.get_all_entity_strings(dbpath)
-    Messager.info('Strings for ' + database + ' = [' + ','.join(strings) + ']')
+    #strings = normdb.get_all_entity_strings(dbpath)
+    #Messager.info('Strings for ' + database + ' = [' + ','.join(strings) + ']')
 
-    simstringdb.ssdb_build(strings, database)
+    #simstringdb.ssdb_build(strings, database)
      
     return responseData
 
