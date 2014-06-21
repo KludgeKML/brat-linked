@@ -1294,9 +1294,11 @@ var AnnotatorUI = (function($, window, undefined) {
                     ' data-id="'+Util.escapeHTMLandQuotes(item.id)+'"'+
                     ' data-txt="'+Util.escapeHTMLandQuotes(item.name)+'"'+
                     '>');
-          for (var i=0; i<len; i++) {
-            html.push('<td>' + Util.escapeHTML(item[i]) + '</td>');
-          }
+
+            html.push('<td>' + Util.escapeHTML(item.id) + '</td>');
+            html.push('<td>' + Util.escapeHTML(item.name) + '</td>');
+            html.push('<td>Local Entity</td>');
+
           html.push('</tr>');
         });
         $('#norm_search_result_select tbody').html(html.join(''));
