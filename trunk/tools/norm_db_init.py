@@ -140,6 +140,7 @@ CREATE TABLE infos (
 """
 CREATE TABLE local_norms (
   id INTEGER PRIMARY KEY,
+  uid VARCHAR(255) UNIQUE,
   user_id VARCHAR(255),
   doc_id VARCHAR(255),
   name VARCHAR(255)
@@ -163,6 +164,7 @@ CREATE_INDEX_COMMANDS = [
 "CREATE INDEX attributes_entity_id ON attributes (entity_id);",
 #"CREATE INDEX infos_value ON infos (value);", # unnecessary, not searchable
 "CREATE INDEX infos_entity_id ON infos (entity_id);",
+"CREATE INDEX norms_uid ON local_norms (uid);",
 "CREATE INDEX norms_for_doc ON local_norms (user_id, doc_id);",
 "CREATE INDEX norms_name ON local_norms (name);",
 "CREATE INDEX entity_norms_entity ON entity_norms (entity_id);",
