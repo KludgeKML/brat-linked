@@ -98,7 +98,8 @@ def get_rdf_parts(fpath, document):
                 parts['data'] += "\trdfs:label '" + chunks[0] + "' .\n\n"
                 
                 for row in entity_data:
-                    parts['data'] += ''.join(str(row)[:]) + "\n"
+                    for data in row:
+                        parts['data'] += data[0] + "\n"
                 
            
             elif line[0] == 'R':
