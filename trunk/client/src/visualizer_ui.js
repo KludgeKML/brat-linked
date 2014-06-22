@@ -409,6 +409,8 @@ var VisualizerUI = (function($, window, undefined) {
           immediately = true;
         }
         // process normalizations
+        // PROBABLY BEST TO DEAL WITH LOCAL NORMALISATIONS HERE
+        
         var normsToQuery = [];
         $.each(normalizations, function(normNo, norm) {
           var dbName = norm[0], dbKey = norm[1];
@@ -433,6 +435,8 @@ var VisualizerUI = (function($, window, undefined) {
             }
           }
         });
+        
+        comment += '<span><strong>!!!!</strong></span>';
 
         // display initial comment HTML 
         displayComment(evt, target, comment, commentText, commentType, 
