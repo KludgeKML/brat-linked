@@ -1,6 +1,6 @@
-http://contextus.net/data/meta/RedRidingHood	name:Name:Red Riding Hood	attr:Category:Character
-http://contextus.net/data/meta/RRHMother	name:Name:Mother	attr:Category:Character
-http://contextus.net/data/meta/RRHFather	name:Name:Father	attr:Category:Character
-http://contextus.net/data/meta/RRHGrandma	name:Name:Grandma	name:Name:Grandmother	attr:Category:Character
-http://contextus.net/data/meta/Wolf	name:Name:Wolf	attr:Category:Character
-http://contextus.net/data/meta/Forester	name:Name:Forester	name:Name:Woodcutter	name:Name:Hunter	attr:Category:Character
+http://contextus.net/resource/meta/RedRidingHood	name:Name:Red Riding Hood	attr:Category:Character
+http://contextus.net/resource/meta/RRHMother	name:Name:Mother	attr:Category:Character
+http://contextus.net/resource/meta/RRHFather	name:Name:Father	attr:Category:Character
+http://contextus.net/resource/meta/RRHGrandma	name:Name:Grandma	name:Name:Grandmother	attr:Category:Character
+http://contextus.net/resource/meta/Wolf	name:Name:Wolf	attr:Category:Character
+http://contextus.net/resource/meta/Forester	name:Name:Forester	name:Name:Woodcutter	name:Name:Hunter	attr:Category:Character

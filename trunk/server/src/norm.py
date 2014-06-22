@@ -77,12 +77,12 @@ def _get_db_path(database, collection):
 def norm_create_name(database, name, collection=None, docID=None):
     responseData = { 'name': '', 'entityID': '' }
     userID = get_session()['user']
-    entityID = 'http://contextus.net/resource/RRH/meta/' + userID
+    entityID = 'http://contextus.net/resource/RRH/' + userID
     
     if docID != None:
         entityID += '/' + docID
         
-    entityID += '/' + camelCase(name)
+    entityID += '/meta/' + camelCase(name)
 
     
 
