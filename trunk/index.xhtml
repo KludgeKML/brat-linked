@@ -780,6 +780,28 @@
         </div>
       </fieldset>      
     </form>
+    <!-- Normalization DB edit dialog -->
+    <form id="norm_edit_dialog" class="dialog" title="Edit Local Normalisation Entity">
+      <fieldset>
+        <legend>Name</legend>
+        <input id="norm_edit_name" placeholder="Name" class="borderless" readonly="readonly"/>
+      </fieldset>      
+      <fieldset>
+        <legend>ID</legend>
+        <input id="norm_edit_id" placeholder="Identifier" class="borderless" readonly="readonly"/>
+      </fieldset>
+      <fieldset>
+        <legend>Link to Shared Entity</legend>
+        <div id="norm_edit_container">
+          <input id="norm_edit_search_query" placeholder="Query string" class="borderless"/>
+          <input id="norm_edit_search_button" type="button" value="Search"/>
+        </div>
+      </fieldset>      
+      <table id="norm_edit_search_result_select" class="ui-widget unselectable">
+        <thead class="ui-widget-header"/>
+        <tbody class="ui-widget-content"/>
+      </table>     
+    </form>    
     <!-- Spinner -->
     <div id="waiter" class="dialog" title="Please wait">
       <img src="static/img/spinner.gif"/>
