@@ -100,8 +100,6 @@ def get_rdf_parts(fpath, document):
                 
                 if len(entity_data) > 0:
                 
-                    parts['data'] += "<" + namespace + EventID + ">\n\t "
-                
                     for key, row in entity_data.iteritems():
                     
                         parts['data'] += "<" + key + ">\n"
