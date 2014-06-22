@@ -82,7 +82,7 @@ def get_rdf_parts(fpath, document):
                     parts['data'] += "<" + namespace + chunks[2] + "> owl:sameAs <" + namespace + entity_name + ">;\n"
                     parts['data'] += "<" + namespace + entity_name + "> ome:shadow-of <" + normalised + ">;\n"
                     
-                    entity_data = data_by_id(dbname, normalised)
+                    entity_data.append({normalised:data_by_id(dbname, normalised)})
                 
                 else:
                 
@@ -93,13 +93,24 @@ def get_rdf_parts(fpath, document):
                     
                     for uid in global_id:
                         parts['data'] += "<" + normalised + "> ome:shadow-of <" + uid + ">;\n"
-                        entity_data = data_by_id(dbname, uid)
+                        entity_data.append({uid:data_by_id(dbname, uid)})
                 
                 parts['data'] += "\trdfs:label '" + chunks[0] + "' .\n\n"
                 
-                for row in entity_data:
-                    for data in row:
-                        parts['data'] += data[0] + "\n"
+                
+                if len(entity_data) > 0:
+                
+                    parts['data'] += "<" + namespace + EventID + ">\n\t "
+                
+                    for key, row in entity_data.iteritems():
+                    
+                        parts['data'] += "<" + key + ">\n"
+                        
+                        for data in row:
+                            if data[0] == 'Name':
+                                parts['data'] += '\trdfs:label "' + data[1] + '";\n'
+                            elif data[0] == 'Category':
+                                parts['data'] += '\ta ' + lookup(data[1]) + ' .\n\n'
                 
            
             elif line[0] == 'R':
