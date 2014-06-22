@@ -1276,13 +1276,13 @@ var AnnotatorUI = (function($, window, undefined) {
 
         if (response.value.length == 0) {
           // no results
-          $('#norm_search_result_select thead').empty();
-          $('#norm_search_result_select tbody').empty();
+          $('#norm_local_result_select thead').empty();
+          $('#norm_local_result_select tbody').empty();
           dispatcher.post('messages', [[['No matches to search.', 'comment']]]);
           return false;
         } 
 
-        var html = '<tr><th colspan="3">Local Entities</th></tr><tr><td>ID</td><td>Name</td><td>Category</td></tr>';
+        var html = '<tr><th colspan="2">Local Entities</th></tr><tr><td>ID</td><td>Name</td></tr>';
         $('#norm_search_result_select thead').html(html);
 
         html = [];
@@ -1297,13 +1297,12 @@ var AnnotatorUI = (function($, window, undefined) {
 
             html.push('<td>' + Util.escapeHTML(item.id) + '</td>');
             html.push('<td>' + Util.escapeHTML(item.name) + '</td>');
-            html.push('<td>Local Entity</td>');
 
           html.push('</tr>');
         });
-        $('#norm_search_result_select tbody').html(html.join(''));
+        $('#norm_local_result_select tbody').html(html.join(''));
 
-        $('#norm_search_result_select tbody').find('tr').
+        $('#norm_local_result_select tbody').find('tr').
             click(chooseNormId).
             dblclick(chooseNormIdAndSubmit);
 
