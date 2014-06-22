@@ -1055,8 +1055,14 @@ var AnnotatorUI = (function($, window, undefined) {
       var clearSpanNorm = function(evt) {
         clearNormalizationUI();
       }
-       $('#norm_edit_button').button();
-      $('#norm_edit_button').click(showNormEditDialog);
+      
+      $('#norm_edit_button').button();
+      $('#norm_edit_button').click(function() 
+      {
+        dispatcher.post('hideForm');
+        dispatcher.post('showForm', [normEditDialog]);
+        $('#norm_edit_search_query').focus().select();
+      });
       
       $('#clear_norm_button').button();
       $('#clear_norm_button').click(clearSpanNorm);
