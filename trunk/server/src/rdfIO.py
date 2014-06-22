@@ -105,9 +105,10 @@ def get_rdf_parts(fpath, document):
                     
                             parts['data'] += "<" + key + ">\n"
                         
-                            #for data in value:
-                            #    if data[0] == 'Name':
-                            #        parts['data'] += '\trdfs:label "' + data[1] + '";\n'
+                            for data in value:
+                                for tuple in data:
+                                    if tuple[0] == 'Name':
+                                        parts['data'] += '\trdfs:label "' + tuple[1] + '";\n'
                             #    elif data[0] == 'Category':
                             #        parts['data'] += '\ta ' + lookup(data[1]) + ' .\n\n'
                 
