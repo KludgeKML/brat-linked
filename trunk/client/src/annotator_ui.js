@@ -1056,6 +1056,23 @@ var AnnotatorUI = (function($, window, undefined) {
         clearNormalizationUI();
       }
       
+      var normEditDialog = $('#norm_edit_dialog');
+      initForm(normEditDialog, {
+          width: 800,
+          width: 600,
+          resizable: true,
+          alsoResize: '#norm_edit_search_result_select',
+          open: function(evt) {
+            keymap = {};
+          },
+          close: function(evt) {
+            // assume that we always want to return to the span dialog
+            // on normalization dialog close
+            dispatcher.post('showForm', [spanForm, true]);
+          },
+      });  
+      
+      
       $('#norm_edit_button').button();
       $('#norm_edit_button').click(function() 
       {
@@ -1411,30 +1428,7 @@ var AnnotatorUI = (function($, window, undefined) {
 		}, 'normCreateResult']);  
       });
  
-      var normEditDialog = $('#norm_edit_dialog');
-      initForm(normEditDialog, {
-          width: 800,
-          width: 600,
-          resizable: true,
-          alsoResize: '#norm_edit_search_result_select',
-          open: function(evt) {
-            keymap = {};
-          },
-          close: function(evt) {
-            // assume that we always want to return to the span dialog
-            // on normalization dialog close
-            dispatcher.post('showForm', [spanForm, true]);
-          },
-      });  
-      
-      var showNormEditDialog = function() 
-      {
-        dispatcher.post('hideForm');
-        dispatcher.post('showForm', [normEditDialog]);
-        $('#norm_edit_search_query').focus().select();
-      }
-      
-      
+           
       var arcFormSubmitRadio = function(evt) {
         // TODO: check for confirm_mode?
         arcFormSubmit(evt, $(evt.target));
