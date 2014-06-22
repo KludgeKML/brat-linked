@@ -159,7 +159,15 @@ def norm_get_data(database, key, collection=None):
         dbpath = database
 
     try:
-        data = normdb.data_by_id(dbpath, key)
+        type = normdb.get_norm_type_by_id(dbpath, key)
+    
+        if type == 'global':
+            data = normdb.data_by_id(dbpath, key)
+        elif type == 'local':
+            data = 'Local Normalisation Value'
+        else:
+            data = type
+                    
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))
         data = None

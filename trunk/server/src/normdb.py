@@ -141,6 +141,30 @@ def create_local_norm_value(dbname, name, entity_id, user_id, doc_id):
     connection.commit()
     return local_rowid
     
+def get_norm_type_by_id(dbname, uid):
+    ''' Check whether normalisation entity is local or global - returns 'local', 'global' or None. 
+    Does not check whether local normalisation entity is valid for that person/document just whether it exists '''
+      
+    connection, cursor = _get_connection_cursor(dbname)
+    
+    global_results = []
+    for row in cursor.execute("SELECT DISTINCT(id) FROM entities WHERE uid='" + uid + "'"):
+        local_results.append(row[0].encode('utf-8'))    
+    
+    if len(global_results) > 0:
+        return 'global' 
+    
+    
+    local_results = []
+    for row in cursor.execute("SELECT DISTINCT(id) FROM local_norms WHERE uid='" + uid + "'"):
+        local_results.append(row[0].encode('utf-8'))
+    
+    if len(local_results) > 0:
+        return 'local'   
+    
+    
+    return None
+    
     
 def data_by_id(dbname, id_):
     '''
