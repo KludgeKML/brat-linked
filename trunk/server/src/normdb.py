@@ -112,7 +112,7 @@ def get_local_entities(dbname, docID, userID):
 
     return local_list    
 
-def create_norm_entity(dbname, name, entity_id):
+def create_norm_entity(dbname, name, entity_id, type):
     '''
     Create a new normalisation entity in the database which can be searched
     for later.
@@ -121,10 +121,10 @@ def create_norm_entity(dbname, name, entity_id):
     cursor.execute('INSERT INTO entities (uid) values (:uid)', {'uid': entity_id})
     entity_rowid = cursor.lastrowid
     cursor.execute('INSERT INTO names (entity_id,label_id,value,normvalue) values (:entity_id,:label_id,:value,:normvalue)',
-                    {'entity_id': entity_rowid, 'label_id': 2, 'value': name, 'normvalue': name.lower()})
+                    {'entity_id': entity_rowid, 'label_id': 2, 'value': name, 'normvalue': name.lower().strip().replace('-', ' ')})
     names_rowid = cursor.lastrowid
     cursor.execute('INSERT INTO attributes (entity_id,label_id,value,normvalue) values (:entity_id,:label_id,:value,:normvalue)',
-                    {'entity_id': entity_rowid, 'label_id': 1, 'value': 'Character', 'normvalue': 'character'})
+                    {'entity_id': entity_rowid, 'label_id': 1, 'value': type, 'normvalue': type.lower().strip().replace('-', ' ')})
     attrs_rowid = cursor.lastrowid
 
     connection.commit()
@@ -140,6 +140,52 @@ def create_local_norm_value(dbname, name, entity_id, user_id, doc_id):
 
     connection.commit()
     return local_rowid
+    
+def create_local_norm_link(dbname, entity_uid, local_uid):
+    '''
+    Add an entry into the link table with an entities.id and local_norms.id .
+    '''
+    connection, cursor = _get_connection_cursor(dbname)
+    
+    global_results = []
+    for row in cursor.execute("SELECT DISTINCT(id) FROM entities WHERE uid='" + entity_uid + "'"):
+        global_results.append(row[0])
+        
+    entity_id = global_results[0]    
+    
+    local_results = []
+    for row in cursor.execute("SELECT DISTINCT(id) FROM local_norms WHERE uid='" + local_uid + "'"):
+        local_results.append(row[0])
+    
+    local_id = local_results[0]
+    
+    if local_id != '' and entity_id != '':
+        cursor.execute('INSERT INTO entity_norms (entity_id, norm_id) values (:g_id,:l_id)', {'g_id': entity_id, 'l_id': local_id})
+        local_rowid = cursor.lastrowid
+
+        connection.commit()
+        return local_rowid  
+    else:
+        return None  
+
+def get_linked_global_entity(dbname, local_uid):
+
+    results = []
+    connection, cursor = _get_connection_cursor(dbname)
+    for row in cursor.execute("SELECT DISTINCT(E.uid) FROM entities E JOIN entity_norms N ON E.id = N.entity_id JOIN local_norms L ON N.norm_id = L.id WHERE L.uid='" + local_uid + "'"):
+        results.append(row[0].encode('utf-8'))
+
+    return results 
+
+def get_linked_local_entity(dbname, global_uid):
+
+    results = []
+    connection, cursor = _get_connection_cursor(dbname)
+    for row in cursor.execute("SELECT DISTINCT(L.uid) FROM entities E JOIN entity_norms N ON E.id = N.entity_id JOIN local_norms L ON N.norm_id = L.id WHERE E.uid='" + global_uid + "'"):
+        results.append(row[0].encode('utf-8'))
+
+    return results 
+    
     
 def get_norm_type_by_id(dbname, uid):
     ''' Check whether normalisation entity is local or global - returns 'local', 'global' or None. 
