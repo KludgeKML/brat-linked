@@ -1213,9 +1213,9 @@ var AnnotatorUI = (function($, window, undefined) {
 
         // Whatever happens, once a search is performed, allow the user
         // to create a new entity
-        $('#norm_create_button').button('enable');
-        $('#norm_create_name').removeAttr('readonly', false);
-        $('#norm_create_name').attr('placeholder', 'Enter entity name');
+        //$('#norm_create_button').button('enable');
+        //$('#norm_create_name').removeAttr('readonly', false);
+        //$('#norm_create_name').attr('placeholder', 'Enter entity name');
 
         if (response.items.length == 0) {
           // no results
@@ -1226,8 +1226,10 @@ var AnnotatorUI = (function($, window, undefined) {
         }
 
         // TODO: avoid code duplication with showFileBrowser()
+        
+        var len = response.header.length;
 
-        var html = ['<tr>'];
+        var html = ['<tr><th colspan="' + len + '">Global Entities</th></tr><tr>'];
         $.each(response.header, function(headNo, head) {
           html.push('<th>' + Util.escapeHTML(head[0]) + '</th>');
         });
@@ -1235,7 +1237,6 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_search_result_select thead').html(html.join(''));
 
         html = [];
-        var len = response.header.length;
         $.each(response.items, function(itemNo, item) {
           // NOTE: assuming ID is always the first datum in the item
           // and that the preferred text is always the second
@@ -1282,7 +1283,7 @@ var AnnotatorUI = (function($, window, undefined) {
           return false;
         } 
 
-        var html = '<tr><th colspan="2">Local Entities</th></tr><tr><td>ID</td><td>Name</td></tr>';
+        var html = '<tr><th colspan="2">Local Entities</th></tr><tr><td>Name</td><td>ID</td></tr>';
         $('#norm_local_result_select thead').html(html);
 
         html = [];
@@ -1294,8 +1295,8 @@ var AnnotatorUI = (function($, window, undefined) {
                     ' data-txt="'+Util.escapeHTMLandQuotes(item.name)+'"'+
                     '>');
 
-            html.push('<td>' + Util.escapeHTML(item.id) + '</td>');
             html.push('<td>' + Util.escapeHTML(item.name) + '</td>');
+            html.push('<td>' + Util.escapeHTML(item.id) + '</td>');
 
           html.push('</tr>');
         });
@@ -1312,10 +1313,20 @@ var AnnotatorUI = (function($, window, undefined) {
       var updateWithCreatedNorm = function(response) {
           $('#norm_search_id').val(response.entityID);
           $('#norm_search_query').val(response.name);
-          $('#norm_create_button').button('disable');
-          $('#norm_create_name').attr('readonly', 'readonly');
-          $('#norm_create_name').attr('placeholder', 'Search to find created ID');
-          $('#norm_create_name').val('');          
+         // $('#norm_create_button').button('disable');
+         // $('#norm_create_name').attr('readonly', 'readonly');
+         // $('#norm_create_name').attr('placeholder', 'Search to find created ID');
+          $('#norm_create_name').val('');      
+          
+        var db = $('#span_norm_db').val();  
+        dispatcher.post('ajax',
+        [{
+          action: 'normList',
+          database: db,
+          collection: coll,
+          docID: doc,
+          protocol: '1'
+        }, 'localNormList']);      
       }
       
       var performNormSearch = function() {
@@ -1348,9 +1359,6 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_search_result_select tbody').empty();  
         $('#norm_local_result_select thead').empty();
         $('#norm_local_result_select tbody').empty();  
-        
-        body = $('#norm_local_result_select tbody');
-        body.html('<tr><td>Hello</td><td>There!</td></tr>')
         
         var db = $('#span_norm_db').val();
         dispatcher.post('ajax',
