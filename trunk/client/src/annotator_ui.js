@@ -1055,6 +1055,9 @@ var AnnotatorUI = (function($, window, undefined) {
       var clearSpanNorm = function(evt) {
         clearNormalizationUI();
       }
+       $('#norm_edit_button').button();
+      $('#norm_edit_button').click(showNormEditDialog);
+      
       $('#clear_norm_button').button();
       $('#clear_norm_button').click(clearSpanNorm);
 
@@ -1111,6 +1114,7 @@ var AnnotatorUI = (function($, window, undefined) {
       $('#span_norm_id').bind('propertychange keyup input paste', spanNormIdUpdate);
       // nice-looking select for normalization
       $('#span_norm_db').addClass('ui-widget ui-state-default ui-button-text');
+           
 
       var normSearchDialog = $('#norm_search_dialog');
       initForm(normSearchDialog, {
@@ -1400,8 +1404,31 @@ var AnnotatorUI = (function($, window, undefined) {
 			protocol: '1'
 		}, 'normCreateResult']);  
       });
+ 
+      var normEditDialog = $('#norm_edit_dialog');
+      initForm(normEditDialog, {
+          width: 800,
+          width: 600,
+          resizable: true,
+          alsoResize: '#norm_edit_search_result_select',
+          open: function(evt) {
+            keymap = {};
+          },
+          close: function(evt) {
+            // assume that we always want to return to the span dialog
+            // on normalization dialog close
+            dispatcher.post('showForm', [spanForm, true]);
+          },
+      });  
       
-
+      var showNormEditDialog = function() 
+      {
+        dispatcher.post('hideForm');
+        dispatcher.post('showForm', [normEditDialog]);
+        $('#norm_edit_search_query').focus().select();
+      }
+      
+      
       var arcFormSubmitRadio = function(evt) {
         // TODO: check for confirm_mode?
         arcFormSubmit(evt, $(evt.target));
