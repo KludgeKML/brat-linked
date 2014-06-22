@@ -100,15 +100,16 @@ def get_rdf_parts(fpath, document):
                 
                 if len(entity_data) > 0:
                 
-                    for key, row in entity_data.iteritems():
+                    for row in entity_data:
+                        for key, value in row:
                     
-                        parts['data'] += "<" + key + ">\n"
+                            parts['data'] += "<" + key + ">\n"
                         
-                        for data in row:
-                            if data[0] == 'Name':
-                                parts['data'] += '\trdfs:label "' + data[1] + '";\n'
-                            elif data[0] == 'Category':
-                                parts['data'] += '\ta ' + lookup(data[1]) + ' .\n\n'
+                            for data in value:
+                                if data[0] == 'Name':
+                                    parts['data'] += '\trdfs:label "' + data[1] + '";\n'
+                                elif data[0] == 'Category':
+                                    parts['data'] += '\ta ' + lookup(data[1]) + ' .\n\n'
                 
            
             elif line[0] == 'R':
