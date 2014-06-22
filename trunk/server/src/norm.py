@@ -82,9 +82,7 @@ def norm_create_name(database, name, collection=None, docID=None):
     if docID != None:
         entityID += '/' + docID
         
-    entityID += '/meta/' + camelCase(name)
-
-    
+    entityID += '/meta/' + camelCase(name)    
 
     dbpath = _get_db_path(database, collection)
     if dbpath is None:

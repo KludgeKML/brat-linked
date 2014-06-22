@@ -4,6 +4,7 @@ import re
 
 from annotation import open_textfile
 from session import get_session
+from normdb import get_norm_type_by_id
 
 base_namespace = 'http://contextus.net/resource/RRH/'
 
@@ -68,9 +69,23 @@ def get_rdf_parts(fpath, document):
             elif line[0] == 'N': 
                 
                 normalised = chunks[3].split(':', 1)[1]
-                       
-                parts['data'] += "<" + namespace + chunks[2] + "> owl:sameAs <" + normalised + ">;\n"
-                parts['data'] += "\trdfs:label '" + chunks[0] + "' .\n\n"
+                dbname = chunks[3].split(':', 1)[0]
+                
+                if get_norm_type_by_id(dbname, normalised) == 'global':
+                    # If link is directly to global entity then need to create local entity for sameAs
+                    # and the link to global entity with shadow-of relationship
+                    
+                    entity_name = normalised.split('/')[-1]
+                
+                    parts['data'] += "<" + namespace + chunks[2] + "> owl:sameAs <" + namespace + entity_name + ">;\n"
+                    parts['data'] += "<" + namespace + entity_name + "> ome:shadow-of <" + normalised + ">;\n"
+                
+                else:
+                
+                    parts['data'] += "<" + namespace + chunks[2] + "> owl:sameAs <" + normalised + ">;\n"
+                    # Check if local entity is linked to global entity - if so add in shadow-of relationship
+                
+                    parts['data'] += "\trdfs:label '" + chunks[0] + "' .\n\n"
            
             elif line[0] == 'R':
                 
