@@ -1283,11 +1283,10 @@ var AnnotatorUI = (function($, window, undefined) {
         } 
 
         var html = '<tr><th colspan="2">Local Entities</th></tr><tr><td>ID</td><td>Name</td></tr>';
-        $('#norm_search_result_select thead').html(html);
+        $('#norm_local_result_select thead').html(html);
 
         html = [];
-        //var len = response.header.length;
-        var len = 3
+
         $.each(response.value, function(itemNo, item) {
 
           html.push('<tr'+
@@ -1344,11 +1343,13 @@ var AnnotatorUI = (function($, window, undefined) {
           $('#norm_search_id').val('');
           $('#norm_search_query').val($('#span_selected').text());
         }
-        // blank the table
+        // blank the tables
         $('#norm_search_result_select thead').empty();
         $('#norm_search_result_select tbody').empty();  
+        $('#norm_local_result_select thead').empty();
+        $('#norm_local_result_select tbody').empty();  
         
-        body = $('#norm_search_result_select tbody');
+        body = $('#norm_local_result_select tbody');
         body.html('<tr><td>Hello</td><td>There!</td></tr>')
         
         var db = $('#span_norm_db').val();
