@@ -149,7 +149,7 @@ def get_norm_type_by_id(dbname, uid):
     
     global_results = []
     for row in cursor.execute("SELECT DISTINCT(id) FROM entities WHERE uid='" + uid + "'"):
-        local_results.append(row[0].encode('utf-8'))    
+        local_results.append(row[0])    
     
     if len(global_results) > 0:
         return 'global' 
@@ -157,7 +157,7 @@ def get_norm_type_by_id(dbname, uid):
     
     local_results = []
     for row in cursor.execute("SELECT DISTINCT(id) FROM local_norms WHERE uid='" + uid + "'"):
-        local_results.append(row[0].encode('utf-8'))
+        local_results.append(row[0])
     
     if len(local_results) > 0:
         return 'local'   
