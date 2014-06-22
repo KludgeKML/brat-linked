@@ -90,7 +90,7 @@ def get_rdf_parts(fpath, document):
                     for uid in global_id:
                         parts['data'] += "<" + normalised + "> ome:shadow-of <" + uid + ">;\n"
                 
-                    parts['data'] += "\trdfs:label '" + chunks[0] + "' .\n\n"
+                parts['data'] += "\trdfs:label '" + chunks[0] + "' .\n\n"
            
             elif line[0] == 'R':
                 
