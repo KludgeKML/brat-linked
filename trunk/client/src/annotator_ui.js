@@ -1060,11 +1060,18 @@ var AnnotatorUI = (function($, window, undefined) {
       initForm(normEditDialog, {
           width: 800,
           width: 600,
+
           resizable: true,
           alsoResize: '#norm_edit_search_result_select',
           open: function(evt) {
             keymap = {};
           },
+          buttons: [{
+              id: 'edit_form_delete_norm',
+              text: "Delete",
+              click: addFragment
+          }
+          ],    
           close: function(evt) {
             // assume that we always want to return to the span dialog
             // on normalization dialog close
