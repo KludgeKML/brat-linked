@@ -1077,6 +1077,7 @@ var AnnotatorUI = (function($, window, undefined) {
       $('#norm_edit_button').click(function() 
       {
         dispatcher.post('hideForm');
+        $('#norm_edit_name').val($('#span_norm_id').val());
         dispatcher.post('showForm', [normEditDialog]);
         $('#norm_edit_search_query').focus().select();
       });
