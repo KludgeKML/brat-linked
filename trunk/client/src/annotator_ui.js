@@ -1056,6 +1056,17 @@ var AnnotatorUI = (function($, window, undefined) {
         clearNormalizationUI();
       }
       
+      var performEditNormSearch = function() {
+        var val = $('#norm_edit_search_query').val();
+        var db = $('#span_norm_db').val();
+        dispatcher.post('ajax', [ {
+                        action: 'normSearch',
+                        database: db,
+                        name: val,
+                        collection: coll}, 'normEditSearchResult']);
+      }
+      $('#norm_edit_search_button').click(performEditNormSearch);      
+      
       var normEditDialog = $('#norm_edit_dialog');
       initForm(normEditDialog, {
           width: 800,
@@ -1186,11 +1197,12 @@ var AnnotatorUI = (function($, window, undefined) {
           append('<a>' + Util.escapeHTML(item.value) + '<div class="autocomplete-id">' + Util.escapeHTML(item.id) + "</div></a>").
           appendTo($ul);
       };
-      var normSubmit = function(selectedId, selectedTxt) {
+      
+      var normSubmit = function(selectedId, selectedTxt, sectionName) {
         // we got a value; act if it was a submit
         $('#span_norm_id').val(selectedId);
         // don't forget to update this reference value
-        oldSpanNormIdValue = selectedId;
+        oldSpanNormIdValue = selectedId; 
         $('#span_norm_txt').val(selectedTxt);
         updateNormalizationRefLink();
         // update history
@@ -1211,6 +1223,7 @@ var AnnotatorUI = (function($, window, undefined) {
         // bringing up the normSearchDialog.
         normSearchDialog.dialog('close');
       };
+      
       var normSearchSubmit = function(evt) {
         if (normSearchSubmittable) {
           var selectedId = $('#norm_search_id').val(); 
@@ -1222,11 +1235,33 @@ var AnnotatorUI = (function($, window, undefined) {
         }
         return false;
       }
+
+      var normLinkedSearchSubmit = function(evt) {
+        if (normLinkedSearchSubmittable) {
+          var selectedId = $('#norm_edit_search_id').val(); 
+          var selectedTxt = $('#norm_edit_search_query').val();
+
+          normLinkedSubmit(selectedId, selectedTxt);
+        } else {
+          performLinkedNormSearch();
+        }
+        return false;
+      }
+      
       var normSearchSubmittable = false;
+      
+      var normLinkedSearchSubmittable = false;
+      
       var setNormSearchSubmit = function(enable) {
         $('#norm_search_dialog-ok').button(enable ? 'enable' : 'disable');
         normSearchSubmittable = enable;
       };
+
+      var setLinkedNormSearchSubmit = function(enable) {
+        $('#norm_edit_search_dialog-ok').button(enable ? 'enable' : 'disable');
+        normLinkedSearchSubmittable = enable;
+      };      
+      
       normSearchDialog.submit(normSearchSubmit);
       var chooseNormId = function(evt) {
         var $element = $(evt.target).closest('tr');
@@ -1236,6 +1271,15 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_search_id').val($element.attr('data-id'));
         setNormSearchSubmit(true);
       }
+      var chooseLinkedNormId = function(evt) {
+        var $element = $(evt.target).closest('tr');
+        $('#norm_edit_search_result_select tr').removeClass('selected');
+        $element.addClass('selected');
+        $('#norm_edit_search_query').val($element.attr('data-txt'));
+        $('#norm_edit_global_id').val($element.attr('data-id'));
+        setLinkedNormSearchSubmit(true);
+      }      
+      
       var chooseNormIdAndSubmit = function(evt) {
         chooseNormId(evt);
         normSearchSubmit(evt);
@@ -1298,6 +1342,57 @@ var AnnotatorUI = (function($, window, undefined) {
 
         // TODO: sorting on click on header (see showFileBrowser())
       }
+
+      var setSpanEditNormSearchResults = function(response) {
+        if (response.exception) {
+          // TODO: better response to failure
+          dispatcher.post('messages', [[['Lookup error', 'warning', -1]]]);
+          return false;
+        }
+
+        if (response.items.length == 0) {
+          // no results
+          $('#norm_edit_search_result_select thead').empty();
+          $('#norm_edit_search_result_select tbody').empty();
+          dispatcher.post('messages', [[['No matches to search.', 'comment']]]);
+          return false;
+        }
+        
+        var len = response.header.length;
+
+        var html = ['<tr><th colspan="' + len + '">Global Entities</th></tr><tr>'];
+        $.each(response.header, function(headNo, head) {
+          html.push('<th>' + Util.escapeHTML(head[0]) + '</th>');
+        });
+        html.push('</tr>');
+        $('#norm_edit_search_result_select thead').html(html.join(''));
+
+        html = [];
+        $.each(response.items, function(itemNo, item) {
+          // NOTE: assuming ID is always the first datum in the item
+          // and that the preferred text is always the second
+          // TODO: Util.escapeQuotes would be expected to be
+          // sufficient here, but that appears to give "DOM Exception
+          // 11" in cases (try e.g. $x.html('<p a="A&B"/>'). Why? Is
+          // this workaround OK?
+          html.push('<tr'+
+                    ' data-id="'+Util.escapeHTMLandQuotes(item[0])+'"'+
+                    ' data-txt="'+Util.escapeHTMLandQuotes(item[1])+'"'+
+                    '>');
+          for (var i=0; i<len; i++) {
+            html.push('<td>' + Util.escapeHTML(item[i]) + '</td>');
+          }
+          html.push('</tr>');
+        });
+        $('#norm_edit_search_result_select tbody').html(html.join(''));
+
+        $('#norm_edit_search_result_select tbody').find('tr').
+            click(chooseNormId).
+            dblclick(chooseNormIdAndSubmit);
+
+        // TODO: sorting on click on header (see showFileBrowser())
+      }
+
 
       var setSpanLocalNormListResults = function(response) {
         if (response.exception) {
@@ -1379,6 +1474,7 @@ var AnnotatorUI = (function($, window, undefined) {
       $('#norm_search_query').focus(function() {
         setNormSearchSubmit(false);
       });
+      
       var showNormSearchDialog = function() {
         // if we already have non-empty ID and normalized string,
         // use these as default; otherwise take default search string
@@ -2880,6 +2976,7 @@ var AnnotatorUI = (function($, window, undefined) {
           on('suggestedSpanTypes', receivedSuggestedSpanTypes).
           on('normGetNameResult', setSpanNormText).
           on('normSearchResult', setSpanNormSearchResults).
+          on('normEditSearchResult', setSpanEditNormSearchResults).
           on('normCreateResult', updateWithCreatedNorm).
           on('localNormList', setSpanLocalNormListResults);
     };
