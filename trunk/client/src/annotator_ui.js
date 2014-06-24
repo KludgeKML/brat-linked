@@ -1056,6 +1056,7 @@ var AnnotatorUI = (function($, window, undefined) {
         clearNormalizationUI();
       }
       
+      $('#norm_edit_search_button').button();
       $('#norm_edit_search_button').click(performLinkedNormSearch);      
       
       var normEditDialog = $('#norm_edit_dialog');
