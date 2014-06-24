@@ -141,6 +141,23 @@ def create_local_norm_value(dbname, name, entity_id, user_id, doc_id):
     connection.commit()
     return local_rowid
     
+def delete_local_norm_value(dbname, uid):
+    ''' remove local norm value from local_norms and any links from entity_norms '''
+    connection, cursor = _get_connection_cursor(dbname)
+    cursor.execute("DELETE FROM entity_norms N JOIN local_norms L ON N.norm_id = L.id WHERE L.uid='" + uid + "'")    
+    connection.commit()
+    
+    return True
+
+def update_local_norm_link(dbname, local_uid, entity_uid=''):
+    ''' update any links in entity_norms - if no global entity value is specified then just delete link '''
+    connection, cursor = _get_connection_cursor(dbname)
+
+    '''TO DO'''
+    
+    return True
+        
+    
 def create_local_norm_link(dbname, entity_uid, local_uid):
     '''
     Add an entry into the link table with an entities.id and local_norms.id .
