@@ -1220,7 +1220,7 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#span_norm_id').val(selectedId);
         // don't forget to update this reference value
         oldSpanNormIdValue = selectedId; 
-        $('#span_linked_norm_txt').val(selectedTxt);
+        $('#span_linked_norm_id').val(selectedTxt);
         updateNormalizationRefLink();
         // update history
         var nextLastNormSearches = [
