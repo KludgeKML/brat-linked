@@ -1056,16 +1056,7 @@ var AnnotatorUI = (function($, window, undefined) {
         clearNormalizationUI();
       }
       
-      var performEditNormSearch = function() {
-        var val = $('#norm_edit_search_query').val();
-        var db = $('#span_norm_db').val();
-        dispatcher.post('ajax', [ {
-                        action: 'normSearch',
-                        database: db,
-                        name: val,
-                        collection: coll}, 'normEditSearchResult']);
-      }
-      $('#norm_edit_search_button').click(performEditNormSearch);      
+      $('#norm_edit_search_button').click(performLinkedNormSearch);      
       
       var normEditDialog = $('#norm_edit_dialog');
       initForm(normEditDialog, {
@@ -1198,7 +1189,7 @@ var AnnotatorUI = (function($, window, undefined) {
           appendTo($ul);
       };
       
-      var normSubmit = function(selectedId, selectedTxt, sectionName) {
+      var normSubmit = function(selectedId, selectedTxt) {
         // we got a value; act if it was a submit
         $('#span_norm_id').val(selectedId);
         // don't forget to update this reference value
@@ -1222,7 +1213,33 @@ var AnnotatorUI = (function($, window, undefined) {
         // Switch dialogs. NOTE: assuming we closed the spanForm when
         // bringing up the normSearchDialog.
         normSearchDialog.dialog('close');
-      };
+      };  
+      
+      var normLink = function(selectedId, selectedTxt) {
+        // we got a value; act if it was a submit
+        $('#span_norm_id').val(selectedId);
+        // don't forget to update this reference value
+        oldSpanNormIdValue = selectedId; 
+        $('#span_linked_norm_txt').val(selectedTxt);
+        updateNormalizationRefLink();
+        // update history
+        var nextLastNormSearches = [
+          {
+            value: selectedTxt,
+            id: selectedId,
+          },
+        ];
+        $.each(lastNormSearches, function(searchNo, search) {
+          if (search.id != selectedId || search.value != selectedTxt) {
+            nextLastNormSearches.push(search);
+          }
+        });
+        lastNormSearches = nextLastNormSearches;
+        lastNormSearches.slice(0, maxNormSearchHistory);
+        // Switch dialogs. NOTE: assuming we closed the spanForm when
+        // bringing up the normSearchDialog.
+        normEditDialog.dialog('close');
+      };          
       
       var normSearchSubmit = function(evt) {
         if (normSearchSubmittable) {
@@ -1241,7 +1258,7 @@ var AnnotatorUI = (function($, window, undefined) {
           var selectedId = $('#norm_edit_search_id').val(); 
           var selectedTxt = $('#norm_edit_search_query').val();
 
-          normLinkedSubmit(selectedId, selectedTxt);
+          normSubmit(selectedId, selectedTxt);
         } else {
           performLinkedNormSearch();
         }
@@ -1263,6 +1280,7 @@ var AnnotatorUI = (function($, window, undefined) {
       };      
       
       normSearchDialog.submit(normSearchSubmit);
+      
       var chooseNormId = function(evt) {
         var $element = $(evt.target).closest('tr');
         $('#norm_search_result_select tr').removeClass('selected');
@@ -1271,6 +1289,7 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_search_id').val($element.attr('data-id'));
         setNormSearchSubmit(true);
       }
+      
       var chooseLinkedNormId = function(evt) {
         var $element = $(evt.target).closest('tr');
         $('#norm_edit_search_result_select tr').removeClass('selected');
@@ -1284,6 +1303,11 @@ var AnnotatorUI = (function($, window, undefined) {
         chooseNormId(evt);
         normSearchSubmit(evt);
       }
+
+      var chooseLinkedNormIdAndSubmit = function(evt) {
+        chooseLinkedNormId(evt);
+        normLinkedSearchSubmit(evt);
+      }      
      
       var setSpanNormSearchResults = function(response) {
         if (response.exception) {
@@ -1343,7 +1367,7 @@ var AnnotatorUI = (function($, window, undefined) {
         // TODO: sorting on click on header (see showFileBrowser())
       }
 
-      var setSpanEditNormSearchResults = function(response) {
+      var setSpanLinkedNormSearchResults = function(response) {
         if (response.exception) {
           // TODO: better response to failure
           dispatcher.post('messages', [[['Lookup error', 'warning', -1]]]);
@@ -1387,8 +1411,8 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_edit_search_result_select tbody').html(html.join(''));
 
         $('#norm_edit_search_result_select tbody').find('tr').
-            click(chooseNormId).
-            dblclick(chooseNormIdAndSubmit);
+            click(chooseLinkedNormId).
+            dblclick(chooseLinkedNormIdAndSubmit);
 
         // TODO: sorting on click on header (see showFileBrowser())
       }
@@ -1473,6 +1497,20 @@ var AnnotatorUI = (function($, window, undefined) {
       $('#norm_search_button').click(performNormSearch);
       $('#norm_search_query').focus(function() {
         setNormSearchSubmit(false);
+      });
+
+      var performLinkedNormSearch = function() {
+        var val = $('#norm_edit_search_query').val();
+        var db = $('#span_norm_db').val();
+        dispatcher.post('ajax', [ {
+                        action: 'normSearch',
+                        database: db,
+                        name: val,
+                        collection: coll}, 'normSearchResult']);
+      }
+      $('#norm_search_button').click(performLinkedNormSearch);
+      $('#norm_search_query').focus(function() {
+        setLinkedNormSearchSubmit(false);
       });
       
       var showNormSearchDialog = function() {
@@ -2976,7 +3014,7 @@ var AnnotatorUI = (function($, window, undefined) {
           on('suggestedSpanTypes', receivedSuggestedSpanTypes).
           on('normGetNameResult', setSpanNormText).
           on('normSearchResult', setSpanNormSearchResults).
-          on('normEditSearchResult', setSpanEditNormSearchResults).
+          on('normLinkedSearchResult', setSpanLinkedNormSearchResults).
           on('normCreateResult', updateWithCreatedNorm).
           on('localNormList', setSpanLocalNormListResults);
     };
