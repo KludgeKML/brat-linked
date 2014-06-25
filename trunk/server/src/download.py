@@ -51,7 +51,7 @@ def download_rdf(document, collection, extension):
     #data = convert_to_rdf(fpath, document)
     raise NoPrintJSONError(hdrs, data)   
  
- def cache_rdf(document, collection, extension):
+def cache_rdf(document, collection, extension):
     directory = collection
     real_dir = real_directory(directory)
     fname = '%s.%s' % (document, 'ann')
