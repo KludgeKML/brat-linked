@@ -1066,7 +1066,7 @@ var AnnotatorUI = (function($, window, undefined) {
                         action: 'normSearch',
                         database: db,
                         name: val,
-                        collection: coll}, 'normSearchResult']);
+                        collection: coll}, 'normLinkedSearchResult']);
       });
       
       var normEditDialog = $('#norm_edit_dialog');
@@ -1524,7 +1524,7 @@ var AnnotatorUI = (function($, window, undefined) {
                         action: 'normSearch',
                         database: db,
                         name: val,
-                        collection: coll}, 'normSearchResult']);
+                        collection: coll}, 'normLinkedSearchResult']);
       }
       
       
