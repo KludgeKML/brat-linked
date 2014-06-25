@@ -1055,21 +1055,6 @@ var AnnotatorUI = (function($, window, undefined) {
       var clearSpanNorm = function(evt) {
         clearNormalizationUI();
       }
-
-
-      var performLinkedNormSearch = function() {
-        var val = $('#norm_edit_search_query').val();
-        var db = $('#span_norm_db').val();
-        dispatcher.post('ajax', [ {
-                        action: 'normSearch',
-                        database: db,
-                        name: val,
-                        collection: coll}, 'normSearchResult']);
-      }
-      $('#norm_search_button').click(performLinkedNormSearch);
-      $('#norm_search_query').focus(function() {
-        setLinkedNormSearchSubmit(false);
-      });
       
       $('#norm_edit_search_button').button();
       $('#norm_edit_search_button').click(function() {
@@ -1525,6 +1510,21 @@ var AnnotatorUI = (function($, window, undefined) {
       $('#norm_search_button').click(performNormSearch);
       $('#norm_search_query').focus(function() {
         setNormSearchSubmit(false);
+      });
+
+      var performLinkedNormSearch = function() {
+        var val = $('#norm_edit_search_query').val();
+        var db = $('#span_norm_db').val();
+        dispatcher.post('ajax', [ {
+                        action: 'normSearch',
+                        database: db,
+                        name: val,
+                        collection: coll}, 'normSearchResult']);
+      }
+      
+      
+      $('#norm_edit_search_query').focus(function() {
+        setLinkedNormSearchSubmit(false);
       });
       
       var showNormSearchDialog = function() {
