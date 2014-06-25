@@ -1208,6 +1208,11 @@ var AnnotatorUI = (function($, window, undefined) {
             dispatcher.post('showForm', [spanForm, true]);
           },
       });
+      
+      normSearchDialog.submit(function () {
+        alert("Submitted!");
+      });
+      
       $('#norm_search_query').autocomplete({
         source: function(request, callback) {
           var query = $.ui.autocomplete.escapeRegex(request.term);
