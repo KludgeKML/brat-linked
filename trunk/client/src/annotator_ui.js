@@ -1058,7 +1058,8 @@ var AnnotatorUI = (function($, window, undefined) {
       
       $('#norm_edit_search_button').button();
       
-      $('#norm_edit_search_button').click(function() {
+      $('#norm_edit_search_button').click(function() 
+      {
         var val = $('#norm_edit_search_query').val();
         var db = $('#span_norm_db').val();
         dispatcher.post('ajax', [ {
@@ -1066,9 +1067,10 @@ var AnnotatorUI = (function($, window, undefined) {
                         database: db,
                         name: val,
                         collection: coll}, 'normSearchResult']);
-      }  
+      });
       
       var normEditDialog = $('#norm_edit_dialog');
+      
       initForm(normEditDialog, {
           width: 800,
           width: 600,
