@@ -1402,12 +1402,12 @@ var VisualizerUI = (function($, window, undefined) {
               
             if(!user)
             {
-              $('#triplestore_upload').disable()
+              $('#triplestore_upload').button().disable()
             }
             else
             {
-              $('#triplestore_upload').enable()
-            }            
+              $('#triplestore_upload').button().enable()
+            } 
             
           }
       });
