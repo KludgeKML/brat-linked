@@ -1106,20 +1106,19 @@ var AnnotatorUI = (function($, window, undefined) {
           open: function(evt) {
             keymap = {};
           },
-          buttons: [{
-              id: 'edit_form_delete_norm',
-              text: "Delete",
-              click: deleteNorm
-          }
-          ],    
+          //buttons: [{
+          //    id: 'edit_form_delete_norm',
+          //    text: "Delete",
+          //    click: deleteNorm
+          //}
+          //],    
           close: function(evt) {
             // assume that we always want to return to the span dialog
             // on normalization dialog close
             dispatcher.post('showForm', [spanForm, true]);
           },
       }
-      
-      $('#edit_form_delete_norm').button().hide()
+    
       
       );  
       
