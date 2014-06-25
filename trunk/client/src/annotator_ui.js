@@ -1057,6 +1057,7 @@ var AnnotatorUI = (function($, window, undefined) {
       }
       
       $('#norm_edit_search_button').button();
+      
       $('#norm_edit_search_button').click(function() {
         var val = $('#norm_edit_search_query').val();
         var db = $('#span_norm_db').val();
@@ -1065,11 +1066,7 @@ var AnnotatorUI = (function($, window, undefined) {
                         database: db,
                         name: val,
                         collection: coll}, 'normSearchResult']);
-      }
-      
-      $('#norm_edit_search_query').focus(function() {
-        setLinkedNormSearchSubmit(false);
-      }););      
+      }  
       
       var normEditDialog = $('#norm_edit_dialog');
       initForm(normEditDialog, {
@@ -1290,7 +1287,11 @@ var AnnotatorUI = (function($, window, undefined) {
       var setLinkedNormSearchSubmit = function(enable) {
         $('#norm_edit_search_dialog-ok').button(enable ? 'enable' : 'disable');
         normLinkedSearchSubmittable = enable;
-      };      
+      };  
+      
+      $('#norm_edit_search_query').focus(function() {
+        setLinkedNormSearchSubmit(false);
+      }););        
       
       normSearchDialog.submit(normSearchSubmit);
       
