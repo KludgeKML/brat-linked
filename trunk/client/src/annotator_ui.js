@@ -1123,7 +1123,7 @@ var AnnotatorUI = (function($, window, undefined) {
       );  
       
       normEditDialog.submit(function () {
-        $('#span_linked_norm_id').val('#norm_edit_global_id');
+        $('#span_linked_norm_id').val($('#norm_edit_global_id').val);
         
         normEditDialog.dialog('close');
       });
