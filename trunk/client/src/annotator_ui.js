@@ -1087,7 +1087,7 @@ var AnnotatorUI = (function($, window, undefined) {
             local_uid: uid,
 			      protocol: '1'
 		      }, 'normDeleteResult']);  
-      });
+      };
       
       
       var updateWithDeletedNorm = function()
