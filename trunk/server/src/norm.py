@@ -104,7 +104,7 @@ def norm_create_local(database, name, collection=None, docID=None):
      
     return responseData
 
-def norm_delete_local(database, local_uid, collection=None)
+def norm_delete_local(database, local_uid, collection=None):
 
     dbpath = _get_db_path(database, collection)
     if dbpath is None:
