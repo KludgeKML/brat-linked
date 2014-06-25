@@ -1402,11 +1402,11 @@ var VisualizerUI = (function($, window, undefined) {
               
             if(!user)
             {
-              $('#triplestore_upload').button().disable()
+              $('#triplestore_upload').hide()
             }
             else
             {
-              $('#triplestore_upload').button().enable()
+              $('#triplestore_upload').show()
             } 
             
           }
