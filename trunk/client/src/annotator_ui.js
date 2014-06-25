@@ -1293,7 +1293,7 @@ var AnnotatorUI = (function($, window, undefined) {
       
       $('#norm_edit_search_query').focus(function() {
         setLinkedNormSearchSubmit(false);
-      }););        
+      });        
       
       normSearchDialog.submit(normSearchSubmit);
       
