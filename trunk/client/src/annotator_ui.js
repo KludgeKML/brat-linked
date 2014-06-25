@@ -1066,8 +1066,8 @@ var AnnotatorUI = (function($, window, undefined) {
                         name: val,
                         collection: coll}, 'normSearchResult']);
       }
-      $('#norm_search_button').click(performLinkedNormSearch);
-      $('#norm_search_query').focus(function() {
+      
+      $('#norm_edit_search_query').focus(function() {
         setLinkedNormSearchSubmit(false);
       }););      
       
@@ -1507,7 +1507,9 @@ var AnnotatorUI = (function($, window, undefined) {
                         name: val,
                         collection: coll}, 'normSearchResult']);
       }
+      
       $('#norm_search_button').click(performNormSearch);
+      
       $('#norm_search_query').focus(function() {
         setNormSearchSubmit(false);
       });
