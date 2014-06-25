@@ -1122,6 +1122,10 @@ var AnnotatorUI = (function($, window, undefined) {
       
       );  
       
+      normEditDialog.submit(function () {
+        alert("Submitted!");
+      });
+      
       
       $('#norm_edit_button').button();
       $('#norm_edit_button').click(function() 
@@ -1209,9 +1213,6 @@ var AnnotatorUI = (function($, window, undefined) {
           },
       });
       
-      normSearchDialog.submit(function () {
-        alert("Submitted!");
-      });
       
       $('#norm_search_query').autocomplete({
         source: function(request, callback) {
