@@ -1068,7 +1068,33 @@ var AnnotatorUI = (function($, window, undefined) {
                         name: val,
                         collection: coll}, 'normLinkedSearchResult']);
       });
+
+
+      var deleteNorm = function() 
+      {
+        if (Configuration.confirmModeOn && !confirm("Are you sure you want to delete this local normalisation entity (and any related links to shared entities)?")) 
+        {
+          return;
+        }
+        
+        var db = $('#span_norm_db').val();
+        var uid = $('#norm_edit_id').val()
+        
+        dispatcher.post('ajax',
+		      [{
+			      action: 'normDelete',
+            database: db,
+            local_uid: uid,
+			      protocol: '1'
+		      }, 'normDeleteResult']);  
+      });
       
+      
+      var updateWithDeletedNorm = function()
+      {
+      }
+      
+            
       var normEditDialog = $('#norm_edit_dialog');
       
       initForm(normEditDialog, {
@@ -1083,7 +1109,7 @@ var AnnotatorUI = (function($, window, undefined) {
           buttons: [{
               id: 'edit_form_delete_norm',
               text: "Delete",
-              click: addFragment
+              click: deleteNorm
           }
           ],    
           close: function(evt) {
@@ -1091,7 +1117,11 @@ var AnnotatorUI = (function($, window, undefined) {
             // on normalization dialog close
             dispatcher.post('showForm', [spanForm, true]);
           },
-      });  
+      }
+      
+      $('#edit_form_delete_norm').button().hide()
+      
+      );  
       
       
       $('#norm_edit_button').button();
@@ -1157,6 +1187,7 @@ var AnnotatorUI = (function($, window, undefined) {
           oldSpanNormIdValue = key;
         }
       }
+      
       // see http://stackoverflow.com/questions/1948332/detect-all-changes-to-a-input-type-text-immediately-using-jquery
       $('#span_norm_id').bind('propertychange keyup input paste', spanNormIdUpdate);
       // nice-looking select for normalization
@@ -3035,6 +3066,7 @@ var AnnotatorUI = (function($, window, undefined) {
           on('normSearchResult', setSpanNormSearchResults).
           on('normLinkedSearchResult', setSpanLinkedNormSearchResults).
           on('normCreateResult', updateWithCreatedNorm).
+          on('normDeleteResult', updateWithDeletedNorm).
           on('localNormList', setSpanLocalNormListResults);
     };
 

@@ -39,17 +39,31 @@ def download_file(document, collection, extension):
 def download_rdf(document, collection, extension):
     directory = collection
     real_dir = real_directory(directory)
+    fname = '%s.%s' % (document, extension)
+    fpath = path_join(real_dir, fname)
+
+    hdrs = [('Content-Type', 'text/plain; charset=utf-8'),
+            ('Content-Disposition',
+                'inline; filename=%s' % fname)]
+    with open_textfile(fpath, 'r') as txt_file:
+       data = txt_file.read().encode('utf-8')
+    
+    #data = convert_to_rdf(fpath, document)
+    raise NoPrintJSONError(hdrs, data)   
+ 
+ def cache_rdf(document, collection, extension):
+    directory = collection
+    real_dir = real_directory(directory)
     fname = '%s.%s' % (document, 'ann')
     fpath = path_join(real_dir, fname)
 
     hdrs = [('Content-Type', 'text/plain; charset=utf-8'),
             ('Content-Disposition',
                 'inline; filename=%s' % fname)]
-    #with open_textfile(fpath, 'r') as txt_file:
-    #   data = txt_file.read().encode('utf-8')
     
     data = convert_to_rdf(fpath, document)
-    raise NoPrintJSONError(hdrs, data)    
+    raise NoPrintJSONError(hdrs, data) 
+           
 
 def find_in_directory_tree(directory, filename):
     # TODO: DRY; partial dup of projectconfig.py:__read_first_in_directory_tree

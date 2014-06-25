@@ -1376,6 +1376,7 @@ var VisualizerUI = (function($, window, undefined) {
         return false;
       };
       dataForm.submit(dataFormSubmit);
+      
       initForm(dataForm, {
           width: 500,
           resizable: false,
@@ -1392,6 +1393,14 @@ var VisualizerUI = (function($, window, undefined) {
               $('#document_visualization').show();
               // the SVG button can only be accessed through the data form,
               // so we'll spare unnecessary saves by only saving here
+            if(!user)
+            {
+              $('#triplestore_upload').disable()
+            }
+            else
+            {
+              $('#triplestore_upload').enable()
+            }
               saveSVG();
             }
           }

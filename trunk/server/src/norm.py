@@ -74,7 +74,7 @@ def _get_db_path(database, collection):
                              collection+', falling back on default.')
             return None
 
-def norm_create_name(database, name, collection=None, docID=None):
+def norm_create_local(database, name, collection=None, docID=None):
     responseData = { 'name': '', 'entityID': '' }
     userID = get_session()['user']
     entityID = 'http://contextus.net/resource/RRH/' + userID
@@ -104,12 +104,58 @@ def norm_create_name(database, name, collection=None, docID=None):
      
     return responseData
 
+def norm_delete_local(database, local_uid, collection=None)
+
+    dbpath = _get_db_path(database, collection)
+    if dbpath is None:
+        # full path not configured, fall back on name as default
+        dbpath = database
+
+    try:
+        response = normdb.delete_local_norm_value(dbpath, local_uid)
+    except normdb.dbNotFoundError, e:
+        Messager.warning(str(e))  
+        
+    return response    
+    
+
 def camelCase(tag_str):
     words = re.findall(r'\w+', tag_str)
     camel = ''
     for word in words:
         camel += word.title()
     return camel
+
+
+def norm_create_link(database, local_uid, global_uid, collection=None):
+
+    dbpath = _get_db_path(database, collection)
+    if dbpath is None:
+        # full path not configured, fall back on name as default
+        dbpath = database
+        
+    try:        
+        data = normdb.create_local_norm_link(dbpath, local_uid, global_uid)
+    except normdb.dbNotFoundError, e:
+        Messager.warning(str(e))    
+        
+    return data    
+
+
+def norm_update_link(database, local_uid, global_uid=None, collection=None):
+
+    dbpath = _get_db_path(database, collection)
+    if dbpath is None:
+        # full path not configured, fall back on name as default
+        dbpath = database
+        
+    try:        
+        data = normdb.update_local_norm_link(dbpath, local_uid, global_uid)
+    except normdb.dbNotFoundError, e:
+        Messager.warning(str(e))         
+        
+    return data        
+        
 
 def norm_get_name(database, key, collection=None):
     if NORM_LOOKUP_DEBUG:
