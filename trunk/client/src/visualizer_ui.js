@@ -1385,14 +1385,21 @@ var VisualizerUI = (function($, window, undefined) {
             keymap = {};
             // aspects of the data form relating to the current document should
             // only be shown when a document is selected.
-            if (!doc) {
+            if (!doc) 
+            {
               $('#document_export').hide();
               $('#document_visualization').hide();
-            } else {
+            } 
+            else 
+            {
               $('#document_export').show();
               $('#document_visualization').show();
               // the SVG button can only be accessed through the data form,
               // so we'll spare unnecessary saves by only saving here
+              
+              saveSVG();
+            }
+              
             if(!user)
             {
               $('#triplestore_upload').disable()
@@ -1400,9 +1407,8 @@ var VisualizerUI = (function($, window, undefined) {
             else
             {
               $('#triplestore_upload').enable()
-            }
-              saveSVG();
-            }
+            }            
+            
           }
       });
       $('#data_button').click(function() {
