@@ -1130,7 +1130,8 @@ var AnnotatorUI = (function($, window, undefined) {
       
       
       $('#norm_edit_button').button();
-      $('#norm_edit_button').click(function() 
+      
+      $('#span_linked_norm_id').click(function() 
       {
         dispatcher.post('hideForm');
         $('#norm_edit_name').val($('#span_norm_txt').val());
