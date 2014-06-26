@@ -1135,7 +1135,7 @@ var AnnotatorUI = (function($, window, undefined) {
       $('#clear_link_button').click(
         // removes the link between the two entities
 
-        var local_uid = $('#span_norm_id').val();
+        var local_uid = $('#span_norm_id').val()
 
         dispatcher.post('ajax', 
         [{
