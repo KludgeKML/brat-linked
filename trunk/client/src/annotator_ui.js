@@ -1092,6 +1092,7 @@ var AnnotatorUI = (function($, window, undefined) {
       
       var updateWithDeletedNorm = function()
       {
+        //Needs to be added
       }
       
             
@@ -1129,7 +1130,28 @@ var AnnotatorUI = (function($, window, undefined) {
       });
       
       
-      $('#norm_edit_button').button();
+      $('#clear_link_button').button();
+      
+      $('#clear_link_button').click(
+        // removes the link between the two entities
+
+        local_uid = $('#span_norm_id').val()
+
+        dispatcher.post('ajax', 
+        [{
+            action: 'normLinkUpdate',
+            database: db,
+            local_uid: local_uid,
+            'normClearLinkResult'
+        ])                
+      );
+      
+      var updateWithClearedLinkedNorm = function()
+      {
+        $('#span_linked_norm_id').val('');
+        $('#span_linked_norm_id').attr('placeholder', 'Click here to link to shared entity');
+        
+      }
       
       $('#span_linked_norm_id').click(function() 
       {
@@ -3075,6 +3097,7 @@ var AnnotatorUI = (function($, window, undefined) {
           on('normLinkedSearchResult', setSpanLinkedNormSearchResults).
           on('normCreateResult', updateWithCreatedNorm).
           on('normDeleteResult', updateWithDeletedNorm).
+          on('normClearLinkResult', updateWithClearedLinkedNorm).
           on('localNormList', setSpanLocalNormListResults);
     };
 
