@@ -1126,6 +1126,11 @@ var AnnotatorUI = (function($, window, undefined) {
       normEditDialog.submit(function () {
         $('#span_linked_norm_id').val($('#norm_edit_global_id').val());
         
+        if($('#span_linked_norm_id').val() != '')
+        {
+          $('#clear_link_button').button('enable');
+        }
+        
         normEditDialog.dialog('close');
       });
       
@@ -1403,6 +1408,8 @@ var AnnotatorUI = (function($, window, undefined) {
         //$('#norm_create_button').button('enable');
         //$('#norm_create_name').removeAttr('readonly', false);
         //$('#norm_create_name').attr('placeholder', 'Enter entity name');
+        
+        $('#span_linked_norm_id').attr('placeholder', 'Click here to link to shared entity');
 
         if (response.items.length == 0) {
           // no results
