@@ -1157,15 +1157,18 @@ var AnnotatorUI = (function($, window, undefined) {
       
       $('#span_linked_norm_id').click(function() 
       {
-        dispatcher.post('hideForm');
-        $('#norm_edit_name').val($('#span_norm_txt').val());
-        $('#norm_edit_id').val($('#span_norm_id').val());
-        $('#norm_edit_search_query').val($('#span_norm_txt').val());
-        dispatcher.post('showForm', [normEditDialog]);
-        $('#norm_edit_search_query').focus().select();
+        if($('#norm_edit_id').val() != '')
+        {        
+          dispatcher.post('hideForm');
+          $('#norm_edit_name').val($('#span_norm_txt').val());
+          $('#norm_edit_id').val($('#span_norm_id').val());
+          $('#norm_edit_search_query').val($('#span_norm_txt').val());
+          dispatcher.post('showForm', [normEditDialog]);
+          $('#norm_edit_search_query').focus().select();
+        }
       });
       
-      $('#clear_norm_button').button();
+      $('#clear_norm_button').button('disable');
       $('#clear_norm_button').click(clearSpanNorm);
 
       // invoked on response to ajax request for id lookup
@@ -2513,11 +2516,15 @@ var AnnotatorUI = (function($, window, undefined) {
         var normDb = $normDb.val();
         if (!normId || !normDb || normId.match(/^\s*$/)) {
           $normLink.hide();
-        } else {
+        } 
+        else 
+        {
           var base = normDbUrlBaseByDbName[normDb];
           // assume hidden unless everything goes through
           $normLink.hide();
-          if (!base) {
+          
+          if (!base) 
+          {
             // base URL is now optional, just skip link generation if not set
             ;
           } else if (base.indexOf('%s') == -1) {
@@ -2538,11 +2545,15 @@ var AnnotatorUI = (function($, window, undefined) {
         var $normDb = $('#span_norm_db');
         var normDb = $normDb.val();
         if (!normDb) return; // no normalisation configured
+        
         var link = normDbUrlByDbName[normDb];
-        if (!link || link.match(/^\s*$/)) {
+        
+        if (!link || link.match(/^\s*$/)) 
+        {
           dispatcher.post('messages', [[['No URL for '+normDb, 'error']]]);
           $dbLink.hide();
-        } else {
+        } else 
+        {
           // TODO: protect against weirdness in DB link
           $dbLink.attr('href', link);
           $dbLink.show();
@@ -2554,10 +2565,17 @@ var AnnotatorUI = (function($, window, undefined) {
       var clearNormalizationUI = function() {
         var $normId = $('#span_norm_id');
         var $normText = $('#span_norm_txt');
+        var $normLink = $('#span_linked_norm_id');
+        
         $normId.val('');
         oldSpanNormIdValue = '';
         $normId.removeClass('valid_value').removeClass('invalid_value');
+        
         $normText.val('');
+        
+        $normLink.removeClass('valid_value').removeClass('invalid_value');
+        $normLink.val('');
+        
         updateNormalizationRefLink();
       }
 
@@ -2570,9 +2588,11 @@ var AnnotatorUI = (function($, window, undefined) {
         var normDb = $('#span_norm_db').val();
         var normId = $('#span_norm_id').val();
         var normText = $('#span_norm_txt').val();
+        var normLink = $('#span_linked_norm_id').val();
+        
         // empty ID -> no normalization
         if (!normId.match(/^\s*$/)) {
-          normalizations.push([normDb, normId, normText]);
+          normalizations.push([normDb, normId, normText, normLink]);
         }
         return normalizations;
       }
