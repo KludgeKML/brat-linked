@@ -1168,7 +1168,7 @@ var AnnotatorUI = (function($, window, undefined) {
         }
       });
       
-      $('#clear_norm_button').button('disable');
+      $('#clear_norm_button').button();
       $('#clear_norm_button').click(clearSpanNorm);
 
       // invoked on response to ajax request for id lookup
@@ -2792,7 +2792,7 @@ var AnnotatorUI = (function($, window, undefined) {
       dispatcher.post('initForm', [spanForm, {
           alsoResize: '#entity_and_event_wrapper',
           width: 760,
-          
+          $('#clear_link_button').button('disable'),
           buttons: [{
               id: 'span_form_add_fragment',
               text: "Add Frag.",
