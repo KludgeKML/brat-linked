@@ -116,8 +116,9 @@ def norm_delete_local(database, local_uid, collection=None):
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))  
         
-    return response    
+    responseData = { 'local' : local_uid, 'response' : data }   
     
+    return responseData
 
 def camelCase(tag_str):
     words = re.findall(r'\w+', tag_str)
@@ -139,7 +140,9 @@ def norm_create_link(database, local_uid, global_uid, collection=None):
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))    
         
-    return data    
+    responseData = { 'local' : local_uid, 'global' : global_uid, 'response' : data }   
+    
+    return responseData    
 
 
 def norm_update_link(database, local_uid, global_uid=None, collection=None):
@@ -154,7 +157,9 @@ def norm_update_link(database, local_uid, global_uid=None, collection=None):
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))         
         
-    return data        
+    responseData = { 'local' : local_uid, 'global' : global_uid, 'response' : data }   
+    
+    return responseData       
         
 
 def norm_get_name(database, key, collection=None):
