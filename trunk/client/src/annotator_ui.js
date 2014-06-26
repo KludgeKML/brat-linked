@@ -1142,7 +1142,7 @@ var AnnotatorUI = (function($, window, undefined) {
             action: 'normLinkUpdate',
             database: db,
             local_uid: local_uid,
-            'normClearLinkResult'
+          }, 'normClearLinkResult'
         ])                
       );
       
