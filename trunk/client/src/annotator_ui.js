@@ -1078,7 +1078,7 @@ var AnnotatorUI = (function($, window, undefined) {
         }
         
         var db = $('#span_norm_db').val();
-        var uid = $('#norm_edit_id').val()
+        var uid = $('#norm_edit_id').val();
         
         dispatcher.post('ajax',
 		      [{
@@ -1135,7 +1135,7 @@ var AnnotatorUI = (function($, window, undefined) {
       $('#clear_link_button').click(
         // removes the link between the two entities
 
-        local_uid = $('#span_norm_id').val();
+        var local_uid = $('#span_norm_id').val();
 
         dispatcher.post('ajax', 
         [{
