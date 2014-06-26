@@ -1137,6 +1137,7 @@ var AnnotatorUI = (function($, window, undefined) {
         // removes the link between the two entities
 
         var local_uid = $('#span_norm_id').val()
+        var db = $('#span_norm_db').val();
 
         dispatcher.post('ajax', 
         [{
@@ -2664,6 +2665,7 @@ var AnnotatorUI = (function($, window, undefined) {
 
       // TODO: why are these globals defined here instead of at the top?
       var spanForm = $('#span_form');
+      
       var rapidSpanForm = $('#rapid_span_form');
     
       var deleteSpan = function() {
@@ -2770,6 +2772,7 @@ var AnnotatorUI = (function($, window, undefined) {
       dispatcher.post('initForm', [spanForm, {
           alsoResize: '#entity_and_event_wrapper',
           width: 760,
+          
           buttons: [{
               id: 'span_form_add_fragment',
               text: "Add Frag.",
