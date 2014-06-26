@@ -1132,7 +1132,8 @@ var AnnotatorUI = (function($, window, undefined) {
       
       $('#clear_link_button').button();
       
-      $('#clear_link_button').click(
+      $('#clear_link_button').click(function() 
+      {
         // removes the link between the two entities
 
         var local_uid = $('#span_norm_id').val()
@@ -1144,7 +1145,7 @@ var AnnotatorUI = (function($, window, undefined) {
             local_uid: local_uid,
           }, 'normClearLinkResult'
         ])                
-      );
+      });
       
       var updateWithClearedLinkedNorm = function()
       {
