@@ -1160,6 +1160,30 @@ var AnnotatorUI = (function($, window, undefined) {
         
       }
       
+      var autofillLinkedNorm = function(response)
+      {
+        if(response.data != [])
+        {
+          $('#span_linked_norm_id').val(response.data[0])
+        }
+        else
+          updateWithClearedLinkedNorm
+      }
+      
+      var getLinkedNorm = function()
+      {
+        local_uid = $('#span_norm_id').val()
+      
+        dispatcher.post('ajax', 
+        [{
+            action: 'getLinkedNorm',
+            database: db,
+            key: local_uid,
+          }, 'autofillLinkedNorm'
+        ]) 
+                
+      }
+      
       $('#span_linked_norm_id').click(function() 
       {
         if($('#norm_edit_id').val() != '')

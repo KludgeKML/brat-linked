@@ -160,6 +160,27 @@ def norm_update_link(database, local_uid, global_uid=None, collection=None):
     responseData = { 'local' : local_uid, 'global' : global_uid, 'response' : data }   
     
     return responseData       
+ 
+def norm_get_linked(database, key, collection=None):
+
+    dbpath = _get_db_path(database, collection)
+    if dbpath is None:
+        # full path not configured, fall back on name as default
+        dbpath = database
+        
+
+    try: 
+        if(get_norm_type_by_id(dbpath, key) == 'local'):
+            data = get_linked_global_entity(dbpath, key)
+        else:
+            data = get_linked_local_entity(dbpath, key)
+    except normdb.dbNotFoundError, e:
+        Messager.warning(str(e))         
+        
+    response = { 'key' : key, 'response' : data }   
+    
+    return response     
+        
         
 
 def norm_get_name(database, key, collection=None):
