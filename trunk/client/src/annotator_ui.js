@@ -1157,6 +1157,7 @@ var AnnotatorUI = (function($, window, undefined) {
       {
         $('#span_linked_norm_id').val('');
         $('#span_linked_norm_id').attr('placeholder', 'Click here to link to shared entity');
+        $('#clear_link_button').button('disable');
         
       }
       
@@ -1164,10 +1165,11 @@ var AnnotatorUI = (function($, window, undefined) {
       {
         if(response.data != [])
         {
-          $('#span_linked_norm_id').val(response.data[0])
+          $('#span_linked_norm_id').val(response.data[0]);
+          $('#clear_link_button').button('enable');
         }
         else
-          updateWithClearedLinkedNorm
+          updateWithClearedLinkedNorm;
       }
       
       var getLinkedNorm = function()
@@ -1327,7 +1329,8 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#span_norm_id').val(selectedId);
         // don't forget to update this reference value
         oldSpanNormIdValue = selectedId; 
-        $('#span_linked_norm_id').val(selectedTxt);
+        $('#span_norm_txt').val(selectedTxt);
+        $('#span_linked_norm_id').val(updateNormalizationRefLink);
         updateNormalizationRefLink();
         // update history
         var nextLastNormSearches = [
