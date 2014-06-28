@@ -1268,6 +1268,23 @@ var AnnotatorUI = (function($, window, undefined) {
         }
       }
       
+       
+      //$('#norm_create_name').keyup(function(evt) {
+      
+      var setCreateButton = function(evt)
+      {
+      
+        if($('#norm_create_name').val() == '')
+        {
+          $('#norm_create_button').button('disable')
+        }
+        else
+        {
+          $('#norm_create_button').button('enable')
+        }
+      
+      };
+      
       // see http://stackoverflow.com/questions/1948332/detect-all-changes-to-a-input-type-text-immediately-using-jquery
       
       $('#norm_create_name').bind('propertychange keyup input paste', setCreateButton);      
@@ -1722,22 +1739,7 @@ var AnnotatorUI = (function($, window, undefined) {
 		        
 		    }
       });
- 
-      //$('#norm_create_name').keyup(function(evt) {
-      
-      var setCreateButton = function(evt)
-      {
-      
-        if($('#norm_create_name').val() == '')
-        {
-          $('#norm_create_button').button('disable')
-        }
-        else
-        {
-          $('#norm_create_button').button('enable')
-        }
-      
-      };
+
            
       var arcFormSubmitRadio = function(evt) {
         // TODO: check for confirm_mode?
