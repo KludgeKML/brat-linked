@@ -36,7 +36,8 @@ def upload_annotation(document, collection):
 
     if 'TRIPLESTORE_RESTFUL_ENDPOINT' not in environ:
         Messager.error('No Triplestore endpoint set! ' +
-            '(Must be set in Apache with SetEnv TRIPLESTORE_RESTFUL_ENDPOINT <url>)')
+            '(Must be set in Apache with SetEnv ' +
+            'TRIPLESTORE_RESTFUL_ENDPOINT <url>)')
         return
 
     endpoint = environ['TRIPLESTORE_RESTFUL_ENDPOINT'] + \
@@ -50,9 +51,7 @@ def upload_annotation(document, collection):
 
     response = requests.put(endpoint, headers=headers, data=rdf_data)
 
-    Messager.info(rdf_data)
-
-    if response.status_code == 200:
+    if response.status_code == 201 or response.status_code == 200:
         Messager.info('Uploaded data to triplestore')
     else:
         Messager.error('Failed to upload to triplestore (Response ' +
