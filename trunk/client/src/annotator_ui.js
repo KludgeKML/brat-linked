@@ -849,6 +849,7 @@ var AnnotatorUI = (function($, window, undefined) {
               $normText.val(refText);
               // TODO: check if ID is valid
               $normId.addClass('valid_value')
+              getLinkedNorm();
               normFilled = true;
             } else {
               // can't set the DB selector; assume DB is not configured,
