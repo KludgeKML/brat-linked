@@ -2,7 +2,7 @@
 Uploads annotation RDF files to a triplestore.
 
 Author:     Keith M Lawrence    <keith@kludge.co.uk>
-Version:    2014-05-23
+Version:    2014-06-28
 '''
 
 from os.path import join as path_join
@@ -35,23 +35,28 @@ def upload_annotation(document, collection):
     # Get target sparql endpoint from the environment
 
     if 'TRIPLESTORE_RESTFUL_ENDPOINT' not in environ:
-        Messager.error('No Triplestore endpoint set! (Must be set in Apache with SetEnv TRIPLESTORE_RESTFUL_ENDPOINT <url>)')
+        Messager.error('No Triplestore endpoint set! ' +
+            '(Must be set in Apache with SetEnv TRIPLESTORE_RESTFUL_ENDPOINT <url>)')
         return
 
-    endpoint = environ['TRIPLESTORE_RESTFUL_ENDPOINT'] + 'http://contextus.net/user/' + user + '/' + document
+    endpoint = environ['TRIPLESTORE_RESTFUL_ENDPOINT'] + \
+        'http://contextus.net/user/' + user + '/' + document
 
-    Messager.info('Triplestore RESTFUL Endpoint for this graph: [' + endpoint + ']')
+    Messager.info('Triplestore RESTFUL Endpoint for this graph: [' +
+        endpoint + ']')
 
     rdf_data = convert_to_rdf(fpath, document)
+    headers = {'content-type' : 'application/x-turtle'}
 
-    response = requests.put(endpoint, data=rdf_data)
+    response = requests.put(endpoint, headers=headers, data=rdf_data)
 
     Messager.info(rdf_data)
 
     if response.status_code == 200:
         Messager.info('Uploaded data to triplestore')
     else:
-        Messager.error('Failed to upload to triplestore (Response ' + str(response.status_code) + ' ' + response.reason + ')')
+        Messager.error('Failed to upload to triplestore (Response ' +
+            str(response.status_code) + ' ' + response.reason + ')')
 
     return {}
 
