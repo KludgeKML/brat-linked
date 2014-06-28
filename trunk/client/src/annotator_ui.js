@@ -1414,6 +1414,7 @@ var AnnotatorUI = (function($, window, undefined) {
       var chooseNormId = function(evt) {
         var $element = $(evt.target).closest('tr');
         $('#norm_search_result_select tr').removeClass('selected');
+        $('#norm_local_result_select tr').removeClass('selected');
         $element.addClass('selected');
         $('#norm_search_query').val($element.attr('data-txt'));
         $('#norm_search_id').val($element.attr('data-id'));
