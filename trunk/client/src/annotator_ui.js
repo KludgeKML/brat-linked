@@ -1686,7 +1686,7 @@ var AnnotatorUI = (function($, window, undefined) {
         setNormSearchSubmit(false);
         $('#norm_create_button').button('disable');
         //$('#norm_create_name').attr('readonly', 'readonly');
-        $('#norm_create_name').attr('placeholder', 'Check results before creating new!');
+        $('#norm_create_name').attr('placeholder', 'Check for existing entities before creating new ones!');
         $('#norm_create_name').val('');
   
         dispatcher.post('showForm', [normSearchDialog]);
