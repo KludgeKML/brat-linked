@@ -1682,15 +1682,20 @@ var AnnotatorUI = (function($, window, undefined) {
       $('#norm_create_button').click(function(evt) {
         var db = $('#span_norm_db').val();
         var entityName = $('#norm_create_name').val()
-		dispatcher.post('ajax',
-		[{
-			action: 'normCreate',
-      database: db,
-			name: entityName,
-      collection: coll,
-      docID: doc,
-			protocol: '1'
-		}, 'normCreateResult']);  
+        
+        if(entityName != '')
+        {
+		      dispatcher.post('ajax',
+		      [{
+			      action: 'normCreate',
+            database: db,
+			      name: entityName,
+            collection: coll,
+            docID: doc,
+			      protocol: '1'
+		        }, 'normCreateResult']);  
+		        
+		    }
       });
  
       
