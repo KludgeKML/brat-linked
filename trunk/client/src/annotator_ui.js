@@ -1421,7 +1421,9 @@ var AnnotatorUI = (function($, window, undefined) {
       var chooseLinkedNormIdAndSubmit = function(evt) {
         chooseLinkedNormId(evt);
         normLinkedSearchSubmit(evt);
-      }      
+      }  
+      
+        
      
       var setSpanNormSearchResults = function(response) {
         if (response.exception) {
@@ -1543,7 +1545,7 @@ var AnnotatorUI = (function($, window, undefined) {
 
         // Whatever happens, once a search is performed, allow the user
         // to create a new entity
-        $('#norm_create_button').button('enable');
+        //$('#norm_create_button').button('enable');
         $('#norm_create_name').removeAttr('readonly', false);
         $('#norm_create_name').attr('placeholder', 'Enter entity name');
 
@@ -1691,6 +1693,7 @@ var AnnotatorUI = (function($, window, undefined) {
 		}, 'normCreateResult']);  
       });
  
+      
            
       var arcFormSubmitRadio = function(evt) {
         // TODO: check for confirm_mode?
