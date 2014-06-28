@@ -2649,7 +2649,7 @@ var AnnotatorUI = (function($, window, undefined) {
         
         // empty ID -> no normalization
         if (!normId.match(/^\s*$/)) {
-          normalizations.push([normDb, normId, normText, normLink]);
+          normalizations.push([normDb, normId, normText]);
         }
         return normalizations;
       }
