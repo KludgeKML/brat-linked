@@ -46,7 +46,7 @@ def upload_annotation(document, collection):
 
     response = requests.put(endpoint, data=parts['data'])
 
-    Message.info(parts['data'])
+    Messager.info(parts['data'])
 
     if response.status_code == 200:
         Messager.info('Uploaded data to triplestore')
