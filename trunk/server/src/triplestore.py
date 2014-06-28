@@ -13,6 +13,7 @@ store_update_param = 'update'
 from os.path import join as path_join
 from session import get_session
 
+import os
 import requests
 
 from document import real_directory
@@ -34,7 +35,11 @@ def upload_annotation(document, collection):
     fpath = path_join(real_dir, fname)
     user = get_session()['user']
 
-    # First remove the entire user graph from the triplestore
+    # Get target sparql endpoint from the environment
+    Messager.info('OS Environment SPARQL endpoint [' + os.environ['SPARQL_STORE_DATA_URL'] + "]" )
+    Messager.info('Apache Environment SPARQL endpoint [' + environ['SPARQL_STORE_DATA_URL'] + "]" )
+
+    # Remove the entire user graph from the triplestore
     
     deleteData = { store_delete_param: str('http://contextus.net/user/' + user + '/' + document) }
     
