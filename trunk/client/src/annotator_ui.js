@@ -1186,6 +1186,7 @@ var AnnotatorUI = (function($, window, undefined) {
       var getLinkedNorm = function()
       {
         local_uid = $('#span_norm_id').val()
+        var db = $('#span_norm_db').val();
         
         if(local_uid != '')
         {
