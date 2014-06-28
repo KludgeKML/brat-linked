@@ -1702,11 +1702,11 @@ var AnnotatorUI = (function($, window, undefined) {
       
         if($('#norm_create_name').val() == '')
         {
-          $('#norm_search_button').button('disable')
+          $('#norm_create_button').button('disable')
         }
         else
         {
-          $('#norm_search_button').button('enable')
+          $('#norm_create_button').button('enable')
         }
       
       });
