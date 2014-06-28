@@ -1175,6 +1175,7 @@ var AnnotatorUI = (function($, window, undefined) {
       var getLinkedNorm = function()
       {
         local_uid = $('#span_norm_id').val()
+        
         if(local_uid != '')
         {
           dispatcher.post('ajax', 
@@ -1183,7 +1184,7 @@ var AnnotatorUI = (function($, window, undefined) {
               database: db,
               key: local_uid,
             }, 'autofillLinkedNorm'
-          ])
+          ]);
         } 
                 
       }
@@ -2847,7 +2848,7 @@ var AnnotatorUI = (function($, window, undefined) {
       dispatcher.post('initForm', [spanForm, {
           alsoResize: '#entity_and_event_wrapper',
           width: 760,
-
+          getLinkedNorm(),
           buttons: [{
               id: 'span_form_add_fragment',
               text: "Add Frag.",
@@ -2874,7 +2875,6 @@ var AnnotatorUI = (function($, window, undefined) {
               click: splitSpan
             }
           ],
-          getLinkedNorm(),
           close: function(evt) {
             keymap = null;
             if (reselectedSpan) {
