@@ -1162,12 +1162,12 @@ var AnnotatorUI = (function($, window, undefined) {
         if($('#span_norm_id').val() != '')
         {
           $('#span_linked_norm_id').attr('placeholder', 'Click here to link to shared entity');
-          $('#span_linked_norm_id').removeAttr('disabled')
+          $('#span_linked_norm_id').removeAttr('readonly', false)
         }
         else
         {
           $('#span_linked_norm_id').attr('placeholder', 'A Normalization Entity Must Be Selected');
-          $('#span_linked_norm_id').attr('disabled', 'disabled');
+          $('#span_linked_norm_id').attr('readonly', 'readonly');
         }
         
       }
