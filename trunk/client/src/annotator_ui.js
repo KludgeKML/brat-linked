@@ -2885,7 +2885,6 @@ var AnnotatorUI = (function($, window, undefined) {
               svgElement.removeClass('reselect');
             }
           }
-          }
         }]);
         
       // set button tooltips (@amadanmath: can this be done in init?)
