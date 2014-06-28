@@ -42,11 +42,11 @@ def upload_annotation(document, collection):
 
     Messager.info('Triplestore RESTFUL Endpoint for this graph: [' + endpoint + ']')
 
-    parts = get_rdf_parts(fpath, document)
+    rdfData = convert_to_rdf(fpath, document)
 
-    response = requests.put(endpoint, data=("\n".join(parts['prefixes']) + "\n\n" + parts['data']))
+    response = requests.put(endpoint, data=rdfData)
 
-    Messager.info(parts['data'])
+    Messager.info(rdfData)
 
     if response.status_code == 200:
         Messager.info('Uploaded data to triplestore')
