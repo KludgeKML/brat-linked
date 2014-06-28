@@ -3194,7 +3194,7 @@ var AnnotatorUI = (function($, window, undefined) {
           on('normCreateResult', updateWithCreatedNorm).
           on('normDeleteResult', updateWithDeletedNorm).
           on('normClearLinkResult', updateWithClearedLinkedNorm).
-          on('autofillLinkedNorm'), autofillLinkedNorm).
+          on('autofillLinkedNorm', autofillLinkedNorm).
           on('localNormList', setSpanLocalNormListResults);
     };
 
