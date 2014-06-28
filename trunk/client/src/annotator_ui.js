@@ -2872,6 +2872,7 @@ var AnnotatorUI = (function($, window, undefined) {
               click: splitSpan
             }
           ],
+          getLinkedNorm(),
           close: function(evt) {
             keymap = null;
             if (reselectedSpan) {
