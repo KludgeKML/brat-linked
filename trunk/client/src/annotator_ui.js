@@ -1180,7 +1180,7 @@ var AnnotatorUI = (function($, window, undefined) {
           $('#clear_link_button').button('enable');
         }
         else
-          updateWithClearedLinkedNorm;
+          updateWithClearedLinkedNorm();
       }
       
       var getLinkedNorm = function()
