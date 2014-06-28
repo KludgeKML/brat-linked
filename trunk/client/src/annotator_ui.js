@@ -1547,7 +1547,7 @@ var AnnotatorUI = (function($, window, undefined) {
         // to create a new entity
         //$('#norm_create_button').button('enable');
         $('#norm_create_name').removeAttr('readonly', false);
-        $('#norm_create_name').attr('placeholder', 'Enter entity name');
+        //$('#norm_create_name').attr('placeholder', 'Enter entity name');
 
         if (response.value.length == 0) {
           // no results
