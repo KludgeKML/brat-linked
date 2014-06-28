@@ -1698,7 +1698,18 @@ var AnnotatorUI = (function($, window, undefined) {
 		    }
       });
  
+      $('#norm_create_name').onChange(function(evt) {
       
+        if($('#norm_create_name').val() == '')
+        {
+          $('#norm_search_button').button('disable')
+        }
+        else
+        {
+          $('#norm_search_button').button('enable')
+        }
+      
+      });
            
       var arcFormSubmitRadio = function(evt) {
         // TODO: check for confirm_mode?
