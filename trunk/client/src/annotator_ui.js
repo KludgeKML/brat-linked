@@ -1737,7 +1737,7 @@ var AnnotatorUI = (function($, window, undefined) {
           $('#norm_create_button').button('enable')
         }
       
-      });
+      };
            
       var arcFormSubmitRadio = function(evt) {
         // TODO: check for confirm_mode?
