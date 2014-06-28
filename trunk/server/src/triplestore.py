@@ -40,11 +40,13 @@ def upload_annotation(document, collection):
 
     endpoint = environ['TRIPLESTORE_RESTFUL_ENDPOINT'] + 'http://contextus.net/user/' + user + '/' + document
 
-    Messager.error('Triplestore RESTFUL Endpoint for this graph: [' + endpoint + ']')
+    Messager.info('Triplestore RESTFUL Endpoint for this graph: [' + endpoint + ']')
 
     parts = get_rdf_parts(fpath, document)
 
     response = requests.put(endpoint, data=parts['data'])
+
+    Message.info(parts['data'])
 
     if response.status_code == 200:
         Messager.info('Uploaded data to triplestore')
