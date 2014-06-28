@@ -520,6 +520,9 @@ div.scroll_wrapper_upper div.scroller {
   font-family: 'PT Sans Caption', sans-serif !important;
 }
 
+.ui-widget-header.not-logged-in { 
+  background: #5c9ccc url(img/ui-bg_gloss-red.jpg) 50% 50% repeat-x; 
+}
 
 @font-face {
   font-family: 'Astloch';
