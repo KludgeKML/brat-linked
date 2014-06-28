@@ -1698,7 +1698,7 @@ var AnnotatorUI = (function($, window, undefined) {
 		    }
       });
  
-      $('#norm_create_name').onchange(function(evt) {
+      $('#norm_create_name').keyup(function(evt) {
       
         if($('#norm_create_name').val() == '')
         {
