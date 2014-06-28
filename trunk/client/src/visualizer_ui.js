@@ -2067,6 +2067,8 @@ var VisualizerUI = (function($, window, undefined) {
               $('.login').show();
             } else {
               user = null;
+              dn = $("#document_name");
+              dni = dn.find("input");              
               $('#document_name input').addclass('not-logged-in');
               auth_button.val('Login');
               dispatcher.post('user', [null]);
