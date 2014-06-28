@@ -520,11 +520,11 @@ div.scroll_wrapper_upper div.scroller {
   font-family: 'PT Sans Caption', sans-serif !important;
 }
 
-#main_header.not-logged-in.ui-widget-header { 
+#mainHeader.not-logged-in.ui-widget-header { 
   background: #5c9ccc url(img/ui-bg_gloss-red.jpg) 50% 50% repeat-x; 
   border: 1px solid red;
 }
-#main_header.not-logged-in .ui-widget-header { 
+#mainHeader.not-logged-in .ui-widget-header { 
   background: #5c9ccc url(img/ui-bg_gloss-red.jpg) 50% 50% repeat-x; 
   border: 1px solid red;
 }
