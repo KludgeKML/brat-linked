@@ -1130,6 +1130,7 @@ var AnnotatorUI = (function($, window, undefined) {
         if($('#span_linked_norm_id').val() != '')
         {
           $('#clear_link_button').button('enable');
+          $('#span_linked_norm_id').attr('readonly', 'readonly');
         }
         
         normEditDialog.dialog('close');
@@ -1269,8 +1270,7 @@ var AnnotatorUI = (function($, window, undefined) {
           }
           oldSpanNormIdValue = key;
         }
-      }
-      
+      }      
        
       //$('#norm_create_name').keyup(function(evt) {
       
@@ -1290,7 +1290,7 @@ var AnnotatorUI = (function($, window, undefined) {
       
       // see http://stackoverflow.com/questions/1948332/detect-all-changes-to-a-input-type-text-immediately-using-jquery
       
-      $('#norm_create_name').bind('propertychange keyup input paste', setCreateButton);      
+      $('#norm_create_name').bind('propertychange keyup input paste', setCreateButton);    
       $('#span_norm_id').bind('propertychange keyup input paste', spanNormIdUpdate);
       // nice-looking select for normalization
       $('#span_norm_db').addClass('ui-widget ui-state-default ui-button-text');
