@@ -8,6 +8,7 @@ Version:    2014-05-23
 from os.path import join as path_join
 from session import get_session
 
+import os
 import requests
 
 from document import real_directory
