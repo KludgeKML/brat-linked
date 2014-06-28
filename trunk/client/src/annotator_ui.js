@@ -1175,14 +1175,16 @@ var AnnotatorUI = (function($, window, undefined) {
       var getLinkedNorm = function()
       {
         local_uid = $('#span_norm_id').val()
-      
-        dispatcher.post('ajax', 
-        [{
-            action: 'getLinkedNorm',
-            database: db,
-            key: local_uid,
-          }, 'autofillLinkedNorm'
-        ]) 
+        if(local_uid != '')
+        {
+          dispatcher.post('ajax', 
+          [{
+              action: 'getLinkedNorm',
+              database: db,
+              key: local_uid,
+            }, 'autofillLinkedNorm'
+          ])
+        } 
                 
       }
       
