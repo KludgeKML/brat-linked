@@ -2645,7 +2645,7 @@ var AnnotatorUI = (function($, window, undefined) {
         var normDb = $('#span_norm_db').val();
         var normId = $('#span_norm_id').val();
         var normText = $('#span_norm_txt').val();
-        var normLink = $('#span_linked_norm_id').val();
+        //var normLink = $('#span_linked_norm_id').val();
         
         // empty ID -> no normalization
         if (!normId.match(/^\s*$/)) {
