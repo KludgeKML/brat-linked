@@ -95,7 +95,7 @@ def get_rdf_parts(fpath, document):
                         parts['data'] += "<" + normalised + "> ome:shadow-of <" + uid + ">;\n"
                         entity_data.append({uid:data_by_id(dbname, uid)})
                 
-                parts['data'] += "\trdfs:label '" + chunks[0] + "' .\n\n"
+                parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
                 
                 
                 if len(entity_data) > 0:
