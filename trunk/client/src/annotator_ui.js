@@ -1725,7 +1725,7 @@ var AnnotatorUI = (function($, window, undefined) {
  
       //$('#norm_create_name').keyup(function(evt) {
       
-      var setCreateButton = function()
+      var setCreateButton = function(evt)
       {
       
         if($('#norm_create_name').val() == '')
