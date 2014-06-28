@@ -1156,8 +1156,18 @@ var AnnotatorUI = (function($, window, undefined) {
       var updateWithClearedLinkedNorm = function()
       {
         $('#span_linked_norm_id').val('');
-        $('#span_linked_norm_id').attr('placeholder', 'Click here to link to shared entity');
         $('#clear_link_button').button('disable');
+        
+        if($('#span_norm_id').val() != '')
+        {
+          $('#span_linked_norm_id').attr('placeholder', 'Click here to link to shared entity');
+          $('#span_linked_norm_id').input('enabled');
+        }
+        else
+        {
+          $('#span_linked_norm_id').attr('placeholder', 'A Normalization Entity Must Be Selected');
+          $('#span_linked_norm_id').input('disabled');
+        }
         
       }
       
