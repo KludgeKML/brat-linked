@@ -129,7 +129,7 @@ def get_rdf_parts(fpath, document):
                 if lookup(chunks[1]) != False:
                     parts['data'] += lookup(chunks[1])
                 parts['data'] += " ;\n"
-                parts['data'] += '\tcnt:chars "' + " ".join(chunks[4:]) + '"" .\n\n'
+                parts['data'] += '\tcnt:chars "' + " ".join(chunks[4:]) + '" .\n\n'
             
             elif line[0] == 'A':
                 parts['data'] += "<" + namespace + chunks[2] + ">\n\ta " + lookup(chunks[3]) + ";\n"    
