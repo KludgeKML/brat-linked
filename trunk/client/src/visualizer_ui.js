@@ -1997,7 +1997,7 @@ var VisualizerUI = (function($, window, undefined) {
                 $('#auth_user').select().focus();
               } else {
                 user = _user;
-                 $('#document_name input').removeClass('not-logged-in');
+                 $('#mainHeader').removeClass('not-logged-in');
                 $('#auth_button').val('Logout ' + user);
                 $('#auth_user').val('');
                 $('#auth_pass').val('');
@@ -2013,7 +2013,7 @@ var VisualizerUI = (function($, window, undefined) {
             action: 'logout'
           }, function(response) {
             user = null;
-            $('#document_name input').addClass('not-logged-in');
+            $('#mainHeader').addClass('not-logged-in');
             $('#auth_button').val('Login');
             $('.login').hide();
             dispatcher.post('user', [null]);
@@ -2058,18 +2058,14 @@ var VisualizerUI = (function($, window, undefined) {
             var auth_button = $('#auth_button');
             if (response.user) {
               user = response.user;
-              dn = $("#document_name");
-              dni = dn.find("input");
-              $('#document_name input').removeClass('not-logged-in');
+              $('#mainHeader').removeClass('not-logged-in');
               dispatcher.post('messages', [[['Welcome back, user "' + user + '"', 'comment']]]);
               auth_button.val('Logout ' + user);
               dispatcher.post('user', [user]);
               $('.login').show();
             } else {
               user = null;
-              dn = $("#document_name");
-              dni = dn.find("input");              
-              $('#document_name input').addClass('not-logged-in');
+              $('#mainHeader').addClass('not-logged-in');
               auth_button.val('Login');
               dispatcher.post('user', [null]);
               $('.login').hide();
