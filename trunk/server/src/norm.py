@@ -179,7 +179,7 @@ def norm_get_linked(database, key, collection=None):
         
     response = { 'key' : key, 'response' : data }   
     
-    Messager.warning(response["response"])
+    //Messager.warning(response["response"])
     
     return response     
         

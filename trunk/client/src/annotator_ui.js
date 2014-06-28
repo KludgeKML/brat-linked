@@ -1174,7 +1174,7 @@ var AnnotatorUI = (function($, window, undefined) {
       
       var autofillLinkedNorm = function(response)
       {
-        if(response.response != [])
+        if(response.response.length > 0)
         {
           $('#span_linked_norm_id').val(response.response[0]);
           $('#clear_link_button').button('enable');
