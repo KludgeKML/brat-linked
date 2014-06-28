@@ -1225,6 +1225,7 @@ var AnnotatorUI = (function($, window, undefined) {
           updateNormalizationRefLink();
         }
         $('#span_norm_txt').val(response.value);
+        getLinkedNorm();
       }
 
       // on any change to the normalization DB, clear everything and
@@ -2883,13 +2884,10 @@ var AnnotatorUI = (function($, window, undefined) {
               reselectedSpan = null;
               svgElement.removeClass('reselect');
             }
-          },
-          open: function(evt) 
-          {
-            getLinkedNorm();
           }
           }
         }]);
+        
       // set button tooltips (@amadanmath: can this be done in init?)
       $('#span_form_reselect').attr('title', 'Re-select the text span that this annotation marks.');
       $('#span_form_delete').attr('title', 'Delete this annotation.');
