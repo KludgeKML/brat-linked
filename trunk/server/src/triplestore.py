@@ -13,7 +13,7 @@ import requests
 
 from document import real_directory
 from message import Messager
-from rdfIO import get_rdf_parts
+from rdfIO import convert_to_rdf
 
 def upload_annotation(document, collection):
     '''Uploads an annotation into a triplestore.
@@ -42,11 +42,11 @@ def upload_annotation(document, collection):
 
     Messager.info('Triplestore RESTFUL Endpoint for this graph: [' + endpoint + ']')
 
-    rdfData = convert_to_rdf(fpath, document)
+    rdf_data = convert_to_rdf(fpath, document)
 
-    response = requests.put(endpoint, data=rdfData)
+    response = requests.put(endpoint, data=rdf_data)
 
-    Messager.info(rdfData)
+    Messager.info(rdf_data)
 
     if response.status_code == 200:
         Messager.info('Uploaded data to triplestore')
