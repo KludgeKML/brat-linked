@@ -428,12 +428,12 @@ def create_span(collection, document, offsets, type, attributes=None,
     offsets = _json_offsets_to_list(offsets)
     
 
-    if(linkedNorm != None and refid != None):    
+    if(linkedNorm != None and normalizations != None):    
         Messager.info("Linked span id: "+ linkedNorm + ", ID: " + normalizations[1])
-    elif(refid != None):
+    elif(normalizations != None):
         Messager.info("Linked span id: , ID: " +  normalizations[2] + ", normalizations: " + normalizations)
 
-        return _create_span(collection, document, offsets, type, attributes,
+    return _create_span(collection, document, offsets, type, attributes,
                         normalizations, id, comment)
 
 def _set_normalizations(ann_obj, ann, normalizations, mods, undo_resp={}):
