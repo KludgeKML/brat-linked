@@ -863,9 +863,9 @@ var AnnotatorUI = (function($, window, undefined) {
           }
 
           // update links
-          getLinkedNorm();
           updateNormalizationRefLink();
           updateNormalizationDbLink();
+          getLinkedNorm();
         }
 
         var showAttributesFor = function(attrTypes, category, type) {
