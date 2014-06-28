@@ -2848,7 +2848,6 @@ var AnnotatorUI = (function($, window, undefined) {
       dispatcher.post('initForm', [spanForm, {
           alsoResize: '#entity_and_event_wrapper',
           width: 760,
-          getLinkedNorm(),
           buttons: [{
               id: 'span_form_add_fragment',
               text: "Add Frag.",
@@ -2875,13 +2874,20 @@ var AnnotatorUI = (function($, window, undefined) {
               click: splitSpan
             }
           ],
-          close: function(evt) {
+          close: function(evt) 
+          {
             keymap = null;
-            if (reselectedSpan) {
+            if (reselectedSpan) 
+            {
               $(reselectedSpan.rect).removeClass('reselect');
               reselectedSpan = null;
               svgElement.removeClass('reselect');
             }
+          },
+          open: function(evt) 
+          {
+            getLinkedNorm();
+          }
           }
         }]);
       // set button tooltips (@amadanmath: can this be done in init?)
