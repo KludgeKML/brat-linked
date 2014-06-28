@@ -422,10 +422,12 @@ def _json_offsets_to_list(offsets):
 
 #TODO: unshadow Python internals like "type" and "id"
 def create_span(collection, document, offsets, type, attributes=None,
-                normalizations=None, id=None, comment=None):
+                normalizations=None, id=None, comment=None, linkedNorm=None):
     # offsets should be JSON string corresponding to a list of (start,
     # end) pairs; convert once at this interface
     offsets = _json_offsets_to_list(offsets)
+    
+    Messager.info("Linked span id: "+linkedNorm)
 
     return _create_span(collection, document, offsets, type, attributes,
                         normalizations, id, comment)

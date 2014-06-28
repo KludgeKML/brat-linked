@@ -2933,6 +2933,7 @@ var AnnotatorUI = (function($, window, undefined) {
       var spanFormSubmit = function(evt, typeRadio) {
         typeRadio = typeRadio || $('#span_form input:radio:checked');
         var type = typeRadio.val();
+        var linkedNorm = $('#span_linked_norm_id').val();
         
         $('#span_form-ok').blur();
         dispatcher.post('hideForm');
@@ -2941,6 +2942,7 @@ var AnnotatorUI = (function($, window, undefined) {
           collection: coll,
           'document': doc,
           type: type,
+          'linkedNorm': linkedNorm,
           comment: $('#span_notes').val()
         });
 
@@ -2960,11 +2962,13 @@ var AnnotatorUI = (function($, window, undefined) {
         dispatcher.post('ajax', [spanOptions, 'edited']);
         return false;
       };
+      
       $('#span_notes').focus(function () {
           keymap = null;
         }).blur(function () {
           keymap = spanKeymap;
         });
+        
       spanForm.submit(spanFormSubmit);
 
       var rapidSpanFormSubmit = function(evt, typeRadio) {
