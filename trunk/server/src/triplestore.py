@@ -43,9 +43,6 @@ def upload_annotation(document, collection):
     endpoint = environ['TRIPLESTORE_RESTFUL_ENDPOINT'] + \
         'http://contextus.net/user/' + user + '/' + document
 
-    Messager.info('Triplestore RESTFUL Endpoint for this graph: [' +
-        endpoint + ']')
-
     rdf_data = convert_to_rdf(fpath, document)
     headers = {'content-type' : 'application/x-turtle'}
 
