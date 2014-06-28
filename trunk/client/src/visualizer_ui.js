@@ -2058,6 +2058,8 @@ var VisualizerUI = (function($, window, undefined) {
             var auth_button = $('#auth_button');
             if (response.user) {
               user = response.user;
+              dn = $("#document_name");
+              dni = dn.find("input");
               $('#document_name input').removeclass('not-logged-in');
               dispatcher.post('messages', [[['Welcome back, user "' + user + '"', 'comment']]]);
               auth_button.val('Logout ' + user);
