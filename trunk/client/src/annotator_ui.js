@@ -1269,6 +1269,8 @@ var AnnotatorUI = (function($, window, undefined) {
       }
       
       // see http://stackoverflow.com/questions/1948332/detect-all-changes-to-a-input-type-text-immediately-using-jquery
+      
+      $('norm_create_name').bind('propertychange keyup input paste', setCreateButton);      
       $('#span_norm_id').bind('propertychange keyup input paste', spanNormIdUpdate);
       // nice-looking select for normalization
       $('#span_norm_db').addClass('ui-widget ui-state-default ui-button-text');
@@ -1368,24 +1370,30 @@ var AnnotatorUI = (function($, window, undefined) {
       };          
       
       var normSearchSubmit = function(evt) {
-        if (normSearchSubmittable) {
+        if (normSearchSubmittable) 
+        {
           var selectedId = $('#norm_search_id').val(); 
           var selectedTxt = $('#norm_search_query').val();
 
           normSubmit(selectedId, selectedTxt);
-        } else {
+        } 
+        else 
+        {
           performNormSearch();
         }
         return false;
       }
 
       var normLinkedSearchSubmit = function(evt) {
-        if (normLinkedSearchSubmittable) {
+        if (normLinkedSearchSubmittable) 
+        {
           var selectedId = $('#norm_edit_search_id').val(); 
           var selectedTxt = $('#norm_edit_search_query').val();
 
           normSubmit(selectedId, selectedTxt);
-        } else {
+        } 
+        else 
+        {
           performLinkedNormSearch();
         }
         return false;
@@ -1401,7 +1409,7 @@ var AnnotatorUI = (function($, window, undefined) {
       };
 
       var setLinkedNormSearchSubmit = function(enable) {
-        $('#norm_edit_search_dialog-ok').button(enable ? 'enable' : 'disable');
+        $('#norm_edit_dialog-ok').button(enable ? 'enable' : 'disable');
         normLinkedSearchSubmittable = enable;
       };  
       
@@ -1715,7 +1723,10 @@ var AnnotatorUI = (function($, window, undefined) {
 		    }
       });
  
-      $('#norm_create_name').keyup(function(evt) {
+      //$('#norm_create_name').keyup(function(evt) {
+      
+      var setCreateButton = function()
+      {
       
         if($('#norm_create_name').val() == '')
         {
@@ -3197,6 +3208,7 @@ var AnnotatorUI = (function($, window, undefined) {
           on('normDeleteResult', updateWithDeletedNorm).
           on('normClearLinkResult', updateWithClearedLinkedNorm).
           on('autofillLinkedNorm', autofillLinkedNorm).
+          on('setCreateButton', setCreateButton).
           on('localNormList', setSpanLocalNormListResults);
     };
 
