@@ -39,12 +39,12 @@ def upload_annotation(document, collection):
     try:
         Messager.info('OS Environment SPARQL endpoint [' + os.environ['SPARQL_STORE_DATA_URL'] + "]" )
     except:
-        Messager.warning('No OS Environment SPARQL endpoint")
+        Messager.warning('No OS Environment SPARQL endpoint')
     
     try:
         Messager.info('Apache Environment SPARQL endpoint [' + environ['SPARQL_STORE_DATA_URL'] + "]" )
     except:
-        Messager.warning('No Apache Environment SPARQL endpoint")
+        Messager.warning('No Apache Environment SPARQL endpoint')
 
     # Remove the entire user graph from the triplestore
     
