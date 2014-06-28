@@ -6,9 +6,9 @@ Version:    2014-05-23
 '''
 
 from os.path import join as path_join
+from os import environ
 from session import get_session
 
-import os
 import requests
 
 from document import real_directory
@@ -20,10 +20,10 @@ def upload_annotation(document, collection):
 
     The triplestore endpoint path is specified by environment - it can be
     set in apache with the SetEnv directive, either in a local .htaccess
-    file or in the main configuration for the brat directory. It assumes 
-    that the triplestore implements the 1.1 RESTFUL interface, as for 
+    file or in the main configuration for the brat directory. It assumes
+    that the triplestore implements the 1.1 RESTFUL interface, as for
     example 4Store and Sesame are supposed to, whereby you can PUT to the
-    graph to replace it. This function is called from the dispatcher when 
+    graph to replace it. This function is called from the dispatcher when
     an AJAX 'uploadAnnotation' call comes in.
     '''
     directory = collection
@@ -50,6 +50,6 @@ def upload_annotation(document, collection):
         Messager.info('Uploaded data to triplestore')
     else:
         Messager.error('Failed to upload to triplestore (Response ' + str(response.status_code) + ' ' + response.reason + ')')
-		
+
     return {}
 
