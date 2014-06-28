@@ -44,7 +44,7 @@ def upload_annotation(document, collection):
 
     parts = get_rdf_parts(fpath, document)
 
-    response = requests.put(endpoint, data=(parts['prefixes'] + "\n\n" + parts['data'])
+    response = requests.put(endpoint, data=(parts['prefixes'] + "\n\n" + parts['data']))
 
     Messager.info(parts['data'])
 
