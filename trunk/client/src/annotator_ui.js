@@ -1176,7 +1176,7 @@ var AnnotatorUI = (function($, window, undefined) {
       {
         if(response.response != [])
         {
-          $('#span_linked_norm_id').val(response.data[0]);
+          $('#span_linked_norm_id').val(response.response[0]);
           $('#clear_link_button').button('enable');
         }
         else
