@@ -171,9 +171,9 @@ def norm_get_linked(database, key, collection=None):
 
     try: 
         if(normdb.get_norm_type_by_id(dbpath, key) == 'local'):
-            data = get_linked_global_entity(dbpath, key)
+            data = normdb.get_linked_global_entity(dbpath, key)
         else:
-            data = get_linked_local_entity(dbpath, key)
+            data = normdb.get_linked_local_entity(dbpath, key)
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))         
         
