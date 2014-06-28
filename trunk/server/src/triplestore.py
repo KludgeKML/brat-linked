@@ -5,15 +5,9 @@ Author:     Keith M Lawrence    <keith@kludge.co.uk>
 Version:    2014-05-23
 '''
 
-store_url = 'http://localhost:8000/update/'
-store_data_url = 'http://localhost:8000/data/'
-store_delete_param = 'graph'
-store_update_param = 'update'
-
 from os.path import join as path_join
 from session import get_session
 
-import os
 import requests
 
 from document import real_directory
@@ -22,12 +16,14 @@ from rdfIO import get_rdf_parts
 
 def upload_annotation(document, collection):
     '''Uploads an annotation into a triplestore.
-    
-    The triplestore URL is specified by the module's store_url variable,
-    and the function assumes that INSERT DATA statements can be sent to 
-    that url with a POST http command, using the parameter name supplied 
-    in the module's store_update_param variable. This function is called
-    from the dispatcher when an AJAX 'uploadAnnotation' call comes in.
+
+    The triplestore endpoint path is specified by environment - it can be
+    set in apache with the SetEnv directive, either in a local .htaccess
+    file or in the main configuration for the brat directory. It assumes 
+    that the triplestore implements the 1.1 RESTFUL interface, as for 
+    example 4Store and Sesame are supposed to, whereby you can PUT to the
+    graph to replace it. This function is called from the dispatcher when 
+    an AJAX 'uploadAnnotation' call comes in.
     '''
     directory = collection
     real_dir = real_directory(directory)
@@ -36,43 +32,23 @@ def upload_annotation(document, collection):
     user = get_session()['user']
 
     # Get target sparql endpoint from the environment
-    try:
-        Messager.info('OS Environment SPARQL endpoint [' + os.environ['SPARQL_STORE_DATA_URL'] + "]" )
-    except:
-        Messager.warning('No OS Environment SPARQL endpoint')
-    
-    try:
-        Messager.info('Apache Environment SPARQL endpoint [' + environ['SPARQL_STORE_DATA_URL'] + "]" )
-    except:
-        Messager.warning('No Apache Environment SPARQL endpoint')
 
-    # Remove the entire user graph from the triplestore
-    
-    deleteData = { store_delete_param: str('http://contextus.net/user/' + user + '/' + document) }
-    
-    response = requests.delete(store_data_url, params=deleteData)
+    if 'TRIPLESTORE_RESTFUL_ENDPOINT' not in environ:
+        Messager.error('No Triplestore endpoint set! (Must be set in Apache with SetEnv TRIPLESTORE_RESTFUL_ENDPOINT <url>)')
+        return
 
-    if (response.status_code != 200) and (response.status_code != 500):
-        Messager.error('Failed to delete old graph from triplestore (Response ' + str(response.status_code) + ' ' + response.reason + ')')
-        return {}
+    endpoint = environ['TRIPLESTORE_RESTFUL_ENDPOINT'] + 'http://contextus.net/user/' + user + '/' + document
 
-    # Then add the new graph in
+    Messager.error('Triplestore RESTFUL Endpoint for this graph: [' + endpoint + ']')
 
     parts = get_rdf_parts(fpath, document)
-    sparql = ''
-    
-    for prefix in parts['prefixes']:
-        sparql += 'PREFIX ' + prefix + ' '
-    sparql += ' INSERT DATA { GRAPH <http://contextus.net/user/' + user + '/' + document + '> { ' + parts['data'] + ' }} '
-    
-    insertData = { store_update_param: sparql }
-    
-    response = requests.post(store_url, data=insertData)
-    
+
+    response = requests.put(endpoint, data=parts['data'])
+
     if response.status_code == 200:
-		Messager.info('Uploaded data to triplestore')
+        Messager.info('Uploaded data to triplestore')
     else:
-		Messager.error('Failed to upload to triplestore (Response ' + str(response.status_code) + ' ' + response.reason + ')')
+        Messager.error('Failed to upload to triplestore (Response ' + str(response.status_code) + ' ' + response.reason + ')')
 		
     return {}
 
