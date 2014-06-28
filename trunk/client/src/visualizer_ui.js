@@ -415,7 +415,7 @@ var VisualizerUI = (function($, window, undefined) {
           var dbName = norm[0], dbKey = norm[1];
           comment += ( '<hr/>' +
                        '<span class="comment_id">' +
-                       Util.escapeHTML(dbName) + ':' +
+// Remove db name      Util.escapeHTML(dbName) + ':' +
                        Util.escapeHTML(dbKey) + '</span>');
           if (dbName in normServerDbByNormDbName &&
               normServerDbByNormDbName[dbName] != '<NONE>') {
