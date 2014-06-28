@@ -1213,9 +1213,9 @@ var AnnotatorUI = (function($, window, undefined) {
           dispatcher.post('showForm', [normEditDialog]);
           $('#norm_edit_search_query').focus().select();
         }
-      });
+      };
       
-      $('#span_linked_norm_id').click(showNormEditDialog)
+      $('#span_linked_norm_id').click(showNormEditDialog);
       
       $('#clear_norm_button').button();
       $('#clear_norm_button').click(clearSpanNorm);
