@@ -28,6 +28,8 @@ from common import ProtocolError
 from filelock import file_lock
 from message import Messager
 
+from rdfIO import convert_to_rdf
+
 
 ### Constants
 # The only suffix we allow to write to, which is the joined annotation file
@@ -955,6 +957,8 @@ class Annotations(object):
                 return
 
             from config import WORK_DIR
+
+            rdf_str = convert_to_rdf(self._input_files[0], self._document)
             
             # Protect the write so we don't corrupt the file
             with file_lock(path_join(WORK_DIR,
@@ -969,36 +973,42 @@ class Annotations(object):
                 #       so we hack around it.
                 #with NamedTemporaryFile('w', suffix='.ann') as tmp_file:
                 # Grab the filename, but discard the handle
-                tmp_fh, tmp_fname = mkstemp(suffix='.ann')
-                os_close(tmp_fh)
-                try:
-                    with open_textfile(tmp_fname, 'w') as tmp_file:
-                        #XXX: Temporary hack to make sure we don't write corrupted
-                        #       files, but the client will already have the version
-                        #       at this stage leading to potential problems upon
-                        #       the next change to the file.
-                        tmp_file.write(out_str)
-                        tmp_file.flush()
+                tmp_ann_fh, tmp_ann_fname = mkstemp(suffix='.ann')
+                tmp_rdf_fh, tmp_rdf_fname = mkstemp(suffix='.rdf')
 
-                        try:
-                            with Annotations(tmp_file.name) as ann:
-                                # Move the temporary file onto the old file
-                                copyfile(tmp_file.name, self._input_files[0])
-                                # As a matter of convention we adjust the modified
-                                # time of the data dir when we write to it. This
-                                # helps us to make back-ups
-                                now = time()
-                                #XXX: Disabled for now!
-                                #utime(DATA_DIR, (now, now))
-                        except Exception, e:
-                            Messager.error('ERROR writing changes: generated annotations cannot be read back in!\n(This is almost certainly a system error, please contact the developers.)\n%s' % e, -1)
-                            raise
-                finally:
+                files = [(tmp_ann_fh, tmp_ann_fname, out_str, self._input_files[0]), 
+                         (tmp_rdf_fh, tmp_rdf_fname, rdf_str, (self._input_files[0]).replace('.ann','.rdf'))]
+
+                for (tmp_fh, tmp_fname, out_str, target) in files:
+                    os_close(tmp_fh)
                     try:
-                        from os import remove
-                        remove(tmp_fname)
-                    except Exception, e:
-                        Messager.error("Error removing temporary file '%s'" % tmp_fname)
+                        with open_textfile(tmp_fname, 'w') as tmp_file:
+                            #XXX: Temporary hack to make sure we don't write corrupted
+                            #       files, but the client will already have the version
+                            #       at this stage leading to potential problems upon
+                            #       the next change to the file.
+                            tmp_file.write(out_str)
+                            tmp_file.flush()
+
+                            try:
+                                with Annotations(tmp_file.name) as ann:
+                                    # Move the temporary file onto the old file
+                                    copyfile(tmp_file.name, target)
+                                    # As a matter of convention we adjust the modified
+                                    # time of the data dir when we write to it. This
+                                    # helps us to make back-ups
+                                    now = time()
+                                    #XXX: Disabled for now!
+                                    #utime(DATA_DIR, (now, now))
+                            except Exception, e:
+                                Messager.error('ERROR writing changes: generated annotations cannot be read back in!\n(This is almost certainly a system error, please contact the developers.)\n%s' % e, -1)
+                                raise
+                    finally:
+                        try:
+                            from os import remove
+                            remove(tmp_fname)
+                        except Exception, e:
+                            Messager.error("Error removing temporary file '%s'" % tmp_fname)
             return
 
     def __in__(self, other):
