@@ -155,10 +155,15 @@ def norm_update_link(database, local_uid, global_uid=None, collection=None):
         # full path not configured, fall back on name as default
         dbpath = database
         
-    try:        
-        data = normdb.update_local_norm_link(dbpath, local_uid, global_uid)
+    data = []   
+          
+    try: 
+        if(normdb.get_norm_type_by_id(dbpath, local_uid) == 'local' and local_uid != ''):
+            data = normdb.update_local_norm_link(dbpath, local_uid, global_uid)
+
     except normdb.dbNotFoundError, e:
-        Messager.warning(str(e))         
+        Messager.warning(str(e))          
+               
         
     responseData = { 'local' : local_uid, 'global' : global_uid, 'response' : data }   
     
