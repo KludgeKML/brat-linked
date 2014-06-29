@@ -192,6 +192,11 @@ def norm_get_linked(database, key, collection=None):
     return response     
         
 def get_norm_type_by_id(database, key):
+
+    dbpath = _get_db_path(database, collection)
+    if dbpath is None:
+        # full path not configured, fall back on name as default
+        dbpath = database
     
     try: 
         if(key == '' or key == None):
