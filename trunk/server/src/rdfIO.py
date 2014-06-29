@@ -131,13 +131,13 @@ def get_rdf_parts(fpath, document):
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
             
             elif line[0] == 'T':
-                line_string = " ".join(chunks[4:]
+                line_string = " ".join(chunks[4:])
             
                 parts['data'] += "<" + namespace + chunks[0] + ">\n\ta "
                 if lookup(chunks[1], namespace_info) != False:
                     parts['data'] += lookup(chunks[1], namespace_info)
                 parts['data'] += " ;\n"
-                parts['data'] += '\tcnt:chars "' + line_string.strip + '" .\n\n'
+                parts['data'] += '\tcnt:chars "' + line_string.strip() + '" .\n\n'
             
             elif line[0] == 'A':
                 parts['data'] += "<" + namespace + chunks[2] + ">\n\ta " + lookup(chunks[3], namespace_info) + ";\n"    
