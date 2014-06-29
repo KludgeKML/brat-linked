@@ -1147,14 +1147,14 @@ var AnnotatorUI = (function($, window, undefined) {
       {
         $('#span_linked_norm_id').attr('readonly', 'readonly');
       
-        if(response == 'local')
+        if(response.type == 'local')
         {
-          $('#span_linked_norm_id').attr('placeholder', 'Click here to link to shared entity');
+          $('#span_linked_norm_id').attr('placeholder', 'Click Here to Link to Shared Entity');
           $('#span_linked_norm_id').removeAttr('readonly', false)
         }
-        else if (response == 'global')
+        else if (response.type == 'global')
         {
-          $('#span_linked_norm_id').attr('placeholder', 'Cannot create link from shared entity');
+          $('#span_linked_norm_id').attr('placeholder', 'Cannot Create Link from Shared Entity');
         }
         else
         {
@@ -3254,6 +3254,7 @@ var AnnotatorUI = (function($, window, undefined) {
           on('normClearLinkResult', updateWithClearedLinkedNorm).
           on('autofillLinkedNorm', autofillLinkedNorm).
           on('setCreateButton', setCreateButton).
+          on('clearedLinkedNorm', clearedLinkedNorm).
           on('localNormList', setSpanLocalNormListResults);
     };
 

@@ -158,7 +158,9 @@ def norm_update_link(database, local_uid=None, global_uid=None, collection=None)
     data = []   
           
     try: 
-        if(get_norm_type_by_id(dbpath, local_uid) == 'local' and local_uid != ''):
+        type = get_norm_type_by_id(dbpath, local_uid)
+        
+        if(type['type'] == 'local' and local_uid != ''):
             data = normdb.update_local_norm_link(dbpath, local_uid, global_uid)
 
     except normdb.dbNotFoundError, e:
@@ -178,7 +180,9 @@ def norm_get_linked(database, key, collection=None):
         
 
     try: 
-        if(get_norm_type_by_id(dbpath, key) == 'local'):
+        type = get_norm_type_by_id(dbpath, key)
+    
+        if(type['type'] == 'local'):
             data = normdb.get_linked_global_entity(dbpath, key)
         else:
             data = normdb.get_linked_local_entity(dbpath, key)
@@ -198,18 +202,19 @@ def get_norm_type_by_id(database, key, collection=None):
         # full path not configured, fall back on name as default
         dbpath = database
     
+    type = ''
+    
     try: 
-        if(key == '' or key == None):
-            return None
-        elif(normdb.get_norm_type_by_id(dbpath, key) == 'local'): 
-            return 'local'
+        if(normdb.get_norm_type_by_id(dbpath, key) == 'local'): 
+            type = 'local'
         elif(normdb.get_norm_type_by_id(dbpath, key) == 'global'): 
-            return 'global'   
-        else:  
-            return None
-            
+            type = 'global'   
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))
+        
+    response = { 'id' : key, 'type' : type }
+    
+    return response
              
 
 def norm_get_name(database, key, collection=None):
@@ -260,12 +265,12 @@ def norm_get_data(database, key, collection=None):
     try:
         type = get_norm_type_by_id(dbpath, key)
     
-        if type == 'global':
+        if type['type'] == 'global':
             data = normdb.data_by_id(dbpath, key)
-        elif type == 'local':
+        elif type['type'] == 'local':
             data = 'Local Normalisation Value'
         else:
-            data = type
+            data = type['type']
                     
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))
