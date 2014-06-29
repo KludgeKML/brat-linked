@@ -1139,11 +1139,6 @@ var AnnotatorUI = (function($, window, undefined) {
       
       $('#clear_link_button').button();
       
-      $('#clear_link_button').click(function() 
-      {
-        $('#span_linked_norm_id').val('')
-      });
-      
       var updateWithClearedLinkedNorm = function()
       {
         $('#span_linked_norm_id').val('');
@@ -1161,6 +1156,9 @@ var AnnotatorUI = (function($, window, undefined) {
         }
         
       }
+
+      $('#clear_link_button').click(updateWithClearedLinkedNorm);
+      
       
       var autofillLinkedNorm = function(response)
       {
