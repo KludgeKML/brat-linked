@@ -2946,16 +2946,19 @@ var AnnotatorUI = (function($, window, undefined) {
         // hiding them
         spanForm.parent().find('*').blur();
 
-        var local_uid = $('#span_norm_id').val()
+        var local_uid = $('#span_norm_id').val()                
         var db = $('#span_norm_db').val();
-
-        dispatcher.post('ajax', 
-        [{
-            action: 'normLinkUpdate',
-            database: db,
-            local_uid: local_uid,
-          }, 'normClearLinkResult'
-        ])                
+        
+        if(local_uid != '' && db != '')
+        {
+          dispatcher.post('ajax', 
+          [{
+              action: 'normLinkUpdate',
+              database: db,
+              local_uid: local_uid,
+            }, 'normClearLinkResult'
+          ]); 
+        }               
 
         $('#waiter').dialog('open');
         dispatcher.post('ajax', [spanOptions, 'edited']);

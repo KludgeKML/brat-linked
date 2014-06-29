@@ -148,7 +148,7 @@ def norm_create_link(database, local_uid, global_uid, collection=None):
     return responseData    
 
 
-def norm_update_link(database, local_uid, global_uid=None, collection=None):
+def norm_update_link(database, local_uid=None, global_uid=None, collection=None):
 
     dbpath = _get_db_path(database, collection)
     if dbpath is None:
