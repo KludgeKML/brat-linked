@@ -154,7 +154,7 @@ def update_local_norm_link(dbname, local_uid, entity_uid=None):
     ''' update any links in entity_norms - if no global entity value is specified then just delete link '''
     connection, cursor = _get_connection_cursor(dbname)
 
-    current_link = get_linked_local_entity(dbname, local_uid)
+    current_link = get_linked_global_entity(dbname, local_uid)
     
     Messager.info("Current link count: " + str(len(current_link)) + ', current_link: ' + ' '.join(current_link))
     
