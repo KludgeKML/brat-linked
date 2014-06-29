@@ -30,6 +30,7 @@ except ImportError:
 from document import real_directory
 from jsonwrap import loads as json_loads, dumps as json_dumps
 from message import Messager
+from norm import norm_update_link
 from projectconfig import ProjectConfiguration, ENTITY_CATEGORY, EVENT_CATEGORY, RELATION_CATEGORY, UNKNOWN_CATEGORY
 
 ### Constants
@@ -427,11 +428,10 @@ def create_span(collection, document, offsets, type, attributes=None,
     offsets = _json_offsets_to_list(offsets)
     norm_info = _parse_span_normalizations(normalizations)
     
-
-    if(linkedNorm != None and norm_info != None):    
-        Messager.info("Linked span id: "+ linkedNorm + ", ID: " + norm_info[0][1])
-    elif(norm_info != None):
-        Messager.info("Linked span id: , ID: " +  norm_info[0][1] + ", normalizations: " + " ".join(map(str, norm_info)))
+    local_uid = norm_info[0][1]
+    database = norm_info[0][0]
+    
+    norm.norm_update_link(database, local_uid, linkedNorm)
 
     return _create_span(collection, document, offsets, type, attributes,
                         normalizations, id, comment)
