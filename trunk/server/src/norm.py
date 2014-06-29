@@ -191,7 +191,7 @@ def norm_get_linked(database, key, collection=None):
     
     return response     
         
-def get_norm_type_by_id(database, key):
+def get_norm_type_by_id(database, key, collection=None):
 
     dbpath = _get_db_path(database, collection)
     if dbpath is None:
