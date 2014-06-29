@@ -155,6 +155,8 @@ def update_local_norm_link(dbname, local_uid, entity_uid=None):
 
     current_link = get_linked_local_entity(dbname, local_uid)
     
+    Message.info("Current link count: " + str(len(current_link)))
+    
     rowid = ''
     
     if len(current_link) > 0:
