@@ -21,7 +21,7 @@ from config import DATA_DIR
 from convert.convert import convert
 from docimport import save_import
 from document import (get_directory_information, get_document, get_document_timestamp, get_configuration)
-from download import download_file, download_collection, download_rdf, cache_rdf
+from download import download_file, download_collection
 from inspect import getargspec
 from itertools import izip
 from jsonwrap import dumps
