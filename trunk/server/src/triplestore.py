@@ -14,6 +14,7 @@ import requests
 from document import real_directory
 from message import Messager
 from rdfIO import convert_to_rdf
+from rdfIO import load_namespace_info
 
 def upload_annotation(document, collection):
     '''Uploads an annotation into a triplestore.
@@ -40,8 +41,10 @@ def upload_annotation(document, collection):
             'TRIPLESTORE_RESTFUL_ENDPOINT <url>)')
         return
 
+    namespace_info = load_namespace_info()
+    
     endpoint = environ['TRIPLESTORE_RESTFUL_ENDPOINT'] + \
-        'http://contextus.net/user/' + user + '/' + document
+        namespace_info['base_url'] + 'user/' + user + '/' + document
 
     rdf_data = convert_to_rdf(fpath, document)
     headers = {'content-type' : 'application/x-turtle'}

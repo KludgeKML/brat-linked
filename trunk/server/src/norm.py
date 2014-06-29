@@ -17,6 +17,7 @@ from message import Messager
 from normdb import string_norm_form
 from document import real_directory
 from projectconfig import ProjectConfiguration
+from rdfIO import load_namespace_info
 
 from session import get_session
 
@@ -77,7 +78,9 @@ def _get_db_path(database, collection):
 def norm_create_local(database, name, collection=None, docID=None):
     responseData = { 'name': '', 'entityID': '' }
     userID = get_session()['user']
-    entityID = 'http://contextus.net/resource/RRH/' + userID
+
+    namespace_info = load_namespace_info()
+    entityID = namespace_info['base_namespace'] + userID
     
     if docID != None:
         entityID += '/' + docID
