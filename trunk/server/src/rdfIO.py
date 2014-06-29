@@ -7,7 +7,6 @@ from os.path import join as path_join
 
 from annotation import open_textfile
 from config import DATA_DIR
-from document import real_directory
 from session import get_session
 from normdb import get_norm_type_by_id, get_linked_global_entity, get_linked_local_entity, data_by_id
 
@@ -18,8 +17,7 @@ def load_namespace_info():
     an environment variable. For now, it's just on disk.
     '''
 
-    data_dir = real_directory(directory, DATA_DIR)
-    fpath = path_join(data_dir, 'Narrative', 'ontomedia-data.json')
+    fpath = path_join(DATA_DIR, 'Narrative', 'ontomedia-data.json')
     namespace_file = open(fpath, 'r')
     namespace_info = json.load(namespace_file)
     namespace_file.close()
