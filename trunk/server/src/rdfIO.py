@@ -10,6 +10,9 @@ from config import DATA_DIR
 from session import get_session
 from normdb import get_norm_type_by_id, get_linked_global_entity, get_linked_local_entity, data_by_id
 
+# Constants
+RDF_FILE_SUFFIX = 'rdf'
+
 def load_namespace_info():
     '''Reads namespace variables from JSON file.
 
