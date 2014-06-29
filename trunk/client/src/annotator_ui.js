@@ -1132,12 +1132,35 @@ var AnnotatorUI = (function($, window, undefined) {
           $('#clear_link_button').button('enable');
           $('#span_linked_norm_id').attr('readonly', 'readonly');
         }
+        else
+        {
+          $('#clear_link_button').button('disable');
+        }
         
         normEditDialog.dialog('close');
       });
       
       
       $('#clear_link_button').button();
+      
+      var clearedLinkedNorm = function(response)
+      {
+        $('#span_linked_norm_id').attr('readonly', 'readonly');
+      
+        if(response == 'local')
+        {
+          $('#span_linked_norm_id').attr('placeholder', 'Click here to link to shared entity');
+          $('#span_linked_norm_id').removeAttr('readonly', false)
+        }
+        else if (response == 'global')
+        {
+          $('#span_linked_norm_id').attr('placeholder', 'Cannot create link from shared entity');
+        }
+        else
+        {
+          $('#span_linked_norm_id').attr('placeholder', 'A Normalization Entity Must Be Selected');
+        }
+      }
       
       var updateWithClearedLinkedNorm = function()
       {
@@ -1146,8 +1169,18 @@ var AnnotatorUI = (function($, window, undefined) {
         
         if($('#span_norm_id').val() != '')
         {
-          $('#span_linked_norm_id').attr('placeholder', 'Click here to link to shared entity');
-          $('#span_linked_norm_id').removeAttr('readonly', false)
+        
+          var db = $('#span_norm_db').val();
+          var uid = $('#span_norm_id').val();
+          
+          dispatcher.post('ajax', 
+          [{
+              action: 'getNormType',
+              database: db,
+              key: uid,
+            }, 'clearedLinkedNorm'
+          ]);
+        
         }
         else
         {
@@ -1207,6 +1240,7 @@ var AnnotatorUI = (function($, window, undefined) {
       
       $('#clear_norm_button').button();
       $('#clear_norm_button').click(clearSpanNorm);
+
 
       // invoked on response to ajax request for id lookup
       var setSpanNormText = function(response) {
