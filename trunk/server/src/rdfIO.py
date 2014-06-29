@@ -154,9 +154,9 @@ def lookup(annotation, namespace_info):
     if annotation in namespace_info['namespaces']:
         return namespace_info['namespaces'][annotation]
     elif annotation in namespace_info['category_map']:
-        return namespace_info['category_map'] + ":" + annotation
+        return namespace_info['category_map'][annotation] + ":" + annotation
     elif annotation in namespace_info['relationship_map']:
-        return namespace_info['relationship_map'] + ":" + annotation
+        return namespace_info['relationship_map'][annotation] + ":" + annotation
     elif annotation in namespace_info['extended_rdf_map']:
         return False
     return annotation
