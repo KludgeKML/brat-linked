@@ -9,6 +9,7 @@ Functionality for normalization SQL database access.
 import sys
 from os.path import join as path_join, exists, sep as path_sep
 import sqlite3 as sqlite
+from message import Messager
 
 try:
     from config import BASE_DIR, WORK_DIR
