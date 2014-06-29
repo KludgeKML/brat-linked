@@ -181,6 +181,7 @@ def update_local_norm_link(dbname, local_uid, entity_uid=None):
     if entity_uid != None:
         rowid = create_local_norm_link(dbname, local_uid, entity_uid)
     
+    connection.commit()
     cursor.close()
     
     return rowid
