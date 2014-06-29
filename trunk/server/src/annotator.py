@@ -426,16 +426,18 @@ def create_span(collection, document, offsets, type, attributes=None,
     # offsets should be JSON string corresponding to a list of (start,
     # end) pairs; convert once at this interface
     offsets = _json_offsets_to_list(offsets)
+    
+    
     norm_info = _parse_span_normalizations(normalizations)
-    
-    local_uid = norm_info[0][1]
-    database = norm_info[0][0]
-    global_uid = ''
-    
     if(linkedNorm != None):
-        global_uid = linkedNorm
-    
-    update_info = norm_update_link(database, local_uid, linkedNorm)
+        global_uid = linkedNorm    
+        
+        
+    if(normalizations != None):    
+        local_uid = norm_info[0][1]
+        database = norm_info[0][0]
+        global_uid = ''
+        update_info = norm_update_link(database, local_uid, linkedNorm)
     
     #Messager.info('Update called with database: ' + database + ', local_uid:' + local_uid + ', global_uid:' + global_uid)
 
