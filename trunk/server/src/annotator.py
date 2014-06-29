@@ -431,7 +431,7 @@ def create_span(collection, document, offsets, type, attributes=None,
     if(linkedNorm != None and norm_info != None):    
         Messager.info("Linked span id: "+ linkedNorm + ", ID: " + norm_info[0])
     elif(norm_info != None):
-        Messager.info("Linked span id: , ID: " +  norm_info[0] + ", normalizations: " + normalizations)
+        Messager.info("Linked span id: , ID: " +  norm_info[0] + ", normalizations: " + " ".join(norm_info))
 
     return _create_span(collection, document, offsets, type, attributes,
                         normalizations, id, comment)
