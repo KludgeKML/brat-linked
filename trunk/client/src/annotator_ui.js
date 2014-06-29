@@ -1141,18 +1141,7 @@ var AnnotatorUI = (function($, window, undefined) {
       
       $('#clear_link_button').click(function() 
       {
-        // removes the link between the two entities
-
-        var local_uid = $('#span_norm_id').val()
-        var db = $('#span_norm_db').val();
-
-        dispatcher.post('ajax', 
-        [{
-            action: 'normLinkUpdate',
-            database: db,
-            local_uid: local_uid,
-          }, 'normClearLinkResult'
-        ])                
+        $('#span_linked_norm_id').val('')
       });
       
       var updateWithClearedLinkedNorm = function()
@@ -2958,6 +2947,17 @@ var AnnotatorUI = (function($, window, undefined) {
         // unfocus all elements to prevent focus being kept after
         // hiding them
         spanForm.parent().find('*').blur();
+
+        var local_uid = $('#span_norm_id').val()
+        var db = $('#span_norm_db').val();
+
+        dispatcher.post('ajax', 
+        [{
+            action: 'normLinkUpdate',
+            database: db,
+            local_uid: local_uid,
+          }, 'normClearLinkResult'
+        ])                
 
         $('#waiter').dialog('open');
         dispatcher.post('ajax', [spanOptions, 'edited']);
