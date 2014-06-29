@@ -158,7 +158,7 @@ def update_local_norm_link(dbname, local_uid, entity_uid=None):
 
     current_link = get_linked_global_entity(dbname, local_uid)
     
-    Messager.info("Current link count: " + str(len(current_link)) + ', current_link: ' + ' '.join(current_link))  
+    #Messager.info("Current link count: " + str(len(current_link)) + ', current_link: ' + ' '.join(current_link))  
     
     local_results = []
     for row in cursor.execute("SELECT DISTINCT(id) FROM local_norms WHERE uid='" + local_uid + "'"):
@@ -171,12 +171,12 @@ def update_local_norm_link(dbname, local_uid, entity_uid=None):
     if len(current_link) > 0:
         try:
             cursor.execute("DELETE FROM entity_norms WHERE norm_id=" + str(local_id))      
-            Messager.info("Calling delete in entity_norms on norm_id: " + str(local_id)) 
+            #Messager.info("Calling delete in entity_norms on norm_id: " + str(local_id)) 
         except dbNotFoundError, e:
             Messager.warning(str(e))  
         
     new_current_link = get_linked_global_entity(dbname, local_uid)
-    Messager.info("New Current link count: " + str(len(new_current_link)) + ', current_link: ' + ' '.join(new_current_link))  
+    #Messager.info("New Current link count: " + str(len(new_current_link)) + ', current_link: ' + ' '.join(new_current_link))  
     
     if entity_uid != None:
         rowid = create_local_norm_link(dbname, local_uid, entity_uid)
