@@ -429,11 +429,12 @@ def create_span(collection, document, offsets, type, attributes=None,
     
     
     norm_info = _parse_span_normalizations(normalizations)
+    
     if(linkedNorm != None):
         global_uid = linkedNorm    
         
         
-    if(normalizations != None):    
+    if norm_info:    
         local_uid = norm_info[0][1]
         database = norm_info[0][0]
         global_uid = ''
