@@ -430,10 +430,14 @@ def create_span(collection, document, offsets, type, attributes=None,
     
     local_uid = norm_info[0][1]
     database = norm_info[0][0]
+    global_uid = ''
+    
+    if(linkedNorm != None):
+        global_uid = linkedNorm
     
     update_info = norm_update_link(database, local_uid, linkedNorm)
     
-    Messager.info('Update called with database: ' + database + ', local_uid:' + local_uid + ', global_uid:' + linkedNorm)
+    Messager.info('Update called with database: ' + database + ', local_uid:' + local_uid + ', global_uid:' + global_uid)
 
     return _create_span(collection, document, offsets, type, attributes,
                         normalizations, id, comment)
