@@ -129,6 +129,7 @@ def create_norm_entity(dbname, name, entity_id, type):
     attrs_rowid = cursor.lastrowid
 
     connection.commit()
+    cursor.close()
     return names_rowid
 
 def create_local_norm_value(dbname, name, entity_id, user_id, doc_id):
@@ -140,6 +141,7 @@ def create_local_norm_value(dbname, name, entity_id, user_id, doc_id):
     local_rowid = cursor.lastrowid
 
     connection.commit()
+    cursor.close()
     return local_rowid
     
 def delete_local_norm_value(dbname, uid):
@@ -147,7 +149,7 @@ def delete_local_norm_value(dbname, uid):
     connection, cursor = _get_connection_cursor(dbname)
     cursor.execute("DELETE FROM entity_norms N JOIN local_norms L ON N.norm_id = L.id WHERE L.uid='" + uid + "'")    
     connection.commit()
-    
+    cursor.close()
     return True
 
 def update_local_norm_link(dbname, local_uid, entity_uid=None):
@@ -179,6 +181,8 @@ def update_local_norm_link(dbname, local_uid, entity_uid=None):
     if entity_uid != None:
         rowid = create_local_norm_link(dbname, local_uid, entity_uid)
     
+    cursor.close()
+    
     return rowid
         
     
@@ -205,8 +209,11 @@ def create_local_norm_link(dbname, local_uid, entity_uid):
         local_rowid = cursor.lastrowid
 
         connection.commit()
+        cursor.close()
+        
         return local_rowid  
     else:
+        cursor.close()
         return None  
 
 def get_linked_global_entity(dbname, local_uid):
@@ -216,6 +223,7 @@ def get_linked_global_entity(dbname, local_uid):
     for row in cursor.execute("SELECT DISTINCT(E.uid) FROM entities E JOIN entity_norms N ON E.id = N.entity_id JOIN local_norms L ON N.norm_id = L.id WHERE L.uid='" + local_uid + "'"):
         results.append(row[0].encode('utf-8'))
 
+    cursor.close()
     return results 
 
 def get_linked_local_entity(dbname, global_uid):
@@ -225,6 +233,7 @@ def get_linked_local_entity(dbname, global_uid):
     for row in cursor.execute("SELECT DISTINCT(L.uid) FROM entities E JOIN entity_norms N ON E.id = N.entity_id JOIN local_norms L ON N.norm_id = L.id WHERE E.uid='" + global_uid + "'"):
         results.append(row[0].encode('utf-8'))
 
+    cursor.close()
     return results 
     
     
@@ -249,7 +258,7 @@ def get_norm_type_by_id(dbname, uid):
     if len(local_results) > 0:
         return 'local'   
     
-    
+    cursor.close()
     return None
     
     
