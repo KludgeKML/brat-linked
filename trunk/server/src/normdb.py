@@ -161,7 +161,7 @@ def update_local_norm_link(dbname, local_uid, entity_uid=None):
     rowid = ''
     
     if len(current_link) > 0:
-        cursor.execute("DELETE FROM local_norms WHERE uid='" + local_uid + "'")      
+        cursor.execute("DELETE FROM entity_norms WHERE norm_uid='" + local_uid + "'")      
     
     if entity_uid != None:
         rowid = create_local_norm_link(dbname, local_uid, entity_uid)
