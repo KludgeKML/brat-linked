@@ -1214,6 +1214,7 @@ var AnnotatorUI = (function($, window, undefined) {
           dispatcher.post('ajax', 
           [{
               action: 'getLinkedNorm',
+              filter: 'local',
               database: db,
               key: local_uid,
             }, 'autofillLinkedNorm'

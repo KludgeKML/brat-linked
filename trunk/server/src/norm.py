@@ -158,9 +158,9 @@ def norm_update_link(database, local_uid=None, global_uid=None, collection=None)
     data = []   
           
     try: 
-        type = get_norm_type_by_id(dbpath, local_uid)
+        link_type = get_norm_type_by_id(dbpath, local_uid)
         
-        if(type['type'] == 'local' and local_uid != ''):
+        if(link_type['type'] == 'local' and local_uid != ''):
             data = normdb.update_local_norm_link(dbpath, local_uid, global_uid)
 
     except normdb.dbNotFoundError, e:
@@ -171,7 +171,7 @@ def norm_update_link(database, local_uid=None, global_uid=None, collection=None)
     
     return responseData       
  
-def norm_get_linked(database, key, collection=None):
+def norm_get_linked(database, key, filter=None, collection=None):
 
     dbpath = _get_db_path(database, collection)
     if dbpath is None:
@@ -180,11 +180,11 @@ def norm_get_linked(database, key, collection=None):
         
 
     try: 
-        type = get_norm_type_by_id(dbpath, key)
-    
-        if(type['type'] == 'local'):
+        link_type = get_norm_type_by_id(dbpath, key)
+
+        if(link_type['type'] == 'local' and ((filter != None and filter == 'local') or filter == None)):
             data = normdb.get_linked_global_entity(dbpath, key)
-        else:
+        elif((filter != None and filter == 'global') or filter == None):
             data = normdb.get_linked_local_entity(dbpath, key)
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))         
@@ -263,14 +263,14 @@ def norm_get_data(database, key, collection=None):
         dbpath = database
 
     try:
-        type = get_norm_type_by_id(dbpath, key)
+        link_type = get_norm_type_by_id(dbpath, key)
     
-        if type['type'] == 'global':
+        if link_type['type'] == 'global':
             data = normdb.data_by_id(dbpath, key)
-        elif type['type'] == 'local':
+        elif link_type['type'] == 'local':
             data = 'Local Normalisation Value'
         else:
-            data = type['type']
+            data = link_type['type']
                     
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))
