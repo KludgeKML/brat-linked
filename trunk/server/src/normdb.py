@@ -170,7 +170,7 @@ def update_local_norm_link(dbname, local_uid, entity_uid=None):
     
     if len(current_link) > 0:
         try:
-            cursor.execute("DELETE FROM entity_norms WHERE norm_id='" + str(local_id) + "'")      
+            cursor.execute("DELETE FROM entity_norms WHERE norm_id=" + str(local_id))      
             Messager.info("Calling delete in entity_norms on norm_id: " + str(local_id)) 
         except dbNotFoundError, e:
             Messager.warning(str(e))  
