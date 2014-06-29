@@ -13,7 +13,7 @@ def load_namespace_info():
     Ultimately this file will be cached from a site specified in 
     an environment variable. For now, it's just on disk.
     '''
-    namespace_file = open('/var/www/brat/data/Narrative', 'r')
+    namespace_file = open('/var/www/brat/data/Narrative/ontomedia-data.json', 'r')
     namespace_info = json.load(namespace_file)
     close(namespace_file)
 
