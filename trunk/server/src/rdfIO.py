@@ -15,7 +15,7 @@ def load_namespace_info():
     '''
     namespace_file = open('/var/www/brat/data/Narrative/ontomedia-data.json', 'r')
     namespace_info = json.load(namespace_file)
-    close(namespace_file)
+    namespace_file.close()
 
     return namespace_info
 
