@@ -85,7 +85,7 @@ def norm_create_local(database, name, collection=None, docID=None):
     if docID != None:
         entityID += '/' + docID
         
-    entityID += '/meta/' + camelCase(name)    
+    entityID += '/shared/' + camelCase(name)    
 
     dbpath = _get_db_path(database, collection)
     if dbpath is None:
