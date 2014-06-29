@@ -433,7 +433,7 @@ def create_span(collection, document, offsets, type, attributes=None,
     
     update_info = norm_update_link(database, local_uid, linkedNorm)
     
-    Messager.info('Local ID: ' + update_info['local'] + ', Global ID: ' +  update_info['global'] + ', Response: ' + update_info['repsonse'])
+    Messager.info('Local ID: ' + update_info['local'] + ', Global ID: ' +  update_info['global'])
 
     return _create_span(collection, document, offsets, type, attributes,
                         normalizations, id, comment)
