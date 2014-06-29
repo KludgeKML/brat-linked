@@ -420,21 +420,16 @@ def _json_offsets_to_list(offsets):
         raise ProtocolArgumentError
     return offsets
 
-def create_span(collection, document, offsets, type, attributes=None,
-                normalizations=None, id=None, comment=None, linkedNorm=None):
+def create_span(collection, document, offsets, span_type, attributes=None,
+                normalizations=None, span_id=None, comment=None, linkedNorm=None):
     # offsets should be JSON string corresponding to a list of (start,
     # end) pairs; convert once at this interface
     offsets = _json_offsets_to_list(offsets)
 
-    span_type = type
-    del type
-    span_id = id
-    del id
-
     if(linkedNorm != None and normalizations != None):    
         Messager.info("Linked span id: "+ linkedNorm + ", ID: " + normalizations[1])
     elif(normalizations != None):
-        Messager.info("Linked span id: , ID: " +  type(normalizations) + ", normalizations: " + normalizations)
+        Messager.info("Linked span id: , ID: " +  __builtins__.type(normalizations) + ", normalizations: " + normalizations)
 
     return _create_span(collection, document, offsets, span_type, attributes,
                         normalizations, span_id, comment)
