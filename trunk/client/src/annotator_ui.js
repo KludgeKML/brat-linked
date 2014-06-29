@@ -1343,6 +1343,7 @@ var AnnotatorUI = (function($, window, undefined) {
         oldSpanNormIdValue = selectedId; 
         $('#span_norm_txt').val(selectedTxt);
         updateNormalizationRefLink();
+        getLinkedNorm();
         // update history
         var nextLastNormSearches = [
           {
