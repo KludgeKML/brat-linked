@@ -1,21 +1,24 @@
 #!/usr/bin/env python
 
 import re
+import json
 
 from annotation import open_textfile
 from session import get_session
 from normdb import get_norm_type_by_id, get_linked_global_entity, get_linked_local_entity, data_by_id
 
-base_namespace = 'http://contextus.net/resource/RRH/'
+def load_namespace_info():
+    '''Reads namespace variables from JSON file.
 
-namespaces = {'rdfs':'http://www.w3.org/2000/01/rdf-schema#','ome':'http://contextus.net/ontology/ontomedia/core/expression#', 'omt':'http://contextus.net/ontology/ontomedia/ext/common/trait#', 'omb':'http://contextus.net/ontology/ontomedia/ext/common/being#', 'omeg':'http://contextus.net/ontology/ontomedia/ext/events/gain#', 'omel':'http://contextus.net/ontology/ontomedia/ext/events/loss#', 'omet':'http://contextus.net/ontology/ontomedia/ext/events/trans#', 'omes':'http://contextus.net/ontology/ontomedia/ext/events/social#', 'omea':'http://contextus.net/ontology/ontomedia/ext/events/action#', 'omj':'http://contextus.net/ontology/ontomedia/ext/events/travel#', 'eprop':'http://contextus.net/ontology/ontomedia/ext/events/eventprop#', 'omf':'http://contextus.net/ontology/ontomedia/ext/fiction/fic#', 'owl':'http://www.w3.org/2002/07/owl#', 'cnt':'http://www.w3.org/2011/content#'}
-    
-category_map = {'Entity':'ome', 'Being':'ome', 'Character':'ome', 'Item':'ome', 'Abstract-Item':'ome', 'Group':'omb', 'Community':'omb', 'Household':'omb', 'Bonded-Group':'omb', 'Bonded-Pair':'omb', 'Organisation':'omb', 'Company':'omb', 'Government':'omb', 'Context':'ome', 'Physical-Item':'ome', 'Space':'ome','Event':'ome', 'Gain':'ome', 'Creation':'omeg', 'Loss':'ome', 'Destruction':'omel', 'Betrayal':'omel', 'Transformation':'ome', 'Transference':'omet', 'Division':'omet', 'Merge':'omet', 'Degradation':'omet', 'Social':'ome', 'Conversational':'omes', 'Flirtation':'omes', 'Proposition':'omes', 'Political':'omes', 'Academic':'omes', 'Legal':'omes', 'Theological':'omes', 'Philosophical':'omes', 'Action':'ome', 'Violence':'omea', 'Sex':'omea', 'Festivity':'omea', 'Ingestion':'omea', 'Celestial':'omea', 'Environmental':'omea', 'Travel':'omj', 'Describes':'omf', 'Implied':'omf', 'References-Concept':'omf', 'In-Passing':'omf', 'Vague-Description':'omf', 'Detailed-Description':'omf', 'Extremely-Detailed-Description':'omf', 'Fade-To-Black':'omf', 'Extremely-Detailed-Description':'omf', 'Spoiler':'omf', 'Key':'omf', 'Main':'omf', 'Fact':'omf', 'Nitpick':'omf', 'Nitpick':'omf', 'Consent-Given':'eprop', 'Consent-Implied':'eprop', 'Consent-Not-Given':'eprop', 'Consent-Unclear':'eprop', 'Strongly-Positive':'omes','Positive':'omes','Neutral':'omes','Negative':'omes','Strongly-Negative':'omes'}
+    Ultimately this file will be cached from a site specified in 
+    an environment variable. For now, it's just on disk.
+    '''
+    namespace_file = open('/var/www/brat/data/Narrative', 'r')
+    namespace_info = json.load(namespace_file)
+    close(namespace_file)
 
-    
-relationship_map = {'is-linked-to':'ome', 'is':'ome', 'is-shadow-of':'ome', 'contains':'ome', 'contained-by':'ome', 'has-subject-entity':'ome', 'has-object-entity':'ome', 'has-subject':'omes', 'to':'ome', 'from':'ome'}
-    
-extended_rdf_map = {'bond-with':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Bond;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n', 'family-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Family;\n\t\t\tomb:is-relation-of {1}]\n\t\t];\n', 'friend-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Friendship;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n', 'enemy-of':'omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Enmity;\n\t\t\tomb:is-linked-to {1}]\n\t\t];\n'}
+    return namespace_info
+
 
 def convert_to_rdf(fpath, document):
     '''Returns a turtle file of the annotations.
@@ -33,14 +36,17 @@ def convert_to_rdf(fpath, document):
 
     return rdf
 
+
 def get_rdf_parts(fpath, document):
     
     user = get_session()['user']
     parts = { 'prefixes': [], 'data': '' }
+
+    namespace_info = load_namespace_info()
     
-    namespace = base_namespace + user + '/' + document + '/'
+    namespace = namespace_info['base_namespace'] + user + '/' + document + '/'
     
-    for prefix, url in namespaces.items():
+    for prefix, url in namespace_info['namespaces'].items():
         parts['prefixes'].append(prefix + ': <' + url + '>')
 
     with open(fpath) as txt_file:
@@ -57,12 +63,12 @@ def get_rdf_parts(fpath, document):
             
                 parts['data'] += "<" + namespace + EventID + ">\n\ta "
                 
-                if lookup(EventType) != False:
-                    parts['data'] += lookup(EventType) + ";\n"
+                if lookup(EventType, namespace_info) != False:
+                    parts['data'] += lookup(EventType, namespace_info) + ";\n"
             
                 for chunk in chunks[2:]:
                     if ':' in chunk:
-                        parts['data'] += "\t" + lookup(chunk.split(':')[0]) + " <" + namespace + chunk.split(':')[1] + ">;\n"
+                        parts['data'] += "\t" + lookup(chunk.split(':')[0], namespace_info) + " <" + namespace + chunk.split(':')[1] + ">;\n"
                 
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
                 
@@ -110,60 +116,61 @@ def get_rdf_parts(fpath, document):
                                     if tuple[0] == 'Name':
                                         parts['data'] += '\trdfs:label "' + tuple[1] + '";\n'
                                     elif tuple[0] == 'Category':
-                                        parts['data'] += '\ta ' + lookup(tuple[1]) + ' .\n\n'
+                                        parts['data'] += '\ta ' + lookup(tuple[1], namespace_info) + ' .\n\n'
                 
            
             elif line[0] == 'R':
                 
                 parts['data'] += "<" + namespace + chunks[2].split(":")[1] + "> "
                     
-                if lookup(chunks[1]) != False:
-                    parts['data'] += lookup(chunks[1]) + " " + "<" + namespace + chunks[3].split(":")[1] + ">;\n" 
+                if lookup(chunks[1], namespace_info) != False:
+                    parts['data'] += lookup(chunks[1], namespace_info) + " " + "<" + namespace + chunks[3].split(":")[1] + ">;\n" 
                 else:
-                    parts['data'] += get_long_rdf(chunks[1], chunks[3].split(":")[1], namespace)
+                    parts['data'] += get_long_rdf(chunks[1], chunks[3].split(":")[1], namespace, namespace_info)
                 
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
             
             elif line[0] == 'T':
                 parts['data'] += "<" + namespace + chunks[0] + ">\n\ta "
-                if lookup(chunks[1]) != False:
-                    parts['data'] += lookup(chunks[1])
+                if lookup(chunks[1], namespace_info) != False:
+                    parts['data'] += lookup(chunks[1], namespace_info)
                 parts['data'] += " ;\n"
                 parts['data'] += '\tcnt:chars "' + " ".join(chunks[4:]) + '" .\n\n'
             
             elif line[0] == 'A':
-                parts['data'] += "<" + namespace + chunks[2] + ">\n\ta " + lookup(chunks[3]) + ";\n"    
+                parts['data'] += "<" + namespace + chunks[2] + ">\n\ta " + lookup(chunks[3], namespace_info) + ";\n"    
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'     
            
     return parts
 
-def lookup(annotation):
+
+def lookup(annotation, namespace_info):
 
     #conversion = {}
     
     #if annotation in conversion:
     #    annotation = conversion[annotation]
 
-    if annotation in namespaces:
-        return namespaces[annotation]
-    elif annotation in category_map:
-        return category_map[annotation] + ":" + annotation
-    elif annotation in relationship_map:
-        return relationship_map[annotation] + ":" + annotation
-    elif annotation in extended_rdf_map:
+    if annotation in namespace_info['namespaces']:
+        return namespace_info['namespaces'][annotation]
+    elif annotation in namespace_info['category_map']:
+        return namespace_info['category_map'] + ":" + annotation
+    elif annotation in namespace_info['relationship_map']:
+        return namespace_info['relationship_map'] + ":" + annotation
+    elif annotation in namespace_info['extended_rdf_map']:
         return False
     return annotation
 
 
-def get_long_rdf(annotation, entity, namespace):
+def get_long_rdf(annotation, entity, namespace, namespace_info):
     ent = ''    
-    if entity in category_map:
-        ent = category_map[entity] + ":" + entity
+    if entity in namespace_info['category_map']:
+        ent = namespace_info['category_map'][entity] + ":" + entity
     else:
         ent = "<" + namespace + entity + ">"
 
-    if annotation in extended_rdf_map:
-        raw = extended_rdf_map[annotation]
+    if annotation in namespace_info['extended_rdf_map']:
+        raw = namespace_info['extended_rdf_map'][annotation]
         return raw.replace('{1}', ent)
 
     return annotation + " " + ent
