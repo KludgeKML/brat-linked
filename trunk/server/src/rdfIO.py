@@ -10,7 +10,7 @@ from os.path import join as path_join
 from config import DATA_DIR
 from document import real_directory
 from session import get_session
-from normdb import get_norm_type_by_id, get_linked_global_entity, get_linked_local_entity, data_by_id
+from normdb import get_norm_type_by_id, data_by_id
 
 # Constants
 RDF_FILE_SUFFIX = 'rdf'
@@ -35,12 +35,12 @@ def create_rdf_file(collection, document):
     fname = '%s.%s' % (document, RDF_FILE_SUFFIX)
     fpath = path_join(real_dir, fname)
 
-    (tf,tf_name) = tempfile.mkstemp()
-    tf.write(convert_to_rdf(fpath, document))
-    tf.close()
-    if (os.path.isfile(fpath)):
+    (tmp_file, tmp_name) = tempfile.mkstemp()
+    tmp_file.write(convert_to_rdf(fpath, document))
+    tmp_file.close()
+    if os.path.isfile(fpath):
         os.remove(fpath)
-    os.rename(tf_name,fpath)
+    os.rename(tmp_name, fpath)
     return
 
 def convert_to_rdf(fpath, document):
@@ -50,7 +50,7 @@ def convert_to_rdf(fpath, document):
     to insert them into a graph, are returned as a file. This function is
     designed to be called from the dispatcher.
     '''
-    parts = get_rdf_parts(fpath, document);
+    parts = get_rdf_parts(fpath, document)
     rdf = ''
 
     for prefix in parts['prefixes']:
@@ -63,7 +63,7 @@ def convert_to_rdf(fpath, document):
 def get_rdf_parts(fpath, document):
 
     user = get_session()['user']
-    parts = { 'prefixes': [], 'data': '' }
+    parts = {'prefixes': [], 'data': ''}
 
     namespace_info = load_namespace_info()
 
@@ -81,15 +81,15 @@ def get_rdf_parts(fpath, document):
 
             if line[0] == 'E':
 
-                Event = chunks[1]
+                event = chunks[1]
 
-                EventID = Event.split(':')[1]
-                EventType = Event.split(':')[0]
+                event_id = event.split(':')[1]
+                event_type = event.split(':')[0]
 
-                parts['data'] += "<" + namespace + EventID + ">\n\ta "
+                parts['data'] += "<" + namespace + event_id + ">\n\ta "
 
-                if lookup(EventType, namespace_info) != False:
-                    parts['data'] += lookup(EventType, namespace_info) + ";\n"
+                if lookup(event_type, namespace_info) != False:
+                    parts['data'] += lookup(event_type, namespace_info) + ";\n"
 
                 for chunk in chunks[2:]:
                     if ':' in chunk:
@@ -137,11 +137,11 @@ def get_rdf_parts(fpath, document):
                             parts['data'] += "<" + key + ">\n"
 
                             for data in value:
-                                for tuple in data:
-                                    if tuple[0] == 'Name':
-                                        parts['data'] += '\trdfs:label "' + tuple[1] + '";\n'
-                                    elif tuple[0] == 'Category':
-                                        parts['data'] += '\ta ' + lookup(tuple[1], namespace_info) + ' .\n\n'
+                                for data_tuple in data:
+                                    if data_tuple[0] == 'Name':
+                                        parts['data'] += '\trdfs:label "' + data_tuple[1] + '";\n'
+                                    elif data_tuple[0] == 'Category':
+                                        parts['data'] += '\ta ' + lookup(data_tuple[1], namespace_info) + ' .\n\n'
 
 
             elif line[0] == 'R':
