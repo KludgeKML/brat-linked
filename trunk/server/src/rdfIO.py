@@ -32,7 +32,7 @@ def load_namespace_info():
 def create_rdf_file(collection, document):
     directory = collection
     real_dir = real_directory(directory)
-    fname = '%s.%s' % (document, extension)
+    fname = '%s.%s' % (document, RDF_FILE_SUFFIX)
     fpath = path_join(real_dir, fname)
 
     tf = tempfile.TemporaryFile()
