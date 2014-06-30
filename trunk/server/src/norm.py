@@ -187,7 +187,7 @@ def norm_get_linked(database, key, filter=None, collection=None):
             data = normdb.get_linked_global_entity(dbpath, key)
         elif((filter != None and filter == 'global') or filter == None):
             data = normdb.get_linked_local_entity(dbpath, key)
-        else
+        else:
             Messager.warning('Type: ' + link_type['type'] + ', Filter: ' + filter)
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))         
