@@ -31,7 +31,6 @@ def load_namespace_info():
     return namespace_info
 
 def create_rdf_file(collection, document):
-    Messager.info("Collection is: [" + collection + "] and Document is [" + document + "]")
     directory = collection
     real_dir = real_directory(directory)
     fname = '%s.%s' % (document, 'ann')
@@ -50,8 +49,8 @@ def create_rdf_file(collection, document):
     tmp_file.close()
     if os.path.isfile(fpath):
         os.remove(fpath)
-    Messager.info("Creating RDF File [" + fpath + "]")
     os.rename(tmp_name, fpath)
+    os.chmod(fpath, 0644)
     return
 
 def convert_to_rdf(fpath, document):

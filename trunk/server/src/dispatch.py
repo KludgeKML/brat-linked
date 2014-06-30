@@ -339,17 +339,6 @@ def dispatch(http_args, client_ip, client_hostname):
                        'FINISH', action, action_args)
 
     if action in ANNOTATION_SAVE_RDF:
-        if http_args['collection'] == None:
-            hc = "None"
-        else:
-            hc = http_args['collection']
-
-        if http_args['document'] == None:
-            hd = "None"
-        else:
-            hd = http_args['document']
-
-        Messager.info("Saving command from " + action + ", " + hc + ", " + hd)
         create_rdf_file(http_args['collection'],
                         http_args['document'])
 
