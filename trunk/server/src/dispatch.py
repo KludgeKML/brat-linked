@@ -134,7 +134,7 @@ LOGGED_ANNOTATOR_ACTION = ANNOTATION_ACTION | set((
 REQUIRES_AUTHENTICATION = ANNOTATION_ACTION | set((
         # Document functionality
         'importDocument',
-        
+
         # Search functionality in whole collection (heavy on the CPU/disk ATM)
         'searchTextInCollection',
         'searchEntityInCollection',
@@ -263,7 +263,7 @@ def dispatch(http_args, client_ip, client_hostname):
     except ValueError:
         raise ProtocolVersionMismatchError(http_args['protocol'],
                 PROTOCOL_VERSION)
-    
+
     # Was an action supplied?
     if action is None:
         raise NoActionError
@@ -339,6 +339,9 @@ def dispatch(http_args, client_ip, client_hostname):
                        'FINISH', action, action_args)
 
     if action in ANNOTATION_SAVE_RDF:
+        Messager.info("Saving command from " + action + ", " +
+            (http_args['collection'] == None ? "None": http_args['collection']) + ", " +
+            (http_args['document'] == None ? "None": http_args['document']))
         create_rdf_file(http_args['collection'],
                         http_args['document'])
 
