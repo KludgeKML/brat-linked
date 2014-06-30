@@ -36,7 +36,10 @@ def create_rdf_file(collection, document):
     fname = '%s.%s' % (document, RDF_FILE_SUFFIX)
     fpath = path_join(real_dir, fname)
 
-    (tmp_file, tmp_name) = tempfile.mkstemp()
+    (tmp_fh, tmp_name) = tempfile.mkstemp()
+    os.close(tmp_fh)
+
+    tmp_file = open(tmp_name, 'w')
     tmp_file.write(convert_to_rdf(fpath, document))
     tmp_file.close()
     if os.path.isfile(fpath):
