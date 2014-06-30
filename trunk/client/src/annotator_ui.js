@@ -72,7 +72,7 @@ var AnnotatorUI = (function($, window, undefined) {
         // utility function, originally for stripping numerix suffixes
         // from arc types (e.g. "Theme2" -> "Theme"). For values
         // without suffixes (including non-strings), returns given value.
-        if (typeof(s) != "string") {          
+        if (typeof(s) != "string") {
           return s; // can't strip
         }
         var m = s.match(/^(.*?)(\d*)$/);
@@ -127,7 +127,7 @@ var AnnotatorUI = (function($, window, undefined) {
 
         // in rapid annotation mode, prioritize the keys 0..9 for the
         // ordered choices in the quick annotation dialog.
-        if (Configuration.rapidModeOn && rapidAnnotationDialogVisible && 
+        if (Configuration.rapidModeOn && rapidAnnotationDialogVisible &&
             "0".charCodeAt() <= code && code <= "9".charCodeAt()) {
           var idx = String.fromCharCode(code);
           var $input = $('#rapid_span_'+idx);
@@ -594,7 +594,7 @@ var AnnotatorUI = (function($, window, undefined) {
             eLeft = Math.min(Math.max(eLeft,0), screenWidth - elementWidth);
         } else {
             eLeft = 0;
-        } 
+        }
         if (screenHeight > elementHeight) {
             eTop  = Math.min(Math.max(eTop,0), screenHeight - elementHeight);
         } else {
@@ -664,7 +664,7 @@ var AnnotatorUI = (function($, window, undefined) {
         }
 
         $('#span_selected').text(spanText);
-        var encodedText = encodeURIComponent(spanText);       
+        var encodedText = encodeURIComponent(spanText);
         $.each(searchConfig, function(searchNo, search) {
           $('#span_'+search[0]).attr('href', search[1].replace('%s', encodedText));
         });
@@ -890,7 +890,7 @@ var AnnotatorUI = (function($, window, undefined) {
           var type = $('#span_form input:radio:checked').val();
           var entityAttrCount = showAttributesFor(entityAttributeTypes, 'entity', type);
           var eventAttrCount = showAttributesFor(eventAttributeTypes, 'event', type);
-          
+
           showAllAttributes = false;
           // show attribute frames only if at least one attribute is
           // shown, and set size classes appropriately
@@ -966,7 +966,7 @@ var AnnotatorUI = (function($, window, undefined) {
           var $label = $('<label class="span_type_label"/>').
             attr('for', 'rapid_span_' + (typeNo+1)).
             text(name+' (' + (100.0 * prob).toFixed(1) + '%)');
-          $label.css('background-color', spanBgColor);          
+          $label.css('background-color', spanBgColor);
           // TODO: check for unnecessary extra wrapping here
           var $content = $('<div class="item_content"/>').
             append($numlabel).
@@ -1007,7 +1007,7 @@ var AnnotatorUI = (function($, window, undefined) {
         });
         // fill in some space and the special "Other" option, with key "0" (zero)
         $spanTypeDiv.append($('<div class="item_content">&#160;</div>')); // non-breaking space
-        var $numlabel = $('<span class="accesskey">0</span><span>:</span>');        
+        var $numlabel = $('<span class="accesskey">0</span><span>:</span>');
         var $input = $('<input type="radio" name="rapid_span_type" id="rapid_span_0" value=""/>');
         var $label = $('<label class="span_type_label" for="rapid_span_0" style="background-color:lightgray">Other...</label>');
         var $content = $('<div class="item_content"/>').
@@ -1056,10 +1056,10 @@ var AnnotatorUI = (function($, window, undefined) {
       var clearSpanNorm = function(evt) {
         clearNormalizationUI();
       }
-      
+
       $('#norm_edit_search_button').button();
-      
-      $('#norm_edit_search_button').click(function() 
+
+      $('#norm_edit_search_button').click(function()
       {
         var val = $('#norm_edit_search_query').val();
         var db = $('#span_norm_db').val();
@@ -1071,34 +1071,35 @@ var AnnotatorUI = (function($, window, undefined) {
       });
 
 
-      var deleteNorm = function() 
+      var deleteNorm = function()
       {
-        if (Configuration.confirmModeOn && !confirm("Are you sure you want to delete this local normalisation entity (and any related links to shared entities)?")) 
+        if (Configuration.confirmModeOn && !confirm("Are you sure you want to delete this local normalisation entity (and any related links to shared entities)?"))
         {
           return;
         }
-        
+
         var db = $('#span_norm_db').val();
         var uid = $('#norm_edit_id').val();
-        
+
         dispatcher.post('ajax',
 		      [{
 			      action: 'normDelete',
             database: db,
             local_uid: uid,
+            collection: coll,
 			      protocol: '1'
-		      }, 'normDeleteResult']);  
+		      }, 'normDeleteResult']);
       };
-      
-      
+
+
       var updateWithDeletedNorm = function()
       {
         //Needs to be added
       }
-      
-            
+
+
       var normEditDialog = $('#norm_edit_dialog');
-      
+
       initForm(normEditDialog, {
           width: 800,
           width: 600,
@@ -1113,20 +1114,20 @@ var AnnotatorUI = (function($, window, undefined) {
           //    text: "Delete",
           //    click: deleteNorm
           //}
-          //],    
+          //],
           close: function(evt) {
             // assume that we always want to return to the span dialog
             // on normalization dialog close
             dispatcher.post('showForm', [spanForm, true]);
           },
       }
-    
-      
-      );  
-      
+
+
+      );
+
       normEditDialog.submit(function () {
         $('#span_linked_norm_id').val($('#norm_edit_global_id').val());
-        
+
         if($('#span_linked_norm_id').val() != '')
         {
           $('#clear_link_button').button('enable');
@@ -1136,17 +1137,17 @@ var AnnotatorUI = (function($, window, undefined) {
         {
           $('#clear_link_button').button('disable');
         }
-        
+
         normEditDialog.dialog('close');
       });
-      
-      
+
+
       $('#clear_link_button').button();
-      
+
       var clearedLinkedNorm = function(response)
       {
         $('#span_linked_norm_id').attr('readonly', 'readonly');
-      
+
         if(response.type == 'local')
         {
           $('#span_linked_norm_id').attr('placeholder', 'Click Here to Link to Shared Entity');
@@ -1161,38 +1162,39 @@ var AnnotatorUI = (function($, window, undefined) {
           $('#span_linked_norm_id').attr('placeholder', 'A Normalization Entity Must Be Selected');
         }
       }
-      
+
       var updateWithClearedLinkedNorm = function()
       {
         $('#span_linked_norm_id').val('');
         $('#clear_link_button').button('disable');
-        
+
         if($('#span_norm_id').val() != '')
         {
-        
+
           var db = $('#span_norm_db').val();
           var uid = $('#span_norm_id').val();
-          
-          dispatcher.post('ajax', 
+
+          dispatcher.post('ajax',
           [{
               action: 'getNormType',
               database: db,
               key: uid,
+              collection: coll,
             }, 'clearedLinkedNorm'
           ]);
-        
+
         }
         else
         {
           $('#span_linked_norm_id').attr('placeholder', 'A Normalization Entity Must Be Selected');
           $('#span_linked_norm_id').attr('readonly', 'readonly');
         }
-        
+
       }
 
       $('#clear_link_button').click(updateWithClearedLinkedNorm);
-      
-      
+
+
       var autofillLinkedNorm = function(response)
       {
         if(response.response.length > 0)
@@ -1203,30 +1205,31 @@ var AnnotatorUI = (function($, window, undefined) {
         else
           updateWithClearedLinkedNorm();
       }
-      
+
       var getLinkedNorm = function()
       {
         local_uid = $('#span_norm_id').val()
         var db = $('#span_norm_db').val();
-        
+
         if(local_uid != '')
         {
-          dispatcher.post('ajax', 
+          dispatcher.post('ajax',
           [{
               action: 'getLinkedNorm',
               filter: 'local',
               database: db,
               key: local_uid,
+              collection: coll,
             }, 'autofillLinkedNorm'
           ]);
-        } 
-                
+        }
+
       }
-      
-      var showNormEditDialog = function() 
+
+      var showNormEditDialog = function()
       {
         if($('#span_norm_id').val() != '')
-        {        
+        {
           dispatcher.post('hideForm');
           $('#norm_edit_name').val($('#span_norm_txt').val());
           $('#norm_edit_id').val($('#span_norm_id').val());
@@ -1236,9 +1239,9 @@ var AnnotatorUI = (function($, window, undefined) {
           $('#norm_edit_search_query').focus().select();
         }
       };
-      
+
       $('#span_linked_norm_id').click(showNormEditDialog);
-      
+
       $('#clear_norm_button').button();
       $('#clear_norm_button').click(clearSpanNorm);
 
@@ -1249,7 +1252,7 @@ var AnnotatorUI = (function($, window, undefined) {
           // TODO: better response to failure
           dispatcher.post('messages', [[['Lookup error', 'warning', -1]]]);
           return false;
-        }        
+        }
         // set input style according to whether we have a valid value
         var $idinput = $('#span_norm_id');
         // TODO: make sure the key echo in the response matches the
@@ -1292,13 +1295,13 @@ var AnnotatorUI = (function($, window, undefined) {
           }
           oldSpanNormIdValue = key;
         }
-      }      
-       
+      }
+
       //$('#norm_create_name').keyup(function(evt) {
-      
+
       var setCreateButton = function(evt)
       {
-      
+
         if($('#norm_create_name').val() == '')
         {
           $('#norm_create_button').button('disable')
@@ -1307,16 +1310,16 @@ var AnnotatorUI = (function($, window, undefined) {
         {
           $('#norm_create_button').button('enable')
         }
-      
+
       };
-      
+
       // see http://stackoverflow.com/questions/1948332/detect-all-changes-to-a-input-type-text-immediately-using-jquery
-      
-      $('#norm_create_name').bind('propertychange keyup input paste', setCreateButton);    
+
+      $('#norm_create_name').bind('propertychange keyup input paste', setCreateButton);
       $('#span_norm_id').bind('propertychange keyup input paste', spanNormIdUpdate);
       // nice-looking select for normalization
       $('#span_norm_db').addClass('ui-widget ui-state-default ui-button-text');
-           
+
 
       var normSearchDialog = $('#norm_search_dialog');
       initForm(normSearchDialog, {
@@ -1333,8 +1336,8 @@ var AnnotatorUI = (function($, window, undefined) {
             dispatcher.post('showForm', [spanForm, true]);
           },
       });
-      
-      
+
+
       $('#norm_search_query').autocomplete({
         source: function(request, callback) {
           var query = $.ui.autocomplete.escapeRegex(request.term);
@@ -1357,12 +1360,12 @@ var AnnotatorUI = (function($, window, undefined) {
           append('<a>' + Util.escapeHTML(item.value) + '<div class="autocomplete-id">' + Util.escapeHTML(item.id) + "</div></a>").
           appendTo($ul);
       };
-      
+
       var normSubmit = function(selectedId, selectedTxt) {
         // we got a value; act if it was a submit
         $('#span_norm_id').val(selectedId);
         // don't forget to update this reference value
-        oldSpanNormIdValue = selectedId; 
+        oldSpanNormIdValue = selectedId;
         $('#span_norm_txt').val(selectedTxt);
         updateNormalizationRefLink();
         getLinkedNorm();
@@ -1383,13 +1386,13 @@ var AnnotatorUI = (function($, window, undefined) {
         // Switch dialogs. NOTE: assuming we closed the spanForm when
         // bringing up the normSearchDialog.
         normSearchDialog.dialog('close');
-      };  
-      
+      };
+
       var normLink = function(selectedId, selectedTxt) {
         // we got a value; act if it was a submit
         $('#span_norm_id').val(selectedId);
         // don't forget to update this reference value
-        oldSpanNormIdValue = selectedId; 
+        oldSpanNormIdValue = selectedId;
         $('#span_norm_txt').val(selectedTxt);
         $('#span_linked_norm_id').val(updateNormalizationRefLink);
         updateNormalizationRefLink();
@@ -1410,17 +1413,17 @@ var AnnotatorUI = (function($, window, undefined) {
         // Switch dialogs. NOTE: assuming we closed the spanForm when
         // bringing up the normSearchDialog.
         normEditDialog.dialog('close');
-      };          
-      
+      };
+
       var normSearchSubmit = function(evt) {
-        if (normSearchSubmittable) 
+        if (normSearchSubmittable)
         {
-          var selectedId = $('#norm_search_id').val(); 
+          var selectedId = $('#norm_search_id').val();
           var selectedTxt = $('#norm_search_query').val();
 
           normSubmit(selectedId, selectedTxt);
-        } 
-        else 
+        }
+        else
         {
           performNormSearch();
         }
@@ -1428,24 +1431,24 @@ var AnnotatorUI = (function($, window, undefined) {
       }
 
       var normLinkedSearchSubmit = function(evt) {
-        if (normLinkedSearchSubmittable) 
+        if (normLinkedSearchSubmittable)
         {
-          var selectedId = $('#norm_edit_search_id').val(); 
+          var selectedId = $('#norm_edit_search_id').val();
           var selectedTxt = $('#norm_edit_search_query').val();
 
           normSubmit(selectedId, selectedTxt);
-        } 
-        else 
+        }
+        else
         {
           performLinkedNormSearch();
         }
         return false;
       }
-      
+
       var normSearchSubmittable = false;
-      
+
       var normLinkedSearchSubmittable = false;
-      
+
       var setNormSearchSubmit = function(enable) {
         $('#norm_search_dialog-ok').button(enable ? 'enable' : 'disable');
         normSearchSubmittable = enable;
@@ -1454,14 +1457,14 @@ var AnnotatorUI = (function($, window, undefined) {
       var setLinkedNormSearchSubmit = function(enable) {
         $('#norm_edit_dialog-ok').button(enable ? 'enable' : 'disable');
         normLinkedSearchSubmittable = enable;
-      };  
-      
+      };
+
       $('#norm_edit_search_query').focus(function() {
         setLinkedNormSearchSubmit(false);
-      });        
-      
+      });
+
       normSearchDialog.submit(normSearchSubmit);
-      
+
       var chooseNormId = function(evt) {
         var $element = $(evt.target).closest('tr');
         $('#norm_search_result_select tr').removeClass('selected');
@@ -1471,7 +1474,7 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_search_id').val($element.attr('data-id'));
         setNormSearchSubmit(true);
       }
-      
+
       var chooseLinkedNormId = function(evt) {
         var $element = $(evt.target).closest('tr');
         $('#norm_edit_search_result_select tr').removeClass('selected');
@@ -1479,8 +1482,8 @@ var AnnotatorUI = (function($, window, undefined) {
         $('#norm_edit_search_query').val($element.attr('data-txt'));
         $('#norm_edit_global_id').val($element.attr('data-id'));
         setLinkedNormSearchSubmit(true);
-      }      
-      
+      }
+
       var chooseNormIdAndSubmit = function(evt) {
         chooseNormId(evt);
         normSearchSubmit(evt);
@@ -1489,10 +1492,10 @@ var AnnotatorUI = (function($, window, undefined) {
       var chooseLinkedNormIdAndSubmit = function(evt) {
         chooseLinkedNormId(evt);
         normLinkedSearchSubmit(evt);
-      }  
-      
-        
-     
+      }
+
+
+
       var setSpanNormSearchResults = function(response) {
         if (response.exception) {
           // TODO: better response to failure
@@ -1505,7 +1508,7 @@ var AnnotatorUI = (function($, window, undefined) {
         //$('#norm_create_button').button('enable');
         //$('#norm_create_name').removeAttr('readonly', false);
         //$('#norm_create_name').attr('placeholder', 'Enter entity name');
-        
+
         $('#span_linked_norm_id').attr('placeholder', 'Click here to link to shared entity');
 
         if (response.items.length == 0) {
@@ -1517,7 +1520,7 @@ var AnnotatorUI = (function($, window, undefined) {
         }
 
         // TODO: avoid code duplication with showFileBrowser()
-        
+
         var len = response.header.length;
 
         var html = ['<tr><th colspan="' + len + '">Global Entities</th></tr><tr>'];
@@ -1567,7 +1570,7 @@ var AnnotatorUI = (function($, window, undefined) {
           dispatcher.post('messages', [[['No matches to search.', 'comment']]]);
           return false;
         }
-        
+
         var len = response.header.length;
 
         var html = ['<tr><th colspan="' + len + '">Global Entities</th></tr><tr>'];
@@ -1623,7 +1626,7 @@ var AnnotatorUI = (function($, window, undefined) {
           $('#norm_local_result_select tbody').empty();
           dispatcher.post('messages', [[['No matches to search.', 'comment']]]);
           return false;
-        } 
+        }
 
         var html = '<tr><th colspan="2">Local Entities</th></tr><tr><td>Name</td><td>ID</td></tr>';
         $('#norm_local_result_select thead').html(html);
@@ -1651,16 +1654,16 @@ var AnnotatorUI = (function($, window, undefined) {
         // TODO: sorting on click on header (see showFileBrowser())
       }
 
-                  
+
       var updateWithCreatedNorm = function(response) {
           $('#norm_search_id').val(response.entityID);
           $('#norm_search_query').val(response.name);
          // $('#norm_create_button').button('disable');
          // $('#norm_create_name').attr('readonly', 'readonly');
          // $('#norm_create_name').attr('placeholder', 'Search to find created ID');
-          $('#norm_create_name').val('');      
-          
-        var db = $('#span_norm_db').val();  
+          $('#norm_create_name').val('');
+
+        var db = $('#span_norm_db').val();
         dispatcher.post('ajax',
         [{
           action: 'normList',
@@ -1668,9 +1671,9 @@ var AnnotatorUI = (function($, window, undefined) {
           collection: coll,
           docID: doc,
           protocol: '1'
-        }, 'localNormList']);      
+        }, 'localNormList']);
       }
-      
+
       var performNormSearch = function() {
         var val = $('#norm_search_query').val();
         var db = $('#span_norm_db').val();
@@ -1680,9 +1683,9 @@ var AnnotatorUI = (function($, window, undefined) {
                         name: val,
                         collection: coll}, 'normSearchResult']);
       }
-      
+
       $('#norm_search_button').click(performNormSearch);
-      
+
       $('#norm_search_query').focus(function() {
         setNormSearchSubmit(false);
       });
@@ -1696,12 +1699,12 @@ var AnnotatorUI = (function($, window, undefined) {
                         name: val,
                         collection: coll}, 'normLinkedSearchResult']);
       }
-      
-      
+
+
       $('#norm_edit_search_query').focus(function() {
         setLinkedNormSearchSubmit(false);
       });
-      
+
       var showNormSearchDialog = function() {
         // if we already have non-empty ID and normalized string,
         // use these as default; otherwise take default search string
@@ -1716,10 +1719,10 @@ var AnnotatorUI = (function($, window, undefined) {
         }
         // blank the tables
         $('#norm_search_result_select thead').empty();
-        $('#norm_search_result_select tbody').empty();  
+        $('#norm_search_result_select tbody').empty();
         $('#norm_local_result_select thead').empty();
-        $('#norm_local_result_select tbody').empty();  
-        
+        $('#norm_local_result_select tbody').empty();
+
         var db = $('#span_norm_db').val();
         dispatcher.post('ajax',
         [{
@@ -1728,8 +1731,8 @@ var AnnotatorUI = (function($, window, undefined) {
           collection: coll,
           docID: doc,
           protocol: '1'
-        }, 'localNormList']);  
-              
+        }, 'localNormList']);
+
         // TODO: support for two (or more) dialogs open at the same time
         // so we don't need to hide this before showing normSearchDialog
         dispatcher.post('hideForm');
@@ -1739,18 +1742,18 @@ var AnnotatorUI = (function($, window, undefined) {
         //$('#norm_create_name').attr('readonly', 'readonly');
         $('#norm_create_name').attr('placeholder', 'Check for existing entities before creating new ones!');
         $('#norm_create_name').val('');
-  
+
         dispatcher.post('showForm', [normSearchDialog]);
         $('#norm_search_query').focus().select();
       }
       $('#span_norm_txt').click(showNormSearchDialog);
       $('#norm_search_button').button();
       $('#norm_create_button').button();
-      
+
       $('#norm_create_button').click(function(evt) {
         var db = $('#span_norm_db').val();
         var entityName = $('#norm_create_name').val()
-        
+
         if(entityName != '')
         {
 		      dispatcher.post('ajax',
@@ -1761,12 +1764,12 @@ var AnnotatorUI = (function($, window, undefined) {
             collection: coll,
             docID: doc,
 			      protocol: '1'
-		        }, 'normCreateResult']);  
-		        
+		        }, 'normCreateResult']);
+
 		    }
       });
 
-           
+
       var arcFormSubmitRadio = function(evt) {
         // TODO: check for confirm_mode?
         arcFormSubmit(evt, $(evt.target));
@@ -1821,7 +1824,7 @@ var AnnotatorUI = (function($, window, undefined) {
               // do not allow equiv<->non-equiv change options
               if (arcType && isEquiv != isThisEquiv) return;
 
-              var displayName = ((arcDesc.labels && arcDesc.labels[0]) || 
+              var displayName = ((arcDesc.labels && arcDesc.labels[0]) ||
                                  arcTypeName);
               var $checkbox = $('<input id="arc_' + arcTypeName + '" type="radio" name="arc_type" value="' + arcTypeName + '"/>');
               var $label = $('<label class="arc_type_label" for="arc_' + arcTypeName + '"/>').text(displayName);
@@ -2190,7 +2193,7 @@ var AnnotatorUI = (function($, window, undefined) {
             // but this is clumsy and suboptimal (user may have scrolled
             // during the ajax invocation); think of a better way.
             lastRapidAnnotationEvent = evt;
-            dispatcher.post('ajax', [ { 
+            dispatcher.post('ajax', [ {
                             action: 'suggestSpanTypes',
                             collection: coll,
                             'document': doc,
@@ -2201,7 +2204,7 @@ var AnnotatorUI = (function($, window, undefined) {
                             }, 'suggestedSpanTypes']);
           }
         }
-      };      
+      };
 
       var onMouseUp = function(evt) {
         if (that.user === null) return;
@@ -2393,10 +2396,10 @@ var AnnotatorUI = (function($, window, undefined) {
           } else if (attr.bool) {
             var escapedName = Util.escapeQuotes(attr.name);
             var $input = $('<input type="checkbox" id="'+attrId+
-                           '" value="' + escapedType + 
+                           '" value="' + escapedType +
                            '" category="' + category + '"/>');
             var $label = $('<label for="'+attrId+
-                           '" data-bare="' + escapedName + '">&#x2610; ' + 
+                           '" data-bare="' + escapedName + '">&#x2610; ' +
                            escapedName + '</label>');
             $span.append($input).append($label);
             $input.button();
@@ -2424,7 +2427,7 @@ var AnnotatorUI = (function($, window, undefined) {
         // disable not only categories of types (events or entities),
         // but the specific set of types that are incompatible with
         // the current attribute settings.
-        
+
         // just assume all attributes are event attributes
         // TODO: support for entity attributes
         // TODO2: the above comment is almost certainly false, check and remove
@@ -2625,14 +2628,14 @@ var AnnotatorUI = (function($, window, undefined) {
         var normDb = $normDb.val();
         if (!normId || !normDb || normId.match(/^\s*$/)) {
           $normLink.hide();
-        } 
-        else 
+        }
+        else
         {
           var base = normDbUrlBaseByDbName[normDb];
           // assume hidden unless everything goes through
           $normLink.hide();
-          
-          if (!base) 
+
+          if (!base)
           {
             // base URL is now optional, just skip link generation if not set
             ;
@@ -2654,14 +2657,14 @@ var AnnotatorUI = (function($, window, undefined) {
         var $normDb = $('#span_norm_db');
         var normDb = $normDb.val();
         if (!normDb) return; // no normalisation configured
-        
+
         var link = normDbUrlByDbName[normDb];
-        
-        if (!link || link.match(/^\s*$/)) 
+
+        if (!link || link.match(/^\s*$/))
         {
           dispatcher.post('messages', [[['No URL for '+normDb, 'error']]]);
           $dbLink.hide();
-        } else 
+        } else
         {
           // TODO: protect against weirdness in DB link
           $dbLink.attr('href', link);
@@ -2675,16 +2678,16 @@ var AnnotatorUI = (function($, window, undefined) {
         var $normId = $('#span_norm_id');
         var $normText = $('#span_norm_txt');
         var $normLink = $('#span_linked_norm_id');
-        
+
         $normId.val('');
         oldSpanNormIdValue = '';
         $normId.removeClass('valid_value').removeClass('invalid_value');
-        
+
         $normText.val('');
-        
+
         $normLink.removeClass('valid_value').removeClass('invalid_value');
         $normLink.val('');
-        
+
         updateNormalizationRefLink();
         updateWithClearedLinkedNorm();
       }
@@ -2699,7 +2702,7 @@ var AnnotatorUI = (function($, window, undefined) {
         var normId = $('#span_norm_id').val();
         var normText = $('#span_norm_txt').val();
         //var normLink = $('#span_linked_norm_id').val();
-        
+
         // empty ID -> no normalization
         if (!normId.match(/^\s*$/)) {
           normalizations.push([normDb, normId, normText]);
@@ -2732,7 +2735,7 @@ var AnnotatorUI = (function($, window, undefined) {
         return attributes;
       }
 
-      var spanAndAttributeTypesLoaded = function(_spanTypes, 
+      var spanAndAttributeTypesLoaded = function(_spanTypes,
                                                  _entityAttributeTypes,
                                                  _eventAttributeTypes,
                                                  _relationTypesHash) {
@@ -2741,8 +2744,8 @@ var AnnotatorUI = (function($, window, undefined) {
         eventAttributeTypes = _eventAttributeTypes;
         relationTypesHash = _relationTypesHash;
         // for easier access
-        allAttributeTypes = $.extend({}, 
-                                     entityAttributeTypes, 
+        allAttributeTypes = $.extend({},
+                                     entityAttributeTypes,
                                      eventAttributeTypes);
       };
 
@@ -2795,9 +2798,9 @@ var AnnotatorUI = (function($, window, undefined) {
 
       // TODO: why are these globals defined here instead of at the top?
       var spanForm = $('#span_form');
-      
+
       var rapidSpanForm = $('#rapid_span_form');
-    
+
       var deleteSpan = function() {
         if (Configuration.confirmModeOn && !confirm("Are you sure you want to delete this annotation?")) {
           return;
@@ -2859,7 +2862,7 @@ var AnnotatorUI = (function($, window, undefined) {
           $roles.append($role).append($label);
         });
         var $roleButtons = $roles.find('input').button();
-        
+
         dispatcher.post('showForm', [splitForm]);
       };
 
@@ -2928,10 +2931,10 @@ var AnnotatorUI = (function($, window, undefined) {
               click: splitSpan
             }
           ],
-          close: function(evt) 
+          close: function(evt)
           {
             keymap = null;
-            if (reselectedSpan) 
+            if (reselectedSpan)
             {
               $(reselectedSpan.rect).removeClass('reselect');
               reselectedSpan = null;
@@ -2939,7 +2942,7 @@ var AnnotatorUI = (function($, window, undefined) {
             }
           }
         }]);
-        
+
       // set button tooltips (@amadanmath: can this be done in init?)
       $('#span_form_reselect').attr('title', 'Re-select the text span that this annotation marks.');
       $('#span_form_delete').attr('title', 'Delete this annotation.');
@@ -2948,7 +2951,7 @@ var AnnotatorUI = (function($, window, undefined) {
 
       dispatcher.post('initForm', [rapidSpanForm, {
           alsoResize: '#rapid_span_types',
-          width: 400,             
+          width: 400,
           close: function(evt) {
             keymap = null;
           }
@@ -2958,7 +2961,7 @@ var AnnotatorUI = (function($, window, undefined) {
         typeRadio = typeRadio || $('#span_form input:radio:checked');
         var type = typeRadio.val();
         var linkedNorm = $('#span_linked_norm_id').val();
-        
+
         $('#span_form-ok').blur();
         dispatcher.post('hideForm');
         $.extend(spanOptions, {
@@ -2982,31 +2985,32 @@ var AnnotatorUI = (function($, window, undefined) {
         // hiding them
         spanForm.parent().find('*').blur();
 
-        var local_uid = $('#span_norm_id').val()                
+        var local_uid = $('#span_norm_id').val()
         var db = $('#span_norm_db').val();
-        
+
         if(local_uid != '' && db != '')
         {
-          dispatcher.post('ajax', 
+          dispatcher.post('ajax',
           [{
               action: 'normLinkUpdate',
               database: db,
               local_uid: local_uid,
+              collection: coll,collection: coll,
             }, 'normClearLinkResult'
-          ]); 
-        }               
+          ]);
+        }
 
         $('#waiter').dialog('open');
         dispatcher.post('ajax', [spanOptions, 'edited']);
         return false;
       };
-      
+
       $('#span_notes').focus(function () {
           keymap = null;
         }).blur(function () {
           keymap = spanKeymap;
         });
-        
+
       spanForm.submit(spanFormSubmit);
 
       var rapidSpanFormSubmit = function(evt, typeRadio) {
