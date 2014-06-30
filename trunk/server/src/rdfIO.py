@@ -33,6 +33,11 @@ def load_namespace_info():
 def create_rdf_file(collection, document):
     directory = collection
     real_dir = real_directory(directory)
+    fname = '%s.%s' % (document, 'ann')
+    fpath = path_join(real_dir, fname)
+
+    rdf_string = convert_to_rdf(fpath, document)
+
     fname = '%s.%s' % (document, RDF_FILE_SUFFIX)
     fpath = path_join(real_dir, fname)
 
@@ -40,7 +45,7 @@ def create_rdf_file(collection, document):
     os.close(tmp_fh)
 
     tmp_file = open(tmp_name, 'w')
-    tmp_file.write(convert_to_rdf(fpath, document))
+    tmp_file.write(rdf_string)
     tmp_file.close()
     if os.path.isfile(fpath):
         os.remove(fpath)
