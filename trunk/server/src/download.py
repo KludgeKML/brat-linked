@@ -8,7 +8,7 @@ Version:    2011-10-03
 from __future__ import with_statement
 
 from os import close as os_close, remove
-from os.path import join as path_join, dirname, basename, normpath
+from os.path import join as path_join, dirname, basename, normpath, isfile
 from tempfile import mkstemp
 
 from document import real_directory
@@ -16,12 +16,7 @@ from annotation import open_textfile
 from common import NoPrintJSONError
 from subprocess import Popen
 
-from rdfIO import convert_to_rdf
-
-try:
-    from cStringIO import StringIO
-except ImportError:
-    from StringIO import StringIO
+from rdfIO import create_rdf_file
 
 def download_file(document, collection, extension):
     directory = collection
@@ -29,13 +24,16 @@ def download_file(document, collection, extension):
     fname = '%s.%s' % (document, extension)
     fpath = path_join(real_dir, fname)
 
+    if extension == 'rdf' and not isfile(fpath):
+        create_rdf_file(fpath, document)
+
     hdrs = [('Content-Type', 'text/plain; charset=utf-8'),
             ('Content-Disposition',
                 'inline; filename=%s' % fname)]
     with open_textfile(fpath, 'r') as txt_file:
         data = txt_file.read().encode('utf-8')
     raise NoPrintJSONError(hdrs, data)
- 
+
 def find_in_directory_tree(directory, filename):
     # TODO: DRY; partial dup of projectconfig.py:__read_first_in_directory_tree
     try:

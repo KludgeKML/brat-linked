@@ -28,6 +28,7 @@ from jsonwrap import dumps
 from logging import info as log_info
 from annlog import log_annotation
 from message import Messager
+from rdfIO import create_rdf_file
 from svg import store_svg, retrieve_stored
 from session import get_session, load_conf, save_conf
 from search import search_text, search_entity, search_event, search_relation, search_note
@@ -143,6 +144,22 @@ REQUIRES_AUTHENTICATION = ANNOTATION_ACTION | set((
 
         'tag',
         ))
+
+# Actions that trigger an rdf file save
+ANNOTATION_SAVE_RDF = set((
+        'createArc',
+        'deleteArc',
+
+        'createSpan',
+        'deleteSpan',
+        'splitSpan',
+
+        'normCreate',
+        'normDelete',
+        'normLink',
+        'normLinkUpdate',
+        ))
+
 
 # Sanity check
 for req_action in REQUIRES_AUTHENTICATION:
@@ -320,6 +337,10 @@ def dispatch(http_args, client_ip, client_hostname):
         log_annotation(http_args['collection'],
                         http_args['document'],
                        'FINISH', action, action_args)
+
+    if action in ANNOTATION_SAVE_RDF:
+        create_rdf_file(http_args['collection'],
+                        http_args['document'])
 
     # Assign which action that was performed to the json_dic
     json_dic['action'] = action

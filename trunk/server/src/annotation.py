@@ -28,8 +28,6 @@ from common import ProtocolError
 from filelock import file_lock
 from message import Messager
 
-from rdfIO import convert_to_rdf
-
 
 ### Constants
 # The only suffix we allow to write to, which is the joined annotation file
@@ -957,8 +955,6 @@ class Annotations(object):
                 return
 
             from config import WORK_DIR
-
-            rdf_str = convert_to_rdf(self._input_files[0], self._document)
             
             # Protect the write so we don't corrupt the file
             with file_lock(path_join(WORK_DIR,
@@ -974,10 +970,8 @@ class Annotations(object):
                 #with NamedTemporaryFile('w', suffix='.ann') as tmp_file:
                 # Grab the filename, but discard the handle
                 tmp_ann_fh, tmp_ann_fname = mkstemp(suffix='.ann')
-                tmp_rdf_fh, tmp_rdf_fname = mkstemp(suffix='.rdf')
 
-                files = [(tmp_ann_fh, tmp_ann_fname, out_str, self._input_files[0]), 
-                         (tmp_rdf_fh, tmp_rdf_fname, rdf_str, (self._input_files[0]).replace('.ann','.rdf'))]
+                files = [(tmp_ann_fh, tmp_ann_fname, out_str, self._input_files[0])]
 
                 for (tmp_fh, tmp_fname, out_str, target) in files:
                     os_close(tmp_fh)

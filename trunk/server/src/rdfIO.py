@@ -2,10 +2,13 @@
 
 import re
 import json
+import os
+import tempfile
 
 from os.path import join as path_join
 
 from config import DATA_DIR
+from document import real_directory
 from session import get_session
 from normdb import get_norm_type_by_id, get_linked_global_entity, get_linked_local_entity, data_by_id
 
@@ -26,6 +29,19 @@ def load_namespace_info():
 
     return namespace_info
 
+def create_rdf_file(collection, document):
+    directory = collection
+    real_dir = real_directory(directory)
+    fname = '%s.%s' % (document, extension)
+    fpath = path_join(real_dir, fname)
+
+    tf = tempfile.TemporaryFile()
+    tf.write(convert_to_rdf(fpath, document))
+    tf.close()
+    if (os.path.isfile(fpath)):
+        os.remove(fpath)
+    os.rename(tf,fpath)
+    return
 
 def convert_to_rdf(fpath, document):
     '''Returns a turtle file of the annotations.
