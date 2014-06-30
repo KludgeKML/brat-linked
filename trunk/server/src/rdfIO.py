@@ -51,7 +51,9 @@ def get_rdf_parts(fpath, document):
 
     namespace_info = load_namespace_info()
     
-    namespace = namespace_info['base_namespace'] + user + '/{' + document + '}/'
+    doc_name = document.rpartition(':')[2]
+    
+    namespace = namespace_info['base_namespace'] + user + '/' + doc_name + '/'
     
     for prefix, url in namespace_info['namespaces'].items():
         parts['prefixes'].append(prefix + ': <' + url + '>')
