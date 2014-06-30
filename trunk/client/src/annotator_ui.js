@@ -2686,6 +2686,7 @@ var AnnotatorUI = (function($, window, undefined) {
         $normLink.val('');
         
         updateNormalizationRefLink();
+        updateWithClearedLinkedNorm();
       }
 
       // returns the normalizations currently filled in the span
