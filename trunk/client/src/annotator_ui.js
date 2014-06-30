@@ -2994,8 +2994,9 @@ var AnnotatorUI = (function($, window, undefined) {
           [{
               action: 'normLinkUpdate',
               database: db,
+              'document': doc,
               local_uid: local_uid,
-              collection: coll,collection: coll,
+              collection: coll,
             }, 'normClearLinkResult'
           ]);
         }
