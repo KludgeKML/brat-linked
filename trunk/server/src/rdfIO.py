@@ -35,12 +35,12 @@ def create_rdf_file(collection, document):
     fname = '%s.%s' % (document, RDF_FILE_SUFFIX)
     fpath = path_join(real_dir, fname)
 
-    tf = tempfile.TemporaryFile()
+    (tf,tf_name) = tempfile.mkstemp()
     tf.write(convert_to_rdf(fpath, document))
     tf.close()
     if (os.path.isfile(fpath)):
         os.remove(fpath)
-    os.rename(tf,fpath)
+    os.rename(tf_name,fpath)
     return
 
 def convert_to_rdf(fpath, document):
