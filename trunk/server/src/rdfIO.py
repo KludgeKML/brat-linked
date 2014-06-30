@@ -31,7 +31,7 @@ def load_namespace_info():
     return namespace_info
 
 def create_rdf_file(collection, document):
-    Messager.info("Collection is: [" + collection + "]")
+    Messager.info("Collection is: [" + collection + "] and Document is [" + document + "]")
     directory = collection
     real_dir = real_directory(directory)
     fname = '%s.%s' % (document, 'ann')
