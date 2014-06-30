@@ -9,6 +9,7 @@ from os.path import join as path_join
 
 from config import DATA_DIR
 from document import real_directory
+from message import Messager
 from session import get_session
 from normdb import get_norm_type_by_id, data_by_id
 
@@ -40,6 +41,7 @@ def create_rdf_file(collection, document):
     tmp_file.close()
     if os.path.isfile(fpath):
         os.remove(fpath)
+    Messager.info("Creating RDF File [" + fpath + "]")
     os.rename(tmp_name, fpath)
     return
 
