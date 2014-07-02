@@ -123,7 +123,8 @@ def get_rdf_parts(fpath, document):
                     parts['data'] += "<" + namespace + chunks[2] + "> owl:sameAs <" + namespace + entity_name + ">;\n"
                     parts['data'] += "<" + namespace + entity_name + "> ome:shadow-of <" + normalised + ">;\n"
 
-                    entity_data.append({normalised:data_by_id(dbname, normalised)})
+                    if normalised not in entity_data:
+                        entity_data.append({normalised:data_by_id(dbname, normalised)})
 
                 else:
 
@@ -134,7 +135,9 @@ def get_rdf_parts(fpath, document):
 
                     for uid in global_id:
                         parts['data'] += "<" + normalised + "> ome:shadow-of <" + uid + ">;\n"
-                        entity_data.append({uid:data_by_id(dbname, uid)})
+                        
+                        if uid not in entity_data:
+                            entity_data.append({uid:data_by_id(dbname, uid)})
 
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
 
