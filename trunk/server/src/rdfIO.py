@@ -180,7 +180,7 @@ def get_rdf_parts(fpath, document):
                             elif data_tuple[0] == 'Category':
                                 parts['data'] += '\ta ' + lookup(data_tuple[1], namespace_info) + ' .\n\n'
                                 
-    parts += " ".join(entity_data) 
+    parts += entity_data 
                                 
     return parts
 
