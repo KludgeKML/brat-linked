@@ -139,21 +139,6 @@ def get_rdf_parts(fpath, document):
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
 
 
-                if len(entity_data) > 0:
-
-                    for row in entity_data:
-                        for key, value in row.iteritems():
-
-                            parts['data'] += "<" + key + ">\n"
-
-                            for data in value:
-                                for data_tuple in data:
-                                    if data_tuple[0] == 'Name':
-                                        parts['data'] += '\trdfs:label "' + data_tuple[1] + '";\n'
-                                    elif data_tuple[0] == 'Category':
-                                        parts['data'] += '\ta ' + lookup(data_tuple[1], namespace_info) + ' .\n\n'
-
-
             elif line[0] == 'R':
 
                 parts['data'] += "<" + namespace + chunks[2].split(":")[1] + "> "
@@ -178,6 +163,19 @@ def get_rdf_parts(fpath, document):
                 parts['data'] += "<" + namespace + chunks[2] + ">\n\ta " + lookup(chunks[3], namespace_info) + ";\n"
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
 
+        if len(entity_data) > 0:
+
+            for row in entity_data:
+                for key, value in row.iteritems():
+
+                    parts['data'] += "<" + key + ">\n"
+
+                    for data in value:
+                        for data_tuple in data:
+                            if data_tuple[0] == 'Name':
+                                parts['data'] += '\trdfs:label "' + data_tuple[1] + '";\n'
+                            elif data_tuple[0] == 'Category':
+                                parts['data'] += '\ta ' + lookup(data_tuple[1], namespace_info) + ' .\n\n'
     return parts
 
 
