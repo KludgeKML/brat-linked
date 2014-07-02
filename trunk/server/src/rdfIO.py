@@ -85,6 +85,8 @@ def get_rdf_parts(fpath, document):
         parts['prefixes'].append(prefix + ': <' + url + '>')
 
     with open(fpath) as txt_file:
+        entity_data = []
+    
         for line in txt_file:
 
             chunks = re.split(r'\s+', line)
@@ -111,8 +113,6 @@ def get_rdf_parts(fpath, document):
 
                 normalised = chunks[3].split(':', 1)[1]
                 dbname = chunks[3].split(':', 1)[0]
-
-                entity_data = []
 
                 if get_norm_type_by_id(dbname, normalised) == 'global':
                     # If link is directly to global entity then need to create local entity for sameAs
