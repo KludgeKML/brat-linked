@@ -169,7 +169,7 @@ def get_rdf_parts(fpath, document):
         if len(entity_data) > 0:
 
             #for row in entity_data:
-            for key, value in row.iteritems():
+            for key, value in entity_data:
 
                 parts['data'] += "<" + key + ">\n"
 
