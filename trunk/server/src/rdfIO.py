@@ -124,7 +124,7 @@ def get_rdf_parts(fpath, document):
                     parts['data'] += "<" + namespace + entity_name + "> ome:shadow-of <" + normalised + ">;\n"
 
                     if normalised not in entity_data:
-                        entity_data.append({normalised:data_by_id(dbname, normalised)})
+                        entity_data[normalised] = data_by_id(dbname, normalised)
 
                 else:
 
@@ -136,8 +136,8 @@ def get_rdf_parts(fpath, document):
                     for uid in global_id:
                         parts['data'] += "<" + normalised + "> ome:shadow-of <" + uid + ">;\n"
                         
-                        if uid not in entity_data:
-                            entity_data.append({uid:data_by_id(dbname, uid)})
+                    if uid not in entity_data:
+                        entity_data[uid] = data_by_id(dbname, uid)
 
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
 
@@ -168,19 +168,17 @@ def get_rdf_parts(fpath, document):
 
         if len(entity_data) > 0:
 
-            for row in entity_data:
-                for key, value in row.iteritems():
+            #for row in entity_data:
+            for key, value in row.iteritems():
 
-                    parts['data'] += "<" + key + ">\n"
+                parts['data'] += "<" + key + ">\n"
 
-                    for data in value:
-                        for data_tuple in data:
-                            if data_tuple[0] == 'Name':
-                                parts['data'] += '\trdfs:label "' + data_tuple[1] + '";\n'
-                            elif data_tuple[0] == 'Category':
-                                parts['data'] += '\ta ' + lookup(data_tuple[1], namespace_info) + ' .\n\n'
-                                
-    parts += entity_data 
+                for data in value:
+                    for data_tuple in data:
+                        if data_tuple[0] == 'Name':
+                            parts['data'] += '\trdfs:label "' + data_tuple[1] + '";\n'
+                        elif data_tuple[0] == 'Category':
+                            parts['data'] += '\ta ' + lookup(data_tuple[1], namespace_info) + ' .\n\n'
                                 
     return parts
 
