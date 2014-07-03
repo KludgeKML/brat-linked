@@ -85,7 +85,7 @@ def get_rdf_parts(fpath, document):
         parts['prefixes'].append(prefix + ': <' + url + '>')
 
     with open(fpath) as txt_file:
-        entity_data = []
+        entity_data = {}
     
         for line in txt_file:
 
