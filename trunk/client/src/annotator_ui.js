@@ -2408,9 +2408,16 @@ var AnnotatorUI = (function($, window, undefined) {
             // var $div = $('<div class="ui-button ui-button-text-only attribute_type_label"/>');
             $span.text(attr.name);
             $span.append(':&#160;');
+            
+            // ATTRIBUTE OPTIONS CREATED
+                        
             var $select = $('<select id="'+attrId+'" class="ui-widget ui-state-default ui-button-text" category="' + category + '"/>');
             var $option = $('<option class="ui-state-default" value=""/>').text('?');
             $select.append($option);
+            
+            var $option = $('<option class="ui-state-default" value=""/>').text('TEST');
+            $select.append($option);
+                        
             $.each(attr.values, function(valType, value) {
               $option = $('<option class="ui-state-active" value="' + Util.escapeQuotes(valType) + '"/>').text(value.name || valType);
               $select.append($option);
