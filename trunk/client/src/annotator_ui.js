@@ -2386,25 +2386,32 @@ var AnnotatorUI = (function($, window, undefined) {
         $top.append($fieldset);
         addSpanTypesToDivInner($scroller, types);
       };
-      var addAttributeTypesToDiv = function($top, types, category) {
-        $.each(types, function(attrNo, attr) {
+      
+      
+      var addAttributeTypesToDiv = function($top, types, category) 
+      {
+        $.each(types, function(attrNo, attr) 
+        {
           var escapedType = Util.escapeQuotes(attr.type);
           var attrId = category+'_attr_'+escapedType;
           var $span = $('<span class="attribute_type_label"/>').appendTo($top);
-          if (attr.unused) {
+          
+          if (attr.unused) 
+          {
             $('<input type="hidden" id="'+attrId+'" value=""/>').appendTo($span);
-          } else if (attr.bool) {
+          } 
+          else if (attr.bool) 
+          {
             var escapedName = Util.escapeQuotes(attr.name);
-            var $input = $('<input type="checkbox" id="'+attrId+
-                           '" value="' + escapedType +
-                           '" category="' + category + '"/>');
-            var $label = $('<label for="'+attrId+
-                           '" data-bare="' + escapedName + '">&#x2610; ' +
-                           escapedName + '</label>');
+            
+            var $input = $('<input type="checkbox" id="'+attrId+ '" value="' + escapedType + '" category="' + category + '"/>');
+            var $label = $('<label for="'+attrId+ '" data-bare="' + escapedName + '">&#x2610; ' + escapedName + '</label>');
             $span.append($input).append($label);
             $input.button();
             $input.change(onBooleanAttrChange);
-          } else {
+          } 
+          else
+          {
             // var $div = $('<div class="ui-button ui-button-text-only attribute_type_label"/>');
             $span.text(attr.name);
             $span.append(':&#160;');
@@ -2414,14 +2421,12 @@ var AnnotatorUI = (function($, window, undefined) {
             var $select = $('<select id="'+attrId+'" class="ui-widget ui-state-default ui-button-text" category="' + category + '"/>');
             var $option = $('<option class="ui-state-default" value=""/>').text('?');
             $select.append($option);
-            
-            var $option = $('<option class="ui-state-default" value=""/>').text('TEST');
-            $select.append($option);
                         
             $.each(attr.values, function(valType, value) {
               $option = $('<option class="ui-state-active" value="' + Util.escapeQuotes(valType) + '"/>').text(value.name || valType);
               $select.append($option);
             });
+            
             $span.append($select);
             $select.combobox();
             $select.change(onMultiAttrChange);
