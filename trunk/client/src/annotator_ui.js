@@ -2422,14 +2422,13 @@ var AnnotatorUI = (function($, window, undefined) {
             
             $.each(attr.values, function(valType, value) {
               if (valType == 'fnord')
-                is_text = true
+                is_text = true;
             });
             
             if (is_text)
             {
-              //var $textbox = $('<input type="text" id="'+attrId+'" value="''" category="' + category + '"/>');
-              //$textbox.bind('propertychange keyup input paste', onStringAttrChange);
-              alert(first.value)
+              var $textbox = $('<input type="text" id="'+attrId+'" value="''" category="' + category + '"/>');
+              $textbox.bind('propertychange keyup input paste', onStringAttrChange);
             }
             else
             {            
