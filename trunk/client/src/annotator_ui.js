@@ -2421,8 +2421,8 @@ var AnnotatorUI = (function($, window, undefined) {
             var first = attr.values[0]
             if (first.value == "fnord")
             {
-              var textbox = $('<input type="text" id="'+attrId+ '" value="''" category="' + category + '"/>');
-              textbox.bind('propertychange keyup input paste', onStringAttrChange);
+              var $textbox = $('<input type="text" id="'+attrId+'" value="''" category="' + category + '"/>');
+              $textbox.bind('propertychange keyup input paste', onStringAttrChange);
             }
             else
             {            
