@@ -149,7 +149,7 @@ def get_rdf_parts(fpath, document):
                 if lookup(chunks[1], namespace_info) != False:
                     parts['data'] += lookup(chunks[1], namespace_info) + " " + "<" + namespace + chunks[3].split(":")[1] + ">;\n"
                 else:
-                    parts['data'] += get_long_rdf(chunks[1], chunks[3].split(":")[1], namespace, namespace_info)
+                    parts['data'] += get_long_rdf(chunks[1], namespace_info,'', chunks[3].split(":")[1], namespace)
 
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
 
@@ -163,7 +163,15 @@ def get_rdf_parts(fpath, document):
                 parts['data'] += '\tcnt:chars "' + line_string.strip() + '" .\n\n'
 
             elif line[0] == 'A':
-                parts['data'] += "<" + namespace + chunks[2] + ">\n\ta " + lookup(chunks[3], namespace_info) + ";\n"
+                get_lookup = lookup(chunks[1], namespace_info)
+                
+                if (get_lookup == chunks[1]):
+                    get_lookup = lookup(chunks[3], namespace_info)
+                elif (get_lookup == False):
+                    get_lookup = get_long_rdf(chunks[1], namespace_info, chunks[3]) 
+                
+                
+                parts['data'] += "<" + namespace + chunks[2] + ">\n\ta " + get_lookup + ";\n"
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
 
         if len(entity_data) > 0:
@@ -198,12 +206,18 @@ def lookup(annotation, namespace_info):
         return namespace_info['relationship_map'][annotation] + ":" + annotation
     elif annotation in namespace_info['extended_rdf_map']:
         return False
+    elif annotation in namespace_info['literals']:
+        raw = namespace_info['literals'][annotation]
+        return raw.replace('{1}', annotation)        
+    
     return annotation
 
 
-def get_long_rdf(annotation, entity, namespace, namespace_info):
+def get_long_rdf(annotation, namespace_info, annotation_class = '', entity = '', namespace = ''):
     ent = ''
-    if entity in namespace_info['category_map']:
+    if entity == '':
+        ent = annotation_class
+    elif entity in namespace_info['category_map']:
         ent = namespace_info['category_map'][entity] + ":" + entity
     else:
         ent = "<" + namespace + entity + ">"

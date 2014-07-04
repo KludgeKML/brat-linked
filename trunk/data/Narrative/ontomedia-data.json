@@ -16,9 +16,14 @@
 		"omj":		"http://contextus.net/ontology/ontomedia/ext/events/travel#",
 		"eprop":	"http://contextus.net/ontology/ontomedia/ext/events/eventprop#",
 		"omf":		"http://contextus.net/ontology/ontomedia/ext/fiction/fic#",
+		"omfc":		"http://contextus.net/ontology/ontomedia/ext/fiction/char#",
 		"owl":		"http://www.w3.org/2002/07/owl#",
 		"cnt":		"http://www.w3.org/2011/content#"
 		},
+
+    "literals": {
+        "Name": "omt:has-trait [\n\ta omt:Name ;\n\t\tomt:has-name '{1}'\n\t\t];\n"
+    },
 
 	"category_map": {
 		"Entity":							"ome",
@@ -49,6 +54,7 @@
 		"Merge":							"omet",
 		"Degradation":						"omet",
 		"Social":							"ome",
+		"EmotionalExpression":				"omes",		
 		"Conversational":					"omes",
 		"Flirtation":						"omes",
 		"Proposition":						"omes",
@@ -99,13 +105,19 @@
 		"has-object-entity":	"ome",
 		"has-subject":			"omes",
 		"to":					"ome",
-		"from":					"ome"
+		"from":					"ome",
+		"refers-to":			"ome",
+		"exists-in":			"ome",
+		"portrayed-by":			"omfc",
+		"portrays":	    		"omb",
+		"projected-at":			"omt"
 	},
 
 	"extended_rdf_map": {
 		"bond-with":		"omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Bond;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n",
 		"family-of":		"omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Family;\n\t\t\tomb:is-relation-of {1}]\n\t\t];\n",
 		"friend-of":		"omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Friendship;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n",
-		"enemy-of":			"omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Enmity;\n\t\t\tomb:is-linked-to {1}]\n\t\t];\n"
+		"enemy-of":			"omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Enmity;\n\t\t\tomb:is-linked-to {1}]\n\t\t];\n",
+		"gender":			"omt:has-trait [\n\ta omt:{1} ;\n\t\trdfs:label '{1} (Gender)'\n\t\t];\n"
 	}
 }
