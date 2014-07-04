@@ -2418,7 +2418,7 @@ var AnnotatorUI = (function($, window, undefined) {
             
             // ATTRIBUTE OPTIONS CREATED
             
-            var first = attr.values[0]
+            var first = attr.values.shift()
             if (first.value == "fnord")
             {
               //var $textbox = $('<input type="text" id="'+attrId+'" value="''" category="' + category + '"/>');
