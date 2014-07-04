@@ -2429,8 +2429,7 @@ var AnnotatorUI = (function($, window, undefined) {
             {
               var $textbox = $('<input type="text" id="'+attrId+'" value="" category="' + category + '"/>');
               $textbox.bind('propertychange keyup input paste', onStringAttrChange);
-              $span.append($select);
-              $textbox.textbox();
+              $span.append($textbox);
               
             }
             else
