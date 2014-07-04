@@ -2418,10 +2418,14 @@ var AnnotatorUI = (function($, window, undefined) {
             
             // ATTRIBUTE OPTIONS CREATED
             
-           var value_keys = attr.values.keys()
-           var first = value_keys[0] 
+            var is_text = false
             
-            if (first.value == "fnord")
+            $.each(attr.values, function(valType, value) {
+              if (valType == 'fnord')
+                is_text = true
+            });
+            
+            if (is_text)
             {
               //var $textbox = $('<input type="text" id="'+attrId+'" value="''" category="' + category + '"/>');
               //$textbox.bind('propertychange keyup input paste', onStringAttrChange);
