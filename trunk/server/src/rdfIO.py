@@ -215,7 +215,7 @@ def lookup(annotation, namespace_info):
 def get_long_rdf(annotation, namespace_info, annotation_value = '', entity = '', namespace = ''):
     ent = ''
     if entity == '':
-        ent = annotation_value
+        ent = ' '.join(annotation_value)
     elif entity in namespace_info['category_map']:
         ent = namespace_info['category_map'][entity] + ":" + entity
     else:
