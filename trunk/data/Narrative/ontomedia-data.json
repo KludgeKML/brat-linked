@@ -22,7 +22,7 @@
 		},
 
     "literals": {
-        "Name": "omt:has-trait [\n\t\ta omt:Name ;\n\t\tomt:has-name '{1}'\n\t\t]"
+        "Name": "omt:has-trait [\n\t\ta omt:Name ;\n\t\tomt:has-name \"{1}\"\n\t\t]"
     },
 
 	"category_map": {
@@ -118,6 +118,6 @@
 		"family-of":		"omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Family;\n\t\t\tomb:is-relation-of {1}]\n\t\t];\n",
 		"friend-of":		"omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Friendship;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n",
 		"enemy-of":			"omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Enmity;\n\t\t\tomb:is-linked-to {1}]\n\t\t];\n",
-		"Gender":			"omt:has-trait [\n\t\ta omt:{1} ;\n\t\trdfs:label '{1} (Gender)'\n\t\t]"
+		"Gender":			"omt:has-trait [\n\t\ta omt:{1} ;\n\t\trdfs:label \"{1} (Gender)\"\n\t\t]"
 	}
 }
