@@ -2417,19 +2417,29 @@ var AnnotatorUI = (function($, window, undefined) {
             $span.append(':&#160;');
             
             // ATTRIBUTE OPTIONS CREATED
-                        
-            var $select = $('<select id="'+attrId+'" class="ui-widget ui-state-default ui-button-text" category="' + category + '"/>');
-            var $option = $('<option class="ui-state-default" value=""/>').text('?');
-            $select.append($option);
-                        
-            $.each(attr.values, function(valType, value) {
-              $option = $('<option class="ui-state-active" value="' + Util.escapeQuotes(valType) + '"/>').text(value.name || valType);
-              $select.append($option);
-            });
             
-            $span.append($select);
-            $select.combobox();
-            $select.change(onMultiAttrChange);
+            var first = attr.values[0]
+            if (first.value == "fnord")
+            {
+              var textbox = $('<input type="text" id="'+attrId+ '" value="''" category="' + category + '"/>');
+              textbox.bind('propertychange keyup input paste', onStringAttrChange);
+            }
+            else
+            {            
+              var $select = $('<select id="'+attrId+'" class="ui-widget ui-state-default ui-button-text" category="' + category + '"/>');
+              var $option = $('<option class="ui-state-default" value=""/>').text('?');
+              $select.append($option);
+                        
+              $.each(attr.values, function(valType, value) {
+                $option = $('<option class="ui-state-active" value="' + Util.escapeQuotes(valType) + '"/>').text(value.name || valType);
+                $select.append($option);
+              });
+            
+              $span.append($select);
+              $select.combobox();
+              $select.change(onMultiAttrChange);
+            
+            }
           }
         });
       }
@@ -2485,6 +2495,11 @@ var AnnotatorUI = (function($, window, undefined) {
         setSpanTypeSelectability(attrCategory);
         updateCheckbox($(evt.target));
       };
+      
+      var onStringAttrChange = function(evt) {
+        var attrCategory = evt.target.getAttribute('category');
+        setSpanTypeSelectability(attrCategory);
+      };      
 
       var rememberSpanSettings = function(response) {
         spanKeymap = {};
