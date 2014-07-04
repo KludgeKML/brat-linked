@@ -3289,6 +3289,7 @@ var AnnotatorUI = (function($, window, undefined) {
           on('autofillLinkedNorm', autofillLinkedNorm).
           on('setCreateButton', setCreateButton).
           on('clearedLinkedNorm', clearedLinkedNorm).
+          on('onStringAttrChange', onStringAttrChange).
           on('localNormList', setSpanLocalNormListResults);
     };
 
