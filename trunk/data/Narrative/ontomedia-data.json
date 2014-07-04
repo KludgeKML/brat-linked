@@ -22,7 +22,7 @@
 		},
 
     "literals": {
-        "Name": "omt:has-trait [\n\t\ta omt:Name ;\n\t\tomt:has-name '{1}';\n\t\t]"
+        "Name": "omt:has-trait [\n\t\ta omt:Name ;\n\t\tomt:has-name '{1}\n\t\t]"
     },
 
 	"category_map": {
