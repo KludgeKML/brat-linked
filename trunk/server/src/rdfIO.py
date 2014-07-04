@@ -168,7 +168,7 @@ def get_rdf_parts(fpath, document):
                 if (get_lookup == chunks[1]):
                     get_lookup = lookup(chunks[3], namespace_info)
                 elif (get_lookup == False):
-                    get_lookup = get_long_rdf(chunks[1], namespace_info, chunks[3]) 
+                    get_lookup = get_long_rdf(chunks[1], namespace_info, chunks[3:]) 
                 
                 
                 parts['data'] += "<" + namespace + chunks[2] + ">\n\ta " + get_lookup + ";\n"
@@ -207,16 +207,15 @@ def lookup(annotation, namespace_info):
     elif annotation in namespace_info['extended_rdf_map']:
         return False
     elif annotation in namespace_info['literals']:
-        raw = namespace_info['literals'][annotation]
-        return raw.replace('{1}', annotation)        
+        return False      
     
     return annotation
 
 
-def get_long_rdf(annotation, namespace_info, annotation_class = '', entity = '', namespace = ''):
+def get_long_rdf(annotation, namespace_info, annotation_value = '', entity = '', namespace = ''):
     ent = ''
     if entity == '':
-        ent = annotation_class
+        ent = annotation_value
     elif entity in namespace_info['category_map']:
         ent = namespace_info['category_map'][entity] + ":" + entity
     else:
@@ -225,5 +224,8 @@ def get_long_rdf(annotation, namespace_info, annotation_class = '', entity = '',
     if annotation in namespace_info['extended_rdf_map']:
         raw = namespace_info['extended_rdf_map'][annotation]
         return raw.replace('{1}', ent)
+    elif annotation in namespace_info['literals']:
+        raw = namespace_info['literals'][annotation]
+        return raw.replace('{1}', ent)    
 
     return annotation + " " + ent
