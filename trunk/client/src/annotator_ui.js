@@ -2766,7 +2766,7 @@ var AnnotatorUI = (function($, window, undefined) {
           {
             attributes[attr.type] = $input[0].checked;
           } 
-          else if ($input[0].selectedIndex or $input[0].type == 'text') 
+          else if ($input[0].selectedIndex || $input[0].type == 'text') 
           {
             attributes[attr.type] = $input.val();
           }
