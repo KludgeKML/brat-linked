@@ -2428,8 +2428,9 @@ var AnnotatorUI = (function($, window, undefined) {
             if (is_text)
             {
               var $textbox = $('<input type="text" id="'+attrId+'" value="" category="' + category + '"/>');
-              $textbox.bind('propertychange keyup input paste', onStringAttrChange);
               $span.append($textbox);
+              $textbox.bind('propertychange keyup input paste', onStringAttrChange);
+              
               
             }
             else
@@ -2761,11 +2762,15 @@ var AnnotatorUI = (function($, window, undefined) {
         }
         $.each(attributeTypes, function(attrNo, attr) {
           var $input = $('#'+category+'_attr_'+Util.escapeQuotes(attr.type));
-          if (attr.bool) {
+          if (attr.bool) 
+          {
             attributes[attr.type] = $input[0].checked;
-          } else if ($input[0].selectedIndex) {
+          } 
+          else if ($input[0].selectedIndex or $input[0].type == 'text') 
+          {
             attributes[attr.type] = $input.val();
           }
+          
         });
         return attributes;
       }
