@@ -35,6 +35,8 @@ def create_rdf_file(collection, document):
     real_dir = real_directory(directory)
     fname = '%s.%s' % (document, 'ann')
     fpath = path_join(real_dir, fname)
+    
+    Messager.info("document: " + document)
 
     rdf_string = convert_to_rdf(fpath, document)
 
@@ -60,7 +62,6 @@ def convert_to_rdf(fpath, document):
     to insert them into a graph, are returned as a file. This function is
     designed to be called from the dispatcher.
     '''
-    Messager.info("document: " + document)
     
     parts = get_rdf_parts(fpath, document)
     rdf = ''
