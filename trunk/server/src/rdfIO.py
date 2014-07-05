@@ -133,12 +133,14 @@ def get_rdf_parts(fpath, document):
                     # Check if local entity is linked to global entity - if so add in shadow-of relationship
 
                     global_id = get_linked_global_entity(dbname, normalised)
+                    
+                    
 
                     for uid in global_id:
                         parts['data'] += "<" + normalised + "> ome:shadow-of <" + uid + ">;\n"
                         
-                    if uid not in entity_data:
-                        entity_data[uid] = data_by_id(dbname, uid)
+                        if uid not in entity_data:
+                            entity_data[uid] = data_by_id(dbname, uid)
 
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
 

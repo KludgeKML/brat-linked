@@ -110,7 +110,9 @@
 		"exists-in":			"ome",
 		"portrayed-by":			"omfc",
 		"portrays":	    		"omb",
-		"projected-at":			"omt"
+		"projected-at":			"omt",
+		"precedes":             "ome",
+		"follows":              "ome"
 	},
 
 	"extended_rdf_map": {
