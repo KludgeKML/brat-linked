@@ -74,6 +74,8 @@ def get_rdf_parts(fpath, document):
 
     user = get_session()['user']
     parts = {'prefixes': [], 'data': ''}
+    
+    Messager.info("document: " + document)
 
     namespace_info = load_namespace_info()
 
