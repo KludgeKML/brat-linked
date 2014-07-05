@@ -35,8 +35,6 @@ def create_rdf_file(collection, document):
     real_dir = real_directory(directory)
     fname = '%s.%s' % (document, 'ann')
     fpath = path_join(real_dir, fname)
-    
-    Messager.info("document: " + document)
 
     rdf_string = convert_to_rdf(fpath, document)
 

@@ -21,6 +21,7 @@ from os.path import join as path_join
 from sys import version_info, stderr
 from time import time
 from thread import allocate_lock
+from message import Messager
 
 ### Constants
 # This handling of version_info is strictly for backwards compability
@@ -189,6 +190,7 @@ def _safe_serve(params, client_ip, client_hostname, cookie_data):
             #   according to HTTP they should be UTF-8
             try:
                 http_args[k] = unicode(params.getvalue(k), encoding='utf-8')
+                Messager.info('key:' + k + ', value: ' + unicode(params.getvalue(k), encoding='utf-8'))
             except TypeError:
                 Messager.error('protocol argument error: expected string argument %s, got %s' % (k, type(params.getvalue(k))))
                 raise ProtocolArgumentError
