@@ -1027,7 +1027,15 @@ var Visualizer = (function($, window, undefined) {
                 return;
               }
               var val = attr.values[attr.bool || valType];
-              if (!val) {
+            
+              var is_text = false
+            
+              $.each(attr.values, function(valType, value) {
+                if (valType == 'fnord')
+                  is_text = true;
+              });
+            
+              if (!val || !is_text) {
                 // non-existent value
                 warning = true;
                 return;
