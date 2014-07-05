@@ -60,6 +60,8 @@ def convert_to_rdf(fpath, document):
     to insert them into a graph, are returned as a file. This function is
     designed to be called from the dispatcher.
     '''
+    Messager.info("document: " + document)
+    
     parts = get_rdf_parts(fpath, document)
     rdf = ''
 
@@ -74,8 +76,6 @@ def get_rdf_parts(fpath, document):
 
     user = get_session()['user']
     parts = {'prefixes': [], 'data': ''}
-    
-    Messager.info("document: " + document)
 
     namespace_info = load_namespace_info()
 
