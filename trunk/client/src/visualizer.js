@@ -1035,7 +1035,7 @@ var Visualizer = (function($, window, undefined) {
                   is_text = true;
               });
             
-              if (!val || !is_text) {
+              if (!val && !is_text) {
                 // non-existent value
                 warning = true;
                 return;
