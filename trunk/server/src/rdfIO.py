@@ -120,9 +120,10 @@ def get_rdf_parts(fpath, document):
                     # and the link to global entity with shadow-of relationship
 
                     entity_name = normalised.split('/')[-1]
+                    
+                    parts['data'] += "<" + namespace + entity_name + "> ome:shadow-of <" + normalised + ">.\n"
 
                     parts['data'] += "<" + namespace + chunks[2] + "> owl:sameAs <" + namespace + entity_name + ">;\n"
-                    parts['data'] += "<" + namespace + entity_name + "> ome:shadow-of <" + normalised + ">;\n"
 
                     if normalised not in entity_data:
                         entity_data[normalised] = data_by_id(dbname, normalised)
