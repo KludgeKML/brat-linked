@@ -163,12 +163,14 @@ def get_rdf_parts(fpath, document):
                 parts['data'] += '\tcnt:chars "' + line_string.strip() + '" .\n\n'
 
             elif line[0] == 'A':
-                get_lookup = lookup(chunks[1], namespace_info) + ';'
+                get_lookup = lookup(chunks[1], namespace_info)
                 
                 if (get_lookup == chunks[1]):
                     get_lookup = lookup(chunks[3], namespace_info) + ';'
                 elif (get_lookup == False):
                     get_lookup = get_long_rdf(chunks[1], namespace_info, chunks[3:]) 
+                else
+                    get_lookup += ';'
                 
                 
                 parts['data'] += "<" + namespace + chunks[2] + ">\n\ta " + get_lookup + "\n"
