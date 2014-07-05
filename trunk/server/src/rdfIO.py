@@ -169,7 +169,7 @@ def get_rdf_parts(fpath, document):
                     get_lookup = lookup(chunks[3], namespace_info) + ';'
                 elif (get_lookup == False):
                     get_lookup = get_long_rdf(chunks[1], namespace_info, chunks[3:]) 
-                else
+                else:
                     get_lookup += ';'
                 
                 
