@@ -75,15 +75,15 @@ def _get_db_path(database, collection):
                              collection+', falling back on default.')
             return None
 
-def norm_create_local(database, name, collection=None, docID=None):
+def norm_create_local(database, name, collection=None, document=None):
     responseData = { 'name': '', 'entityID': '' }
     userID = get_session()['user']
 
     namespace_info = load_namespace_info()
     entityID = namespace_info['base_namespace'] + userID
     
-    if docID != None:
-        entityID += '/' + docID
+    if document != None:
+        entityID += '/' + document
         
     entityID += '/shared/' + camelCase(name)    
 
@@ -94,7 +94,7 @@ def norm_create_local(database, name, collection=None, docID=None):
 
     try:
         #normdb.create_norm_entity(dbpath, name, entityID)
-        normdb.create_local_norm_value(dbpath, name, entityID, userID, docID)
+        normdb.create_local_norm_value(dbpath, name, entityID, userID, document)
         Messager.info('Created Name: ' + name)
         responseData = { 'name' : name, 'entityID' : entityID }
     except normdb.dbNotFoundError, e:
@@ -293,7 +293,7 @@ def norm_get_data(database, key, collection=None):
         }
     return json_dic    
     
-def norm_get_local_entities(database, docID, collection=None):
+def norm_get_local_entities(database, document, collection=None):
     if NORM_LOOKUP_DEBUG:
         _check_DB_version(database)
     if REPORT_LOOKUP_TIMINGS:
@@ -307,7 +307,7 @@ def norm_get_local_entities(database, docID, collection=None):
         dbpath = database
 
     try:
-        data = normdb.get_local_entities(dbpath, docID, userID)
+        data = normdb.get_local_entities(dbpath, document, userID)
     except normdb.dbNotFoundError, e:
         Messager.warning(str(e))
         data = None
@@ -318,7 +318,7 @@ def norm_get_local_entities(database, docID, collection=None):
     # echo request for sync
     json_dic = {
         'database' : database,
-        'key' : docID + ', ' + userID,
+        'key' : document + ', ' + userID,
         'value' : data
         }
     return json_dic

@@ -1669,7 +1669,7 @@ var AnnotatorUI = (function($, window, undefined) {
           action: 'normList',
           database: db,
           collection: coll,
-          docID: doc,
+          document: doc,
           protocol: '1'
         }, 'localNormList']);
       }
@@ -1729,7 +1729,7 @@ var AnnotatorUI = (function($, window, undefined) {
           action: 'normList',
           database: db,
           collection: coll,
-          docID: doc,
+          document: doc,
           protocol: '1'
         }, 'localNormList']);
 
@@ -1762,7 +1762,7 @@ var AnnotatorUI = (function($, window, undefined) {
             database: db,
 			      name: entityName,
             collection: coll,
-            docID: doc,
+            document: doc,
 			      protocol: '1'
 		        }, 'normCreateResult']);
 
@@ -3093,12 +3093,12 @@ var AnnotatorUI = (function($, window, undefined) {
 
       var importForm = $('#import_form');
       var importFormSubmit = function(evt) {
-        var _docid = $('#import_docid').val();
+        var _document = $('#import_document').val();
         var _doctext = $('#import_text').val();
         var opts = {
           action : 'importDocument',
           collection : coll,
-          docid  : _docid,
+          document  : _document,
           text  : _doctext,
         };
         dispatcher.post('ajax', [opts, function(response) {

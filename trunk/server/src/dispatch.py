@@ -339,7 +339,7 @@ def dispatch(http_args, client_ip, client_hostname):
                        'FINISH', action, action_args)
 
     if action in ANNOTATION_SAVE_RDF:
-        Messager.info('Document (from args): ' + http_args['docID'])
+        Messager.info('Document (from args): ' + http_args['document'])
         create_rdf_file(http_args['collection'],
                         http_args['document'])
 
