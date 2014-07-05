@@ -1015,6 +1015,7 @@ var Visualizer = (function($, window, undefined) {
             var prefix = '';
             var postfix = '';
             var warning = false;
+            
             $.each(fragment.span.attributes, function(attrType, valType) {
               // TODO: might wish to check what's appropriate for the type
               // instead of using the first attribute def found
@@ -1050,6 +1051,7 @@ var Visualizer = (function($, window, undefined) {
                 }
               }
             });
+            
             var text = fragment.labelText;
             if (prefix !== '') {
               text = prefix + ' ' + text;
