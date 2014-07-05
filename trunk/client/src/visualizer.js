@@ -1040,7 +1040,7 @@ var Visualizer = (function($, window, undefined) {
                 warning = true;
                 return;
               }
-              if ($.isEmptyObject(val)) {
+              if ($.isEmptyObject(val) && !is_text) {
                 // defined, but lacks any visual presentation
                 warning = true;
                 return;
