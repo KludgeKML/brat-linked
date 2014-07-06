@@ -105,8 +105,10 @@ def get_rdf_parts(fpath, document):
                     parts['data'] += lookup(event_type, namespace_info) + ";\n"
 
                 for chunk in chunks[2:]:
-                    if ':' in chunk:
+                    if ':' in chunk and lookup(chunk.split(':')[0], namespace_info) != False:
                         parts['data'] += "\t" + lookup(chunk.split(':')[0], namespace_info) + " <" + namespace + chunk.split(':')[1] + ">;\n"
+                    elif ':' in chunk:
+                        parts['data'] += "\t" + get_long_rdf(chunk.split(':')[0], namespace_info, namespace + chunk.split(':')[1]) + ";\n"
 
                 parts['data'] += '\trdfs:label "' + chunks[0] + '" .\n\n'
 
