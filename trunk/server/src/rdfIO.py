@@ -121,7 +121,7 @@ def get_rdf_parts(fpath, document):
 
                     entity_name = normalised.split('/')[-1]
                     
-                    parts['data'] += "<" + namespace + entity_name + "> ome:shadow-of <" + normalised + ">.\n"
+                    parts['data'] += "<" + namespace + entity_name + "> ome:shadow-of <" + normalised + ">.\n\n"
 
                     parts['data'] += "<" + namespace + chunks[2] + "> owl:sameAs <" + namespace + entity_name + ">;\n"
 
