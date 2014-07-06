@@ -87,7 +87,7 @@ var Visualizer = (function($, window, undefined) {
       for (var fi = 0, nfi = 0; fi < this.unsegmentedOffsets.length; fi++) {
         var begin = this.unsegmentedOffsets[fi][0];
         var end = this.unsegmentedOffsets[fi][1];
-      
+
         for (var ti = begin; ti < end; ti++) {
           var c = text.charAt(ti);
           if (c == '\n' || c == '\r') {
@@ -101,7 +101,7 @@ var Visualizer = (function($, window, undefined) {
             begin = ti;
           }
         }
-      
+
         if (begin !== null) {
           this.offsets.push([begin, end]);
           this.segmentedOffsetsMap[nfi++] = fi;
@@ -1015,7 +1015,7 @@ var Visualizer = (function($, window, undefined) {
             var prefix = '';
             var postfix = '';
             var warning = false;
-            
+
             $.each(fragment.span.attributes, function(attrType, valType) {
               // TODO: might wish to check what's appropriate for the type
               // instead of using the first attribute def found
@@ -1027,39 +1027,44 @@ var Visualizer = (function($, window, undefined) {
                 return;
               }
               var val = attr.values[attr.bool || valType];
-            
-              var is_text = false
-            
+
+              var is_text = false;
+
               $.each(attr.values, function(valType, value) {
                 if (valType == 'fnord')
                   is_text = true;
               });
-            
+
               if (!val && !is_text) {
                 // non-existent value
                 warning = true;
                 return;
               }
-              if ($.isEmptyObject(val)) { // && !is_text) {
+
+              if ($.isEmptyObject(val) && !is_text) {
                 // defined, but lacks any visual presentation
                 warning = true;
                 return;
               }
-              if (val.glyph) {
-                if (val.position == "left") {
-                  prefix = val.glyph + prefix;
-                  var tspan_attrs = { 'class' : 'glyph' };
-                  if (val.glyphColor) {
-                    tspan_attrs.fill = val.glyphColor;
+
+              if (!$.isEmptyObject(val))
+              {
+                if (val.glyph) {
+                  if (val.position == "left") {
+                    prefix = val.glyph + prefix;
+                    var tspan_attrs = { 'class' : 'glyph' };
+                    if (val.glyphColor) {
+                      tspan_attrs.fill = val.glyphColor;
+                    }
+                    svgtext.span(val.glyph, tspan_attrs);
+                  } else { // XXX right is implied - maybe change
+                    postfixArray.push([attr, val]);
+                    postfix += val.glyph;
                   }
-                  svgtext.span(val.glyph, tspan_attrs);
-                } else { // XXX right is implied - maybe change
-                  postfixArray.push([attr, val]);
-                  postfix += val.glyph;
                 }
               }
             });
-            
+
             var text = fragment.labelText;
             if (prefix !== '') {
               text = prefix + ' ' + text;
