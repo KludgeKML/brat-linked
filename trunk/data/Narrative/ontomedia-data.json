@@ -21,11 +21,13 @@
 		"cnt":		"http://www.w3.org/2011/content#",
 		"ompi":     "http://contextus.net/ontology/ontomedia/ext/common/physitem#",
 		"loc":      "http://contextus.net/ontology/ontomedia/core/space#",
-		"aktloc":   "http://contextus.net/ontology/ontomedia/misc/AKTlocation#"
+		"aktloc":   "http://contextus.net/ontology/ontomedia/misc/AKTlocation#",
+		"omc":      "http://contextus.net/ontology/ontomedia/ext/common/critters#"
 		},
 
     "literals": {
-        "Name": "omt:has-trait [\n\t\ta omt:Name ;\n\t\tomt:has-name \"{1}\"\n\t\t]"
+        "Name": "omt:has-trait [\n\t\ta omt:Name ;\n\t\tomt:has-name \"{1}\"\n\t\t]",
+		"Species":  "omt:has-trait [\n\t\ta omc:{1};\n\t\trdfs:label \"{1} (Species)\"\n\t\t]"
     },
 
 	"category_map": {
@@ -90,21 +92,9 @@
 		"Celestial":						"omea",
 		"Environmental":					"omea",
 		"Travel":							"omj",
-		"Describes":						"omf",
-		"Implied":							"omf",
-		"References-Concept":				"omf",
-		"In-Passing":						"omf",
-		"Vague-Description":				"omf",
-		"Detailed-Description":				"omf",
-		"Extremely-Detailed-Description":	"omf",
-		"Fade-To-Black":					"omf",
-		"Spoiler":							"omf",
-		"Consent":      					"eprop",
-		"Strongly-Positive":				"omes",
-		"Positive":							"omes",
-		"Neutral":							"omes",
-		"Negative":							"omes",
-		"Strongly-Negative":				"omes"
+		"Detail-Level":						"omf",
+		"Spolier-Level":					"omf",
+		"Consent":      					"eprop"
 	},
 
 	"relationship_map": {
@@ -127,20 +117,20 @@
 		"is-part-of":			"aktloc",
 		"adjacent-to":			"aktloc",
 		"has-usual-occupant":	"loc",
-		"precedes":             "ome",
-		"follows":              "ome",
 		"involves":             "ome",
 		"causes":               "ome",
 		"caused-by":            "ome"
 	},
 
 	"extended_rdf_map": {
-		"bond-with":		"omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Bond;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n",
-		"family-of":		"omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Family;\n\t\t\tomb:is-relation-of {1}]\n\t\t];\n",
-		"friend-of":		"omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Friendship;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n",
-		"enemy-of":			"omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Enmity;\n\t\t\tomb:is-linked-to {1}]\n\t\t];\n",
-		"Gender":			"omt:has-trait [\n\t\ta omt:{1} ;\n\t\trdfs:label \"{1} (Gender)\"\n\t\t]",
-		"will-do":          "omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Pledge;\n\t\t\tomb:will-do {1}]\n\t\t];\n",
-		"will-not-do":      "omt:has-trait [\n\ta omt:link ;\n\t\tomb:has-bond [\n\t\t\ta omb:Pledge;\n\t\t\tomb:will-not-do {1}]\n\t\t];\n"
+		"bond-with":		"omt:has-trait [\n\ta omt:link;\n\t\tomb:has-bond [\n\t\t\ta omb:Bond;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n",
+		"family-of":		"omt:has-trait [\n\ta omt:link;\n\t\tomb:has-bond [\n\t\t\ta omb:Family;\n\t\t\tomb:is-relation-of {1}]\n\t\t];\n",
+		"friend-of":		"omt:has-trait [\n\ta omt:link;\n\t\tomb:has-bond [\n\t\t\ta omb:Friendship;\n\t\t\tome:is-linked-to {1}]\n\t\t];\n",
+		"enemy-of":			"omt:has-trait [\n\ta omt:link;\n\t\tomb:has-bond [\n\t\t\ta omb:Enmity;\n\t\t\tomb:is-linked-to {1}]\n\t\t];\n",
+		"Gender":			"omt:has-trait [\n\t\ta omt:{1};\n\t\trdfs:label \"{1} (Gender)\"\n\t\t]",
+		"will-do":          "omt:has-trait [\n\ta omt:link;\n\t\tomb:has-bond [\n\t\t\ta omb:Pledge;\n\t\t\tomb:will-do {1}]\n\t\t];\n",
+		"will-not-do":      "omt:has-trait [\n\ta omt:link;\n\t\tomb:has-bond [\n\t\t\ta omb:Pledge;\n\t\t\tomb:will-not-do {1}]\n\t\t];\n",
+		"precedes":         "ome:has-occurrence [\n\ta ome:Occurrence;\n\t\tome:precedes [\n\t\t\ta ome:Occurrence;\n\t\t\tome:is-occurrence-of {1}]\n\t\t];\n",
+		"follows":          "ome:has-occurrence [\n\ta ome:Occurrence;\n\t\tome:follows [\n\t\t\ta ome:Occurrence;\n\t\t\tome:is-occurrence-of {1}]\n\t\t];\n"
 	}
 }
