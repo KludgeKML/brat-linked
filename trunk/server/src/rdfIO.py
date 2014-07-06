@@ -212,8 +212,10 @@ def lookup(annotation, namespace_info):
         return namespace_info['relationship_map'][annotation] + ":" + annotation
     elif annotation in namespace_info['extended_rdf_map']:
         return False
-    elif annotation in namespace_info['literals']:
-        return False      
+    elif annotation in namespace_info['string_literals']:
+        return False
+    elif annotation in namespace_info['class_literals']:
+        return False        
     
     return annotation
 
@@ -230,8 +232,13 @@ def get_long_rdf(annotation, namespace_info, annotation_value = '', entity = '',
     if annotation in namespace_info['extended_rdf_map']:
         raw = namespace_info['extended_rdf_map'][annotation]
         return raw.replace('{1}', ent)
-    elif annotation in namespace_info['literals']:
-        raw = namespace_info['literals'][annotation]
-        return raw.replace('{1}', ent)    
+    elif annotation in namespace_info['string_literals']:
+        raw = namespace_info['string_literals'][annotation]
+        return raw.replace('{1}', ent)
+    elif annotation in namespace_info['class_literals']:
+        raw = namespace_info['class_literals'][annotation]
+        filtered_ent = re.sub(r'\W+', '', ent)
+        camelcase_ent = filtered.capwords()
+        return raw.replace('{1}', camelcase_ent.replace(' ', ''))     
 
     return annotation + " " + ent

@@ -25,8 +25,10 @@
 		"omc":      "http://contextus.net/ontology/ontomedia/ext/common/critters#"
 		},
 
-    "literals": {
-        "Name": "omt:has-trait [\n\t\ta omt:Name ;\n\t\tomt:has-name \"{1}\"\n\t\t]",
+    "string_literals": {
+        "Name": "omt:has-trait [\n\t\ta omt:Name ;\n\t\tomt:has-name \"{1}\"\n\t\t]"
+    },
+    "class_literals": {
 		"Species":  "omt:has-trait [\n\t\ta omc:{1};\n\t\trdfs:label \"{1} (Species)\"\n\t\t]"
     },
 
