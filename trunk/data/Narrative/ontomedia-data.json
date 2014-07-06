@@ -132,7 +132,7 @@
 		"Gender":			"omt:has-trait [\n\t\ta omt:{1};\n\t\trdfs:label \"{1} (Gender)\"\n\t\t]",
 		"will-do":          "omt:has-trait [\n\ta omt:link;\n\t\tomb:has-bond [\n\t\t\ta omb:Pledge;\n\t\t\tomb:will-do {1}]\n\t\t];\n",
 		"will-not-do":      "omt:has-trait [\n\ta omt:link;\n\t\tomb:has-bond [\n\t\t\ta omb:Pledge;\n\t\t\tomb:will-not-do {1}]\n\t\t];\n",
-		"precedes":         "ome:has-occurrence [\n\ta ome:Occurrence;\n\t\tome:precedes [\n\t\t\ta ome:Occurrence;\n\t\t\tome:is-occurrence-of {1}]\n\t\t];\n",
-		"follows":          "ome:has-occurrence [\n\ta ome:Occurrence;\n\t\tome:follows [\n\t\t\ta ome:Occurrence;\n\t\t\tome:is-occurrence-of {1}]\n\t\t];\n"
+		"precedes":         "ome:has-occurrence [\n\ta ome:Occurrence;\n\t\tome:precedes [\n\t\t\ta ome:Occurrence;\n\t\t\tome:is-occurrence-of <{1}>]\n\t\t];\n",
+		"follows":          "ome:has-occurrence [\n\ta ome:Occurrence;\n\t\tome:follows [\n\t\t\ta ome:Occurrence;\n\t\t\tome:is-occurrence-of <{1}>]\n\t\t];\n"
 	}
 }
