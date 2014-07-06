@@ -1,6 +1,0 @@
-http://contextus.net/resource/shared/RedRidingHood	name:Name:Red Riding Hood	attr:Category:Character
-http://contextus.net/resource/shared/RRHMother	name:Name:Mother	attr:Category:Character
-http://contextus.net/resource/shared/RRHFather	name:Name:Father	attr:Category:Character
-http://contextus.net/resource/shared/RRHGrandma	name:Name:Grandma	name:Name:Grandmother	attr:Category:Character
-http://contextus.net/resource/shared/Wolf	name:Name:Wolf	attr:Category:Character
-http://contextus.net/resource/shared/Forester	name:Name:Forester	name:Name:Woodcutter	name:Name:Hunter	attr:Category:Character
