@@ -1,0 +1,34 @@
+http://contextus.net/resource/shared/RedRidingHood	name:Name:Red Riding Hood	attr:Category:Character
+http://contextus.net/resource/shared/RRHMother	name:Name:Mother	attr:Category:Character
+http://contextus.net/resource/shared/RRHFather	name:Name:Father	attr:Category:Character
+http://contextus.net/resource/shared/RRHGrandma	name:Name:Grandma	name:Name:Grandmother	attr:Category:Character
+http://contextus.net/resource/shared/Wolf	name:Name:Wolf	attr:Category:Character
+http://contextus.net/resource/shared/Forester	name:Name:Forester	name:Name:Woodcutter	name:Name:Hunter	attr:Category:Character
+
+http://contextus.net/resource/shared/ChezHood	name:Name:Chez Hood	attr:Category:Space
+http://contextus.net/resource/shared/ChezGrandma	name:Name:Chez Grandma	attr:Category:Space
+http://contextus.net/resource/shared/Wood	name:Name:Wood	attr:Category:Space
+http://contextus.net/resource/shared/Path	name:Name:Woodland Path	attr:Category:Space
+
+http://contextus.net/resource/shared/DeliveryRequest	name:Name:Delivery request	attr:Category:Conversational
+http://contextus.net/resource/shared/RRH2Wood	name:Name:RRH goes to the wood	attr:Category:Travel
+http://contextus.net/resource/shared/MeetingWolf	name:Name:Meeting the wolf	attr:Category:Conversational
+http://contextus.net/resource/shared/Wolf2ChezG	name:Name:Wolf goes to Grandmas	attr:Category:Travel
+http://contextus.net/resource/shared/RRH2ChezG	name:Name:RRH goes to Chez Grandma	attr:Category:Travel
+http://contextus.net/resource/shared/WolfEatsG	name:Name:Wolf eats Grandma	attr:Category:Ingestion
+http://contextus.net/resource/shared/WolfDonsDisguise	name:Name:Wolf puts on disguises	attr:Category:Gain
+http://contextus.net/resource/shared/RRHMeetsGWolf	name:Name:RRH meets 'Grandma'	attr:Category:Social
+http://contextus.net/resource/shared/WolfKilled	name:Name:Wolf killed	attr:Category:Violence
+http://contextus.net/resource/shared/WolfDies	name:Name:Wold dies	attr:Category:Transformation
+http://contextus.net/resource/shared/GrandmaDies	name:Name:Grandma dies	attr:Category:Transformation
+http://contextus.net/resource/shared/GrandmaFreed	name:Name:Grandma Freed	attr:Category:Travel
+http://contextus.net/resource/shared/RRH2ChallengesWolf	name:Name:RRH challenges Wolf	attr:Category:Conversational
+http://contextus.net/resource/shared/RRHArrivesChezG	name:Name:RRH arrives at Chez Grandma	attr:Category:Travel
+http://contextus.net/resource/shared/WolfArrivesChezG	name:Name:Wolf arrives at Chez Grandma	attr:Category:Travel
+
+http://contextus.net/resource/shared/Dead	name:Name:Dead (State of Being)	attr:Category:Dead
+http://contextus.net/resource/shared/Alive	name:Name:Alive (State of Being)	attr:Category:Alive
+
+http://contextus.net/resource/shared/Basket	name:Name:Basket	attr:Category:Physical-Item
+http://contextus.net/resource/shared/Axe	name:Name:Axe	attr:Category:Physical-Item
+http://contextus.net/resource/shared/GrannyDisguise	name:Name:Granny Disguise	attr:Category:Physical-Item
