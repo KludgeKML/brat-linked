@@ -132,15 +132,16 @@ def get_rdf_parts(fpath, document):
 
                 else:
 
-                    parts['data'] += "<" + namespace + chunks[2] + "> owl:sameAs <" + normalised + "> ;\n\n"
+                    parts['data'] += "<" + namespace + chunks[2] + "> owl:sameAs <" + normalised + ">" 
                     # Check if local entity is linked to global entity - if so add in shadow-of relationship
 
                     global_id = get_linked_global_entity(dbname, normalised)
                     
-                    
-
-                    for uid in global_id:
-                        parts['data'] += "<" + normalised + "> ome:shadow-of <" + uid + ">;\n"
+                    if len(global_id) < 1:
+                        parts['data'] += ";\n\n"
+                    else:
+                        for uid in global_id:
+                            parts['data'] += "<" + normalised + "> ome:shadow-of <" + uid + ">;\n"
                         
                         if uid not in entity_data:
                             entity_data[uid] = data_by_id(dbname, uid)
