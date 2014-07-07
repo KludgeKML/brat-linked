@@ -140,6 +140,8 @@ def get_rdf_parts(fpath, document):
                     if len(global_id) < 1:
                         parts['data'] += ";\n\n"
                     else:
+                        parts['data'] += ".\n\n"
+                        
                         for uid in global_id:
                             parts['data'] += "<" + normalised + "> ome:shadow-of <" + uid + ">;\n"
                         
