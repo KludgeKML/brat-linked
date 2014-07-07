@@ -212,7 +212,7 @@ def lookup(annotation, namespace_info):
     #if annotation in conversion:
     #    annotation = conversion[annotation]
     
-    annotation = re.sub(r'[a-zA-Z_-]+', '', annotation)
+    annotation = re.sub(r'[^a-zA-Z_-]+', '', annotation)
 
     if annotation in namespace_info['namespaces']:
         return namespace_info['namespaces'][annotation]
@@ -236,14 +236,14 @@ def get_long_rdf(annotation, namespace_info, annotation_value = '', entity = '',
         ent = annotation_value.strip()
     elif entity == '':
         ent = (' '.join(annotation_value)).strip()
-    elif re.sub(r'[a-zA-Z_-]+', '', entity) in namespace_info['category_map']:
-        stripped_entity = re.sub(r'[a-zA-Z_-]+', '', entity)
+    elif re.sub(r'[^a-zA-Z_-]+', '', entity) in namespace_info['category_map']:
+        stripped_entity = re.sub(r'[^a-zA-Z_-]+', '', entity)
         ent = namespace_info['category_map'][stripped_entity] + ":" + stripped_entity
     else:
-        ent = "<" + namespace + re.sub(r'[a-zA-Z_-]+', '', entity) + ">"
+        ent = "<" + namespace + re.sub(r'[^a-zA-Z_-]+', '', entity) + ">"
 
     
-    annotation = re.sub(r'[a-zA-Z_-]+', '', annotation)
+    annotation = re.sub(r'[^a-zA-Z_-]+', '', annotation)
 
     if annotation in namespace_info['extended_rdf_map']:
         raw = namespace_info['extended_rdf_map'][annotation]
