@@ -252,8 +252,8 @@ def get_long_rdf(annotation, namespace_info, annotation_value = '', entity = '',
         raw = namespace_info['string_literals'][annotation]
         return raw.replace('{1}', ent)
     elif annotation in namespace_info['class_literals']:
-        raw = namespace_info['class_literals'][annotation]
-        filtered_ent = re.sub(r'\W+', '', ent)
+        raw = namespace_info['class_literals'][annotation]        
+        filtered_ent = re.sub(r'[a-zA-Z_- ]+', '', ent)
         camelcase_ent = filtered_ent.title()
         return raw.replace('{1}', camelcase_ent.replace(' ', ''))     
 
