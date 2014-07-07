@@ -132,7 +132,7 @@ def get_rdf_parts(fpath, document):
 
                 else:
 
-                    parts['data'] += "<" + namespace + chunks[2] + "> owl:sameAs <" + normalised + ">;\n"
+                    parts['data'] += "<" + namespace + chunks[2] + "> owl:sameAs <" + normalised + ">.\n\n"
                     # Check if local entity is linked to global entity - if so add in shadow-of relationship
 
                     global_id = get_linked_global_entity(dbname, normalised)
