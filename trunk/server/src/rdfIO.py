@@ -165,8 +165,14 @@ def get_rdf_parts(fpath, document):
                 parts['data'] += "<" + namespace + chunks[0] + ">\n\ta "
                 if lookup(chunks[1], namespace_info) != False:
                     parts['data'] += lookup(chunks[1], namespace_info)
-                parts['data'] += " ;\n"
-                parts['data'] += '\tcnt:chars "' + line_string.strip() + '" .\n\n'
+                
+                
+                if line_string.strip() != '':
+                    parts['data'] += " ;\n"
+                    parts['data'] += '\tcnt:chars "' + line_string.strip() + '" .\n\n'
+                else:
+                    parts['data'] += " .\n\n"
+                
 
             elif line[0] == 'A':
                 get_lookup = lookup(chunks[1], namespace_info)
