@@ -254,7 +254,7 @@ def get_long_rdf(annotation, namespace_info, annotation_value = '', entity = '',
     elif annotation in namespace_info['class_literals']:
         raw = namespace_info['class_literals'][annotation]
         filtered_ent = re.sub(r'\W+', '', ent)
-        camelcase_ent = filtered.capwords()
+        camelcase_ent = filtered_ent.capwords()
         return raw.replace('{1}', camelcase_ent.replace(' ', ''))     
 
     return annotation + " " + ent
