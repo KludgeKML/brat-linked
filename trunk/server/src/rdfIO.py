@@ -172,7 +172,7 @@ def get_rdf_parts(fpath, document):
                 
                 if line_string.strip() != '':
                     parts['data'] += " ;\n"
-                    parts['data'] += '\tcnt:chars "' + line_string.strip() + '" .\n\n'
+                    parts['data'] += '\tcnt:chars "' + line_string.strip().replace('"', '\"') + '" .\n\n'
                 else:
                     parts['data'] += " .\n\n"
                 
