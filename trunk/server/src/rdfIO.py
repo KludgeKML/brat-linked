@@ -178,9 +178,7 @@ def get_rdf_parts(fpath, document):
                     parts['data'] += " .\n\n"
                 
 
-            elif line[0] == 'A' and len(chunks) > 3:
-            
-                parts['data'] += '!!'+ str(len(chunks)) +'!!'
+            elif line[0] == 'A' and len(chunks) > 4:
             
                 get_lookup = lookup(chunks[1], namespace_info)
                 
