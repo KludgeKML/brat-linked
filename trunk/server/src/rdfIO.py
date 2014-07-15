@@ -180,7 +180,7 @@ def get_rdf_parts(fpath, document):
 
             elif line[0] == 'A' and len(chunks) > 3:
             
-                parts['data'] += '!!'+len(chunks)+'!!'
+                parts['data'] += '!!'+ str(len(chunks)) +'!!'
             
                 get_lookup = lookup(chunks[1], namespace_info)
                 
