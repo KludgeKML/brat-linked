@@ -90,7 +90,7 @@ def get_rdf_parts(fpath, document):
     
         for line in txt_file:
 
-            chunks = re.split(r'\s+', line)
+            chunks = re.split(r'\s+', line.strip())
 
             if line[0] == 'E':
 
@@ -178,9 +178,11 @@ def get_rdf_parts(fpath, document):
                     parts['data'] += " .\n\n"
                 
 
-            elif line[0] == 'A' and len(chunks) > 4:
+            elif line[0] == 'A' and len(chunks) > 3:
             
                 get_lookup = lookup(chunks[1], namespace_info)
+                
+                parts['data'] += '!!' + str(len(chunks)) + '\n'
                 
                 if (get_lookup == chunks[1]):
                     get_lookup = 'a ' + lookup(chunks[3], namespace_info)
