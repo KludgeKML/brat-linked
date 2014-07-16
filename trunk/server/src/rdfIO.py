@@ -182,8 +182,6 @@ def get_rdf_parts(fpath, document):
             
                 get_lookup = lookup(chunks[1], namespace_info)
                 
-                parts['data'] += '!!' + str(len(chunks)) + '\n'
-                
                 if (get_lookup == chunks[1]):
                     get_lookup = 'a ' + lookup(chunks[3], namespace_info)
                 elif (get_lookup == False):
