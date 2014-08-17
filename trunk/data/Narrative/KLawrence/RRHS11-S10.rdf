@@ -1,0 +1,27 @@
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/klawrence/RRHS11-S10/T1>
+	a ome:Character ;
+	cnt:chars "Grandma's" .
+
+<http://contextus.net/resource/RRH/klawrence/RRHS11-S10/T1>
+	 omt:has-trait [
+		a omt:Female ;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A1" .
+

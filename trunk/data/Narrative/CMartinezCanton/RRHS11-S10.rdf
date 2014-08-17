@@ -1,0 +1,545 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T1>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood 11" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T1>
+	 omt:has-trait [
+		a omt:Name ;
+		omt:has-name "Red Riding Hood"
+		];
+	rdfs:label "A2" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T1>
+	 omt:has-trait [
+		a omc:Human;
+		rdfs:label "Human (Species)"
+		];
+	rdfs:label "A3" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T2>
+	a ome:Character ;
+	cnt:chars "Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T2>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A4" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T2>
+	 omt:has-trait [
+		a omt:Name ;
+		omt:has-name "Red Riding Hood"
+		];
+	rdfs:label "A5" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T2>
+	 omt:has-trait [
+		a omc:Human;
+		rdfs:label "Human (Species)"
+		];
+	rdfs:label "A6" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T3>
+	a ome:Character ;
+	cnt:chars "Grandma" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T3>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A7" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T3>
+	 omt:has-trait [
+		a omt:Name ;
+		omt:has-name "Grandma"
+		];
+	rdfs:label "A8" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T3>
+	 omt:has-trait [
+		a omc:Human;
+		rdfs:label "Human (Species)"
+		];
+	rdfs:label "A9" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T4>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T4>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A10" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T4>
+	 omt:has-trait [
+		a omt:Name ;
+		omt:has-name "Wolf"
+		];
+	rdfs:label "A11" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T4>
+	 omt:has-trait [
+		a omc:Wolf;
+		rdfs:label "Wolf (Species)"
+		];
+	rdfs:label "A12" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T5>
+	a ome:Character ;
+	cnt:chars "woodcutter" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T5>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A13" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T>]
+		];
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T6>
+	a loc:City ;
+	cnt:chars "village" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T7>
+	a loc:Wood ;
+	cnt:chars "woods" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T6> aktloc:adjacent-to <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T7>;
+	rdfs:label "R2" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T2> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS11-S10/shared/Rosy>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/shared/Rosy> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T8>
+	a ome:Character ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T8> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS11-S10/shared/Rosy>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/shared/Rosy> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T3> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RRHGrandma>;
+	rdfs:label "N3" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T9>
+	a ome:Entity ;
+	cnt:chars "Red Hood" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T9> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RedRidingHood>;
+	rdfs:label "N4" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T10>
+	a loc:Home ;
+	cnt:chars "house" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T10> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Gandmothers_House>;
+
+	rdfs:label "N5" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T10> aktloc:is-part-of <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T6>;
+	rdfs:label "R3" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T10> loc:has-usual-occupant <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T3>;
+	rdfs:label "R4" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T11>
+	a ome:Entity ;
+	cnt:chars "Grandma" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T11> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Grandmother>;
+
+	rdfs:label "N6" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T12>
+	a ome:Entity ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T12> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Wolf>;
+	rdfs:label "N7" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T13>
+	a omea:Ingestion ;
+	cnt:chars "swallowing Grandma whole" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T13>
+	a omea:Ingestion;
+	ome:has-object-entity <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T3>;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T12>;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/E1> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Eating_Grandmother>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Eating_Grandmother> ome:shadow-of <http://contextus.net/resource/shared/WolfEatsG>;
+	rdfs:label "N8" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T14>
+	a omel:Destruction ;
+	cnt:chars "he dies" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T14>
+	a omel:Destruction;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T38>;
+	rdfs:label "E2" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/E2> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Wolf_Dies>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Wolf_Dies> ome:shadow-of <http://contextus.net/resource/shared/WolfKilled>;
+	rdfs:label "N9" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T15>
+	a ompi:Weapon ;
+	cnt:chars "axe" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Axe> ome:shadow-of <http://contextus.net/resource/shared/Axe>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T15> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Axe>;
+	rdfs:label "N10" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T16>
+	a loc:Home ;
+	cnt:chars "cottage" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T16> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Gandmothers_House>;
+
+	rdfs:label "N11" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T17>
+	a ome:Physical-Item ;
+	cnt:chars "basket" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Basket> ome:shadow-of <http://contextus.net/resource/shared/Basket>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T17> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Basket>;
+	rdfs:label "N12" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T18>
+	a ome:Entity ;
+	cnt:chars "there" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T18> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Gandmothers_House>;
+
+	rdfs:label "N13" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T19>
+	a ome:Entity ;
+	cnt:chars "Grandma" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T19> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Grandmother>;
+
+	rdfs:label "N14" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T20>
+	a omj:Travel ;
+	cnt:chars "arrives" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T20>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T21>;
+	rdfs:label "E3" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T21>
+	a ome:Entity ;
+	cnt:chars "Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T21> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RedRidingHood>;
+	rdfs:label "N15" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T22>
+	a ome:Character ;
+	cnt:chars "Grandma" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T22> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Grandmother>;
+
+	rdfs:label "N16" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T23>
+	a omet:Merge ;
+	cnt:chars "fall out" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T23>
+	a omet:Merge;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T37>;
+	rdfs:label "E4" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/E4> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/FallingOut>;
+
+	rdfs:label "N17" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T24>
+	a ome:Character ;
+	cnt:chars "Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T24> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RedRidingHood>;
+	rdfs:label "N18" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T25>
+	a ome:Character ;
+	cnt:chars "Grandma" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T25> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Grandmother>;
+
+	rdfs:label "N19" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T26>
+	a ome:Entity ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T26> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RedRidingHood>;
+	rdfs:label "N20" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T27>
+	a omea:Violence ;
+	cnt:chars "cuts the wolf's belly open" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T27>
+	a omea:Violence;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T5>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T28>;
+	ome:involves <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T15>;
+	rdfs:label "E5" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/E5> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/CutWolfSBelly>;
+
+	rdfs:label "N21" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T28>
+	a ome:Entity ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T28> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Wolf>;
+	rdfs:label "N22" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T29>
+	a ome:Entity ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T29> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Wolf>;
+	rdfs:label "N23" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T4> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Wolf>;
+	rdfs:label "N24" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T4> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T>]
+		];
+	rdfs:label "R5" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T30>
+	a omj:Travel ;
+	cnt:chars "she has to walk through the woods" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T30>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T31>;
+	ome:involves <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T7>;
+	rdfs:label "E6" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/E6> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Walk>;
+
+	rdfs:label "N25" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T31>
+	a ome:Entity ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T31> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RedRidingHood>;
+	rdfs:label "N26" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T16> ome:is <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T10>;
+	rdfs:label "R6" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T32>
+	a omes:Conversational ;
+	cnt:chars "said" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T32>
+	a omes:Conversational;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T4>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T2>;
+	rdfs:label "E7" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/E7> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Say>;
+
+	rdfs:label "N27" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T33>
+	a ome:Action ;
+	cnt:chars "takes" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T33>
+	a ome:Action;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T2>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T17>;
+	ome:has-occurrence [
+	a ome:Occurrence;
+		ome:precedes [
+			a ome:Occurrence;
+			ome:is-occurrence-of <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/E6>]
+		];
+;
+	rdfs:label "E8" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/E8> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Take>;
+
+	rdfs:label "N28" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T2> omb:owns <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T17>;
+	rdfs:label "R7" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T34>
+	a ompi:Consumables ;
+	cnt:chars "food" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T34> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Food>;
+
+	rdfs:label "N29" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T17> ome:contains <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T34>;
+	rdfs:label "R8" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T36>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T36> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Wolf>;
+	rdfs:label "N31" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T37>
+	a omb:Bonded-Group ;
+	cnt:chars "Red Riding Hood and Grandma" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T38>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T38> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/Wolf>;
+	rdfs:label "N32" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T39>
+	a ome:Social ;
+	cnt:chars "finds out where she's going" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T39>
+	a ome:Social;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T12>;
+	ome:causes <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/E1>;
+	rdfs:label "E10" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/E10> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Discover>;
+
+	rdfs:label "N33" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T37> ome:contains <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T24>;
+	rdfs:label "R9" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T37> ome:contains <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T25>;
+	rdfs:label "R10" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T17> ome:is-linked-to <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T10>;
+	rdfs:label "R11" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T35>
+	a ome:Character ;
+	cnt:chars "Grandma" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T35> owl:sameAs <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/RRHGrandma>;
+	rdfs:label "N30" .
+
+<http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T35> ome:contained-by <http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/T16>;
+	rdfs:label "R12" .
+
+<http://contextus.net/resource/shared/RRHGrandma>
+	rdfs:label "Grandma";
+	rdfs:label "Grandmother";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Wolf>
+	rdfs:label "Wolf";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Axe>
+	rdfs:label "Axe";
+	a ome:Physical-Item .
+
+<http://contextus.net/resource/shared/WolfKilled>
+	rdfs:label "Wolf killed";
+	a omea:Violence .
+
+<http://contextus.net/resource/shared/Basket>
+	rdfs:label "Basket";
+	a ome:Physical-Item .
+
+<http://contextus.net/resource/shared/WolfEatsG>
+	rdfs:label "Wolf eats Grandma";
+	a omea:Ingestion .
+

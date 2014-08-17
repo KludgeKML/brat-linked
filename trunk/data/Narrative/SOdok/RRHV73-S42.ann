@@ -1,0 +1,70 @@
+T1	Context 0 28	Red Riding Hood Variation 73
+T2	Character 143 149	Steffi
+T3	Character 154 158	Hans
+R1	family-of Arg1:T2 Arg2:T3	
+T4	Character 79 85	doctor
+T5	Character 175 181	Steffi
+T6	Character 329 335	doctor
+T7	Character 535 539	Hans
+T8	Character 638 642	Rose
+T9	Character 687 693	doctor
+T10	Character 1015 1021	Steffi
+T11	Character 1046 1050	Hans
+T12	Character 794 802	old lady
+T13	Character 659 667	daughter
+N3	Reference T3 archetypes:http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Father	Father
+N4	Reference T7 archetypes:http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Father	Father
+N6	Reference T11 archetypes:http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Father	Father
+N7	Reference T13 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N10	Reference T4 archetypes:http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Doctor	Doctor
+N11	Reference T6 archetypes:http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Doctor	Doctor
+N12	Reference T9 archetypes:http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Doctor	Doctor
+N8	Reference T12 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+N9	Reference T8 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+N5	Reference T10 archetypes:http://contextus.net/resource/shared/RRHMother	Mother
+N2	Reference T5 archetypes:http://contextus.net/resource/shared/RRHMother	Mother
+N1	Reference T2 archetypes:http://contextus.net/resource/shared/RRHMother	Mother
+T14	Character 188 191	She
+N13	Reference T14 archetypes:http://contextus.net/resource/shared/RRHMother	Mother
+T15	Character 701 704	She
+N14	Reference T15 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T16	Character 834 837	She
+N15	Reference T16 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T17	Character 918 921	She
+N16	Reference T17 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T18	Character 978 981	She
+N17	Reference T18 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+R2	family-of Arg1:T13 Arg2:T7	
+T20	Bonded-Pair 780 784	They
+N19	Reference T20 archetypes:http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Parents	Parents
+T19	Attire 872 885	strait jacket
+T21	Character 218 221	she
+N18	Reference T21 archetypes:http://contextus.net/resource/shared/RRHMother	Mother
+T22	Environmental 222 227	takes
+E1	Environmental:T22 has-subject-entity:T21 has-object-entity:T23
+T23	Consumables 228 249	the pen and clipboard
+T24	EmotionalExpression 182 186	nods
+E2	EmotionalExpression:T24 has-subject-entity:T5
+T25	Conversational 694 698	says
+E3	Conversational:T25 has-subject-entity:T9
+T26	EmotionalExpression 806 814	shouting
+E4	EmotionalExpression:T26 has-subject-entity:T12
+T27	EmotionalExpression 816 824	growling
+E5	EmotionalExpression:T27 has-subject-entity:T12
+T28	Bonded-Pair 828 832	them
+N20	Reference T28 archetypes:http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Parents	Parents
+T29	Bonded-Pair 932 936	them
+N21	Reference T29 archetypes:http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Parents	Parents
+T30	EmotionalExpression 922 928	glares
+E6	EmotionalExpression:T30 has-subject-entity:T17 has-object-entity:T29
+T31	EmotionalExpression 1065 1070	weeps
+E7	EmotionalExpression:T31 has-subject-entity:T10
+T32	Environmental 785 789	turn
+E8	Environmental:T32 has-subject-entity:T20
+T33	Physical-Item 904 916	hospital bed
+T34	Bonded-Pair 774 778	them
+N22	Reference T34 archetypes:http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Parents	Parents
+T35	EmotionalExpression 1007 1012	howls
+E9	EmotionalExpression:T35 has-subject-entity:T18
+T36	EmotionalExpression 336 351	shakes his head
+E10	EmotionalExpression:T36 has-subject-entity:T6

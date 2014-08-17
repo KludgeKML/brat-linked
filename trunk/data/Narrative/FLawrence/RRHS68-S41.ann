@@ -1,0 +1,10 @@
+T1	Character 215 219	Hood
+A1	Name T1 Ms Hood
+A2	Gender T1 Female
+T2	Travel 230 237	reaches
+E1	Travel:T2 has-subject-entity:T3 to:T4
+T3	Character 204 208	wolf
+N1	Reference T3 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T4	Space 256 261	house
+T5	Conversational 405 417	conversation
+E2	Conversational:T5 

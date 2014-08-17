@@ -1,0 +1,127 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T1>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood Variation 15" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T2>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T2>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A1" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T3>
+	a ome:Character ;
+	cnt:chars "girl" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T3>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A3" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T4>
+	a ompi:Attire ;
+	cnt:chars "cloak" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T5>
+	a ompi:Consumables ;
+	cnt:chars "cakes" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T3> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T>]
+		];
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T3> omb:wears <http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T4>;
+	rdfs:label "R2" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T6>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T6>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A5" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T6>
+	 omt:has-trait [
+		a omt:Name ;
+		omt:has-name "wolf"
+		];
+	rdfs:label "A6" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T7>
+	a loc:Home ;
+	cnt:chars "cottage" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T8>
+	a omea:Ingestion ;
+	cnt:chars "eats" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T8>
+	a omea:Ingestion;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T9>
+	a ome:Character ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T9>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A7" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T2>
+	 omt:has-trait [
+		a omc:HomoSapien;
+		rdfs:label "HomoSapien (Species)"
+		];
+	rdfs:label "A2" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T9>
+	 omt:has-trait [
+		a omc:HomoSapien;
+		rdfs:label "HomoSapien (Species)"
+		];
+	rdfs:label "A8" .
+
+<http://contextus.net/resource/RRH/JMcDonald/RRHV19-S15/T3>
+	 omt:has-trait [
+		a omc:HomoSapien;
+		rdfs:label "HomoSapien (Species)"
+		];
+	rdfs:label "A4" .
+

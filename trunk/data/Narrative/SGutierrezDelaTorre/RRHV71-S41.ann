@@ -1,0 +1,88 @@
+T1	Context 0 15	Red Riding Hood
+T2	Character 54 60	mother
+A2	Gender T2 Female
+T3	Character 97 108	grandmother
+A3	Gender T3 Female
+R1	family-of Arg1:T2 Arg2:T3	
+T4	Character 203 207	wolf
+T5	Character 224 228	Hood
+A4	Gender T5 Male
+R2	enemy-of Arg1:T5 Arg2:T4	
+T6	Character 66 69	him
+A5	Gender T6 Male
+A6	Name T6 Red Riding Hood
+N1	Reference T5 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N2	Reference T6 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T7	Home 265 270	house
+T8	Violence 272 282	overpowers
+E1	Violence:T8 has-object-entity:T28 follows:E7
+T9	Conversational 363 370	quizzes
+E2	Conversational:T9 has-object-entity:T25 follows:E11
+T10	Character 580 591	woodcutters
+N3	Reference T10 archetypes:http://contextus.net/resource/shared/Forester	Woodcutter
+T11	Action 599 605	rescue
+E3	Action:T11 has-subject-entity:T10 has-object-entity3:T32 caused-by:E13
+T12	Violence 634 641	beat up
+E4	Violence:T12 caused-by:E3
+R3	family-of Arg1:T2 Arg2:T6	
+R4	family-of Arg1:T6 Arg2:T3	
+T13	Character 346 350	Hood
+N4	Reference T13 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T14	Entity 656 660	wolf
+N5	Reference T14 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy	Wolf of Male Rosy
+N6	Reference T4 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy	Wolf of Male Rosy
+T15	Entity 158 160	He
+N7	Reference T15 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T16	Violence 535 542	attacks
+E5	Violence:T16 has-object-entity:T17 follows:E2
+T17	Character 543 547	Hood
+N8	Reference T17 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T18	Character 505 509	wolf
+N9	Reference T18 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy	Wolf of Male Rosy
+R5	will-do Arg1:T18 Arg2:E5	
+R6	will-do Arg1:T10 Arg2:E3	
+R7	will-do Arg1:T10 Arg2:E4	
+T19	Character 606 609	him
+N10	Reference T19 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T20	Character 618 629	grandmother
+T21	Character 213 217	wolf
+N12	Reference T21 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy	Wolf of Male Rosy
+T22	Travel 218 223	beats
+E6	Travel:T22 involves:T5 precedes:E7
+R8	will-do Arg1:T21 Arg2:E6	
+T23	Travel 239 246	reaches
+E7	Travel:T23 to:T7
+R9	will-do Arg1:T21 Arg2:E7	
+T24	Conversational 61 65	asks
+E8	Conversational:T24 has-object-entity:T6 has-subject-entity:T2 precedes:E10
+R10	will-do Arg1:T2 Arg2:E8	
+R11	will-do Arg1:T13 Arg2:E2	
+T25	Being 375 379	wolf
+N13	Reference T25 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy	Wolf of Male Rosy
+T26	Travel 661 670	went away
+E9	Travel:T26 caused-by:E4 has-subject-entity:T14
+T27	Conversational 113 119	warned
+E10	Conversational:T27 precedes:E12
+R12	will-do Arg1:T2 Arg2:E10	
+R13	will-do Arg1:T21 Arg2:E1	
+T28	Character 283 286	her
+N14	Reference T28 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/GrandmaOfMaleRosy	Grandma of Male Rosy
+T29	Travel 351 358	reaches
+E11	Travel:T29 to:T7 follows:E1
+R14	will-do Arg1:T13 Arg2:E11	
+T30	Conversational 161 174	does not heed
+E12	Conversational:T30 has-subject-entity:T15 has-object-entity:T31 precedes:E6
+T31	Context 180 187	warning
+T32	Community 606 629	him and his grandmother
+R15	owns Arg1:T7 Arg2:T3	
+N11	Reference T20 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/GrandmaOfMaleRosy	Grandma of Male Rosy
+R16	contained-by Arg1:T19 Arg2:T32	
+R17	contained-by Arg1:T20 Arg2:T32	
+T33	Character 549 553	Hood
+N15	Reference T33 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T34	Action 554 561	screams
+E13	Action:T34 has-subject-entity:T33 follows:E5
+T35	Character 684 688	Hood
+N16	Reference T35 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T36	Transformation 689 695	learnt
+E14	Transformation:T36 has-subject-entity:T35 caused-by:E5 caused-by2:E10

@@ -1,0 +1,84 @@
+T1	Context 0 28	Red Riding Hood Variation 71
+T3	Character 54 60	mother
+A1	Gender T3 Female
+T4	Conversational 192 197	talks
+E1	Conversational:T4 has-subject-entity:T6 has-object-entity:T5
+T5	Character 201 207	a wolf
+T2	Character 36 51	Red Riding Hood
+R1	family-of Arg1:T2 Arg2:T3	
+N1	Reference T2 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T6	Character 158 160	He
+N2	Reference T6 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+N3	Reference T5 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy	Wolf of Male Rosy
+T7	Character 209 217	The wolf
+N4	Reference T7 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy	Wolf of Male Rosy
+T8	Character 224 228	Hood
+N5	Reference T8 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T9	Character 97 108	grandmother
+N6	Reference T9 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/GrandmaOfMaleRosy	Grandma of Male Rosy
+N7	Reference T3 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MotherOfMaleRosy	Mother of Male Rosy
+T10	Character 283 286	her
+N8	Reference T10 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/GrandmaOfMaleRosy	Grandma of Male Rosy
+T11	Character 301 305	Hood
+N9	Reference T11 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T12	Character 346 350	Hood
+N10	Reference T12 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+A2	Gender T2 Male
+A3	Name T2 Red Riding Hood
+T13	Character 371 379	the wolf
+N11	Reference T13 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy	Wolf of Male Rosy
+T14	Character 501 509	the wolf
+N12	Reference T14 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy	Wolf of Male Rosy
+T15	Character 360 362	he
+N13	Reference T15 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T17	Character 543 547	Hood
+N14	Reference T17 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T18	Character 549 553	Hood
+N15	Reference T18 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T19	Character 614 629	his grandmother
+N16	Reference T19 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/GrandmaOfMaleRosy	Grandma of Male Rosy
+T20	Character 606 609	him
+N17	Reference T20 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T21	Character 642 650	the wolf
+N18	Reference T21 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy	Wolf of Male Rosy
+T22	Character 652 660	The wolf
+N19	Reference T22 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy	Wolf of Male Rosy
+T23	Character 684 688	Hood
+N20	Reference T23 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T16	Conversational 363 370	quizzes
+E2	Conversational:T16 
+T24	Conversational 401 467	they have a conversation regarding the various aspects of the same
+E3	Conversational:T24 
+T25	Home 251 270	grandmother's house
+T26	Travel 239 246	reaches
+E4	Travel:T26 has-subject-entity:T7 to:T25 follows:E5
+T27	Violence 218 223	beats
+E5	Violence:T27 has-subject-entity:T7 has-object-entity:T8
+T28	Group 401 405	they
+R2	contains Arg1:T28 Arg2:T13	
+R3	contains Arg1:T28 Arg2:T15	
+T29	Transformation 510 530	ditches the disguise
+E6	Transformation:T29 has-subject-entity:T14
+T30	Violence 535 542	attacks
+E7	Violence:T30 has-subject-entity:T14 has-object-entity:T17
+T31	Violence 634 641	beat up
+E8	Violence:T31 has-object-entity:T21 has-subject-entity:T32
+T33	Transformation 661 678	went away forever
+E9	Transformation:T33 has-subject-entity:T22
+T35	Transformation 689 741	learnt his lesson and never again spoke to strangers
+E10	Transformation:T35 has-subject-entity:T23
+T36	Travel 351 358	reaches
+E11	Travel:T36 has-subject-entity:T12 to:T25
+T32	Group 575 591	some woodcutters
+T34	Physical-Item 83 89	basket
+T37	Conversational 113 156	warned her about interacting with strangers
+E12	Conversational:T37 has-subject-entity:T3 has-object-entity:T2
+T38	Action 599 605	rescue
+E13	Action:T38 has-subject-entity:T32 has-object-entity:T39
+T39	Group 610 610	
+R4	contains Arg1:T39 Arg2:T20	
+R5	contains Arg1:T39 Arg2:T19	
+T40	Transformation 307 339	in the disguise of a grandmother
+E14	Transformation:T40 has-subject-entity:T7
+T41	Violence 272 282	overpowers
+E15	Violence:T41 has-subject-entity:T7 has-object-entity:T10

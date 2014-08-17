@@ -1,0 +1,90 @@
+T1	Context 0 28	Red Riding Hood Variation 69
+T2	Character 36 60	Red Riding Hood's mother
+T3	Character 66 69	her
+A1	Gender T3 Female
+A2	Gender T2 Female
+R1	family-of Arg1:T2 Arg2:T3	
+T4	Physical-Item 83 89	basket
+T5	Character 97 108	grandmother
+A3	Gender T5 Female
+R2	family-of Arg1:T3 Arg2:T5	
+R3	family-of Arg1:T2 Arg2:T5	
+T6	Being 147 156	strangers
+T7	Character 93 96	her
+N1	Reference T5 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T8	Character 329 340	grandmother
+N2	Reference T8 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T9	Character 348 352	Hood
+N3	Reference T9 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T10	Character 158 161	She
+A4	Gender T10 Female
+T11	Character 250 253	She
+A5	Gender T11 Female
+T12	Character 266 277	grandmother
+A6	Gender T12 Female
+T14	Character 404 415	grandmother
+A7	Gender T14 Female
+N4	Reference T14 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T15	Character 417 421	Hood
+A8	Gender T15 Female
+N5	Reference T15 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T16	Character 488 491	her
+A9	Gender T16 Female
+T17	Character 492 498	mother
+A10	Gender T17 Female
+N6	Reference T17 archetypes:http://contextus.net/resource/shared/RRHMother	Mother
+A11	Name T3 Red Riding Hood
+T18	Physical-Item 310 316	basket
+N7	Reference T18 archetypes:http://contextus.net/resource/shared/Basket	Basket
+N8	Reference T4 archetypes:http://contextus.net/resource/shared/Basket	Basket
+T19	Building 280 285	house
+T20	Home 435 439	home
+T21	Conversational 530 538	speaking
+E2	Conversational:T21 
+T22	Social 212 216	meet
+E3	Social:T22 has-object-entity:T27
+A12	Name T10 Red Riding Hood
+N9	Reference T11 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N10	Reference T10 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N11	Reference T3 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N12	Reference T7 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+A13	Name T15 Red Riding Hood
+T23	Character 320 323	her
+A14	Gender T23 Female
+N13	Reference T23 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T24	Character 504 507	her
+N14	Reference T24 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T25	Character 120 123	her
+N15	Reference T25 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N16	Reference T16 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N17	Reference T12 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T26	Physical-Item 361 365	same
+R4	is Arg1:T26 Arg2:T18	
+T13	Travel 254 261	reaches
+E1	Travel:T13 has-object-entity:T12
+R5	will-do Arg1:T11 Arg2:E1	
+R6	will-not-do Arg1:T10 Arg2:E3	
+T27	Being 221 230	strangers
+T28	Transference 422 429	returns
+E4	Transference:T28 has-object-entity:T20
+R7	will-do Arg1:T15 Arg2:E4	
+T29	Conversational 61 65	asks
+E5	Conversational:T29 has-object-entity:T3 refers-to:E6 precedes:E9
+R8	will-do Arg1:T2 Arg2:E5	
+T30	Transference 73 80	deliver
+E6	Transference:T30 has-object-entity:T4 to:T5
+R9	will-do Arg1:T3 Arg2:E6	
+T31	EmotionalExpression 446 477	unable to comprehend the reason
+E7	EmotionalExpression:T31 
+R10	will-do Arg1:T15 Arg2:E7	
+T32	Conversational 130 141	interacting
+E8	Conversational:T32 has-object-entity:T6
+R11	will-not-do Arg1:T25 Arg2:E8	
+T33	Conversational 113 119	warned
+E9	Conversational:T33 refers-to:E8 follows:E5
+R12	will-do Arg1:T2 Arg2:E9	
+T34	Conversational 512 519	warning
+E10	Conversational:T34 refers-to:E9
+T35	Event 297 305	delivers
+E11	Event:T35 has-object-entity:T18
+R13	will-do Arg1:T11 Arg2:E11	

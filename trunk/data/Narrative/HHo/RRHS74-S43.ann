@@ -1,0 +1,145 @@
+T1	Context 0 18	Red Riding Hood 74
+T2	Character 26 40	Red Ridinghood
+T3	Character 68 79	grandmother
+T4	Character 166 170	wolf
+T5	Character 358 372	Red Ridinghood
+R1	family-of Arg1:T2 Arg2:T3	
+R2	family-of Arg1:T3 Arg2:T2	
+T6	Character 209 213	wolf
+T7	Character 419 423	wolf
+T8	Character 449 460	grandmother
+T9	Character 498 502	LRRH
+T10	Character 550 554	wolf
+T11	Character 615 619	wolf
+T12	Character 629 633	LRRH
+T13	Character 658 661	man
+T14	Character 749 753	wolf
+T15	Character 790 794	LRRH
+T16	Character 803 814	grandmother
+T18	Character 518 529	grandmother
+T19	Character 374 378	LRRH
+T20	Character 713 717	LRRH
+T17	Character 226 237	grandmother
+N1	Reference T2 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Ridinghood	Ridinghood
+N2	Reference T9 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Ridinghood	Ridinghood
+N3	Reference T19 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Ridinghood	Ridinghood
+N4	Reference T5 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Ridinghood	Ridinghood
+N5	Reference T20 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Ridinghood	Ridinghood
+N6	Reference T15 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Ridinghood	Ridinghood
+N7	Reference T12 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Ridinghood	Ridinghood
+N8	Reference T6 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Wolf	wolf
+T21	Character 271 274	him
+N9	Reference T21 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Wolf	wolf
+N10	Reference T4 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Wolf	wolf
+N12	Reference T3 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Grandmother	grandmother
+N11	Reference T7 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Wolf	wolf
+N13	Reference T11 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Wolf	wolf
+N14	Reference T14 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Wolf	wolf
+N15	Reference T16 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Grandmother	grandmother
+N16	Reference T10 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Wolf	wolf
+N17	Reference T8 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Grandmother	grandmother
+N18	Reference T17 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Grandmother	grandmother
+T22	Character 260 263	her
+N19	Reference T22 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Grandmother	grandmother
+T23	Character 297 300	her
+N20	Reference T23 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Grandmother	grandmother
+T24	Character 280 282	he
+N21	Reference T24 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Wolf	wolf
+T25	Character 428 431	she
+N22	Reference T25 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Ridinghood	Ridinghood
+R3	family-of Arg1:T15 Arg2:T16	
+R4	family-of Arg1:T16 Arg2:T15	
+R5	family-of Arg1:T20 Arg2:T16	
+R6	family-of Arg1:T16 Arg2:T20	
+R7	is Arg1:T20 Arg2:T15	
+R8	is Arg1:T20 Arg2:T12	
+R9	is Arg1:T9 Arg2:T12	
+R10	is Arg1:T9 Arg2:T20	
+R11	is Arg1:T2 Arg2:T20	
+R12	is Arg1:T2 Arg2:T15	
+R13	is Arg1:T5 Arg2:T19	
+R14	is Arg1:T19 Arg2:T5	
+R15	is Arg1:T19 Arg2:T9	
+R16	is Arg1:T9 Arg2:T5	
+R17	is Arg1:T19 Arg2:T20	
+R18	is Arg1:T4 Arg2:T6	
+R19	is Arg1:T6 Arg2:T7	
+R20	is Arg1:T7 Arg2:T21	
+R21	is Arg1:T21 Arg2:T24	
+R22	is Arg1:T24 Arg2:T10	
+R23	is Arg1:T10 Arg2:T14	
+R24	is Arg1:T23 Arg2:T17	
+R25	is Arg1:T17 Arg2:T3	
+R26	is Arg1:T5 Arg2:T25	
+R27	is Arg1:T18 Arg2:T23	
+R28	is Arg1:T11 Arg2:T10	
+T26	Travel 214 218	gets
+E1	Travel:T26 has-subject-entity:T6 to:T27
+T27	Home 240 245	house
+R29	owns Arg1:T27 Arg2:T17	
+T29	Travel 379 386	arrives
+E3	Travel:T29 has-subject-entity2:T5 to:T27
+T30	Home 104 109	cabin
+R30	owns Arg1:T30 Arg2:T3	
+T31	Travel 41 45	goes
+E4	Travel:T31 has-subject-entity:T2 to:T30
+T32	Character 191 194	she
+N23	Reference T32 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Ridinghood	Ridinghood
+R31	is Arg1:T32 Arg2:T2	
+T33	Travel 197 202	going
+E5	Travel:T33 has-subject-entity:T32 to:T30
+R32	is Arg1:T27 Arg2:T30	
+T34	Travel 729 734	comes
+E6	Travel:T34 has-subject-entity:T13 to:T27 precedes:E7
+T35	Violence 739 744	kills
+E7	Violence:T35 has-subject-entity:T13 has-object-entity:T14 follows:E15
+T28	Transformation 739 744	kills
+E2	Transformation:T28 has-subject-entity:T14 from:T36 to:T37
+T36	Alive 744 744	
+T37	Dead 744 744	
+T38	Item 54 59	lunch
+R33	owns Arg1:T38 Arg2:T2	
+T39	Conversational 250 259	convinces
+E8	Conversational:T39 has-subject-entity:T6 has-object-entity:T17
+T40	Conversational 397 409	conversation
+E9	Conversational:T40 has-subject-entity:T5 has-object-entity:T7
+T41	Conversational 474 482	dialogue
+E10	Conversational:T41 has-object-entity:T10 has-subject-entity:T9 refers-to:T52
+T42	Conversational 564 569	reply
+E11	Conversational:T42 has-subject-entity:T10 has-object-entity:T9
+T43	Physical-Item 764 769	belly
+R34	contains Arg1:T14 Arg2:T43	
+T44	Physical-Item 320 327	clothes
+T45	Physical-Item 345 348	bed
+R35	owns Arg1:T23 Arg2:T44	
+R36	owns Arg1:T23 Arg2:T45	
+R37	contains Arg1:T27 Arg2:T44	
+R38	contains Arg1:T27 Arg2:T45	
+T46	Group 462 466	They
+R39	contains Arg1:T46 Arg2:T9	
+R40	contains Arg1:T46 Arg2:T10	
+T47	Social 150 158	meets up
+E12	Social:T47 has-subject-entity:T48 has-object-entity:T4
+T48	Character 146 149	she
+N24	Reference T48 archetypes:http://contextus.net/resource/RRH/HHo/RRHS74-S43/shared/Ridinghood	Ridinghood
+T49	Wood 117 123	forest
+R41	contains Arg1:T49 Arg2:T30	
+T50	Ingestion 620 628	swallows
+E13	Ingestion:T50 has-subject-entity:T11 has-object-entity:T12
+T51	Ingestion 288 296	swallows
+E14	Ingestion:T51 has-subject-entity:T24 has-object-entity:T23
+T52	Abstract-Item 532 540	features
+R42	owns Arg1:T52 Arg2:T18	
+T53	Violence 755 759	cuts
+E15	Violence:T53 has-subject-entity:T13 has-object-entity:T43
+T54	Transformation 816 821	alive
+E16	Transformation:T54 has-subject-entity:T16 to:T55 from:T56
+E17	Transformation:T54 has-subject-entity:T15 to:T55 from:T56
+T55	Alive 816 821	alive
+T56	Unknown 816 816	
+T57	Event 713 727	LRRH's screams
+E18	Event:T57 has-subject-entity:T20
+T58	Event 697 705	walks by
+E19	Event:T58 has-subject-entity:T13 precedes:E20
+T59	Event 707 712	hears
+E20	Event:T59 has-subject-entity:T13 precedes:E6

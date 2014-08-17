@@ -1,0 +1,40 @@
+T1	Context 0 18	Red Riding Hood 45
+T2	Character 157 168	grandmother
+N1	Reference T2 archetypes:http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Grannyhood	GrannyHood
+T3	Character 21 31	young girl
+T4	Conversational 35 41	warned
+E1	Conversational:T4 has-subject-entity:T3
+T5	Home 292 297	house
+T6	Character 428 438	lumberjack
+A1	Gender T6 Male
+N2	Reference T6 archetypes:http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/TheLumberjack	The Lumberjack
+T7	Character 494 498	wolf
+A2	Gender T7 Male
+N3	Reference T7 archetypes:http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Wolf	Wolf
+T8	Conversational 187 197	approached
+E2	Conversational:T8 has-subject-entity:T10 has-object-entity:T11 has-subject:T15
+T9	Character 278 289	grandmother
+N4	Reference T9 archetypes:http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Grannyhood	GrannyHood
+R2	exists-in Arg1:T3 Arg2:T1	
+A3	Gender T3 Female
+T10	Character 203 207	wolf
+A4	Gender T10 Male
+N5	Reference T10 archetypes:http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Wolf	Wolf
+R3	has-usual-occupant Arg1:T5 Arg2:T9	
+T11	Character 180 183	she
+N6	Reference T11 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T12	Character 458 469	grandmother
+N7	Reference T12 archetypes:http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Grannyhood	GrannyHood
+T13	Travel 147 152	visit
+E3	Travel:T13 has-subject-entity:T14 to:T15
+T14	Character 131 134	she
+N8	Reference T14 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T15	Home 168 168	
+T16	Character 420 424	girl
+A5	Gender T16 Female
+N9	Reference T16 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T17	Gain 212 221	befriends
+E4	Gain:T17 has-subject-entity:T18 has-object-entity:T19
+T18	Character 222 225	her
+N10	Reference T18 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T19	Abstract-Item 212 212	

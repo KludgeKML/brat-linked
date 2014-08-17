@@ -1,0 +1,248 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T2>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood Variation 15" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T1>
+	a omb:Company ;
+	cnt:chars "Redhood" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T3>
+	a ome:Character ;
+	cnt:chars "government agent" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T4>
+	a omb:Company ;
+	cnt:chars "Wolf&Co" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T5>
+	a omb:Company ;
+	cnt:chars "Grandparent Savings Bank" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T6>
+	a omb:Company ;
+	cnt:chars "GSB" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T5> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T6>;
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T7>
+	a omb:Company ;
+	cnt:chars "GSB" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T6> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T7>;
+	rdfs:label "R2" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T8>
+	a omb:Company ;
+	cnt:chars "GSB" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T9>
+	a omb:Company ;
+	cnt:chars "GSB" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T10>
+	a omb:Company ;
+	cnt:chars "The Redhood Bank" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T11>
+	a omb:Company ;
+	cnt:chars "Wolf&Co" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T12>
+	a omb:Company ;
+	cnt:chars "Wolf&Co" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T13>
+	a omb:Company ;
+	cnt:chars "Wolf&Co" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T14>
+	a omb:Company ;
+	cnt:chars "GSB" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T7> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T8>;
+	rdfs:label "R3" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T8> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T9>;
+	rdfs:label "R4" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T9> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T14>;
+	rdfs:label "R5" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T4> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T11>;
+	rdfs:label "R6" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T11> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T12>;
+	rdfs:label "R7" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T12> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T13>;
+	rdfs:label "R8" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T15>
+	a omb:Company ;
+	cnt:chars "Redhood" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T16>
+	a omb:Company ;
+	cnt:chars "Redhood" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T17>
+	a omb:Company ;
+	cnt:chars "Redhood" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T18>
+	a omb:Company ;
+	cnt:chars "Redhood" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T19>
+	a omb:Company ;
+	cnt:chars "Redhood" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T20>
+	a omb:Company ;
+	cnt:chars "Redhood" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T10> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T1>;
+	rdfs:label "R9" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T1> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T15>;
+	rdfs:label "R10" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T15> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T17>;
+	rdfs:label "R11" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T17> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T16>;
+	rdfs:label "R12" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T17> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T18>;
+	rdfs:label "R13" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T18> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T19>;
+	rdfs:label "R14" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T19> ome:is <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T20>;
+	rdfs:label "R15" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T10> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T5> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RRHGrandma>;
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T4> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/Wolf>;
+	rdfs:label "N3" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T6> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RRHGrandma>;
+	rdfs:label "N4" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T1> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood>;
+	rdfs:label "N5" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T15> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood>;
+	rdfs:label "N6" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T16> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood>;
+	rdfs:label "N7" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T17> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood>;
+	rdfs:label "N8" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T19> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood>;
+	rdfs:label "N9" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T18> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood>;
+	rdfs:label "N10" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T20> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RedRidingHood>;
+	rdfs:label "N11" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T14> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RRHGrandma>;
+	rdfs:label "N12" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T13> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/Wolf>;
+	rdfs:label "N13" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T12> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/Wolf>;
+	rdfs:label "N14" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T9> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RRHGrandma>;
+	rdfs:label "N15" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T11> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/Wolf>;
+	rdfs:label "N16" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T8> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RRHGrandma>;
+	rdfs:label "N17" .
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/T7> owl:sameAs <http://contextus.net/resource/RRH/JVanZundert/RRHV20-S15/RRHGrandma>;
+	rdfs:label "N18" .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/RRHGrandma>
+	rdfs:label "Grandma";
+	rdfs:label "Grandmother";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Wolf>
+	rdfs:label "Wolf";
+	a ome:Character .
+

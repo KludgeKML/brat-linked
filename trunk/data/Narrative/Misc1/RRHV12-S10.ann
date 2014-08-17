@@ -1,0 +1,64 @@
+T1	Context 0 28	Red Riding Hood Variation 12
+T2	Character 29 44	Red Riding Hood
+T4	Character 88 95	Grandpa
+T5	Physical-Item 88 103	Grandpa's house
+T6	Character 401 408	Grandpa
+T7	Character 365 380	Red Riding Hood
+T8	Character 449 456	Grandpa
+T9	Character 439 442	you
+T10	Character 259 266	Grandpa
+T11	Character 289 296	Grandpa
+T12	Character 243 246	him
+T13	Character 209 211	he
+T14	Character 315 322	Grandpa
+T15	Character 349 356	Grandpa
+T16	Character 483 486	you
+T17	Character 541 544	you
+T18	Character 596 599	you
+T19	Character 552 554	he
+T20	Character 612 620	the wolf
+T21	Character 630 638	Red Hood
+T22	Character 672 675	you
+T23	Character 683 685	he
+T24	Character 657 671	very big teeth
+T25	Entity 51 67	a basket of food
+T26	Entity 115 126	the village
+T27	Entity 131 133	he
+T28	Entity 154 163	the woods
+T29	Entity 171 176	there
+T30	Character 179 192	A hungry wolf
+T31	Entity 203 219	where he's going
+T32	Entity 259 276	Grandpa's cottage
+T33	Entity 315 332	Grandpa's clothes
+T34	Entity 349 362	Grandpa's bed
+T35	Entity 430 438	big eyes
+T36	Character 499 507	the wolf
+T37	Entity 529 540	strong arms
+T38	Character 740 743	you
+T39	Character 759 767	the wolf
+T40	Character 781 784	him
+T41	Character 799 816	the well-fed wolf
+T42	Entity 829 842	Grandpa's bed
+T43	Character 866 878	a woodcutter
+T44	Character 891 899	the wolf
+T45	Entity 910 926	the wolf's belly
+T46	Character 914 918	wolf
+T47	Entity 937 944	his axe
+T48	Character 946 961	Red Riding Hood
+T49	Character 966 973	Grandpa
+T50	Entity 946 973	Red Riding Hood and Grandpa
+T51	Character 1015 1023	The wolf
+T52	Character 1047 1049	he
+T53	Altered 803 811	well-fed
+T54	Character 71 74	his
+T3	Character 71 82	his Grandpa
+N2	Reference T54 archetypes:http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/RedRidingHood	Red Riding Hood
+N3	Reference T27 archetypes:http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/RedRidingHood	Red Riding Hood
+N4	Reference T13 archetypes:http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/RedRidingHood	
+N5	Reference T6 archetypes:http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/Grandpa	Grandpa
+N6	Reference T7 archetypes:http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/RedRidingHood	Red Riding Hood
+N7	Reference T9 archetypes:http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/Grandpa	Grandpa
+N8	Reference T8 archetypes:http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/Grandpa	Grandpa
+N1	Reference T2 archetypes:http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/RedRidingHood	Red Riding Hood
+T55	Travel 134 145	has to walk
+E1	Travel:T55 has-subject-entity:T27 involves:T28

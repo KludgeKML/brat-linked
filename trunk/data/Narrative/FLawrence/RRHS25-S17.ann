@@ -1,0 +1,159 @@
+T1	Character 114 117	Red
+A1	Gender T1 Female
+T2	Character 560 571	Grandmother
+T3	Character 479 490	Grandmother
+R1	is Arg1:T2 Arg2:T3	
+T4	Physical-Item 125 131	basket
+T5	Wood 202 207	woods
+T6	Character 150 161	grandmother
+N1	Reference T6 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T7	Space 250 254	path
+T8	Group 273 279	wolves
+T9	Travel 238 242	keep
+E1	Travel:T9 from:T7 has-subject-entity:T12
+T10	Conversational 226 230	told
+E2	Conversational:T10 has-subject:E1 has-subject-entity:T11 has-object-entity:T12 refers-to:T8
+T11	Character 219 225	mother
+N2	Reference T11 archetypes:http://contextus.net/resource/shared/RRHMother	Mother
+T12	Character 231 234	her
+N3	Reference T12 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T13	Travel 289 296	set off
+E3	Travel:T13 to:T5 has-subject-entity:T15 precedes:E4
+T14	Character 307 311	wolf
+N4	Reference T14 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T15	Character 285 288	Red
+N5	Reference T15 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T16	Conversational 317 322	asked
+E4	Conversational:T16 has-subject:E5 has-subject-entity:T14 has-object-entity:T15
+T17	Travel 323 342	where she was going
+E5	Travel:T17 has-subject-entity:T15
+T18	Ingestion 598 605	gobbled
+E6	Ingestion:T18 has-subject-entity:T19 has-object-entity:T20
+T19	Character 593 597	wolf
+N6	Reference T19 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T20	Character 606 609	her
+N7	Reference T20 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandma
+T21	Home 493 498	house
+T22	Travel 463 466	ran
+E7	Travel:T22 has-subject-entity:T23 to:T21
+T23	Character 460 462	he
+N8	Reference T23 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T24	Travel 379 387	visiting
+E8	Travel:T24 has-subject-entity:T25
+T25	Character 344 347	She
+N9	Reference T25 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T26	Character 353 356	him
+N10	Reference T26 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T27	Conversational 348 352	told
+E9	Conversational:T27 has-subject-entity:T25 has-object-entity:T26 has-subject:E8 refers-to:T50
+T28	Conversational 1035 1050	Why Grandmother
+E10	Conversational:T28 has-subject:T29 has-subject-entity:T30
+T29	Physical-Item 1084 1093	big teeth
+T30	Abstract-Item 1058 1061	Red
+T31	Context 0 18	Red Riding Hood 25
+A3	Name T1 Ms Hood
+A4	Name T11 Mrs Hood
+R2	family-of Arg1:T1 Arg2:T6	
+R3	family-of Arg1:T1 Arg2:T11	
+R4	family-of Arg1:T11 Arg2:T6	
+T32	Entity 235 235	
+N11	Reference T32 archetypes:http://contextus.net/resource/RRH/flawrence/RRHS25-S17/shared/Dead	Dead
+R6	will-not-do Arg1:T12 Arg2:E1	
+N12	Reference T5 archetypes:http://contextus.net/resource/shared/Wood	Wood
+T33	Weapon 1471 1474	axe
+N13	Reference T33 archetypes:http://contextus.net/resource/shared/Axe	Axe
+T34	Violence 1479 1482	cut
+E11	Violence:T34 has-subject-entity:T35 involves:T33 has-object-entity:T36 causes:E12
+T35	Character 1459 1461	he
+A2	Gender T35 Male
+A5	Name T35 Woody
+N14	Reference T35 archetypes:http://contextus.net/resource/shared/Forester	Woodcutter
+T36	Character 1487 1491	wolf
+N15	Reference T36 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T37	Transformation 1492 1496	open
+E12	Transformation:T37 has-subject-entity:T36 from:T39 to:T38
+T38	Dead 1496 1496	
+N16	Reference T38 archetypes:http://contextus.net/resource/shared/Dead	Dead (State of Being)
+T39	Alive 1496 1496	
+N17	Reference T39 archetypes:http://contextus.net/resource/shared/Alive	Alive (State of Being)
+T40	Attire 633 636	cap
+T41	Attire 641 646	apron
+T42	Consumables 135 142	goodies
+R7	contains Arg1:T4 Arg2:T42	
+R8	owns Arg1:T1 Arg2:T4	
+T43	Character 619 621	he
+N18	Reference T43 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T44	Gain 622 628	put on
+E13	Gain:T44 has-subject-entity:T43 involves:T40 involves2:T41
+T45	Character 745 749	wolf
+N19	Reference T45 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+R11	wears Arg1:T45 Arg2:T40	
+R12	wears Arg1:T45 Arg2:T41	
+R13	usually-worn-by Arg1:T41 Arg2:T2	
+R9	usually-worn-by Arg1:T40 Arg2:T2	
+N20	Reference T7 archetypes:http://contextus.net/resource/shared/Path	Woodland Path
+R10	has-usual-occupant Arg1:T21 Arg2:T3	
+T46	Transformation 1212 1223	fell asleep
+E14	Transformation:T46 from:T47 to:T48 has-subject-entity:T49
+T47	Conscious 1223 1223	
+T48	Asleep 1223 1223	
+T49	Character 1184 1186	he
+A6	Species T49 Wolf
+N21	Reference T49 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+A7	Species T1 Homo Sapiens
+T50	Character 397 408	grandmother
+A8	Gender T50 Female
+A9	Name T50 Granny Hood
+N22	Reference T50 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+A10	Species T50 Homo Sapiens
+T51	Character 177 188	Grandmother
+N23	Reference T51 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T52	Character 928 939	Grandmother
+N24	Reference T52 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T53	Character 1297 1305	old lady
+T54	Attire 89 94	cloak
+T55	Attire 99 103	hood
+T56	Character 19 41	Little Red Riding Hood
+A11	Gender T56 Female
+R14	wears Arg1:T56 Arg2:T54	
+R15	wears Arg1:T56 Arg2:T55	
+T57	Travel 118 122	took
+E15	Travel:T57 has-subject-entity:T1 involves:T4 to:T58
+T58	Home 161 161	
+R16	has-usual-occupant Arg1:T58 Arg2:T6	
+R5	is-part-of Arg1:T58 Arg2:T5	
+N25	Reference T56 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N26	Reference T1 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+A12	Gender T6 Female
+T59	Character 213 216	Red
+A13	Gender T59 Female
+N27	Reference T59 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+R17	family-of Arg1:T59 Arg2:T11	
+R18	family-of Arg1:T51 Arg2:T11	
+A14	Name T59 Red
+A15	Name T12 Red
+A17	Gender T12 Female
+T60	Character 105 108	One
+A16	Gender T60 Female
+N28	Reference T60 archetypes:http://contextus.net/resource/shared/RRHMother	Mother
+A18	Name T60 Mrs Hood
+T61	Conversational 720 735	"Come in dear,"
+E16	Conversational:T61 has-subject-entity:T45
+T62	Conversational 923 941	"Why Grandmother,"
+E17	Conversational:T62 refers-to:T52 has-subject-entity:T63
+T63	Character 947 950	Red
+N29	Reference T63 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T64	Conversational 952 977	"what big ears you have!"
+E18	Conversational:T64 has-subject-entity:T63 follows:E17
+T65	Conversational 1106 1140	"All the better to GOBBLE YOU UP!"
+E19	Conversational:T65 has-subject-entity:T66
+T66	Character 1151 1155	wolf
+N30	Reference T66 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+A19	Default T31
+T67	Conversational 419 434	wished her well
+E20	Conversational:T67 has-subject-entity:T68
+T68	Character 414 418	wolf
+N31	Reference T68 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+R19	exists-in Arg1:T56 Arg2:T31	
+T69	Context 64 70	always
+A20	Default T69

@@ -1,0 +1,20 @@
+T1	Context 0 28	Red Riding Hood Variation 15
+T2	Character 86 97	grandmother
+A1	Gender T2 Female
+T3	Character 31 35	girl
+A3	Gender T3 Female
+T4	Attire 57 62	cloak
+T5	Consumables 73 78	cakes
+R1	family-of Arg1:T3 Arg2:T2	
+R2	wears Arg1:T3 Arg2:T4	
+T6	Character 140 144	wolf
+A5	Gender T6 Male
+A6	Name T6 wolf
+T7	Home 278 285	cottage
+T8	Ingestion 309 313	eats
+E1	Ingestion:T8 
+T9	Character 215 218	she
+A7	Gender T9 Female
+A2	Species T2 homo sapien
+A8	Species T9 homo sapien
+A4	Species T3 homo sapien

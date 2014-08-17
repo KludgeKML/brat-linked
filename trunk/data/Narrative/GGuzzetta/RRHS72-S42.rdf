@@ -1,0 +1,290 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T1>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood 72" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T2>
+	a ome:Character ;
+	cnt:chars "Little Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T3>
+	a ome:Character ;
+	cnt:chars "Grandma" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T4>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T>]
+		];
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T>]
+		];
+	rdfs:label "R2" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T5>
+	a loc:Wood ;
+	cnt:chars "woods" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T6>
+	a loc:Home ;
+	cnt:chars "house" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T7>
+	a ome:Character ;
+	cnt:chars "Grandma" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T8>
+	a ome:Character ;
+	cnt:chars "woodcutter's" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T9>
+	a loc:Country ;
+	cnt:chars "bushes" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T10>
+	a ome:Gain ;
+	cnt:chars "taking food" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T10>
+	a ome:Gain;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T11>
+	a omj:Travel ;
+	cnt:chars "walking through the woods" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T11>
+	a omj:Travel;
+	rdfs:label "E2" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T12>
+	a omes:Conversational ;
+	cnt:chars "asked" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T12>
+	a omes:Conversational;
+	rdfs:label "E3" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T13>
+	a omes:EmotionalExpression ;
+	cnt:chars "unfazed by" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T13>
+	a omes:EmotionalExpression;
+	rdfs:label "E4" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T14>
+	a ome:Character ;
+	cnt:chars "The voice" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T15>
+	a omet:Transference ;
+	cnt:chars "entered" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T15>
+	a omet:Transference;
+	rdfs:label "E5" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T16>
+	a omes:Conversational ;
+	cnt:chars "commented" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T16>
+	a omes:Conversational;
+	rdfs:label "E6" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T17>
+	a omet:Merge ;
+	cnt:chars "sudden appearance" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T17>
+	a omet:Merge;
+	rdfs:label "E7" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T18>
+	a omet:Division ;
+	cnt:chars "bounded off" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T18>
+	a omet:Division;
+	rdfs:label "E8" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T19>
+	a omet:Merge ;
+	cnt:chars "jumped out" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T19>
+	a omet:Merge;
+	rdfs:label "E9" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T20>
+	a omet:Merge ;
+	cnt:chars "The voice" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T20>
+	a omet:Merge;
+	rdfs:label "E10" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T21>
+	a omet:Merge ;
+	cnt:chars "talking wolf" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T21>
+	a omet:Merge;
+	rdfs:label "E11" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T4> owl:sameAs <http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/Wolf>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T3> owl:sameAs <http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/RRHGrandma>;
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T22>
+	a ome:Character ;
+	cnt:chars "Grandma's" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T22> owl:sameAs <http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/RRHGrandma>;
+	rdfs:label "N3" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T23>
+	a ome:Character ;
+	cnt:chars "Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T23> owl:sameAs <http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/RedRidingHood>;
+	rdfs:label "N4" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T24>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T24> owl:sameAs <http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/Wolf>;
+	rdfs:label "N5" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T26>
+	a ome:Character ;
+	cnt:chars "Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T26> owl:sameAs <http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/RedRidingHood>;
+	rdfs:label "N6" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T27>
+	a omes:EmotionalExpression ;
+	cnt:chars "shrugged" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T27>
+	a omes:EmotionalExpression;
+	rdfs:label "E12" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T28>
+	a omj:Travel ;
+	cnt:chars "continued walking" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T28>
+	a omj:Travel;
+	rdfs:label "E13" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T25>
+	a ome:Character ;
+	cnt:chars "him" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T25> owl:sameAs <http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/Wolf>;
+	rdfs:label "N7" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T26>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A3" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T26>
+	 omt:has-trait [
+		a omt:Name ;
+		omt:has-name "Red Riding Hood"
+		];
+	rdfs:label "A4" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T26>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A1" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T2>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A2" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T2>
+	 omt:has-trait [
+		a omt:Name ;
+		omt:has-name "Little Red Riding Hood"
+		];
+	rdfs:label "A5" .
+
+<http://contextus.net/resource/RRH/GGuzzetta/RRHS72-S42/T2>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A6" .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/RRHGrandma>
+	rdfs:label "Grandma";
+	rdfs:label "Grandmother";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Wolf>
+	rdfs:label "Wolf";
+	a ome:Character .
+

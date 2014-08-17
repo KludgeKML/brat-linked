@@ -1,0 +1,19 @@
+T1	Context 0 15	Red Riding Hood
+T2	Character 248 259	Grandmother
+T3	Character 36 51	Red Riding Hood
+R1	family-of Arg1:T3 Arg2:T2	
+T4	Character 1109 1120	Grandmother
+T5	Entity 888 899	Grandmother
+N1	Reference T5 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T6	Entity 384 387	she
+N2	Reference T6 archetypes:http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/shared/Redridinghood	RedRidingHood
+T7	Travel 1423 1427	went
+E1	Travel:T7 has-subject-entity:T8 to:T9
+T8	Character 1412 1422	woodcutter
+T9	Home 603 610	cottage
+T10	Entity 1529 1532	Red
+N3	Reference T10 archetypes:http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/shared/Redridinghood	RedRidingHood
+T11	Gain 1522 1528	sprang
+E2	Gain:T11 has-subject-entity:T10
+T12	Character 1254 1256	he
+N4	Reference T12 archetypes:http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/shared/Wolf	Wolf

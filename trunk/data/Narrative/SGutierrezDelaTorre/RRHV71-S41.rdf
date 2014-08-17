@@ -1,0 +1,536 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T1>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T2>
+	a ome:Character ;
+	cnt:chars "mother" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T2>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A2" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T3>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T3>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A3" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T>]
+		];
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T4>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T5>
+	a ome:Character ;
+	cnt:chars "Hood" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T5>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A4" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T5> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T>]
+		];
+	rdfs:label "R2" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T6>
+	a ome:Character ;
+	cnt:chars "him" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T6>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A5" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T6>
+	 omt:has-trait [
+		a omt:Name ;
+		omt:has-name "Red Riding Hood"
+		];
+	rdfs:label "A6" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T5> owl:sameAs <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/RedRidingHood>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T6> owl:sameAs <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/RedRidingHood>;
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T7>
+	a loc:Home ;
+	cnt:chars "house" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T8>
+	a omea:Violence ;
+	cnt:chars "overpowers" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T8>
+	a omea:Violence;
+	ome:has-object-entity <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T28>;
+	ome:has-occurrence [
+	a ome:Occurrence;
+		ome:follows [
+			a ome:Occurrence;
+			ome:is-occurrence-of <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E7>]
+		];
+;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T9>
+	a omes:Conversational ;
+	cnt:chars "quizzes" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T9>
+	a omes:Conversational;
+	ome:has-object-entity <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T25>;
+	ome:has-occurrence [
+	a ome:Occurrence;
+		ome:follows [
+			a ome:Occurrence;
+			ome:is-occurrence-of <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E11>]
+		];
+;
+	rdfs:label "E2" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T10>
+	a ome:Character ;
+	cnt:chars "woodcutters" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/Forester> ome:shadow-of <http://contextus.net/resource/shared/Forester>.
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T10> owl:sameAs <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/Forester>;
+	rdfs:label "N3" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T11>
+	a ome:Action ;
+	cnt:chars "rescue" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T11>
+	a ome:Action;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T10>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T32>;
+	ome:caused-by <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E13>;
+	rdfs:label "E3" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T12>
+	a omea:Violence ;
+	cnt:chars "beat up" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T12>
+	a omea:Violence;
+	ome:caused-by <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E3>;
+	rdfs:label "E4" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T>]
+		];
+	rdfs:label "R3" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T6> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T>]
+		];
+	rdfs:label "R4" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T13>
+	a ome:Character ;
+	cnt:chars "Hood" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T13> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy>;
+
+	rdfs:label "N4" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T14>
+	a ome:Entity ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T14> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy>;
+
+	rdfs:label "N5" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T4> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy>;
+
+	rdfs:label "N6" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T15>
+	a ome:Entity ;
+	cnt:chars "He" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T15> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy>;
+
+	rdfs:label "N7" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T16>
+	a omea:Violence ;
+	cnt:chars "attacks" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T16>
+	a omea:Violence;
+	ome:has-object-entity <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T17>;
+	ome:has-occurrence [
+	a ome:Occurrence;
+		ome:follows [
+			a ome:Occurrence;
+			ome:is-occurrence-of <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E2>]
+		];
+;
+	rdfs:label "E5" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T17>
+	a ome:Character ;
+	cnt:chars "Hood" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T17> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy>;
+
+	rdfs:label "N8" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T18>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T18> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy>;
+
+	rdfs:label "N9" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T18> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E>]
+		];
+	rdfs:label "R5" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T10> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E>]
+		];
+	rdfs:label "R6" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T10> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E>]
+		];
+	rdfs:label "R7" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T19>
+	a ome:Character ;
+	cnt:chars "him" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T19> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy>;
+
+	rdfs:label "N10" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T20>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T21>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T21> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy>;
+
+	rdfs:label "N12" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T22>
+	a omj:Travel ;
+	cnt:chars "beats" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T22>
+	a omj:Travel;
+	ome:involves <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T5>;
+	ome:has-occurrence [
+	a ome:Occurrence;
+		ome:precedes [
+			a ome:Occurrence;
+			ome:is-occurrence-of <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E7>]
+		];
+;
+	rdfs:label "E6" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T21> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E>]
+		];
+	rdfs:label "R8" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T23>
+	a omj:Travel ;
+	cnt:chars "reaches" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T23>
+	a omj:Travel;
+	ome:to <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T7>;
+	rdfs:label "E7" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T21> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E>]
+		];
+	rdfs:label "R9" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T24>
+	a omes:Conversational ;
+	cnt:chars "asks" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T24>
+	a omes:Conversational;
+	ome:has-object-entity <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T6>;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T2>;
+	ome:has-occurrence [
+	a ome:Occurrence;
+		ome:precedes [
+			a ome:Occurrence;
+			ome:is-occurrence-of <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E10>]
+		];
+;
+	rdfs:label "E8" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E>]
+		];
+	rdfs:label "R10" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T13> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E>]
+		];
+	rdfs:label "R11" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T25>
+	a ome:Being ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T25> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy>;
+
+	rdfs:label "N13" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T26>
+	a omj:Travel ;
+	cnt:chars "went away" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T26>
+	a omj:Travel;
+	ome:caused-by <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E4>;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T14>;
+	rdfs:label "E9" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T27>
+	a omes:Conversational ;
+	cnt:chars "warned" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T27>
+	a omes:Conversational;
+	ome:has-occurrence [
+	a ome:Occurrence;
+		ome:precedes [
+			a ome:Occurrence;
+			ome:is-occurrence-of <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E12>]
+		];
+;
+	rdfs:label "E10" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E>]
+		];
+	rdfs:label "R12" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T21> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E>]
+		];
+	rdfs:label "R13" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T28>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T28> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/GrandmaOfMaleRosy>;
+
+	rdfs:label "N14" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T29>
+	a omj:Travel ;
+	cnt:chars "reaches" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T29>
+	a omj:Travel;
+	ome:to <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T7>;
+	ome:has-occurrence [
+	a ome:Occurrence;
+		ome:follows [
+			a ome:Occurrence;
+			ome:is-occurrence-of <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E1>]
+		];
+;
+	rdfs:label "E11" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T13> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E>]
+		];
+	rdfs:label "R14" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T30>
+	a omes:Conversational ;
+	cnt:chars "does not heed" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T30>
+	a omes:Conversational;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T15>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T31>;
+	ome:has-occurrence [
+	a ome:Occurrence;
+		ome:precedes [
+			a ome:Occurrence;
+			ome:is-occurrence-of <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E6>]
+		];
+;
+	rdfs:label "E12" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T31>
+	a ome:Context ;
+	cnt:chars "warning" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T32>
+	a omb:Community ;
+	cnt:chars "him and his grandmother" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T7> omb:owns <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T3>;
+	rdfs:label "R15" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T20> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/GrandmaOfMaleRosy>;
+
+	rdfs:label "N11" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T19> ome:contained-by <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T32>;
+	rdfs:label "R16" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T20> ome:contained-by <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T32>;
+	rdfs:label "R17" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T33>
+	a ome:Character ;
+	cnt:chars "Hood" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T33> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy>;
+
+	rdfs:label "N15" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T34>
+	a ome:Action ;
+	cnt:chars "screams" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T34>
+	a ome:Action;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T33>;
+	ome:has-occurrence [
+	a ome:Occurrence;
+		ome:follows [
+			a ome:Occurrence;
+			ome:is-occurrence-of <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E5>]
+		];
+;
+	rdfs:label "E13" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T35>
+	a ome:Character ;
+	cnt:chars "Hood" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T35> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy>;
+
+	rdfs:label "N16" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T36>
+	a ome:Transformation ;
+	cnt:chars "learnt" .
+
+<http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T36>
+	a ome:Transformation;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/T35>;
+	ome:caused-by <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E5>;
+	ome:caused-by <http://contextus.net/resource/RRH/SGutierrezDelaTorre/RRHV71-S41/E10>;
+	rdfs:label "E14" .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Forester>
+	rdfs:label "Forester";
+	rdfs:label "Woodcutter";
+	rdfs:label "Hunter";
+	a ome:Character .
+

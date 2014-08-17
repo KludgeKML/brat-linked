@@ -1,0 +1,286 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T1>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood Variation 12" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T2>
+	a ome:Character ;
+	cnt:chars "Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T4>
+	a ome:Character ;
+	cnt:chars "Grandpa" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T5>
+	a ome:Physical-Item ;
+	cnt:chars "Grandpa's house" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T6>
+	a ome:Character ;
+	cnt:chars "Grandpa" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T7>
+	a ome:Character ;
+	cnt:chars "Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T8>
+	a ome:Character ;
+	cnt:chars "Grandpa" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T9>
+	a ome:Character ;
+	cnt:chars "you" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T10>
+	a ome:Character ;
+	cnt:chars "Grandpa" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T11>
+	a ome:Character ;
+	cnt:chars "Grandpa" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T12>
+	a ome:Character ;
+	cnt:chars "him" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T13>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T14>
+	a ome:Character ;
+	cnt:chars "Grandpa" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T15>
+	a ome:Character ;
+	cnt:chars "Grandpa" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T16>
+	a ome:Character ;
+	cnt:chars "you" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T17>
+	a ome:Character ;
+	cnt:chars "you" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T18>
+	a ome:Character ;
+	cnt:chars "you" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T19>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T20>
+	a ome:Character ;
+	cnt:chars "the wolf" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T21>
+	a ome:Character ;
+	cnt:chars "Red Hood" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T22>
+	a ome:Character ;
+	cnt:chars "you" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T23>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T24>
+	a ome:Character ;
+	cnt:chars "very big teeth" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T25>
+	a ome:Entity ;
+	cnt:chars "a basket of food" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T26>
+	a ome:Entity ;
+	cnt:chars "the village" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T27>
+	a ome:Entity ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T28>
+	a ome:Entity ;
+	cnt:chars "the woods" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T29>
+	a ome:Entity ;
+	cnt:chars "there" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T30>
+	a ome:Character ;
+	cnt:chars "A hungry wolf" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T31>
+	a ome:Entity ;
+	cnt:chars "where he's going" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T32>
+	a ome:Entity ;
+	cnt:chars "Grandpa's cottage" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T33>
+	a ome:Entity ;
+	cnt:chars "Grandpa's clothes" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T34>
+	a ome:Entity ;
+	cnt:chars "Grandpa's bed" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T35>
+	a ome:Entity ;
+	cnt:chars "big eyes" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T36>
+	a ome:Character ;
+	cnt:chars "the wolf" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T37>
+	a ome:Entity ;
+	cnt:chars "strong arms" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T38>
+	a ome:Character ;
+	cnt:chars "you" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T39>
+	a ome:Character ;
+	cnt:chars "the wolf" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T40>
+	a ome:Character ;
+	cnt:chars "him" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T41>
+	a ome:Character ;
+	cnt:chars "the well-fed wolf" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T42>
+	a ome:Entity ;
+	cnt:chars "Grandpa's bed" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T43>
+	a ome:Character ;
+	cnt:chars "a woodcutter" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T44>
+	a ome:Character ;
+	cnt:chars "the wolf" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T45>
+	a ome:Entity ;
+	cnt:chars "the wolf's belly" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T46>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T47>
+	a ome:Entity ;
+	cnt:chars "his axe" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T48>
+	a ome:Character ;
+	cnt:chars "Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T49>
+	a ome:Character ;
+	cnt:chars "Grandpa" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T50>
+	a ome:Entity ;
+	cnt:chars "Red Riding Hood and Grandpa" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T51>
+	a ome:Character ;
+	cnt:chars "The wolf" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T52>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T53>
+	a omt:Altered ;
+	cnt:chars "well-fed" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T54>
+	a ome:Character ;
+	cnt:chars "his" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T3>
+	a ome:Character ;
+	cnt:chars "his Grandpa" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T54> owl:sameAs <http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/RedRidingHood>;
+
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T27> owl:sameAs <http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/RedRidingHood>;
+
+	rdfs:label "N3" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T13> owl:sameAs <http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/RedRidingHood>;
+
+	rdfs:label "N4" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T6> owl:sameAs <http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/Grandpa>.
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/Grandpa> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>;
+	rdfs:label "N5" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T7> owl:sameAs <http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/RedRidingHood>;
+
+	rdfs:label "N6" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T9> owl:sameAs <http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/Grandpa>.
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/Grandpa> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>;
+	rdfs:label "N7" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T8> owl:sameAs <http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/Grandpa>.
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/Grandpa> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>;
+	rdfs:label "N8" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T2> owl:sameAs <http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/shared/RedRidingHood>;
+
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T55>
+	a omj:Travel ;
+	cnt:chars "has to walk" .
+
+<http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T55>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T27>;
+	ome:involves <http://contextus.net/resource/RRH/HHuistra/RRHV12-S10/T28>;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/shared/RRHGrandma>
+	rdfs:label "Grandma";
+	rdfs:label "Grandmother";
+	a ome:Character .
+

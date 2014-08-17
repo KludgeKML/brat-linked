@@ -1,0 +1,5 @@
+T1	Character 87 98	grandmother
+A1	Name T1 Grandmama
+A2	Gender T1 Female
+N1	Reference T1 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+A3	State-Of-Being T1 Dead

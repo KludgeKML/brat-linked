@@ -1,0 +1,8 @@
+T1	Context 0 28	Red Riding Hood Variation 22
+T2	Character 638 648	woodcutter
+T3	Character 556 567	grandmother
+N1	Reference T3 archetypes:http://contextus.net/resource/RRH/VVitale/RRHV22-S15/shared/Granny	Granny
+A1	Gender T3 Female
+T4	Character 285 291	mother
+N2	Reference T4 archetypes:http://contextus.net/resource/shared/RRHMother	Mother
+R1	family-of Arg1:T4 Arg2:T3	

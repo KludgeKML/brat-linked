@@ -1,0 +1,64 @@
+T2	Character 37 40	boy
+T1	Context 0 15	Rad Riding Hood
+T3	Character 89 100	grandfather
+R1	family-of Arg1:T2 Arg2:T3	
+T4	Attire 111 126	basket of cakes
+T5	Character 169 173	wolf
+T6	Wood 161 166	woods
+T7	Proposition 183 188	tempt
+E1	Proposition:T7 has-subject-entity:T5
+T8	Character 263 266	boy
+T9	Character 322 326	wolf
+T10	Character 382 393	grandfather
+T11	Home 396 403	cottage
+T15	Character 523 534	grandfather
+T16	Character 554 565	grandfather
+R2	enemy-of Arg1:T5 Arg2:T2	
+N1	Reference T1 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N3	Reference T3 archetypes:http://contextus.net/resource/RRH/MGomes/RRHV21-S15/shared/Grandfather	Grandfather
+N5	Reference T16 archetypes:http://contextus.net/resource/RRH/MGomes/RRHV21-S15/shared/Grandfather	Grandfather
+N6	Reference T15 archetypes:http://contextus.net/resource/RRH/MGomes/RRHV21-S15/shared/Grandfather	Grandfather
+T17	Character 581 584	boy
+N2	Reference T2 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T18	Entity 674 684	woodcutter
+N9	Reference T18 archetypes:http://contextus.net/resource/shared/Forester	Woodcutter
+T22	Entity 742 745	boy
+N11	Reference T22 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N7	Reference T17 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N4	Reference T8 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N13	Reference T9 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+N14	Reference T5 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T21	Entity 768 779	grandfather
+N15	Reference T21 archetypes:http://contextus.net/resource/RRH/MGomes/RRHV21-S15/shared/Grandfather	Grandfather
+T23	Entity 804 808	wolf
+N16	Reference T23 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T24	Festivity 750 758	reunited
+E3	Festivity:T24 has-subject-entity:T22
+T26	Ingestion 421 424	eat
+E5	Ingestion:T26 has-subject-entity:T32
+T28	Home 699 706	cottage
+T19	Character 722 726	wolf
+N10	Reference T19 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+R3	contains Arg1:T28 Arg2:T18	
+A1	Gender T15 Male
+T30	Attire 228 234	basket
+T31	Travel 102 108	taking
+E7	Travel:T31 has-subject-entity:T4
+R4	is Arg1:T30 Arg2:T4	
+T12	Home 463 470	cottage
+T13	Character 503 506	him
+N8	Reference T13 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T14	Entity 475 479	wolf
+N12	Reference T14 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T25	Entity 512 514	he
+N17	Reference T25 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T32	Entity 429 436	old man
+N18	Reference T32 archetypes:http://contextus.net/resource/RRH/MGomes/RRHV21-S15/shared/Grandfather	Grandfather
+T33	Entity 447 450	boy
+N19	Reference T33 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T20	Travel 68 75	set out
+E2	Travel:T20 has-subject-entity:T2
+T27	EmotionalExpression 644 653	convinced
+E4	EmotionalExpression:T27 has-subject-entity:T17
+T29	EmotionalExpression 585 591	argued
+E6	EmotionalExpression:T29 has-subject-entity:T17

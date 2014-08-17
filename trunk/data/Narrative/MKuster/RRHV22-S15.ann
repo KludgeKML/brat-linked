@@ -1,0 +1,39 @@
+T2	Context 0 28	Red Riding Hood Variation 22
+T3	Character 31 41	young girl
+T4	Character 186 197	grandmother
+T1	Character 285 291	mother
+R1	family-of Arg1:T3 Arg2:T4	
+R2	family-of Arg1:T3 Arg2:T1	
+T5	Character 316 319	she
+N2	Reference T5 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N1	Reference T3 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N3	Reference T4 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+N4	Reference T1 archetypes:http://contextus.net/resource/shared/RRHMother	Mother
+T6	Character 556 567	grandmother
+T7	Character 696 705	old woman
+N6	Reference T7 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T8	Character 638 648	woodcutter
+N7	Reference T8 archetypes:http://contextus.net/resource/shared/Forester	Woodcutter
+T9	Character 449 460	grandmother
+N8	Reference T9 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+N5	Reference T6 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T10	Character 798 802	girl
+N9	Reference T10 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+R3	friend-of Arg1:T8 Arg2:T10	
+T11	Violence 568 576	attacked
+E1	Violence:T11 has-object-entity:T10
+R4	will-do Arg1:T6 Arg2:E1	
+T12	Physical-Item 108 113	cakes
+T13	Physical-Item 98 104	basket
+R5	contains Arg1:T12 Arg2:T13	
+T14	EmotionalExpression 125 168	On her way through the woods she hesitated.
+E2	EmotionalExpression:T14 has-subject-entity:T3
+R6	will-do Arg1:T3 Arg2:E2	
+T15	Travel 125 153	On her way through the woods
+E3	Travel:T15 has-subject-entity:T3
+T17	Violence 232 256	administered punishments
+E5	Violence:T17 has-subject-entity:T4
+T18	EmotionalExpression 346 393	hoping that things would be different this time
+E6	EmotionalExpression:T18 has-subject-entity:T5
+T19	Violence 681 691	restrained
+E7	Violence:T19 has-subject-entity:T8 has-object-entity:T7 follows:E1

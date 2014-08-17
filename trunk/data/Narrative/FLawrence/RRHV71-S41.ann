@@ -1,0 +1,9 @@
+T1	Character 386 389	her
+N1	Reference T1 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy	Wolf of Male Rosy
+T2	Character 360 362	he
+N2	Reference T2 archetypes:http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy	Male Rosy
+T3	Conversational 413 425	conversation
+E1	Conversational:T3 has-subject-entity:T2 has-object-entity:T1
+T4	Group 401 405	they
+R1	contains Arg1:T4 Arg2:T1	
+R2	contains Arg1:T4 Arg2:T2	

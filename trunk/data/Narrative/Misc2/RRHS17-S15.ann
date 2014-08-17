@@ -1,0 +1,12 @@
+T1	Character 27 31	girl
+A1	Name T1 Red Riding Hood
+T2	Action 32 39	wearing
+E1	Action:T2 
+T3	Character 155 159	wolf
+A2	Gender T3 Male
+A3	Name T3 wolf
+T4	Character 421 424	she
+A4	Gender T4 Female
+A5	Name T4 Red Riding Hood
+N1	Reference T1 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+R1	enemy-of Arg1:T1 Arg2:T3	

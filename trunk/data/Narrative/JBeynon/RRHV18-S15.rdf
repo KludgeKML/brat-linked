@@ -1,0 +1,927 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T1>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood Variation 18" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T2>
+	a ome:Character ;
+	cnt:chars "A girl" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T3>
+	a ome:Character ;
+	cnt:chars "her grandmother" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T4>
+	a ome:Character ;
+	cnt:chars "a wolf" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T5>
+	a ome:Character ;
+	cnt:chars "a woodcutter" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T>]
+		];
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T>]
+		];
+	rdfs:label "R2" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T5> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Bond;
+			ome:is-linked-to <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T>]
+		];
+	rdfs:label "R3" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T3> ome:contained-by <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T4>;
+	rdfs:label "R4" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T5> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Friendship;
+			ome:is-linked-to <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T>]
+		];
+	rdfs:label "R5" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T6>
+	a ompi:Attire ;
+	cnt:chars "a red hooded cloak" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T7>
+	a ompi:Consumables ;
+	cnt:chars "food" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T8>
+	a loc:Home ;
+	cnt:chars "home" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T9>
+	a loc:Wood ;
+	cnt:chars "the woods" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T10>
+	a omea:Sex ;
+	cnt:chars "to tempt" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T10>
+	a omea:Sex;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T4>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T17>;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T11>
+	a omea:Ingestion ;
+	cnt:chars "he eats" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T11>
+	a omea:Ingestion;
+	ome:has-object-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T21>;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T49>;
+	rdfs:label "E2" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T12>
+	a omea:Violence ;
+	cnt:chars "kills" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T12>
+	a omea:Violence;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T5>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T30>;
+	rdfs:label "E3" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T4> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-not-do <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/E>]
+		];
+	rdfs:label "R6" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T13>
+	a omes:Conversational ;
+	cnt:chars "asks" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T13>
+	a omes:Conversational;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T27>;
+	rdfs:label "E4" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T2> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T3> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>;
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T4> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>;
+	rdfs:label "N3" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T5> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWoodcutter>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWoodcutter> ome:shadow-of <http://contextus.net/resource/shared/Forester>;
+	rdfs:label "N4" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T15>
+	a ome:Character ;
+	cnt:chars "the girl" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T15> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N5" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T16>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T16> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N6" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T17>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T17> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N7" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T18>
+	a ome:Character ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T18> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N8" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T19>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T19> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N9" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T20>
+	a ome:Character ;
+	cnt:chars "the grandmother" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T20> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>;
+	rdfs:label "N10" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T21>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T21> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>;
+	rdfs:label "N11" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T22>
+	a ome:Character ;
+	cnt:chars "the girl" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T22> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N12" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T23>
+	a ome:Character ;
+	cnt:chars "the wolf" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T23> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>;
+	rdfs:label "N13" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T24>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T24> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N14" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T25>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T25> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>;
+	rdfs:label "N15" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T26>
+	a ome:Character ;
+	cnt:chars "the grandmother" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T26> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>;
+	rdfs:label "N16" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T27>
+	a ome:Character ;
+	cnt:chars "the gir" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T27> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N17" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T28>
+	a ome:Character ;
+	cnt:chars "the wolf" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T28> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>;
+	rdfs:label "N18" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T29>
+	a ome:Character ;
+	cnt:chars "the girl" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T29> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N19" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T30>
+	a ome:Character ;
+	cnt:chars "the wolf" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T30> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>;
+	rdfs:label "N20" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T31>
+	a ome:Character ;
+	cnt:chars "the grandmother" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T31> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>;
+	rdfs:label "N21" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T32>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T32> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>;
+	rdfs:label "N22" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T2>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A1" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T2>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A2" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T3>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A3" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T3>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A4" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T16>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A5" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T16>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A6" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T15>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A7" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T15>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A8" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T4>
+	 omt:has-trait [
+		a omc:CanisLupus;
+		rdfs:label "CanisLupus (Species)"
+		];
+	rdfs:label "A9" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T17>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A10" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T17>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A11" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T18>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A12" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T18>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A13" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T32>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A14" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T32>
+	 omt:has-trait [
+		a omc:CanisLupus;
+		rdfs:label "CanisLupus (Species)"
+		];
+	rdfs:label "A15" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T19>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A16" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T19>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A17" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T20>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A18" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T20>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A19" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T21>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A20" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T21>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A21" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T22>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A22" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T22>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A23" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T23>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A24" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T23>
+	 omt:has-trait [
+		a omc:CanisLupus;
+		rdfs:label "CanisLupus (Species)"
+		];
+	rdfs:label "A25" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T24>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A26" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T24>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A27" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T25>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A28" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T25>
+	 omt:has-trait [
+		a omc:CanisLupus;
+		rdfs:label "CanisLupus (Species)"
+		];
+	rdfs:label "A29" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T26>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A30" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T26>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A31" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T27>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A32" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T27>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A33" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T28>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A34" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T28>
+	 omt:has-trait [
+		a omc:CanisLupus;
+		rdfs:label "CanisLupus (Species)"
+		];
+	rdfs:label "A35" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T29>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A36" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T29>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A37" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T30>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A38" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T30>
+	 omt:has-trait [
+		a omc:CanisLupus;
+		rdfs:label "CanisLupus (Species)"
+		];
+	rdfs:label "A39" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T31>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A40" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T31>
+	 omt:has-trait [
+		a omc:HomoSapiens;
+		rdfs:label "HomoSapiens (Species)"
+		];
+	rdfs:label "A41" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T35>
+	a omj:Travel ;
+	cnt:chars "to stray" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T35>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T17>;
+	rdfs:label "E8" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T36>
+	a omj:Travel ;
+	cnt:chars "reaches" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T36>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T32>;
+	ome:to <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T38>;
+	rdfs:label "E9" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T37>
+	a ome:Gain ;
+	cnt:chars "rescues" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T38>
+	a loc:Home ;
+	cnt:chars "house" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T39>
+	a loc:Wood ;
+	cnt:chars "the wood" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T37>
+	a ome:Gain;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T5>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T31>;
+	rdfs:label "E11" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T40>
+	a loc:Home ;
+	cnt:chars "home" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T34>
+	a omj:Travel ;
+	cnt:chars "is passing" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T34>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T5>;
+	rdfs:label "E7" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T41>
+	a omj:Travel ;
+	cnt:chars "rushes in" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T41>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T5>;
+	rdfs:label "E10" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T42>
+	a omea:Ingestion ;
+	cnt:chars "eat" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T42>
+	a omea:Ingestion;
+	ome:has-object-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T29>;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T28>;
+	rdfs:label "E12" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T43>
+	a omj:Travel ;
+	cnt:chars "comes in" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T43>
+	a omj:Travel;
+	rdfs:label "E13" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T44>
+	a ome:Gain ;
+	cnt:chars "might succeed" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T44>
+	a ome:Gain;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T28>;
+	rdfs:label "E14" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T28> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-not-do <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/E>]
+		];
+	rdfs:label "R7" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T28> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-not-do <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/E>]
+		];
+	rdfs:label "R8" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T5> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/E>]
+		];
+	rdfs:label "R9" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T5> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/E>]
+		];
+	rdfs:label "R10" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T45>
+	a ome:Gain ;
+	cnt:chars "give him" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T45>
+	a ome:Gain;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T17>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T4>;
+	rdfs:label "E15" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T4> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-not-do <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/E>]
+		];
+	rdfs:label "R11" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T46>
+	a omj:Travel ;
+	cnt:chars "has been shopping" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T46>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T2>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T7>;
+	ome:involves <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T47>;
+	rdfs:label "E16" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T33>
+	a omj:Travel ;
+	cnt:chars "lopes off" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T33>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T32>;
+	rdfs:label "E6" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T32> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/E>]
+		];
+	rdfs:label "R12" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T32> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/E>]
+		];
+	rdfs:label "R13" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T49>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T49>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A46" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T49>
+	 omt:has-trait [
+		a omc:CanisLupus;
+		rdfs:label "CanisLupus (Species)"
+		];
+	rdfs:label "A47" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T49> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf>.
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>;
+	rdfs:label "N25" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T14>
+	a omes:Political ;
+	cnt:chars "tries to convince" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T14>
+	a omes:Political;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T23>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T24>;
+	rdfs:label "E5" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T23> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-not-do <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/E>]
+		];
+	rdfs:label "R14" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T23> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T>]
+		];
+	rdfs:label "R15" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T22> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/E>]
+		];
+	rdfs:label "R16" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T27> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/E>]
+		];
+	rdfs:label "R17" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T50>
+	a ome:Physical-Item ;
+	cnt:chars "basket" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T51>
+	a ome:Abstract-Item ;
+	cnt:chars "many questions" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T3> ome:is <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T20>;
+	rdfs:label "R18" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T16> ome:is <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T2>;
+	rdfs:label "R19" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T52>
+	a ome:Social ;
+	cnt:chars "meets" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T52>
+	a ome:Social;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T15>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T4>;
+	rdfs:label "E17" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T40> aktloc:adjacent-to <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T9>;
+	rdfs:label "R21" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T39> aktloc:adjacent-to <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T38>;
+	rdfs:label "R22" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T25> ome:contains <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T26>;
+	rdfs:label "R23" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T26> ome:contained-by <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T25>;
+	rdfs:label "R24" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T49> ome:contains <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T21>;
+	rdfs:label "R25" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T21> ome:contained-by <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T49>;
+	rdfs:label "R26" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T47>
+	a omb:Household ;
+	cnt:chars "her family" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T47> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheFamily>;
+
+	rdfs:label "N23" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T48>
+	a omb:Household ;
+	cnt:chars "Her parents and brothers and sisters" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T48> owl:sameAs <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheFamily>;
+
+	rdfs:label "N24" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T8> ome:contains <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T47>;
+	rdfs:label "R20" .
+
+<http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T8> ome:contains <http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/T48>;
+	rdfs:label "R27" .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Forester>
+	rdfs:label "Forester";
+	rdfs:label "Woodcutter";
+	rdfs:label "Hunter";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/RRHGrandma>
+	rdfs:label "Grandma";
+	rdfs:label "Grandmother";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Wolf>
+	rdfs:label "Wolf";
+	a ome:Character .
+

@@ -1,0 +1,349 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T1>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood Variation 73" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T2>
+	a ome:Character ;
+	cnt:chars "Steffi" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T3>
+	a ome:Character ;
+	cnt:chars "Hans" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T>]
+		];
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T4>
+	a ome:Character ;
+	cnt:chars "doctor" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T5>
+	a ome:Character ;
+	cnt:chars "Steffi" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T6>
+	a ome:Character ;
+	cnt:chars "doctor" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T7>
+	a ome:Character ;
+	cnt:chars "Hans" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T8>
+	a ome:Character ;
+	cnt:chars "Rose" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T9>
+	a ome:Character ;
+	cnt:chars "doctor" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T10>
+	a ome:Character ;
+	cnt:chars "Steffi" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T11>
+	a ome:Character ;
+	cnt:chars "Hans" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T12>
+	a ome:Character ;
+	cnt:chars "old lady" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T13>
+	a ome:Character ;
+	cnt:chars "daughter" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T3> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Father>;
+
+	rdfs:label "N3" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T7> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Father>;
+
+	rdfs:label "N4" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T11> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Father>;
+
+	rdfs:label "N6" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T13> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RedRidingHood>;
+	rdfs:label "N7" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T4> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Doctor>;
+
+	rdfs:label "N10" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T6> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Doctor>;
+
+	rdfs:label "N11" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T9> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Doctor>;
+
+	rdfs:label "N12" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T12> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHGrandma>;
+	rdfs:label "N8" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T8> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHGrandma>;
+	rdfs:label "N9" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHMother> ome:shadow-of <http://contextus.net/resource/shared/RRHMother>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T10> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHMother>;
+	rdfs:label "N5" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHMother> ome:shadow-of <http://contextus.net/resource/shared/RRHMother>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T5> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHMother>;
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHMother> ome:shadow-of <http://contextus.net/resource/shared/RRHMother>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T2> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHMother>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T14>
+	a ome:Character ;
+	cnt:chars "She" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHMother> ome:shadow-of <http://contextus.net/resource/shared/RRHMother>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T14> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHMother>;
+	rdfs:label "N13" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T15>
+	a ome:Character ;
+	cnt:chars "She" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T15> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RedRidingHood>;
+	rdfs:label "N14" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T16>
+	a ome:Character ;
+	cnt:chars "She" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T16> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHGrandma>;
+	rdfs:label "N15" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T17>
+	a ome:Character ;
+	cnt:chars "She" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T17> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHGrandma>;
+	rdfs:label "N16" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T18>
+	a ome:Character ;
+	cnt:chars "She" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T18> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHGrandma>;
+	rdfs:label "N17" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T13> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T>]
+		];
+	rdfs:label "R2" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T20>
+	a omb:Bonded-Pair ;
+	cnt:chars "They" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T20> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Parents>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Parents> ome:shadow-of <http://contextus.net/resource/shared/RRHMother>;
+	rdfs:label "N19" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T19>
+	a ompi:Attire ;
+	cnt:chars "strait jacket" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T21>
+	a ome:Character ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHMother> ome:shadow-of <http://contextus.net/resource/shared/RRHMother>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T21> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/RRHMother>;
+	rdfs:label "N18" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T22>
+	a omea:Environmental ;
+	cnt:chars "takes" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T22>
+	a omea:Environmental;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T21>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T23>;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T23>
+	a ompi:Consumables ;
+	cnt:chars "the pen and clipboard" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T24>
+	a omes:EmotionalExpression ;
+	cnt:chars "nods" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T24>
+	a omes:EmotionalExpression;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T5>;
+	rdfs:label "E2" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T25>
+	a omes:Conversational ;
+	cnt:chars "says" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T25>
+	a omes:Conversational;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T9>;
+	rdfs:label "E3" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T26>
+	a omes:EmotionalExpression ;
+	cnt:chars "shouting" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T26>
+	a omes:EmotionalExpression;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T12>;
+	rdfs:label "E4" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T27>
+	a omes:EmotionalExpression ;
+	cnt:chars "growling" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T27>
+	a omes:EmotionalExpression;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T12>;
+	rdfs:label "E5" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T28>
+	a omb:Bonded-Pair ;
+	cnt:chars "them" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T28> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Parents>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Parents> ome:shadow-of <http://contextus.net/resource/shared/RRHMother>;
+	rdfs:label "N20" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T29>
+	a omb:Bonded-Pair ;
+	cnt:chars "them" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T29> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Parents>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Parents> ome:shadow-of <http://contextus.net/resource/shared/RRHMother>;
+	rdfs:label "N21" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T30>
+	a omes:EmotionalExpression ;
+	cnt:chars "glares" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T30>
+	a omes:EmotionalExpression;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T17>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T29>;
+	rdfs:label "E6" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T31>
+	a omes:EmotionalExpression ;
+	cnt:chars "weeps" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T31>
+	a omes:EmotionalExpression;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T10>;
+	rdfs:label "E7" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T32>
+	a omea:Environmental ;
+	cnt:chars "turn" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T32>
+	a omea:Environmental;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T20>;
+	rdfs:label "E8" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T33>
+	a ome:Physical-Item ;
+	cnt:chars "hospital bed" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T34>
+	a omb:Bonded-Pair ;
+	cnt:chars "them" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T34> owl:sameAs <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Parents>.
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/shared/Parents> ome:shadow-of <http://contextus.net/resource/shared/RRHMother>;
+	rdfs:label "N22" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T35>
+	a omes:EmotionalExpression ;
+	cnt:chars "howls" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T35>
+	a omes:EmotionalExpression;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T18>;
+	rdfs:label "E9" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T36>
+	a omes:EmotionalExpression ;
+	cnt:chars "shakes his head" .
+
+<http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T36>
+	a omes:EmotionalExpression;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/SOdok/RRHV73-S42/T6>;
+	rdfs:label "E10" .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/RRHGrandma>
+	rdfs:label "Grandma";
+	rdfs:label "Grandmother";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/RRHMother>
+	rdfs:label "Mother";
+	a ome:Character .
+

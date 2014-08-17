@@ -1,0 +1,9 @@
+T1	Context 0 28	Red Riding Hood Variation 15
+T2	Character 226 233	Redhood
+A1	Gender T2 Female
+N1	Reference T2 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T3	Context 194 201	One day
+T4	Character 203 207	Wolf
+T5	Proposition 211 225	tried to tempt
+E1	Proposition:T5 involves:T2
+R1	will-do Arg1:T4 Arg2:E1	

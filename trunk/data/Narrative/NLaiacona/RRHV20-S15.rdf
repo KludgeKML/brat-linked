@@ -1,0 +1,69 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/NLaiacona/RRHV20-S15/T1>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood Variation 15" .
+
+<http://contextus.net/resource/RRH/NLaiacona/RRHV20-S15/T2>
+	a ome:Character ;
+	cnt:chars "Redhood" .
+
+<http://contextus.net/resource/RRH/NLaiacona/RRHV20-S15/T2>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A1" .
+
+<http://contextus.net/resource/RRH/NLaiacona/RRHV20-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/NLaiacona/RRHV20-S15/T2> owl:sameAs <http://contextus.net/resource/RRH/NLaiacona/RRHV20-S15/RedRidingHood>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/NLaiacona/RRHV20-S15/T3>
+	a ome:Context ;
+	cnt:chars "One day" .
+
+<http://contextus.net/resource/RRH/NLaiacona/RRHV20-S15/T4>
+	a ome:Character ;
+	cnt:chars "Wolf" .
+
+<http://contextus.net/resource/RRH/NLaiacona/RRHV20-S15/T5>
+	a omes:Proposition ;
+	cnt:chars "tried to tempt" .
+
+<http://contextus.net/resource/RRH/NLaiacona/RRHV20-S15/T5>
+	a omes:Proposition;
+	ome:involves <http://contextus.net/resource/RRH/NLaiacona/RRHV20-S15/T2>;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/NLaiacona/RRHV20-S15/T4> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/NLaiacona/RRHV20-S15/E>]
+		];
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+

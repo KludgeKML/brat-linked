@@ -1,0 +1,243 @@
+T1	Context 0 18	Red Riding Hood 25
+T2	Character 19 41	Little Red Riding Hood
+T3	Character 150 161	grandmother
+T5	Character 177 188	Grandmother
+T7	Character 231 234	her
+T8	Character 273 279	wolves
+R5	enemy-of Arg1:T7 Arg2:T8	
+T12	Character 285 288	Red
+N3	Reference T12 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T13	Character 307 311	wolf
+R6	enemy-of Arg1:T12 Arg2:T13	
+T14	Character 329 332	she
+T15	Character 313 316	who
+R7	enemy-of Arg1:T15 Arg2:T14	
+R8	is Arg1:T13 Arg2:T15	
+T16	Character 297 300	she
+R9	is Arg1:T12 Arg2:T16	
+R10	enemy-of Arg1:T16 Arg2:T13	
+T17	Character 344 347	She
+T18	Character 353 356	him
+R11	enemy-of Arg1:T17 Arg2:T18	
+T19	Character 371 374	she
+T20	Character 397 408	grandmother
+R12	family-of Arg1:T19 Arg2:T20	
+T21	Character 414 418	wolf
+N4	Reference T21 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T22	Character 426 429	her
+R13	enemy-of Arg1:T21 Arg2:T22	
+T23	Character 460 462	he
+T24	Home 493 498	house
+T25	Character 479 492	Grandmother's
+T26	Character 506 508	he
+T27	Physical-Item 548 553	voice
+T28	Character 542 547	Red's
+T29	Character 560 571	Grandmother
+N5	Reference T29 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T30	Character 593 597	wolf
+N6	Reference T30 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T31	Character 606 609	her
+R14	enemy-of Arg1:T30 Arg2:T31	
+R15	is Arg1:T29 Arg2:T31	
+T32	Character 619 621	he
+T33	Character 683 686	Red
+N7	Reference T33 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T34	Character 745 749	wolf
+N8	Reference T34 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T35	Character 778 781	Red
+N9	Reference T35 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T36	Character 818 829	Grandmother
+N10	Reference T36 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T37	Character 832 835	she
+R16	is Arg1:T35 Arg2:T37	
+T38	Character 857 860	you
+T39	Character 892 895	you
+T40	Character 916 920	wolf
+N11	Reference T40 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+R17	is Arg1:T38 Arg2:T40	
+R18	is Arg1:T35 Arg2:T39	
+T41	Character 928 939	Grandmother
+N12	Reference T41 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T42	Character 947 950	Red
+N13	Reference T42 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T43	Character 967 970	you
+T44	Character 1003 1006	you
+T45	Character 1027 1031	wolf
+N14	Reference T45 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+R19	is Arg1:T42 Arg2:T44	
+R20	is Arg1:T43 Arg2:T45	
+T46	Character 1039 1050	Grandmother
+N15	Reference T46 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T47	Character 1058 1061	Red
+N16	Reference T47 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T48	Character 1094 1097	you
+T49	Character 1132 1135	YOU
+T50	Character 1151 1155	wolf
+N17	Reference T50 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T51	Character 1161 1163	he
+R21	is Arg1:T47 Arg2:T49	
+R22	is Arg1:T48 Arg2:T50	
+R23	is Arg1:T50 Arg2:T51	
+T52	Character 1184 1186	he
+R24	is Arg1:T52 Arg2:T50	
+T53	Character 1228 1238	woodcutter
+N18	Reference T53 archetypes:http://contextus.net/resource/shared/Forester	Woodcutter
+T54	Physical-Item 1277 1284	snoring
+T55	Character 1265 1271	wolf's
+T56	Character 1292 1305	poor old lady
+T57	Character 1332 1334	he
+T58	Character 1345 1346	I
+T59	Character 1369 1372	she
+R25	is Arg1:T53 Arg2:T57	
+R26	is Arg1:T53 Arg2:T58	
+T60	Character 1392 1402	woodcutter
+N19	Reference T60 archetypes:http://contextus.net/resource/shared/Forester	Woodcutter
+T61	Character 1423 1427	wolf
+N20	Reference T61 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+R27	enemy-of Arg1:T60 Arg2:T61	
+R28	friend-of Arg1:T56 Arg2:T57	
+T62	Character 1459 1461	he
+R29	is Arg1:T60 Arg2:T62	
+T63	Character 1487 1491	wolf
+N21	Reference T63 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T64	Character 1509 1512	Red
+N22	Reference T64 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T65	Character 1521 1532	grandmother
+N23	Reference T65 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+R30	family-of Arg1:T64 Arg2:T65	
+T66	Character 1550 1554	They
+T67	Character 1581 1591	woodcutter
+N24	Reference T67 archetypes:http://contextus.net/resource/shared/Forester	Woodcutter
+T68	Character 1603 1607	them
+T69	Character 1621 1624	him
+R31	friend-of Arg1:T66 Arg2:T67	
+R32	is Arg1:T66 Arg2:T68	
+R33	is Arg1:T67 Arg2:T69	
+R34	friend-of Arg1:T66 Arg2:T69	
+T4	Character 114 117	Red
+N1	Reference T4 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+R1	family-of Arg1:T4 Arg2:T3	
+T10	Conversational 226 230	told
+E2	Conversational:T10 has-object-entity:T7
+T11	Wood 202 207	woods
+T70	Physical-Item 250 254	path
+T71	Travel 238 242	keep
+E3	Travel:T71 involves:T7 has-object-entity:T70
+T72	Travel 289 296	set off
+E4	Travel:T72 has-subject-entity:T12
+T73	Event 259 272	watch out for
+E5	Event:T73 has-subject-entity:T7 has-object-entity:T8
+T74	Event 301 304	met
+E6	Event:T74 has-subject-entity:T16
+T75	Conversational 317 322	asked
+E7	Conversational:T75 has-subject-entity:T15
+T9	Physical-Item 125 131	basket
+T77	Consumables 135 142	goodies
+T78	Gain 118 122	took
+E1	Gain:T78 has-object-entity:T9
+R35	will-do Arg1:T4 Arg2:E1	
+T76	Character 48 59	little girl
+R2	is Arg1:T2 Arg2:T76	
+T79	Character 60 63	who
+R36	is Arg1:T76 Arg2:T79	
+T80	Attire 85 94	red cloak
+T81	Attire 99 103	hood
+T82	Gain 71 75	wore
+E8	Gain:T82 
+R37	will-do Arg1:T79 Arg2:E8	
+T83	Character 163 166	who
+T84	Conversational 348 352	told
+E9	Conversational:T84 
+R38	will-do Arg1:T17 Arg2:E9	
+T85	Conversational 419 425	wished
+E10	Conversational:T85 has-object-entity:T22
+R39	will-do Arg1:T21 Arg2:E10	
+T86	Alive 189 194	lived
+R40	is Arg1:T5 Arg2:T86	
+R41	contained-by Arg1:T86 Arg2:T11	
+R42	is-linked-to Arg1:T9 Arg2:T3	
+T87	Physical-Item 583 587	door
+T88	Violence 598 605	gobbled
+E11	Violence:T88 has-object-entity:T31
+R43	will-do Arg1:T30 Arg2:E11	
+T89	Travel 463 466	ran
+E12	Travel:T89 to:T24
+R44	will-do Arg1:T23 Arg2:E12	
+R45	contained-by Arg1:T25 Arg2:T24	
+T90	Room 524 528	door
+T91	Action 509 516	knocked
+E13	Action:T91 has-object-entity:T90
+R46	will-do Arg1:T26 Arg2:E13	
+T92	Conversational 533 541	mimicked
+E14	Conversational:T92 refers-to:T27
+R47	contained-by Arg1:T28 Arg2:T27	
+T93	Action 572 578	opened
+E15	Action:T93 has-object-entity:T87
+R48	will-do Arg1:T29 Arg2:E15	
+T94	Attire 633 636	cap
+T95	Attire 641 646	apron
+T96	Room 664 667	bed
+T97	Travel 651 654	got
+E16	Travel:T97 to:T96
+R49	will-do Arg1:T32 Arg2:E16	
+T98	Travel 687 694	arrived
+E17	Travel:T98 to:T99
+T99	Building 714 718	door
+T100	Action 699 706	knocked
+E18	Action:T100 has-object-entity:T99
+R52	will-do Arg1:T33 Arg2:E17	
+R53	will-do Arg1:T33 Arg2:E18	
+R54	contains Arg1:T9 Arg2:T77	
+T101	Unresponsive 167 175	was sick
+R55	is Arg1:T83 Arg2:T101	
+T6	Character 219 225	mother
+T102	Character 213 216	Red
+N2	Reference T102 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+R3	family-of Arg1:T102 Arg2:T6	
+R4	friend-of Arg1:T5 Arg2:T6	
+R56	family-of Arg1:T6 Arg2:T7	
+R57	will-do Arg1:T6 Arg2:E2	
+T103	Travel 333 342	was going
+E19	Travel:T103 
+R58	will-do Arg1:T14 Arg2:E19	
+T104	Travel 379 387	visiting
+E20	Travel:T104 has-object-entity:T20
+R59	will-do Arg1:T19 Arg2:E20	
+T105	Travel 439 443	went
+E21	Travel:T105 
+R60	will-do Arg1:T21 Arg2:E21	
+R61	will-do Arg1:T26 Arg2:E14	
+T106	Gain 622 625	put
+E22	Gain:T106 has-object-entity:T94
+R50	will-do Arg1:T32 Arg2:E22	
+R51	is-linked-to Arg1:T94 Arg2:T95	
+T107	Home 795 802	doorway
+T108	Travel 782 787	stood
+E23	Travel:T108 to:T107
+R62	will-not-do Arg1:T35 Arg2:E23	
+T109	Conversational 836 840	said
+E24	Conversational:T109 refers-to:E27 refers-to2:E28
+R63	will-do Arg1:T37 Arg2:E24	
+T110	Physical-Item 852 856	eyes
+T111	Gain 861 865	have
+E25	Gain:T111 has-object-entity:T110
+R64	will-do Arg1:T38 Arg2:E25	
+R65	owns Arg1:T36 Arg2:T110	
+T112	Conversational 903 911	answered
+E26	Conversational:T112 
+R66	will-do Arg1:T40 Arg2:E26	
+T113	Proposition 843 865	what big eyes you have
+E27	Proposition:T113 
+T114	Proposition 814 829	Why Grandmother
+E28	Proposition:T114 
+T115	Physical-Item 962 966	ears
+T116	Gain 971 975	have
+E29	Gain:T116 has-object-entity:T115
+R67	will-do Arg1:T43 Arg2:E29	
+T117	Conversational 942 946	said
+E30	Conversational:T117 refers-to:E31 refers-to2:E32
+R68	will-do Arg1:T42 Arg2:E30	
+T118	Proposition 953 975	what big ears you have
+E31	Proposition:T118 
+T119	Proposition 924 939	Why Grandmother
+E32	Proposition:T119 

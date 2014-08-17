@@ -1,0 +1,75 @@
+T1	Context 0 18	Red Riding Hood 17
+T2	Character 19 58	A young girl wearing a red hooded cloak
+T3	Character 77 92	her grandmother
+R1	family-of Arg1:T2 Arg2:T3	
+A1	Gender T2 Female
+A2	Name T2 Red Riding Hood
+T4	Character 94 97	She
+A3	Gender T4 Female
+A4	Name T4 Red Riding Hood
+T5	Character 153 159	a wolf
+A5	Gender T5 Male
+A6	Name T5 The Wolf
+A7	Species T5 Lupus
+T6	Character 175 178	her
+A8	Gender T6 Female
+A9	Name T6 Red Riding Hood
+T7	Character 239 241	he
+A10	Gender T7 Male
+A11	Name T7 The Wolf
+A12	Species T7 Lupus
+N1	Reference T2 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N2	Reference T4 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+A13	Gender T3 Female
+N4	Reference T3 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+N5	Reference T5 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+N6	Reference T7 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T8	Character 285 293	the girl
+A14	Gender T8 Female
+A15	Name T8 Red Riding Hood
+N7	Reference T8 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T10	Character 318 326	the wolf
+A18	Gender T10 Male
+A19	Name T10 The Wolf
+N9	Reference T10 archetypes:http://contextus.net/resource/RRH/DDye/RRHS17-S15/shared/TheWolf	The Wolf
+N3	Reference T6 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T12	Character 342 357	the grandmother
+T13	Character 377 385	the girl
+N11	Reference T13 archetypes:http://contextus.net/resource/RRH/DDye/RRHS17-S15/shared/RedRidingHood	Red Riding Hood
+T9	Wood 139 151	In the woods
+N8	Reference T9 archetypes:http://contextus.net/resource/shared/Wood	Wood
+T14	Character 300 308	the girl
+N12	Reference T14 archetypes:http://contextus.net/resource/RRH/DDye/RRHS17-S15/shared/RedRidingHood	Red Riding Hood
+T15	Action 98 109	is carrying
+E2	Action:T15 has-object-entity:T16 has-subject-entity:T4
+T16	Consumables 110 137	a basket of cakes as a gift
+N13	Reference T16 archetypes:http://contextus.net/resource/shared/Basket	Basket
+T17	Conversational 160 173	tries to temp
+E3	Conversational:T17 has-subject-entity:T5 has-object-entity:T6 is-located-in:T9 has-subject:E4 has-subject2:E5
+T18	Travel 179 201	to stray from the path
+E4	Travel:T18 
+T19	Transference 205 222	give up her baske
+E5	Transference:T19 
+T20	Travel 242 246	goes
+E6	Travel:T20 has-subject-entity:T7 to:T21
+N14	Reference E6 archetypes:http://contextus.net/resource/shared/Wolf2ChezG	Wolf goes to Grandmas
+T21	Home 254 275	grandmother's cottage
+T22	Loss 225 237	Upon failing
+E7	Loss:T22 has-subject-entity:T7 follows:E3
+T11	Travel 59 76	sets out to visit
+E1	Travel:T11 has-subject-entity:T2 has-object-entity:T3
+N10	Reference T12 archetypes:http://contextus.net/resource/RRH/DDye/RRHS17-S15/shared/TheGrandmother	the grandmother
+T23	Travel 295 316	When the girl arrives
+E8	Travel:T23 to:T21 follows:E9
+T24	Ingestion 332 341	has eaten
+E9	Ingestion:T24 has-subject-entity:T10 has-object-entity:T12
+T25	Conversational 359 376	tries to persuade
+E10	Conversational:T25 has-subject-entity:T10 has-object-entity:T14
+T27	Character 397 412	the grandmother
+N15	Reference T27 archetypes:http://contextus.net/resource/RRH/DDye/RRHS17-S15/shared/TheGrandmother	the grandmother
+T26	Character 391 393	he
+N16	Reference T26 archetypes:http://contextus.net/resource/RRH/DDye/RRHS17-S15/shared/TheWolf	The Wolf
+T28	Character 421 424	she
+N17	Reference T28 archetypes:http://contextus.net/resource/RRH/DDye/RRHS17-S15/shared/RedRidingHood	Red Riding Hood
+T29	Action 425 458	will get close enough to be eaten
+E11	Action:T29 

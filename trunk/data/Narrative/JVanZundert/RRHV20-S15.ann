@@ -1,0 +1,53 @@
+T2	Context 0 28	Red Riding Hood Variation 15
+T1	Company 226 233	Redhood
+T3	Character 1018 1034	government agent
+T4	Company 203 210	Wolf&Co
+T5	Company 162 186	Grandparent Savings Bank
+T6	Company 188 191	GSB
+R1	is Arg1:T5 Arg2:T6	
+T7	Company 438 441	GSB
+R2	is Arg1:T6 Arg2:T7	
+T8	Company 561 564	GSB
+T9	Company 717 720	GSB
+T10	Company 29 45	The Redhood Bank
+T11	Company 595 602	Wolf&Co
+T12	Company 885 892	Wolf&Co
+T13	Company 1062 1069	Wolf&Co
+T14	Company 1116 1119	GSB
+R3	is Arg1:T7 Arg2:T8	
+R4	is Arg1:T8 Arg2:T9	
+R5	is Arg1:T9 Arg2:T14	
+R6	is Arg1:T4 Arg2:T11	
+R7	is Arg1:T11 Arg2:T12	
+R8	is Arg1:T12 Arg2:T13	
+T15	Company 360 367	Redhood
+T16	Company 529 536	Redhood
+T17	Company 659 666	Redhood
+T18	Company 771 778	Redhood
+T19	Company 909 916	Redhood
+T20	Company 1201 1208	Redhood
+R9	is Arg1:T10 Arg2:T1	
+R10	is Arg1:T1 Arg2:T15	
+R11	is Arg1:T15 Arg2:T17	
+R12	is Arg1:T17 Arg2:T16	
+R13	is Arg1:T17 Arg2:T18	
+R14	is Arg1:T18 Arg2:T19	
+R15	is Arg1:T19 Arg2:T20	
+N1	Reference T10 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N2	Reference T5 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandma
+N3	Reference T4 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+N4	Reference T6 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandma
+N5	Reference T1 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N6	Reference T15 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N7	Reference T16 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N8	Reference T17 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N9	Reference T19 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N10	Reference T18 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N11	Reference T20 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N12	Reference T14 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandma
+N13	Reference T13 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+N14	Reference T12 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+N15	Reference T9 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandma
+N16	Reference T11 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+N17	Reference T8 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandma
+N18	Reference T7 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandma

@@ -1,0 +1,105 @@
+T1	Context 0 18	Red Riding Hood 11
+A2	Name T1 Red Riding Hood
+A3	Species T1 Human
+T2	Character 19 34	Red Riding Hood
+A4	Gender T2 Female
+A5	Name T2 Red Riding Hood
+A6	Species T2 Human
+T3	Character 65 72	Grandma
+A7	Gender T3 Female
+A8	Name T3 Grandma
+A9	Species T3 Human
+T4	Character 495 499	wolf
+A10	Gender T4 Male
+A11	Name T4 Wolf
+A12	Species T4 wolf
+T5	Character 862 872	woodcutter
+A13	Gender T5 Male
+R1	family-of Arg1:T2 Arg2:T3	
+T6	City 109 116	village
+T7	Wood 149 154	woods
+R2	adjacent-to Arg1:T6 Arg2:T7	
+N1	Reference T2 archetypes:http://contextus.net/resource/RRH/flawrence/RRHS11-S10/shared/Rosy	Rosy
+T8	Character 544 547	she
+N2	Reference T8 archetypes:http://contextus.net/resource/RRH/flawrence/RRHS11-S10/shared/Rosy	Rosy
+N3	Reference T3 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandma
+T9	Entity 623 631	Red Hood
+N4	Reference T9 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T10	Home 88 93	house
+N5	Reference T10 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Gandmothers_House	Gandmothers_house
+R3	is-part-of Arg1:T10 Arg2:T6	
+R4	has-usual-occupant Arg1:T10 Arg2:T3	
+T11	Entity 78 85	Grandma
+N6	Reference T11 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Grandmother	Grandmother
+T12	Entity 179 183	wolf
+N7	Reference T12 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T13	Ingestion 270 294	swallowing Grandma whole
+E1	Ingestion:T13 has-object-entity:T3 has-subject-entity:T12
+N8	Reference E1 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Eating_Grandmother	eating_grandmother
+T14	Destruction 1041 1048	he dies
+E2	Destruction:T14 has-subject-entity:T38
+N9	Reference E2 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Wolf_Dies	wolf_dies
+T15	Weapon 935 938	axe
+N10	Reference T15 archetypes:http://contextus.net/resource/shared/Axe	Axe
+T16	Home 261 268	cottage
+N11	Reference T16 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Gandmothers_House	Gandmothers_house
+T17	Physical-Item 43 49	basket
+N12	Reference T17 archetypes:http://contextus.net/resource/shared/Basket	Basket
+T18	Entity 162 167	there
+N13	Reference T18 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Gandmothers_House	Gandmothers_house
+T19	Entity 441 448	Grandma
+N14	Reference T19 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Grandmother	Grandmother
+T20	Travel 373 380	arrives
+E3	Travel:T20 has-subject-entity:T21
+T21	Entity 357 372	Red Riding Hood
+N15	Reference T21 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T22	Character 393 400	Grandma
+N16	Reference T22 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Grandmother	Grandmother
+T23	Merge 968 976	fall out
+E4	Merge:T23 has-subject-entity:T37
+N17	Reference E4 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/FallingOut	falling out
+T24	Character 940 955	Red Riding Hood
+N18	Reference T24 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T25	Character 960 967	Grandma
+N19	Reference T25 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Grandmother	Grandmother
+T26	Entity 676 679	she
+N20	Reference T26 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T27	Violence 899 925	cuts the wolf's belly open
+E5	Violence:T27 has-subject-entity:T5 has-object-entity:T28 involves:T15
+N21	Reference E5 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/CutWolfSBelly	cut wolf's belly
+T28	Entity 908 912	wolf
+N22	Reference T28 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T29	Entity 889 893	wolf
+N23	Reference T29 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+N24	Reference T4 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+R5	enemy-of Arg1:T4 Arg2:T2	
+T30	Travel 121 154	she has to walk through the woods
+E6	Travel:T30 has-subject-entity:T31 involves:T7
+N25	Reference E6 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Walk	walk
+T31	Entity 121 124	she
+N26	Reference T31 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+R6	is Arg1:T16 Arg2:T10	
+T32	Conversational 486 490	said
+E7	Conversational:T32 has-subject-entity:T4 has-object-entity:T2
+N27	Reference E7 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Say	say
+T33	Action 35 40	takes
+E8	Action:T33 has-subject-entity:T2 has-object-entity:T17 precedes:E6
+N28	Reference E8 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Take	take
+R7	owns Arg1:T2 Arg2:T17	
+T34	Consumables 53 57	food
+N29	Reference T34 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Food	food
+R8	contains Arg1:T17 Arg2:T34	
+T36	Character 757 761	wolf
+N31	Reference T36 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T37	Bonded-Group 940 967	Red Riding Hood and Grandma
+T38	Character 1041 1043	he
+N32	Reference T38 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T39	Social 184 211	finds out where she's going
+E10	Social:T39 has-subject-entity:T12 causes:E1
+N33	Reference E10 archetypes:http://contextus.net/resource/RRH/CMartinezCanton/RRHS11-S10/shared/Discover	discover
+R9	contains Arg1:T37 Arg2:T24	
+R10	contains Arg1:T37 Arg2:T25	
+R11	is-linked-to Arg1:T17 Arg2:T10	
+T35	Character 251 258	Grandma
+N30	Reference T35 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandma
+R12	contained-by Arg1:T35 Arg2:T16	

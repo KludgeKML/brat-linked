@@ -1,0 +1,164 @@
+T1	Context 0 28	Red Riding Hood Variation 18
+T2	Character 29 35	A girl
+T3	Character 163 178	her grandmother
+T4	Character 256 262	a wolf
+T5	Character 634 646	a woodcutter
+R1	family-of Arg1:T2 Arg2:T3	
+R2	enemy-of Arg1:T2 Arg2:T4	
+R3	bond-with Arg1:T5 Arg2:T2	
+R4	contained-by Arg1:T3 Arg2:T4	
+R5	friend-of Arg1:T5 Arg2:T3	
+T6	Attire 44 62	a red hooded cloak
+T7	Consumables 85 89	food
+T8	Home 185 189	home
+T9	Wood 231 240	the woods
+T10	Sex 273 281	to tempt
+E1	Sex:T10 has-subject-entity:T4 has-object-entity:T17
+T11	Ingestion 447 454	he eats
+E2	Ingestion:T11 has-object-entity:T21 has-subject-entity:T49
+T12	Violence 676 681	kills
+E3	Violence:T12 has-subject-entity:T5 has-object-entity:T30
+R6	will-not-do Arg1:T4 Arg2:E1	
+T13	Conversational 554 558	asks
+E4	Conversational:T13 has-subject-entity:T27
+N1	Reference T2 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood	Red Riding Hood
+N2	Reference T3 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother	the grandmother
+N3	Reference T4 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf	the wolf
+N4	Reference T5 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWoodcutter	the woodcutter
+T15	Character 241 249	the girl
+N5	Reference T15 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood	Red Riding Hood
+T16	Character 202 205	her
+N6	Reference T16 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood	Red Riding Hood
+T17	Character 282 285	her
+N7	Reference T17 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood	Red Riding Hood
+T18	Character 338 341	she
+N8	Reference T18 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood	Red Riding Hood
+T19	Character 411 414	her
+N9	Reference T19 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood	Red Riding Hood
+T20	Character 424 439	the grandmother
+N10	Reference T20 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother	the grandmother
+T21	Character 455 458	her
+N11	Reference T21 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother	the grandmother
+T22	Character 465 473	the girl
+N12	Reference T22 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood	Red Riding Hood
+T23	Character 483 491	the wolf
+N13	Reference T23 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf	the wolf
+T24	Character 510 513	her
+N14	Reference T24 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood	Red Riding Hood
+T25	Character 519 521	he
+N15	Reference T25 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf	the wolf
+T26	Character 525 540	the grandmother
+N16	Reference T26 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother	the grandmother
+T27	Character 545 552	the gir
+N17	Reference T27 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood	Red Riding Hood
+T28	Character 592 600	the wolf
+N18	Reference T28 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf	the wolf
+T29	Character 624 632	the girl
+N19	Reference T29 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/RedRidingHood	Red Riding Hood
+T30	Character 682 690	the wolf
+N20	Reference T30 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf	the wolf
+T31	Character 704 719	the grandmother
+N21	Reference T31 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheGrandmother	the grandmother
+T32	Character 350 352	he
+N22	Reference T32 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf	the wolf
+A1	Gender T2 Female
+A2	Species T2 homo sapiens
+A3	Gender T3 Female
+A4	Species T3 homo sapiens
+A5	Gender T16 Female
+A6	Species T16 homo sapiens
+A7	Gender T15 Female
+A8	Species T15 homo sapiens
+A9	Species T4 canis lupus
+A10	Gender T17 Female
+A11	Species T17 homo sapiens
+A12	Gender T18 Female
+A13	Species T18 homo sapiens
+A14	Gender T32 Male
+A15	Species T32 canis lupus
+A16	Gender T19 Female
+A17	Species T19 homo sapiens
+A18	Gender T20 Female
+A19	Species T20 homo sapiens
+A20	Gender T21 Female
+A21	Species T21 homo sapiens
+A22	Gender T22 Female
+A23	Species T22 homo sapiens
+A24	Gender T23 Male
+A25	Species T23 canis lupus
+A26	Gender T24 Female
+A27	Species T24 homo sapiens
+A28	Gender T25 Male
+A29	Species T25 canis lupus
+A30	Gender T26 Female
+A31	Species T26 homo sapiens
+A32	Gender T27 Female
+A33	Species T27 homo sapiens
+A34	Gender T28 Male
+A35	Species T28 canis lupus
+A36	Gender T29 Female
+A37	Species T29 homo sapiens
+A38	Gender T30 Male
+A39	Species T30 canis lupus
+A40	Gender T31 Female
+A41	Species T31 homo sapiens
+T35	Travel 286 294	to stray
+E8	Travel:T35 has-subject-entity:T17
+T36	Travel 384 391	reaches
+E9	Travel:T36 has-subject-entity:T32 to:T38
+T37	Gain 696 703	rescues
+T38	Home 396 401	house
+T39	Wood 371 379	the wood
+E11	Gain:T37 has-subject-entity:T5 has-object-entity:T31
+T40	Home 218 222	home
+T34	Travel 651 661	is passing
+E7	Travel:T34 has-subject-entity:T5
+T41	Travel 662 671	rushes in
+E10	Travel:T41 has-subject-entity:T5
+T42	Ingestion 620 623	eat
+E12	Ingestion:T42 has-object-entity:T29 has-subject-entity:T28
+T43	Travel 474 482	comes in
+E13	Travel:T43 
+T44	Gain 601 614	might succeed
+E14	Gain:T44 has-subject-entity:T28
+R7	will-not-do Arg1:T28 Arg2:E14	
+R8	will-not-do Arg1:T28 Arg2:E12	
+R9	will-do Arg1:T5 Arg2:E3	
+R10	will-do Arg1:T5 Arg2:E11	
+T45	Gain 312 320	give him
+E15	Gain:T45 has-subject-entity:T17 has-object-entity:T4
+R11	will-not-do Arg1:T4 Arg2:E15	
+T46	Travel 63 80	has been shopping
+E16	Travel:T46 has-subject-entity:T2 has-object-entity:T7 involves:T47
+T33	Travel 353 362	lopes off
+E6	Travel:T33 has-subject-entity:T32
+R12	will-do Arg1:T32 Arg2:E6	
+R13	will-do Arg1:T32 Arg2:E9	
+T49	Character 447 449	he
+A46	Gender T49 Male
+A47	Species T49 canis lupus
+N25	Reference T49 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheWolf	the wolf
+T14	Political 492 509	tries to convince
+E5	Political:T14 has-subject-entity:T23 has-object-entity:T24
+R14	will-not-do Arg1:T23 Arg2:E5	
+R15	enemy-of Arg1:T23 Arg2:T24	
+R16	will-do Arg1:T22 Arg2:E13	
+R17	will-do Arg1:T27 Arg2:E4	
+T50	Physical-Item 325 331	basket
+T51	Abstract-Item 559 573	many questions
+R18	is Arg1:T3 Arg2:T20	
+R19	is Arg1:T16 Arg2:T2	
+T52	Social 250 255	meets
+E17	Social:T52 has-subject-entity:T15 has-object-entity:T4
+R21	adjacent-to Arg1:T40 Arg2:T9	
+R22	adjacent-to Arg1:T39 Arg2:T38	
+R23	contains Arg1:T25 Arg2:T26	
+R24	contained-by Arg1:T26 Arg2:T25	
+R25	contains Arg1:T49 Arg2:T21	
+R26	contained-by Arg1:T21 Arg2:T49	
+T47	Household 94 104	her family
+N23	Reference T47 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheFamily	the family
+T48	Household 106 142	Her parents and brothers and sisters
+N24	Reference T48 archetypes:http://contextus.net/resource/RRH/JBeynon/RRHV18-S15/shared/TheFamily	the family
+R20	contains Arg1:T8 Arg2:T47	
+R27	contains Arg1:T8 Arg2:T48	

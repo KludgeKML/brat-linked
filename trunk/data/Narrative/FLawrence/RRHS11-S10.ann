@@ -1,0 +1,20 @@
+T1	Context 0 18	Red Riding Hood 11
+T2	Character 19 34	Red Riding Hood
+N1	Reference T2 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T3	Character 65 72	Grandma
+N2	Reference T3 archetypes:http://contextus.net/resource/RRH/flawrence/RRHS11-S10/shared/GrannyHood	Granny Hood
+R1	family-of Arg1:T2 Arg2:T3	
+T4	Travel 373 380	arrives
+E1	Travel:T4 has-subject-entity:T5 to:T6
+T5	Character 357 372	Red Riding Hood
+T6	Home 261 268	cottage
+T7	Transformation 1044 1048	dies
+E2	Transformation:T7 has-subject-entity:T8 from:T9 to:T10
+T8	Character 1041 1043	he
+T9	Alive 1048 1048	
+T10	Dead 1044 1044	
+T11	Physical-Item 43 49	basket
+T12	Consumables 53 57	food
+R2	contains Arg1:T11 Arg2:T12	
+T13	Gain 35 40	takes
+E3	Gain:T13 has-subject-entity:T2 has-object-entity:T11

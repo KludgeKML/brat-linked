@@ -1,0 +1,56 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHV71-S41/T1>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHV71-S41/T1> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/WolfOfMaleRosy>;
+
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHV71-S41/T2>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHV71-S41/T2> owl:sameAs <http://contextus.net/resource/RRH/SPChen/RRHV71-S41/shared/MaleRosy>;
+
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHV71-S41/T3>
+	a omes:Conversational ;
+	cnt:chars "conversation" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHV71-S41/T3>
+	a omes:Conversational;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/flawrence/RRHV71-S41/T2>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/flawrence/RRHV71-S41/T1>;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHV71-S41/T4>
+	a omb:Group ;
+	cnt:chars "they" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHV71-S41/T4> ome:contains <http://contextus.net/resource/RRH/flawrence/RRHV71-S41/T1>;
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHV71-S41/T4> ome:contains <http://contextus.net/resource/RRH/flawrence/RRHV71-S41/T2>;
+	rdfs:label "R2" .
+

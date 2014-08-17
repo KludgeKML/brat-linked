@@ -1,0 +1,52 @@
+T1	Context 0 18	Red Riding Hood 61
+T2	Character 39 61	Little Red Riding Hood
+T3	Character 481 496	Red Riding Hood
+A1	Gender T3 Female
+A2	Gender T2 Female
+T4	Character 744 759	Red Riding Hood
+A3	Gender T4 Female
+T5	Character 801 816	Red Riding Hood
+A4	Gender T5 Female
+T6	Character 83 93	Her mother
+A5	Gender T6 Female
+T7	Character 146 165	her ill grandmother
+A6	Gender T7 Female
+T8	Character 193 197	wolf
+A7	Gender T8 Other
+T9	Character 291 306	Red Riding Hood
+A8	Gender T9 Female
+R1	family-of Arg1:T2 Arg2:T6	
+R2	family-of Arg1:T2 Arg2:T7	
+N1	Reference T2 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T10	Character 342 346	wolf
+A9	Gender T10 Other
+N2	Reference T10 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T11	Character 397 406	grandma's
+A10	Gender T11 Female
+T12	Character 466 473	grandma
+A11	Gender T12 Female
+T13	Character 532 536	wolf
+A12	Gender T13 Other
+N3	Reference T13 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T14	Character 729 737	woodsman
+A13	Gender T14 Male
+T15	Character 825 832	Grandma
+A14	Gender T15 Female
+N4	Reference T15 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandma
+T16	Character 842 848	wolf's
+A15	Gender T16 Other
+N5	Reference T16 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T17	Dead 860 864	wolf
+A16	Gender T17 Other
+R3	enemy-of Arg1:T3 Arg2:T13	
+R4	friend-of Arg1:T14 Arg2:T4	
+R5	is Arg1:T2 Arg2:T9	
+N6	Reference T11 archetypes:http://contextus.net/resource/RRH/GColavizza/RRHS61-S36/shared/Rrhgrandma	RRHGrandma
+T18	Environmental 738 743	hears
+E1	Environmental:T18 has-subject-entity:T14 has-object-entity:T4
+T19	Environmental 366 383	breaks and enters
+E2	Environmental:T19 has-subject-entity:T10
+T20	Ingestion 418 422	eats
+E3	Ingestion:T20 has-subject-entity:T10 has-object-entity:T11
+T21	Violence 865 874	is killed
+E4	Violence:T21 has-subject-entity:T17 involves:T14

@@ -1,0 +1,119 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T1>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood 11" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T2>
+	a ome:Character ;
+	cnt:chars "Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T2> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS11-S10/RedRidingHood>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T3>
+	a ome:Character ;
+	cnt:chars "Grandma" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T3> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS11-S10/shared/GrannyHood>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/shared/GrannyHood> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>;
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T>]
+		];
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T4>
+	a omj:Travel ;
+	cnt:chars "arrives" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T4>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T5>;
+	ome:to <http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T6>;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T5>
+	a ome:Character ;
+	cnt:chars "Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T6>
+	a loc:Home ;
+	cnt:chars "cottage" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T7>
+	a ome:Transformation ;
+	cnt:chars "dies" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T7>
+	a ome:Transformation;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T8>;
+	ome:from <http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T9>;
+	ome:to <http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T10>;
+	rdfs:label "E2" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T8>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T9>
+	a omt:Alive .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T10>
+	a omt:Dead .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T11>
+	a ome:Physical-Item ;
+	cnt:chars "basket" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T12>
+	a ompi:Consumables ;
+	cnt:chars "food" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T11> ome:contains <http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T12>;
+	rdfs:label "R2" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T13>
+	a ome:Gain ;
+	cnt:chars "takes" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T13>
+	a ome:Gain;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T2>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/flawrence/RRHS11-S10/T11>;
+	rdfs:label "E3" .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/RRHGrandma>
+	rdfs:label "Grandma";
+	rdfs:label "Grandmother";
+	a ome:Character .
+

@@ -1,0 +1,56 @@
+T1	Context 0 18	Red Riding Hood 72
+T2	Character 19 41	Little Red Riding Hood
+T3	Character 102 109	Grandma
+T4	Character 147 151	wolf
+R1	family-of Arg1:T2 Arg2:T3	
+R2	enemy-of Arg1:T2 Arg2:T4	
+T5	Wood 138 143	woods
+T6	Home 460 465	house
+T7	Character 1188 1195	Grandma
+T8	Character 47 59	woodcutter's
+T9	Country 179 185	bushes
+T10	Gain 74 85	taking food
+E1	Gain:T10 
+T11	Travel 118 143	walking through the woods
+E2	Travel:T11 
+T12	Conversational 239 244	asked
+E3	Conversational:T12 
+T13	EmotionalExpression 268 278	unfazed by
+E4	EmotionalExpression:T13 
+T14	Character 597 606	The voice
+T15	Transference 756 763	entered
+E5	Transference:T15 
+T16	Conversational 662 671	commented
+E6	Conversational:T16 
+T17	Merge 283 300	sudden appearance
+E7	Merge:T17 
+T18	Division 430 441	bounded off
+E8	Division:T18 
+T19	Merge 152 162	jumped out
+E9	Merge:T19 
+T20	Merge 597 606	The voice
+E10	Merge:T20 
+T21	Merge 306 318	talking wolf
+E11	Merge:T21 
+N1	Reference T4 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+N2	Reference T3 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandma
+T22	Character 532 541	Grandma's
+N3	Reference T22 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandma
+T23	Character 198 213	Red Riding Hood
+N4	Reference T23 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T24	Character 249 253	wolf
+N5	Reference T24 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T26	Character 467 482	Red Riding Hood
+N6	Reference T26 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T27	EmotionalExpression 483 491	shrugged
+E12	EmotionalExpression:T27 
+T28	Travel 496 513	continued walking
+E13	Travel:T28 
+T25	Character 358 361	him
+N7	Reference T25 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+A3	Gender T26 Female
+A4	Name T26 Red Riding Hood
+A1	Species T26 Homo Sapiens
+A2	Gender T2 Female
+A5	Name T2 Little Red Riding Hood
+A6	Species T2 Homo Sapiens

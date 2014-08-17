@@ -1,0 +1,528 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T1>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood Variation 69" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T2>
+	a ome:Character ;
+	cnt:chars "Red Riding Hood's mother" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T3>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T3>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A1" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T2>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A2" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T>]
+		];
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T4>
+	a ome:Physical-Item ;
+	cnt:chars "basket" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T5>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T5>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A3" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T3> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T>]
+		];
+	rdfs:label "R2" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T>]
+		];
+	rdfs:label "R3" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T6>
+	a ome:Being ;
+	cnt:chars "strangers" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T7>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T5> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RRHGrandma>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T8>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T8> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RRHGrandma>;
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T9>
+	a ome:Character ;
+	cnt:chars "Hood" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T9> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood>;
+	rdfs:label "N3" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T10>
+	a ome:Character ;
+	cnt:chars "She" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T10>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A4" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T11>
+	a ome:Character ;
+	cnt:chars "She" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T11>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A5" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T12>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T12>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A6" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T14>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T14>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A7" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T14> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RRHGrandma>;
+	rdfs:label "N4" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T15>
+	a ome:Character ;
+	cnt:chars "Hood" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T15>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A8" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T15> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood>;
+	rdfs:label "N5" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T16>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T16>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A9" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T17>
+	a ome:Character ;
+	cnt:chars "mother" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T17>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A10" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RRHMother> ome:shadow-of <http://contextus.net/resource/shared/RRHMother>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T17> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RRHMother>;
+	rdfs:label "N6" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T3>
+	 omt:has-trait [
+		a omt:Name ;
+		omt:has-name "Red Riding Hood"
+		];
+	rdfs:label "A11" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T18>
+	a ome:Physical-Item ;
+	cnt:chars "basket" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/Basket> ome:shadow-of <http://contextus.net/resource/shared/Basket>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T18> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/Basket>;
+	rdfs:label "N7" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/Basket> ome:shadow-of <http://contextus.net/resource/shared/Basket>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T4> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/Basket>;
+	rdfs:label "N8" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T19>
+	a aktloc:Building ;
+	cnt:chars "house" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T20>
+	a loc:Home ;
+	cnt:chars "home" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T21>
+	a omes:Conversational ;
+	cnt:chars "speaking" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T21>
+	a omes:Conversational;
+	rdfs:label "E2" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T22>
+	a ome:Social ;
+	cnt:chars "meet" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T22>
+	a ome:Social;
+	ome:has-object-entity <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T27>;
+	rdfs:label "E3" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T10>
+	 omt:has-trait [
+		a omt:Name ;
+		omt:has-name "Red Riding Hood"
+		];
+	rdfs:label "A12" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T11> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood>;
+	rdfs:label "N9" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T10> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood>;
+	rdfs:label "N10" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T3> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood>;
+	rdfs:label "N11" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T7> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood>;
+	rdfs:label "N12" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T15>
+	 omt:has-trait [
+		a omt:Name ;
+		omt:has-name "Red Riding Hood"
+		];
+	rdfs:label "A13" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T23>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T23>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A14" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T23> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RRHGrandma>;
+	rdfs:label "N13" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T24>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T24> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood>;
+	rdfs:label "N14" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T25>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T25> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood>;
+	rdfs:label "N15" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T16> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RedRidingHood>;
+	rdfs:label "N16" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T12> owl:sameAs <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/RRHGrandma>;
+	rdfs:label "N17" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T26>
+	a ome:Physical-Item ;
+	cnt:chars "same" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T26> ome:is <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T18>;
+	rdfs:label "R4" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T13>
+	a omj:Travel ;
+	cnt:chars "reaches" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T13>
+	a omj:Travel;
+	ome:has-object-entity <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T12>;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T11> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E>]
+		];
+	rdfs:label "R5" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T10> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-not-do <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E>]
+		];
+	rdfs:label "R6" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T27>
+	a ome:Being ;
+	cnt:chars "strangers" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T28>
+	a omet:Transference ;
+	cnt:chars "returns" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T28>
+	a omet:Transference;
+	ome:has-object-entity <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T20>;
+	rdfs:label "E4" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T15> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E>]
+		];
+	rdfs:label "R7" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T29>
+	a omes:Conversational ;
+	cnt:chars "asks" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T29>
+	a omes:Conversational;
+	ome:has-object-entity <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T3>;
+	ome:refers-to <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E6>;
+	ome:has-occurrence [
+	a ome:Occurrence;
+		ome:precedes [
+			a ome:Occurrence;
+			ome:is-occurrence-of <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E9>]
+		];
+;
+	rdfs:label "E5" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E>]
+		];
+	rdfs:label "R8" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T30>
+	a omet:Transference ;
+	cnt:chars "deliver" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T30>
+	a omet:Transference;
+	ome:has-object-entity <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T4>;
+	ome:to <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T5>;
+	rdfs:label "E6" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T3> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E>]
+		];
+	rdfs:label "R9" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T31>
+	a omes:EmotionalExpression ;
+	cnt:chars "unable to comprehend the reason" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T31>
+	a omes:EmotionalExpression;
+	rdfs:label "E7" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T15> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E>]
+		];
+	rdfs:label "R10" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T32>
+	a omes:Conversational ;
+	cnt:chars "interacting" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T32>
+	a omes:Conversational;
+	ome:has-object-entity <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T6>;
+	rdfs:label "E8" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T25> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-not-do <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E>]
+		];
+	rdfs:label "R11" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T33>
+	a omes:Conversational ;
+	cnt:chars "warned" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T33>
+	a omes:Conversational;
+	ome:refers-to <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E8>;
+	ome:has-occurrence [
+	a ome:Occurrence;
+		ome:follows [
+			a ome:Occurrence;
+			ome:is-occurrence-of <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E5>]
+		];
+;
+	rdfs:label "E9" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E>]
+		];
+	rdfs:label "R12" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T34>
+	a omes:Conversational ;
+	cnt:chars "warning" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T34>
+	a omes:Conversational;
+	ome:refers-to <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E9>;
+	rdfs:label "E10" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T35>
+	a ome:Event ;
+	cnt:chars "delivers" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T35>
+	a ome:Event;
+	ome:has-object-entity <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T18>;
+	rdfs:label "E11" .
+
+<http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/T11> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/PDaengeli/RRHV69-S41/E>]
+		];
+	rdfs:label "R13" .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Basket>
+	rdfs:label "Basket";
+	a ome:Physical-Item .
+
+<http://contextus.net/resource/shared/RRHGrandma>
+	rdfs:label "Grandma";
+	rdfs:label "Grandmother";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/RRHMother>
+	rdfs:label "Mother";
+	a ome:Character .
+

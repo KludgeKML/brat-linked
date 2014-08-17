@@ -1,0 +1,1194 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T1>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood 25" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T2>
+	a ome:Character ;
+	cnt:chars "Little Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T3>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T5>
+	a ome:Character ;
+	cnt:chars "Grandmother" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T7>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T8>
+	a ome:Character ;
+	cnt:chars "wolves" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T7> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R5" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T12>
+	a ome:Character ;
+	cnt:chars "Red" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T12> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood>;
+	rdfs:label "N3" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T13>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T12> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R6" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T14>
+	a ome:Character ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T15>
+	a ome:Character ;
+	cnt:chars "who" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T15> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R7" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T13> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T15>;
+	rdfs:label "R8" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T16>
+	a ome:Character ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T12> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T16>;
+	rdfs:label "R9" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T16> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R10" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T17>
+	a ome:Character ;
+	cnt:chars "She" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T18>
+	a ome:Character ;
+	cnt:chars "him" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T17> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R11" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T19>
+	a ome:Character ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T20>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T19> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R12" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T21>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T21> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf>;
+	rdfs:label "N4" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T22>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T21> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R13" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T23>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T24>
+	a loc:Home ;
+	cnt:chars "house" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T25>
+	a ome:Character ;
+	cnt:chars "Grandmother's" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T26>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T27>
+	a ome:Physical-Item ;
+	cnt:chars "voice" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T28>
+	a ome:Character ;
+	cnt:chars "Red's" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T29>
+	a ome:Character ;
+	cnt:chars "Grandmother" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T29> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RRHGrandma>;
+	rdfs:label "N5" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T30>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T30> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf>;
+	rdfs:label "N6" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T31>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T30> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R14" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T29> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T31>;
+	rdfs:label "R15" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T32>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T33>
+	a ome:Character ;
+	cnt:chars "Red" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T33> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood>;
+	rdfs:label "N7" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T34>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T34> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf>;
+	rdfs:label "N8" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T35>
+	a ome:Character ;
+	cnt:chars "Red" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T35> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood>;
+	rdfs:label "N9" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T36>
+	a ome:Character ;
+	cnt:chars "Grandmother" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T36> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RRHGrandma>;
+	rdfs:label "N10" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T37>
+	a ome:Character ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T35> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T37>;
+	rdfs:label "R16" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T38>
+	a ome:Character ;
+	cnt:chars "you" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T39>
+	a ome:Character ;
+	cnt:chars "you" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T40>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T40> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf>;
+	rdfs:label "N11" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T38> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T40>;
+	rdfs:label "R17" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T35> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T39>;
+	rdfs:label "R18" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T41>
+	a ome:Character ;
+	cnt:chars "Grandmother" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T41> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RRHGrandma>;
+	rdfs:label "N12" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T42>
+	a ome:Character ;
+	cnt:chars "Red" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T42> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood>;
+	rdfs:label "N13" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T43>
+	a ome:Character ;
+	cnt:chars "you" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T44>
+	a ome:Character ;
+	cnt:chars "you" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T45>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T45> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf>;
+	rdfs:label "N14" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T42> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T44>;
+	rdfs:label "R19" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T43> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T45>;
+	rdfs:label "R20" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T46>
+	a ome:Character ;
+	cnt:chars "Grandmother" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T46> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RRHGrandma>;
+	rdfs:label "N15" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T47>
+	a ome:Character ;
+	cnt:chars "Red" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T47> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood>;
+	rdfs:label "N16" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T48>
+	a ome:Character ;
+	cnt:chars "you" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T49>
+	a ome:Character ;
+	cnt:chars "YOU" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T50>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T50> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf>;
+	rdfs:label "N17" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T51>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T47> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T49>;
+	rdfs:label "R21" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T48> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T50>;
+	rdfs:label "R22" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T50> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T51>;
+	rdfs:label "R23" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T52>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T52> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T50>;
+	rdfs:label "R24" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T53>
+	a ome:Character ;
+	cnt:chars "woodcutter" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Forester> ome:shadow-of <http://contextus.net/resource/shared/Forester>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T53> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Forester>;
+	rdfs:label "N18" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T54>
+	a ome:Physical-Item ;
+	cnt:chars "snoring" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T55>
+	a ome:Character ;
+	cnt:chars "wolf's" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T56>
+	a ome:Character ;
+	cnt:chars "poor old lady" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T57>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T58>
+	a ome:Character ;
+	cnt:chars "I" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T59>
+	a ome:Character ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T53> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T57>;
+	rdfs:label "R25" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T53> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T58>;
+	rdfs:label "R26" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T60>
+	a ome:Character ;
+	cnt:chars "woodcutter" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Forester> ome:shadow-of <http://contextus.net/resource/shared/Forester>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T60> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Forester>;
+	rdfs:label "N19" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T61>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T61> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf>;
+	rdfs:label "N20" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T60> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R27" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T56> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Friendship;
+			ome:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R28" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T62>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T60> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T62>;
+	rdfs:label "R29" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T63>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T63> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Wolf>;
+	rdfs:label "N21" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T64>
+	a ome:Character ;
+	cnt:chars "Red" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T64> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood>;
+	rdfs:label "N22" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T65>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T65> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RRHGrandma>;
+	rdfs:label "N23" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T64> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R30" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T66>
+	a ome:Character ;
+	cnt:chars "They" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T67>
+	a ome:Character ;
+	cnt:chars "woodcutter" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Forester> ome:shadow-of <http://contextus.net/resource/shared/Forester>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T67> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/Forester>;
+	rdfs:label "N24" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T68>
+	a ome:Character ;
+	cnt:chars "them" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T69>
+	a ome:Character ;
+	cnt:chars "him" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T66> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Friendship;
+			ome:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R31" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T66> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T68>;
+	rdfs:label "R32" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T67> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T69>;
+	rdfs:label "R33" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T66> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Friendship;
+			ome:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R34" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T4>
+	a ome:Character ;
+	cnt:chars "Red" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T4> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T4> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T10>
+	a omes:Conversational ;
+	cnt:chars "told" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T10>
+	a omes:Conversational;
+	ome:has-object-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T7>;
+	rdfs:label "E2" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T11>
+	a loc:Wood ;
+	cnt:chars "woods" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T70>
+	a ome:Physical-Item ;
+	cnt:chars "path" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T71>
+	a omj:Travel ;
+	cnt:chars "keep" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T71>
+	a omj:Travel;
+	ome:involves <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T7>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T70>;
+	rdfs:label "E3" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T72>
+	a omj:Travel ;
+	cnt:chars "set off" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T72>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T12>;
+	rdfs:label "E4" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T73>
+	a ome:Event ;
+	cnt:chars "watch out for" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T73>
+	a ome:Event;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T7>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T8>;
+	rdfs:label "E5" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T74>
+	a ome:Event ;
+	cnt:chars "met" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T74>
+	a ome:Event;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T16>;
+	rdfs:label "E6" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T75>
+	a omes:Conversational ;
+	cnt:chars "asked" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T75>
+	a omes:Conversational;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T15>;
+	rdfs:label "E7" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T9>
+	a ome:Physical-Item ;
+	cnt:chars "basket" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T77>
+	a ompi:Consumables ;
+	cnt:chars "goodies" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T78>
+	a ome:Gain ;
+	cnt:chars "took" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T78>
+	a ome:Gain;
+	ome:has-object-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T9>;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T4> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R35" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T76>
+	a ome:Character ;
+	cnt:chars "little girl" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T2> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T76>;
+	rdfs:label "R2" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T79>
+	a ome:Character ;
+	cnt:chars "who" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T76> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T79>;
+	rdfs:label "R36" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T80>
+	a ompi:Attire ;
+	cnt:chars "red cloak" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T81>
+	a ompi:Attire ;
+	cnt:chars "hood" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T82>
+	a ome:Gain ;
+	cnt:chars "wore" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T82>
+	a ome:Gain;
+	rdfs:label "E8" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T79> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R37" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T83>
+	a ome:Character ;
+	cnt:chars "who" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T84>
+	a omes:Conversational ;
+	cnt:chars "told" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T84>
+	a omes:Conversational;
+	rdfs:label "E9" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T17> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R38" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T85>
+	a omes:Conversational ;
+	cnt:chars "wished" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T85>
+	a omes:Conversational;
+	ome:has-object-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T22>;
+	rdfs:label "E10" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T21> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R39" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T86>
+	a omt:Alive ;
+	cnt:chars "lived" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T5> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T86>;
+	rdfs:label "R40" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T86> ome:contained-by <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T11>;
+	rdfs:label "R41" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T9> ome:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T3>;
+	rdfs:label "R42" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T87>
+	a ome:Physical-Item ;
+	cnt:chars "door" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T88>
+	a omea:Violence ;
+	cnt:chars "gobbled" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T88>
+	a omea:Violence;
+	ome:has-object-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T31>;
+	rdfs:label "E11" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T30> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R43" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T89>
+	a omj:Travel ;
+	cnt:chars "ran" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T89>
+	a omj:Travel;
+	ome:to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T24>;
+	rdfs:label "E12" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T23> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R44" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T25> ome:contained-by <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T24>;
+	rdfs:label "R45" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T90>
+	a aktloc:Room ;
+	cnt:chars "door" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T91>
+	a ome:Action ;
+	cnt:chars "knocked" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T91>
+	a ome:Action;
+	ome:has-object-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T90>;
+	rdfs:label "E13" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T26> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R46" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T92>
+	a omes:Conversational ;
+	cnt:chars "mimicked" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T92>
+	a omes:Conversational;
+	ome:refers-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T27>;
+	rdfs:label "E14" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T28> ome:contained-by <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T27>;
+	rdfs:label "R47" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T93>
+	a ome:Action ;
+	cnt:chars "opened" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T93>
+	a ome:Action;
+	ome:has-object-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T87>;
+	rdfs:label "E15" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T29> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R48" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T94>
+	a ompi:Attire ;
+	cnt:chars "cap" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T95>
+	a ompi:Attire ;
+	cnt:chars "apron" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T96>
+	a aktloc:Room ;
+	cnt:chars "bed" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T97>
+	a omj:Travel ;
+	cnt:chars "got" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T97>
+	a omj:Travel;
+	ome:to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T96>;
+	rdfs:label "E16" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T32> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R49" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T98>
+	a omj:Travel ;
+	cnt:chars "arrived" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T98>
+	a omj:Travel;
+	ome:to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T99>;
+	rdfs:label "E17" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T99>
+	a aktloc:Building ;
+	cnt:chars "door" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T100>
+	a ome:Action ;
+	cnt:chars "knocked" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T100>
+	a ome:Action;
+	ome:has-object-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T99>;
+	rdfs:label "E18" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T33> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R52" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T33> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R53" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T9> ome:contains <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T77>;
+	rdfs:label "R54" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T101>
+	a omt:Unresponsive ;
+	cnt:chars "was sick" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T83> ome:is <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T101>;
+	rdfs:label "R55" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T6>
+	a ome:Character ;
+	cnt:chars "mother" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T102>
+	a ome:Character ;
+	cnt:chars "Red" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T102> owl:sameAs <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/RedRidingHood>;
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T102> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R3" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T5> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Friendship;
+			ome:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R4" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T6> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T>]
+		];
+	rdfs:label "R56" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T6> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R57" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T103>
+	a omj:Travel ;
+	cnt:chars "was going" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T103>
+	a omj:Travel;
+	rdfs:label "E19" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T14> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R58" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T104>
+	a omj:Travel ;
+	cnt:chars "visiting" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T104>
+	a omj:Travel;
+	ome:has-object-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T20>;
+	rdfs:label "E20" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T19> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R59" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T105>
+	a omj:Travel ;
+	cnt:chars "went" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T105>
+	a omj:Travel;
+	rdfs:label "E21" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T21> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R60" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T26> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R61" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T106>
+	a ome:Gain ;
+	cnt:chars "put" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T106>
+	a ome:Gain;
+	ome:has-object-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T94>;
+	rdfs:label "E22" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T32> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R50" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T94> ome:is-linked-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T95>;
+	rdfs:label "R51" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T107>
+	a loc:Home ;
+	cnt:chars "doorway" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T108>
+	a omj:Travel ;
+	cnt:chars "stood" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T108>
+	a omj:Travel;
+	ome:to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T107>;
+	rdfs:label "E23" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T35> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-not-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R62" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T109>
+	a omes:Conversational ;
+	cnt:chars "said" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T109>
+	a omes:Conversational;
+	ome:refers-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E27>;
+	ome:refers-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E28>;
+	rdfs:label "E24" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T37> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R63" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T110>
+	a ome:Physical-Item ;
+	cnt:chars "eyes" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T111>
+	a ome:Gain ;
+	cnt:chars "have" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T111>
+	a ome:Gain;
+	ome:has-object-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T110>;
+	rdfs:label "E25" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T38> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R64" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T36> omb:owns <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T110>;
+	rdfs:label "R65" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T112>
+	a omes:Conversational ;
+	cnt:chars "answered" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T112>
+	a omes:Conversational;
+	rdfs:label "E26" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T40> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R66" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T113>
+	a omes:Proposition ;
+	cnt:chars "what big eyes you have" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T113>
+	a omes:Proposition;
+	rdfs:label "E27" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T114>
+	a omes:Proposition ;
+	cnt:chars "Why Grandmother" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T114>
+	a omes:Proposition;
+	rdfs:label "E28" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T115>
+	a ome:Physical-Item ;
+	cnt:chars "ears" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T116>
+	a ome:Gain ;
+	cnt:chars "have" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T116>
+	a ome:Gain;
+	ome:has-object-entity <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T115>;
+	rdfs:label "E29" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T43> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R67" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T117>
+	a omes:Conversational ;
+	cnt:chars "said" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T117>
+	a omes:Conversational;
+	ome:refers-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E31>;
+	ome:refers-to <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E32>;
+	rdfs:label "E30" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T42> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/EBarker/RRHS25-S17/E>]
+		];
+	rdfs:label "R68" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T118>
+	a omes:Proposition ;
+	cnt:chars "what big ears you have" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T118>
+	a omes:Proposition;
+	rdfs:label "E31" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T119>
+	a omes:Proposition ;
+	cnt:chars "Why Grandmother" .
+
+<http://contextus.net/resource/RRH/EBarker/RRHS25-S17/T119>
+	a omes:Proposition;
+	rdfs:label "E32" .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Forester>
+	rdfs:label "Forester";
+	rdfs:label "Woodcutter";
+	rdfs:label "Hunter";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/RRHGrandma>
+	rdfs:label "Grandma";
+	rdfs:label "Grandmother";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Wolf>
+	rdfs:label "Wolf";
+	a ome:Character .
+

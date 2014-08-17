@@ -1,0 +1,237 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T2>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood Variation 22" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T3>
+	a ome:Character ;
+	cnt:chars "young girl" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T4>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T1>
+	a ome:Character ;
+	cnt:chars "mother" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T3> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T>]
+		];
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T3> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T>]
+		];
+	rdfs:label "R2" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T5>
+	a ome:Character ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T5> owl:sameAs <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RedRidingHood>;
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T3> owl:sameAs <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RedRidingHood>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T4> owl:sameAs <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RRHGrandma>;
+	rdfs:label "N3" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RRHMother> ome:shadow-of <http://contextus.net/resource/shared/RRHMother>.
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T1> owl:sameAs <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RRHMother>;
+	rdfs:label "N4" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T6>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T7>
+	a ome:Character ;
+	cnt:chars "old woman" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T7> owl:sameAs <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RRHGrandma>;
+	rdfs:label "N6" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T8>
+	a ome:Character ;
+	cnt:chars "woodcutter" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/Forester> ome:shadow-of <http://contextus.net/resource/shared/Forester>.
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T8> owl:sameAs <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/Forester>;
+	rdfs:label "N7" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T9>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T9> owl:sameAs <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RRHGrandma>;
+	rdfs:label "N8" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T6> owl:sameAs <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RRHGrandma>;
+	rdfs:label "N5" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T10>
+	a ome:Character ;
+	cnt:chars "girl" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T10> owl:sameAs <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/RedRidingHood>;
+	rdfs:label "N9" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T8> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Friendship;
+			ome:is-linked-to <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T>]
+		];
+	rdfs:label "R3" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T11>
+	a omea:Violence ;
+	cnt:chars "attacked" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T11>
+	a omea:Violence;
+	ome:has-object-entity <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T10>;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T6> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/E>]
+		];
+	rdfs:label "R4" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T12>
+	a ome:Physical-Item ;
+	cnt:chars "cakes" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T13>
+	a ome:Physical-Item ;
+	cnt:chars "basket" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T12> ome:contains <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T13>;
+	rdfs:label "R5" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T14>
+	a omes:EmotionalExpression ;
+	cnt:chars "On her way through the woods she hesitated." .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T14>
+	a omes:EmotionalExpression;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T3>;
+	rdfs:label "E2" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T3> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Pledge;
+			omb:will-do <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/E>]
+		];
+	rdfs:label "R6" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T15>
+	a omj:Travel ;
+	cnt:chars "On her way through the woods" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T15>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T3>;
+	rdfs:label "E3" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T17>
+	a omea:Violence ;
+	cnt:chars "administered punishments" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T17>
+	a omea:Violence;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T4>;
+	rdfs:label "E5" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T18>
+	a omes:EmotionalExpression ;
+	cnt:chars "hoping that things would be different this time" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T18>
+	a omes:EmotionalExpression;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T5>;
+	rdfs:label "E6" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T19>
+	a omea:Violence ;
+	cnt:chars "restrained" .
+
+<http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T19>
+	a omea:Violence;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T8>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/T7>;
+	ome:has-occurrence [
+	a ome:Occurrence;
+		ome:follows [
+			a ome:Occurrence;
+			ome:is-occurrence-of <http://contextus.net/resource/RRH/MKuster/RRHV22-S15/E1>]
+		];
+;
+	rdfs:label "E7" .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Forester>
+	rdfs:label "Forester";
+	rdfs:label "Woodcutter";
+	rdfs:label "Hunter";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/RRHGrandma>
+	rdfs:label "Grandma";
+	rdfs:label "Grandmother";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/RRHMother>
+	rdfs:label "Mother";
+	a ome:Character .
+

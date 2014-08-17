@@ -1,0 +1,228 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T1>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood 45" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T2>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T2> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Grannyhood>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Grannyhood> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T3>
+	a ome:Character ;
+	cnt:chars "young girl" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T4>
+	a omes:Conversational ;
+	cnt:chars "warned" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T4>
+	a omes:Conversational;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T3>;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T5>
+	a loc:Home ;
+	cnt:chars "house" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T6>
+	a ome:Character ;
+	cnt:chars "lumberjack" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T6>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A1" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T6> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/TheLumberjack>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/TheLumberjack> ome:shadow-of <http://contextus.net/resource/shared/Forester>;
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T7>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T7>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A2" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T7> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>;
+	rdfs:label "N3" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T8>
+	a omes:Conversational ;
+	cnt:chars "approached" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T8>
+	a omes:Conversational;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T10>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T11>;
+	omes:has-subject <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T15>;
+	rdfs:label "E2" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T9>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T9> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Grannyhood>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Grannyhood> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>;
+	rdfs:label "N4" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T3> ome:exists-in <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T1>;
+	rdfs:label "R2" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T3>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A3" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T10>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T10>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A4" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T10> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>;
+	rdfs:label "N5" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T5> loc:has-usual-occupant <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T9>;
+	rdfs:label "R3" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T11>
+	a ome:Character ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T11> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/RedRidingHood>;
+	rdfs:label "N6" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T12>
+	a ome:Character ;
+	cnt:chars "grandmother" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T12> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Grannyhood>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/shared/Grannyhood> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>;
+	rdfs:label "N7" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T13>
+	a omj:Travel ;
+	cnt:chars "visit" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T13>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T14>;
+	ome:to <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T15>;
+	rdfs:label "E3" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T14>
+	a ome:Character ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T14> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/RedRidingHood>;
+	rdfs:label "N8" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T15>
+	a loc:Home .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T16>
+	a ome:Character ;
+	cnt:chars "girl" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T16>
+	 omt:has-trait [
+		a omt:Female;
+		rdfs:label "Female (Gender)"
+		];
+	rdfs:label "A5" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T16> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/RedRidingHood>;
+	rdfs:label "N9" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T17>
+	a ome:Gain ;
+	cnt:chars "befriends" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T17>
+	a ome:Gain;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T18>;
+	ome:has-object-entity <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T19>;
+	rdfs:label "E4" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T18>
+	a ome:Character ;
+	cnt:chars "her" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T18> owl:sameAs <http://contextus.net/resource/RRH/flawrence/RRHS45-S29/RedRidingHood>;
+	rdfs:label "N10" .
+
+<http://contextus.net/resource/RRH/flawrence/RRHS45-S29/T19>
+	a ome:Abstract-Item .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Forester>
+	rdfs:label "Forester";
+	rdfs:label "Woodcutter";
+	rdfs:label "Hunter";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/RRHGrandma>
+	rdfs:label "Grandma";
+	rdfs:label "Grandmother";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Wolf>
+	rdfs:label "Wolf";
+	a ome:Character .
+

@@ -1,0 +1,115 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T1>
+	a ome:Context ;
+	cnt:chars "Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T2>
+	a ome:Character ;
+	cnt:chars "Grandmother" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T3>
+	a ome:Character ;
+	cnt:chars "Red Riding Hood" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T3> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T>]
+		];
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T4>
+	a ome:Character ;
+	cnt:chars "Grandmother" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T5>
+	a ome:Entity ;
+	cnt:chars "Grandmother" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/RRHGrandma> ome:shadow-of <http://contextus.net/resource/shared/RRHGrandma>.
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T5> owl:sameAs <http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/RRHGrandma>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T6>
+	a ome:Entity ;
+	cnt:chars "she" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T6> owl:sameAs <http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/shared/Redridinghood>.
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/shared/Redridinghood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T7>
+	a omj:Travel ;
+	cnt:chars "went" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T7>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T8>;
+	ome:to <http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T9>;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T8>
+	a ome:Character ;
+	cnt:chars "woodcutter" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T9>
+	a loc:Home ;
+	cnt:chars "cottage" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T10>
+	a ome:Entity ;
+	cnt:chars "Red" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T10> owl:sameAs <http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/shared/Redridinghood>.
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/shared/Redridinghood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>;
+	rdfs:label "N3" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T11>
+	a ome:Gain ;
+	cnt:chars "sprang" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T11>
+	a ome:Gain;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T10>;
+	rdfs:label "E2" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T12>
+	a ome:Character ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/T12> owl:sameAs <http://contextus.net/resource/RRH/MSemlak/RRHV26-S17/shared/Wolf>;
+
+	rdfs:label "N4" .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/RRHGrandma>
+	rdfs:label "Grandma";
+	rdfs:label "Grandmother";
+	a ome:Character .
+

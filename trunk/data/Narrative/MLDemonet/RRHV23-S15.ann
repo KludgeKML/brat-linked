@@ -1,0 +1,33 @@
+T1	Context 0 28	Red Riding Hood Variation 23
+T2	Character 31 41	young girl
+T3	Character 115 126	grandmother
+R1	family-of Arg1:T2 Arg2:T3	
+T4	Character 138 142	wolf
+T5	Character 187 190	her
+R2	enemy-of Arg1:T4 Arg2:T5	
+T6	Character 201 204	him
+A1	Gender T6 Male
+A2	Name T6 Animal
+R3	is Arg1:T4 Arg2:T6	
+T7	Character 209 212	she
+A3	Gender T7 Female
+R4	is Arg1:T2 Arg2:T7	
+R5	is Arg1:T2 Arg2:T5	
+T8	Character 258 261	she
+R6	is Arg1:T2 Arg2:T8	
+T9	Character 332 335	her
+R7	is Arg1:T2 Arg2:T9	
+T10	Character 341 345	wolf
+R8	is Arg1:T4 Arg2:T10	
+T11	Character 476 487	grandmother
+R9	is-shadow-of Arg1:T3 Arg2:T11	
+N1	Reference T3 archetypes:http://contextus.net/resource/RRH/MLDemonet/RRHV23-S15/shared/Rouge	Rouge
+T12	Character 596 600	girl
+R10	is Arg1:T2 Arg2:T12	
+N2	Reference T2 archetypes:http://contextus.net/resource/RRH/MLDemonet/RRHV23-S15/shared/Rouge	Rouge
+T13	Character 420 422	He
+R11	is Arg1:T4 Arg2:T13	
+A4	Gender T4 Male
+A5	Name T4 Loup
+A6	Species T4 Animal
+N3	Reference T4 archetypes:http://contextus.net/resource/RRH/MLDemonet/RRHV23-S15/shared/Rouge	Rouge

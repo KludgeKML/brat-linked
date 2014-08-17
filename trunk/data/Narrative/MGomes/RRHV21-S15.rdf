@@ -1,0 +1,320 @@
+@prefix aktloc: <http://contextus.net/ontology/ontomedia/misc/AKTlocation#>.
+@prefix omb: <http://contextus.net/ontology/ontomedia/ext/common/being#>.
+@prefix cnt: <http://www.w3.org/2011/content#>.
+@prefix omf: <http://contextus.net/ontology/ontomedia/ext/fiction/fic#>.
+@prefix ome: <http://contextus.net/ontology/ontomedia/core/expression#>.
+@prefix omel: <http://contextus.net/ontology/ontomedia/ext/events/loss#>.
+@prefix loc: <http://contextus.net/ontology/ontomedia/core/space#>.
+@prefix omj: <http://contextus.net/ontology/ontomedia/ext/events/travel#>.
+@prefix omea: <http://contextus.net/ontology/ontomedia/ext/events/action#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix omeg: <http://contextus.net/ontology/ontomedia/ext/events/gain#>.
+@prefix omc: <http://contextus.net/ontology/ontomedia/ext/common/critters#>.
+@prefix eprop: <http://contextus.net/ontology/ontomedia/ext/events/eventprop#>.
+@prefix omfc: <http://contextus.net/ontology/ontomedia/ext/fiction/char#>.
+@prefix omt: <http://contextus.net/ontology/ontomedia/ext/common/trait#>.
+@prefix omes: <http://contextus.net/ontology/ontomedia/ext/events/social#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ompi: <http://contextus.net/ontology/ontomedia/ext/common/physitem#>.
+@prefix omet: <http://contextus.net/ontology/ontomedia/ext/events/trans#>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T2>
+	a ome:Character ;
+	cnt:chars "boy" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T1>
+	a ome:Context ;
+	cnt:chars "Rad Riding Hood" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T3>
+	a ome:Character ;
+	cnt:chars "grandfather" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T2> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Family;
+			omb:is-relation-of <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T>]
+		];
+	rdfs:label "R1" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T4>
+	a ompi:Attire ;
+	cnt:chars "basket of cakes" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T5>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T6>
+	a loc:Wood ;
+	cnt:chars "woods" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T7>
+	a omes:Proposition ;
+	cnt:chars "tempt" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T7>
+	a omes:Proposition;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T5>;
+	rdfs:label "E1" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T8>
+	a ome:Character ;
+	cnt:chars "boy" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T9>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T10>
+	a ome:Character ;
+	cnt:chars "grandfather" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T11>
+	a loc:Home ;
+	cnt:chars "cottage" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T15>
+	a ome:Character ;
+	cnt:chars "grandfather" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T16>
+	a ome:Character ;
+	cnt:chars "grandfather" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T5> omt:has-trait [
+	a omt:link;
+		omb:has-bond [
+			a omb:Enmity;
+			omb:is-linked-to <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T>]
+		];
+	rdfs:label "R2" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T1> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood>;
+	rdfs:label "N1" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T3> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/shared/Grandfather>;
+
+	rdfs:label "N3" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T16> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/shared/Grandfather>;
+
+	rdfs:label "N5" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T15> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/shared/Grandfather>;
+
+	rdfs:label "N6" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T17>
+	a ome:Character ;
+	cnt:chars "boy" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T2> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood>;
+	rdfs:label "N2" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T18>
+	a ome:Entity ;
+	cnt:chars "woodcutter" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Forester> ome:shadow-of <http://contextus.net/resource/shared/Forester>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T18> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Forester>;
+	rdfs:label "N9" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T22>
+	a ome:Entity ;
+	cnt:chars "boy" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T22> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood>;
+	rdfs:label "N11" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T17> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood>;
+	rdfs:label "N7" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T8> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood>;
+	rdfs:label "N4" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T9> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Wolf>;
+	rdfs:label "N13" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T5> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Wolf>;
+	rdfs:label "N14" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T21>
+	a ome:Entity ;
+	cnt:chars "grandfather" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T21> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/shared/Grandfather>;
+
+	rdfs:label "N15" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T23>
+	a ome:Entity ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T23> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Wolf>;
+	rdfs:label "N16" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T24>
+	a omea:Festivity ;
+	cnt:chars "reunited" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T24>
+	a omea:Festivity;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T22>;
+	rdfs:label "E3" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T26>
+	a omea:Ingestion ;
+	cnt:chars "eat" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T26>
+	a omea:Ingestion;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T32>;
+	rdfs:label "E5" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T28>
+	a loc:Home ;
+	cnt:chars "cottage" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T19>
+	a ome:Character ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T19> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Wolf>;
+	rdfs:label "N10" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T28> ome:contains <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T18>;
+	rdfs:label "R3" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T15>
+	 omt:has-trait [
+		a omt:Male;
+		rdfs:label "Male (Gender)"
+		];
+	rdfs:label "A1" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T30>
+	a ompi:Attire ;
+	cnt:chars "basket" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T31>
+	a omj:Travel ;
+	cnt:chars "taking" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T31>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T4>;
+	rdfs:label "E7" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T30> ome:is <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T4>;
+	rdfs:label "R4" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T12>
+	a loc:Home ;
+	cnt:chars "cottage" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T13>
+	a ome:Character ;
+	cnt:chars "him" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T13> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood>;
+	rdfs:label "N8" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T14>
+	a ome:Entity ;
+	cnt:chars "wolf" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T14> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Wolf>;
+	rdfs:label "N12" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T25>
+	a ome:Entity ;
+	cnt:chars "he" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Wolf> ome:shadow-of <http://contextus.net/resource/shared/Wolf>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T25> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/Wolf>;
+	rdfs:label "N17" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T32>
+	a ome:Entity ;
+	cnt:chars "old man" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T32> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/shared/Grandfather>;
+
+	rdfs:label "N18" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T33>
+	a ome:Entity ;
+	cnt:chars "boy" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood> ome:shadow-of <http://contextus.net/resource/shared/RedRidingHood>.
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T33> owl:sameAs <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/RedRidingHood>;
+	rdfs:label "N19" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T20>
+	a omj:Travel ;
+	cnt:chars "set out" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T20>
+	a omj:Travel;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T2>;
+	rdfs:label "E2" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T27>
+	a omes:EmotionalExpression ;
+	cnt:chars "convinced" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T27>
+	a omes:EmotionalExpression;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T17>;
+	rdfs:label "E4" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T29>
+	a omes:EmotionalExpression ;
+	cnt:chars "argued" .
+
+<http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T29>
+	a omes:EmotionalExpression;
+	ome:has-subject-entity <http://contextus.net/resource/RRH/MGomes/RRHV21-S15/T17>;
+	rdfs:label "E6" .
+
+<http://contextus.net/resource/shared/RedRidingHood>
+	rdfs:label "Red Riding Hood";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Forester>
+	rdfs:label "Forester";
+	rdfs:label "Woodcutter";
+	rdfs:label "Hunter";
+	a ome:Character .
+
+<http://contextus.net/resource/shared/Wolf>
+	rdfs:label "Wolf";
+	a ome:Character .
+

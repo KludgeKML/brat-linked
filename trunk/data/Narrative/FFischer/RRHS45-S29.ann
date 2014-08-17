@@ -1,0 +1,53 @@
+T1	Character 19 31	A young girl
+T2	Character 157 168	grandmother
+R1	family-of Arg1:T2 Arg2:T1	
+T3	Character 201 207	a wolf
+R2	enemy-of Arg1:T3 Arg2:T1	
+A1	Gender T1 Female
+A2	Name T1 Little Red Riding Hood
+N1	Reference T1 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T4	Entity 180 183	she
+N2	Reference T4 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+N3	Reference T2 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+N4	Reference T3 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T5	Character 426 438	a lumberjack
+A3	Gender T5 Male
+T6	Travel 131 168	she sets out to visit her grandmother
+E1	Travel:T6 
+T7	Character 342 356	the young girl
+N5	Reference T7 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T8	Travel 266 273	reaches
+E2	Travel:T8 to:T10 has-subject-entity:T9
+T9	Character 262 265	she
+N6	Reference T9 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T10	Home 278 297	grandmother's house
+T11	Division 454 498	the grandmother emerges from within the wolf
+E3	Division:T11 from:T13 has-subject-entity:T12
+T12	Character 454 469	the grandmother
+N7	Reference T12 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T13	Character 490 498	the wolf
+N8	Reference T13 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T14	Character 222 225	her
+N9	Reference T14 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T15	Conversational 212 221	befriends
+E4	Conversational:T15 has-object-entity:T14 has-subject-entity:T3
+T16	Character 446 449	her
+N10	Reference T16 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T17	Festivity 439 445	recues
+E5	Festivity:T17 has-subject-entity:T5 has-object-entity:T16
+T18	Character 381 392	grandmother
+N11	Reference T18 archetypes:http://contextus.net/resource/shared/RRHGrandma	Grandmother
+T19	Character 299 307	the wolf
+N12	Reference T19 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T20	Ingestion 308 327	has tricked his way
+E6	Ingestion:T20 has-subject-entity:T19 has-object-entity:T18
+T21	Character 402 404	he
+N13	Reference T21 archetypes:http://contextus.net/resource/shared/Wolf	Wolf
+T22	Character 416 424	the girl
+N14	Reference T22 archetypes:http://contextus.net/resource/shared/RedRidingHood	Red Riding Hood
+T23	Violence 409 415	attack
+E7	Violence:T23 has-subject-entity:T21 has-object-entity:T22
+T24	Violence 439 445	recues
+E8	Violence:T24 has-subject-entity:T5 has-object-entity:T21
+T25	Attire 106 129	her favourite red cloak
+R3	wears Arg1:T1 Arg2:T25	
