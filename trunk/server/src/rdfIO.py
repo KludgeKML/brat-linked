@@ -87,6 +87,32 @@ def get_rdf_parts(fpath, document):
 
     with open(fpath) as txt_file:
         entity_data = {}
+        global_data = {}
+        global_links = {}
+        default_context_uri = ''
+        
+        for line in txt_file:
+            chunks = re.split(r'\s+', line.strip())
+            
+            for global_class, global_property in namespace_info['global_classes'].items():
+            
+                if chunks[1] == global_class and not(global_class in context_data):
+                    global_data[chunks[0]] = "<" + namespace + chunks[0] + ">"
+                    
+                if chunks[1] == global_property:
+                    arg1 = chunks[2].split(":")[1]
+                    arg2 = chunks[3].split(":")[1]
+                    
+                    rel = {global_property:arg2}
+                    
+                    global_links[arg1] = [rel]
+                    
+                if chunks[1] == "Default" and chunks[2] in global_data:
+                    default_context_uri = "<" + namespace + chunks[2] + ">"
+                    
+        if default_context_uri == '' and len(global_data) == 1:
+            default_context_uri = global_data.values()[0]
+                    
     
         for line in txt_file:
 
@@ -245,7 +271,7 @@ def get_long_rdf(annotation, namespace_info, annotation_value = '', entity = '',
         stripped_entity = re.sub(r'[^a-zA-Z_-]+', '', entity)
         ent = namespace_info['category_map'][stripped_entity] + ":" + stripped_entity
     else:
-        ent = "<" + namespace + re.sub(r'[^a-zA-Z_-]+', '', entity) + ">"
+        ent = "<" + namespace + re.sub(r'[^a-zA-Z0-9_-]+', '', entity) + ">"
 
     
     annotation = re.sub(r'[^a-zA-Z_-]+', '', annotation)
@@ -258,7 +284,7 @@ def get_long_rdf(annotation, namespace_info, annotation_value = '', entity = '',
         return raw.replace('{1}', ent)
     elif annotation in namespace_info['class_literals']:
         raw = namespace_info['class_literals'][annotation]        
-        filtered_ent = re.sub(r'[^a-zA-Z_ -]+', '', ent)
+        filtered_ent = re.sub(r'[^a-zA-Z0-9_ -]+', '', ent)
         camelcase_ent = filtered_ent.title()
         return raw.replace('{1}', camelcase_ent.replace(' ', ''))     
 
