@@ -33,7 +33,6 @@ def upload_annotations ( endpoint, directory ):
                     full_endpoint = endpoint + \
                         namespace_info['base_url'] + 'user/' + user + '/' + document
                     print("uploading to " + full_endpoint)
-                    print(rdf_data)
                     upload_annotation(full_endpoint, rdf_data)
 
 def upload_annotation ( endpoint, rdf_data ):
