@@ -34,7 +34,7 @@ def upload_annotations ( endpoint, directory ):
                         namespace_info['base_url'] + 'user/' + user + '/' + document
                     print("uploading to " + full_endpoint)
                     print(rdf_data)
-                    upload_annotation(endpoint, rdf_data)
+                    upload_annotation(full_endpoint, rdf_data)
 
 def upload_annotation ( endpoint, rdf_data ):
     headers = {'content-type' : 'application/x-turtle'}
