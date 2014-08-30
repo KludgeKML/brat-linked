@@ -27,12 +27,14 @@ def upload_annotations ( endpoint, directory ):
             document, extension = os.path.splitext(file)
             path, user = os.path.split(dir_path)
             if extension == '.ann':
-                rdf_data = convert_to_rdf(os.path.join(dir_path, file), document, user)
-                namespace_info = load_namespace_info()
-                full_endpoint = endpoint + \
-                    namespace_info['base_url'] + 'user/' + user + '/' + document
-                print("uploading to " + full_endpoint)
-                upload_annotation(endpoint, rdf_data)
+                rdf_data, data_exists = convert_to_rdf(os.path.join(dir_path, file), document, user)
+                if data_exists:
+                    namespace_info = load_namespace_info()
+                    full_endpoint = endpoint + \
+                        namespace_info['base_url'] + 'user/' + user + '/' + document
+                    print("uploading to " + full_endpoint)
+                    print(rdf_data)
+                    upload_annotation(endpoint, rdf_data)
 
 def upload_annotation ( endpoint, rdf_data ):
     headers = {'content-type' : 'application/x-turtle'}
@@ -70,8 +72,11 @@ def convert_to_rdf(fpath, document, user):
     for prefix in parts['prefixes']:
         rdf += '@prefix ' + prefix + '.\n'
     rdf += '\n' + parts['data']
+    data_exists = False
+    if len(parts['data']) > 0:
+        data_exists = True
 
-    return rdf
+    return rdf, data_exists
 
 
 def get_rdf_parts(fpath, document, user):
